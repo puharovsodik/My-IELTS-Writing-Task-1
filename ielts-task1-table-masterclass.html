@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Task 1 Tables — Band 7–9 Masterclass</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Mono:wght@400;500&display=swap');
+
+  :root {
+    --primary: #1e3a5f;
+    --accent: #2563eb;
+    --gold: #d97706;
+    --green: #059669;
+    --red: #dc2626;
+    --purple: #7c3aed;
+    --pink: #db2777;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%);
+    color: white;
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: #fbbf24; }
+  .hero p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 10px;
+  }
+  .stat-num { font-size: 1.6rem; font-weight: 800; color: #fbbf24; }
+  .stat-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── TOC ── */
+  .toc {
+    background: white;
+    border: 2px solid var(--accent);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+  }
+  .toc h2 { color: var(--accent); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── SECTION CARDS ── */
+  .section {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    margin-bottom: 36px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-num {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .s1 .section-num { background: #dbeafe; color: #1d4ed8; }
+  .s2 .section-num { background: #dcfce7; color: #166534; }
+  .s3 .section-num { background: #fef3c7; color: #92400e; }
+  .s4 .section-num { background: #f3e8ff; color: #6b21a8; }
+  .s5 .section-num { background: #fce7f3; color: #9d174d; }
+  .colloc-section .section-num { background: #fee2e2; color: #991b1b; }
+
+  .section-header h2 { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+  .section-header .subtitle { font-size: 13px; color: var(--muted); font-weight: 400; }
+
+  /* ── BAND TABS ── */
+  .band-tab {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .band6 { background: #d1fae5; color: #065f46; }
+  .band8 { background: #fef3c7; color: #78350f; border: 1px solid #fcd34d; }
+
+  /* ── SENTENCE CARDS ── */
+  .sentence-card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .sentence-card.gold { border-left-color: var(--gold); }
+  .sentence-card.green { border-left-color: var(--green); }
+  .sentence-card.purple { border-left-color: var(--purple); }
+  .sentence-card.pink { border-left-color: var(--pink); }
+
+  /* ── COLOR-CODED GRAMMAR ── */
+  .tmpl { color: #6b7280; font-style: italic; } /* gray = placeholder */
+  .verb { background: #dbeafe; color: #1e40af; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .subj { background: #dcfce7; color: #14532d; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .colloc { background: #fef3c7; color: #78350f; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .data { background: #f3e8ff; color: #4c1d95; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .trans { background: #fce7f3; color: #831843; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+  .struct { background: #ecfeff; color: #164e63; padding: 1px 4px; border-radius: 3px; font-weight: 600; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 8px 0 18px;
+    padding: 12px 16px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+
+  /* ── MISTAKE BOX ── */
+  .mistake-box {
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 18px 0;
+  }
+  .mistake-box h4 { color: #be123c; font-size: 13px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .mistake-item { margin: 6px 0; font-size: 14px; }
+  .wrong { color: var(--red); text-decoration: line-through; }
+  .right { color: var(--green); font-weight: 600; }
+  .arrow { color: var(--muted); margin: 0 6px; }
+
+  /* ── COLLOCATION TABLE ── */
+  .colloc-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .colloc-table th {
+    background: var(--primary);
+    color: white;
+    padding: 10px 16px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .colloc-table th:first-child { border-radius: 8px 0 0 0; }
+  .colloc-table th:last-child { border-radius: 0 8px 0 0; }
+  .colloc-table td { padding: 9px 16px; border-bottom: 1px solid var(--border); }
+  .colloc-table tr:nth-child(even) td { background: #f8fafc; }
+  .colloc-table tr:last-child td { border-bottom: none; }
+  .colloc-phrase { color: var(--accent); font-weight: 600; font-family: 'Fira Mono', monospace; font-size: 13px; }
+
+  /* ── TIP BOX ── */
+  .tip-box {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .tip-box strong { color: #166534; }
+
+  /* ── SECRET WEAPON BOX ── */
+  .secret-box {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border: 2px solid #fcd34d;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .secret-box strong { color: #78350f; }
+
+  /* ── VISUAL ANNOTATION ── */
+  .visual-block {
+    background: white;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .visual-block .caption { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 10px; text-align: center; }
+
+  .sample-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin: 8px 0;
+  }
+  .sample-table th { background: #1e3a5f; color: white; padding: 6px 10px; text-align: center; }
+  .sample-table td { border: 1px solid #cbd5e1; padding: 6px 10px; text-align: center; }
+  .highlight-cell { background: #fef3c7; font-weight: 700; }
+  .highlight-row td { background: #dbeafe; }
+
+  /* ── ANNOTATION ARROWS ── */
+  .annotate {
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center; gap: 8px; margin: 10px 0;
+    font-size: 13px;
+  }
+  .ann-left { text-align: right; color: var(--accent); font-weight: 600; }
+  .ann-arrow { color: var(--muted); font-size: 18px; }
+  .ann-right { color: var(--muted); font-style: italic; }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    text-align: center;
+    margin: 32px 0;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .section-divider::before, .section-divider::after {
+    content: '— ';
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-card {
+    background: linear-gradient(135deg, #0f172a, #1e3a5f);
+    color: white;
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 36px;
+  }
+  .progress-card h3 { margin-bottom: 16px; font-size: 1.1rem; }
+  .level-bar { margin: 10px 0; }
+  .level-label { display: flex; justify-content: space-between; font-size: 12px; opacity: 0.8; margin-bottom: 5px; }
+  .bar-outer { background: rgba(255,255,255,0.15); border-radius: 6px; height: 8px; }
+  .bar-inner { height: 8px; border-radius: 6px; }
+  .bar-6 { width: 60%; background: #34d399; }
+  .bar-7 { width: 75%; background: #60a5fa; }
+  .bar-8 { width: 90%; background: #fbbf24; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  h3 { color: var(--primary); font-size: 1rem; font-weight: 700; margin: 20px 0 10px; }
+  p { margin-bottom: 12px; color: #374151; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 5px 0; color: #374151; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-badge">✦ IELTS Writing Masterclass</div>
+  <h1>Task 1 <span>Tables</span><br>Band 7–9 Complete Guide</h1>
+  <p>Master every structure, collocation, and technique you need to describe tables with examiner-approved precision — plug-and-play templates included.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Core Sections</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">28</div>
+      <div class="stat-label">Power Collocations</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">35+</div>
+      <div class="stat-label">Model Sentences</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Band 7+</div>
+      <div class="stat-label">Target Score</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ══════════ TOC ══════════ -->
+<div class="toc">
+  <h2>📋 What You'll Learn</h2>
+  <ol>
+    <li><a href="#s1">Introduction Templates — Paraphrase + Overview</a></li>
+    <li><a href="#s2">Key Description Vocabulary — Comparison & Feature Language</a></li>
+    <li><a href="#s3">Comparison & Grouping Structures — Analyzing Data</a></li>
+    <li><a href="#s4">Time, Sequence & Transitional Expressions</a></li>
+    <li><a href="#s5">Data Integration Techniques — Weaving in Numbers Smoothly</a></li>
+    <li><a href="#collocations">Master Collocation List — 28 Examiner-Approved Phrases</a></li>
+  </ol>
+</div>
+
+<!-- ══════════ UNDERSTANDING TABLES ══════════ -->
+<div class="section" style="background: linear-gradient(135deg, #eff6ff, #f0fdf4); border-color: #bfdbfe;">
+  <div class="section-header">
+    <div class="section-num" style="background:#1e3a5f; color:white; font-size:1.4rem;">📊</div>
+    <div>
+      <h2>Why Tables Are Different — Know Your Diagram!</h2>
+      <div class="subtitle">Before you write a single word, understand what tables demand</div>
+    </div>
+  </div>
+  <p>Tables are <strong>comparison-heavy</strong> diagrams. Unlike line graphs (which show trends over time) or pie charts (which show proportions), tables present <em>multiple categories across multiple variables simultaneously</em>. Your job is to identify the most striking comparisons, group similar data, and avoid describing every single cell — that will kill your Task Achievement score.</p>
+  
+  <div class="visual-block">
+    <strong style="font-size:12px; display:block; margin-bottom:10px; color:#64748b;">▼ SAMPLE TABLE (used throughout this guide)</strong>
+    <table class="sample-table">
+      <tr>
+        <th>Country</th>
+        <th>GDP per capita ($)</th>
+        <th>Life Expectancy</th>
+        <th>Literacy Rate (%)</th>
+        <th>Internet Access (%)</th>
+      </tr>
+      <tr>
+        <td><strong>Norway</strong></td>
+        <td class="highlight-cell">82,500</td>
+        <td class="highlight-cell">82.5</td>
+        <td>100</td>
+        <td class="highlight-cell">98</td>
+      </tr>
+      <tr>
+        <td><strong>Brazil</strong></td>
+        <td>8,920</td>
+        <td>75.9</td>
+        <td>93</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <td><strong>India</strong></td>
+        <td>2,100</td>
+        <td>69.7</td>
+        <td>74</td>
+        <td>43</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>Ethiopia</strong></td>
+        <td>925</td>
+        <td>66.2</td>
+        <td class="highlight-cell" style="background:#fee2e2;">38</td>
+        <td class="highlight-cell" style="background:#fee2e2;">15</td>
+      </tr>
+    </table>
+    <p class="caption">🔎 Yellow = highest values | Red = lowest values — these are your KEY FEATURES to mention!</p>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 1 ══════════ -->
+<div class="section s1" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div>
+      <h2>Introduction Templates — Paraphrase + Overview</h2>
+      <div class="subtitle">The first 2 sentences that set your Band score ceiling</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="subj">green</span> Subject / Agent</span>
+    <span><span class="verb">blue</span> Verb Phrase</span>
+    <span><span class="colloc">yellow</span> Table-specific Collocation</span>
+    <span><span class="data">purple</span> Data / Specific Detail</span>
+    <span><span class="trans">pink</span> Transition / Connector</span>
+  </div>
+
+  <h3>PART A — Paraphrase the Question (Sentence 1)</h3>
+  <p>Never copy the question. Paraphrase using synonyms for "shows," "compares," and the topic noun. Tables almost always <em>compare</em> things across categories — that verb is your friend.</p>
+
+  <div class="band-tab band6">Band 6 — Safe</div>
+  <div class="sentence-card">
+    <span class="subj">The table</span> <span class="verb">provides information about</span> <span class="colloc">four development indicators</span> across <span class="data">four selected countries</span>.
+  </div>
+
+  <div class="band-tab band6">Band 6 — Safe</div>
+  <div class="sentence-card">
+    <span class="subj">The table</span> <span class="verb">presents data on</span> <span class="colloc">key economic and social metrics</span> for <span class="data">Norway, Brazil, India, and Ethiopia</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+ — Sophisticated</div>
+  <div class="sentence-card gold">
+    <span class="subj">The table</span> <span class="verb">compares</span> <span class="data">four countries</span> across <span class="colloc">a range of economic and social development indicators</span>, <span class="trans">namely</span> GDP per capita, life expectancy, literacy rate, and internet access.
+  </div>
+
+  <div class="band-tab band8">Band 8+ — Sophisticated</div>
+  <div class="sentence-card gold">
+    <span class="struct">Drawn from</span> <span class="data">a cross-national dataset</span>, <span class="subj">the table</span> <span class="verb">illustrates striking disparities in</span> <span class="colloc">living standards and connectivity</span> among <span class="data">four nations at differing stages of development</span>.
+  </div>
+
+  <h3>PART B — The Overview Statement (Sentence 2) — Your Most Important Sentence!</h3>
+  <p>The overview is where Band 6 students lose points and Band 8 students gain them. For tables, your overview must state the <strong>single clearest overall pattern</strong> — usually which category/country ranks highest/lowest, or that there is a wide range of values. Never include specific numbers here.</p>
+
+  <div class="band-tab band6">Band 6 — Safe</div>
+  <div class="sentence-card green">
+    <trans class="trans">Overall,</trans> <span class="subj">Norway</span> <span class="verb">ranks highest</span> in <span class="colloc">all four categories</span>, while <span class="subj">Ethiopia</span> <span class="verb">records the lowest figures</span> across most indicators.
+  </div>
+
+  <div class="band-tab band8">Band 8+ — Sophisticated</div>
+  <div class="sentence-card green" style="border-left-color: #059669;">
+    <span class="trans">Overall,</span> <span class="subj">a clear north-south divide</span> <span class="verb">is evident</span>, with <span class="data">wealthier nations</span> <span class="colloc">consistently outperforming</span> <span class="data">lower-income countries</span> across <span class="colloc">every metric presented</span>, most dramatically in terms of internet access.
+  </div>
+
+  <div class="band-tab band8">Band 8+ — Sophisticated</div>
+  <div class="sentence-card green" style="border-left-color: #059669;">
+    <span class="trans">In general,</span> <span class="struct">what stands out most</span> is the <span class="colloc">considerable variation between nations</span>, with <span class="data">Norway</span> <span class="verb">leading in all indicators</span> and <span class="data">Ethiopia</span> <span class="colloc">lagging considerably behind</span> the other three countries.
+  </div>
+
+  <div class="secret-box">
+    🏆 <strong>Secret Weapon for Table Overviews:</strong> Look for the "biggest gap" between the highest and lowest value in any one column. Mentioning this gap (without the numbers) instantly shows you can interpret data, not just describe it — and that's Band 8 thinking!
+  </div>
+
+  <div class="mistake-box">
+    <h4>🚫 Don't Say...</h4>
+    <div class="mistake-item"><span class="wrong">The table shows a lot of information about countries.</span> <span class="arrow">→</span> <span class="right">Too vague. What kind of information? Name the variables.</span></div>
+    <div class="mistake-item"><span class="wrong">Overall, Norway has $82,500 GDP per capita.</span> <span class="arrow">→</span> <span class="right">NEVER include specific numbers in the overview!</span></div>
+    <div class="mistake-item"><span class="wrong">In conclusion, the table is very interesting.</span> <span class="arrow">→</span> <span class="right">Don't use "In conclusion" — use "Overall" or "In general."</span></div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 2 ══════════ -->
+<div class="section s2" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div>
+      <h2>Key Description Vocabulary Patterns</h2>
+      <div class="subtitle">Comparison, ranking, and feature language for tables</div>
+    </div>
+  </div>
+
+  <p>Tables require three types of language: <strong>ranking language</strong> (highest/lowest), <strong>comparison language</strong> (more than/less than), and <strong>gap language</strong> (much higher than, approximately double). Master all three.</p>
+
+  <h3>🥇 Ranking Language — Describing Extremes</h3>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="subj">Norway</span> <span class="verb">had the highest</span> <span class="colloc">GDP per capita</span>, at <span class="data">$82,500</span>.
+  </div>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="subj">Ethiopia</span> <span class="verb">recorded the lowest</span> <span class="colloc">literacy rate</span> of <span class="data">all four countries</span>, at just <span class="data">38%</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="colloc">Ranking highest across all indicators</span>, <span class="subj">Norway</span> <span class="verb">stood out markedly</span> from <span class="data">its counterparts</span>, with a <span class="colloc">GDP per capita</span> of <span class="data">$82,500</span> — <span class="struct">nearly 90 times greater than</span> <span class="data">Ethiopia's figure</span> of <span class="data">$925</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="subj">Internet access</span> <span class="verb">showed the most pronounced disparity</span>, <span class="struct">ranging from</span> <span class="data">a mere 15% in Ethiopia</span> to <span class="data">98% in Norway</span>.
+  </div>
+
+  <h3>📊 Comparison Language — Contrasting Two Items</h3>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="subj">Brazil</span> <span class="verb">had a higher</span> <span class="colloc">life expectancy</span> <span class="struct">than</span> <span class="data">India</span>, at <span class="data">75.9 years</span> <span class="struct">compared to</span> <span class="data">69.7 years</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">While</span> <span class="subj">Brazil and India</span> <span class="verb">occupied a middle ground</span> in <span class="colloc">most indicators</span>, <span class="subj">Brazil</span> <span class="colloc">outperformed India</span> in <span class="colloc">life expectancy</span> by <span class="data">over six years</span> and in <span class="colloc">internet access</span> by a <span class="colloc">substantial margin</span> of <span class="data">27 percentage points</span>.
+  </div>
+
+  <div class="visual-block">
+    <strong style="font-size:12px; color:#64748b;">▼ SENTENCE ANATOMY — Band 8 Comparison Structure</strong>
+    <div style="margin: 12px 0; padding: 12px; background: white; border-radius: 6px; font-family: 'Fira Mono', monospace; font-size: 13px; line-height: 2;">
+      <span class="struct">[While/Although]</span> + <span class="subj">[Subject A]</span> + <span class="verb">[verb phrase]</span>, <span class="subj">[Subject B]</span> + <span class="colloc">[outperformed/exceeded/surpassed]</span> + <span class="subj">[Subject A]</span> + <span class="struct">in [category]</span> + <span class="struct">by [gap]</span>
+    </div>
+    <p class="caption">The "by [gap]" ending shows the examiner you can quantify differences — instant Band 7+ signal</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>🚫 Don't Say...</h4>
+    <div class="mistake-item"><span class="wrong">Norway is more high than India.</span> <span class="arrow">→</span> <span class="right">Norway ranked considerably higher than India / Norway's figures were substantially higher than India's.</span></div>
+    <div class="mistake-item"><span class="wrong">The difference between Norway and Ethiopia is very big.</span> <span class="arrow">→</span> <span class="right">Norway substantially outpaced Ethiopia in every category. / A wide gulf separated Norway and Ethiopia across all metrics.</span></div>
+    <div class="mistake-item"><span class="wrong">India's internet access is 43% and Ethiopia's is 15%.</span> <span class="arrow">→</span> <span class="right">India's internet access (43%) was nearly three times that of Ethiopia (15%).</span></div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 3 ══════════ -->
+<div class="section s3" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div>
+      <h2>Comparison & Grouping Structures</h2>
+      <div class="subtitle">How to organize your body paragraphs like an expert</div>
+    </div>
+  </div>
+
+  <p>This is where most students go wrong: they describe the table row by row (country by country) or column by column — which feels mechanical and scores low. The secret is to <strong>group your data meaningfully</strong>. For tables, use one of these two approaches:</p>
+
+  <div class="tip-box">
+    <strong>📐 Two Expert Grouping Strategies:</strong><br>
+    <strong>Strategy A (Most Common):</strong> Group by performance tier — e.g., high-performing countries vs. low-performing ones.<br>
+    <strong>Strategy B:</strong> Group by indicator category — e.g., economic indicators first (GDP), then social (life expectancy, literacy), then technological (internet).
+  </div>
+
+  <h3>Grouping Sentence Starters (Tier-Based)</h3>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="trans">In terms of</span> <span class="colloc">economic indicators</span>, <span class="subj">Norway and Brazil</span> <span class="verb">performed significantly better than</span> <span class="data">India and Ethiopia</span>.
+  </div>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="trans">Looking at</span> <span class="colloc">the two highest-ranked countries</span>, both <span class="data">Norway</span> and <span class="data">Brazil</span> <span class="verb">showed relatively strong figures</span> across <span class="colloc">most categories</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">Grouping the countries into two tiers</span>, <span class="data">Norway and Brazil</span> <span class="colloc">consistently outperformed</span> the remaining two, though even within this upper group, <span class="subj">Norway</span> <span class="verb">stood in a category of its own</span>, <span class="colloc">ranking first in all four indicators</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">Across all four categories</span>, <span class="subj">a clear pattern of economic stratification</span> <span class="verb">emerges</span>: <span class="subj">higher-income nations</span> <span class="colloc">achieve markedly superior outcomes</span> in <span class="colloc">social and technological development</span> alike.
+  </div>
+
+  <h3>Similarity Structures — Showing What's Comparable</h3>
+  <p>Examiners reward students who can identify not just differences but also similarities. Use these to show sophisticated analysis:</p>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    Both <span class="subj">India and Brazil</span> <span class="verb">had similar</span> <span class="colloc">literacy rates</span>, at <span class="data">74%</span> and <span class="data">93%</span> respectively.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">A notable parallel</span> can be observed between <span class="data">India and Brazil</span> regarding <span class="colloc">life expectancy</span>: both countries <span class="verb">fell within a comparable range</span> of <span class="data">69–76 years</span>, <span class="struct">in contrast to</span> the extremes represented by <span class="data">Norway (82.5)</span> and <span class="data">Ethiopia (66.2)</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="trans">Interestingly,</span> <span class="subj">all four nations</span> <span class="colloc">shared relatively high literacy rates</span> — <span class="struct">with the exception of Ethiopia</span>, <span class="struct">which lagged far behind at</span> <span class="data">38%</span> — <span class="colloc">suggesting that basic education has reached a wider population</span> than digital or economic development.
+  </div>
+
+  <div class="visual-block">
+    <strong style="font-size:12px; color:#64748b;">▼ PARAGRAPH STRUCTURE MAP — Body Paragraph 1 (Tier-Based)</strong>
+    <div style="display: grid; gap: 8px; margin-top: 10px; font-size: 13px;">
+      <div style="background: #dbeafe; padding: 8px 12px; border-radius: 6px;"><strong>Sentence 1:</strong> <span style="color:#1e40af;">Introduce the tier/grouping ("Turning to the higher-performing countries...")</span></div>
+      <div style="text-align:center; color:#94a3b8; font-size:16px;">↓</div>
+      <div style="background: #dcfce7; padding: 8px 12px; border-radius: 6px;"><strong>Sentence 2:</strong> <span style="color:#166534;">State the standout value ("Norway ranked first in all indicators, most notably...")</span></div>
+      <div style="text-align:center; color:#94a3b8; font-size:16px;">↓</div>
+      <div style="background: #fef3c7; padding: 8px 12px; border-radius: 6px;"><strong>Sentence 3:</strong> <span style="color:#78350f;">Contrast with next country in same group ("Brazil, while lower, also...")</span></div>
+      <div style="text-align:center; color:#94a3b8; font-size:16px;">↓</div>
+      <div style="background: #f3e8ff; padding: 8px 12px; border-radius: 6px;"><strong>Sentence 4 (optional):</strong> <span style="color:#6b21a8;">Quantify the gap or add a notable similarity</span></div>
+    </div>
+    <p class="caption">This 3–4 sentence paragraph structure earns Band 7+ for Task Achievement & Coherence</p>
+  </div>
+
+  <div class="mistake-box">
+    <h4>🚫 Don't Say...</h4>
+    <div class="mistake-item"><span class="wrong">Norway had 82,500. Brazil had 8,920. India had 2,100. Ethiopia had 925.</span> <span class="arrow">→</span> <span class="right">This "list" style is Band 4–5. Group and compare instead!</span></div>
+    <div class="mistake-item"><span class="wrong">In the first column, Norway is 82,500 and Brazil is 8,920.</span> <span class="arrow">→</span> <span class="right">Never describe "columns" — describe categories by name. "In terms of GDP per capita..."</span></div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 4 ══════════ -->
+<div class="section s4" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div>
+      <h2>Time, Sequence & Transitional Expressions</h2>
+      <div class="subtitle">Linking ideas and organizing your response with Band 7+ cohesion</div>
+    </div>
+  </div>
+
+  <p>Unlike line graphs, tables usually show <em>static data at one point in time</em>. So most tense usage should be <strong>simple past</strong> (if a year is given) or <strong>simple present</strong> (if no year or if it's generally true). The "time" expressions for tables are really <em>organizational</em> transitions — you're moving between categories and groups, not through time.</p>
+
+  <div class="tip-box">
+    <strong>⏱ Quick Tense Rule for Tables:</strong><br>
+    — Table with a specific year (e.g. "in 2020") → Use <strong>simple past</strong>: "Norway <em>had</em> the highest GDP..."<br>
+    — Table with no specific year → Use <strong>simple present</strong>: "Norway <em>has</em> the highest GDP..." or "Norway <em>ranks</em> first..."<br>
+    — Never mix tenses without reason!
+  </div>
+
+  <h3>Organizational Transitions (Moving Between Data Groups)</h3>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="trans">Regarding</span> <span class="colloc">internet access</span>, <span class="subj">Norway</span> <span class="verb">led with</span> <span class="data">98%</span>, while <span class="subj">Ethiopia</span> <span class="verb">had only</span> <span class="data">15%</span>.
+  </div>
+
+  <div class="band-tab band6">Band 6</div>
+  <div class="sentence-card">
+    <span class="trans">With respect to</span> <span class="colloc">life expectancy</span>, <span class="subj">all four countries</span> <span class="verb">fell within a relatively narrow range</span> of <span class="data">66 to 83 years</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="trans">Shifting focus to</span> <span class="colloc">social indicators</span>, the picture becomes more nuanced: <span class="subj">literacy rates</span> <span class="verb">were consistently high</span> across the first three countries, <span class="struct">ranging between</span> <span class="data">74% and 100%</span>, though <span class="subj">Ethiopia</span> proved <span class="colloc">a notable outlier</span> at <span class="data">38%</span>.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="trans">Turning to the lower end of the spectrum</span>, <span class="subj">India and Ethiopia</span> <span class="verb">presented considerably weaker figures</span>, <span class="struct">particularly in</span> <span class="colloc">economic and digital development indicators</span>.
+  </div>
+
+  <h3>Sequencing Within a Paragraph (Listing Multiple Data Points)</h3>
+  <p>When you need to mention several values from the same category, use sequencing phrases to avoid repetition:</p>
+
+  <div class="sentence-card purple">
+    <span class="trans">In descending order,</span> <span class="subj">internet access figures</span> <span class="verb">stood at</span> <span class="data">98% (Norway), 70% (Brazil), 43% (India), and 15% (Ethiopia)</span>, <span class="struct">reflecting each country's level of economic development</span>.
+  </div>
+
+  <div class="sentence-card purple">
+    <span class="trans">At the other extreme,</span> <span class="subj">Ethiopia</span> <span class="verb">recorded the lowest values in three of the four categories</span>, with <span class="colloc">particularly poor performance</span> in <span class="colloc">literacy and internet connectivity</span>.
+  </div>
+
+  <h3>Transition Phrase Bank</h3>
+  <table class="colloc-table" style="margin-top:12px;">
+    <tr>
+      <th>Purpose</th>
+      <th>Expression</th>
+    </tr>
+    <tr><td>Moving to next category</td><td><span class="colloc-phrase">Turning to... / Shifting focus to... / Regarding...</span></td></tr>
+    <tr><td>Adding contrast</td><td><span class="colloc-phrase">In contrast... / By comparison... / On the other hand...</span></td></tr>
+    <tr><td>Adding similarity</td><td><span class="colloc-phrase">Similarly... / Likewise... / In the same vein...</span></td></tr>
+    <tr><td>Signalling exceptions</td><td><span class="colloc-phrase">With the exception of... / Ethiopia aside... / Notably...</span></td></tr>
+    <tr><td>Describing extremes</td><td><span class="colloc-phrase">At the top end... / At the other extreme... / At the lower end of the spectrum...</span></td></tr>
+    <tr><td>Summarizing a group</td><td><span class="colloc-phrase">Across all categories... / In all metrics... / Taken together...</span></td></tr>
+  </table>
+
+  <div class="mistake-box">
+    <h4>🚫 Don't Say...</h4>
+    <div class="mistake-item"><span class="wrong">First... Second... Third... Fourth... (for each country)</span> <span class="arrow">→</span> <span class="right">These ordinal sequences sound like a list, not an analysis. Use category transitions instead.</span></div>
+    <div class="mistake-item"><span class="wrong">In 2020, Norway will have the highest GDP.</span> <span class="arrow">→</span> <span class="right">Never use future tense when describing past or present table data.</span></div>
+    <div class="mistake-item"><span class="wrong">Also, moreover, furthermore (used 5+ times)</span> <span class="arrow">→</span> <span class="right">Vary your transitions! Overusing "also" signals Band 5–6 coherence.</span></div>
+  </div>
+</div>
+
+<!-- ══════════ SECTION 5 ══════════ -->
+<div class="section s5" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div>
+      <h2>Data Integration Techniques</h2>
+      <div class="subtitle">Where and how to place specific figures for maximum impact</div>
+    </div>
+  </div>
+
+  <p>This is your final superpower. Raw numbers sitting alone in a sentence are worth nothing to the examiner. Numbers must be <strong>framed</strong>, <strong>contextualized</strong>, and <strong>compared</strong>. Learn these four techniques and your Task Achievement score will jump.</p>
+
+  <h3>Technique 1 — The Bracket Method (Safest, Most Efficient)</h3>
+  <p>State the comparative claim first, then bracket the specific numbers as supporting evidence. This keeps your writing analytical rather than descriptive.</p>
+
+  <div class="band-tab band6">Band 6 — Numbers Before Comparison</div>
+  <div class="sentence-card" style="border-left-color: #ef4444;">
+    Norway had $82,500 GDP per capita. This was higher than Brazil's $8,920. ❌ <em style="color:#ef4444; font-size:12px;">(Two separate sentences, no comparison word)</em>
+  </div>
+
+  <div class="band-tab band8">Band 8+ — Comparison First, Numbers in Brackets</div>
+  <div class="sentence-card gold">
+    <span class="subj">Norway</span> <span class="colloc">substantially outpaced</span> all three other nations in terms of <span class="colloc">GDP per capita</span>, <span class="struct">recording a figure</span> of <span class="data">$82,500</span> — compared to <span class="data">$8,920 for Brazil</span>, <span class="data">$2,100 for India</span>, and a <span class="colloc">mere</span> <span class="data">$925 for Ethiopia</span>.
+  </div>
+
+  <h3>Technique 2 — The Multiplier (Shows Relative Scale — Very Impressive)</h3>
+  <p>Instead of just listing two numbers, calculate the ratio. This shows the examiner you can interpret data, not just copy it.</p>
+
+  <div class="sentence-card purple">
+    <span class="subj">Norway's GDP per capita</span> was <span class="struct">approximately</span> <span class="data">nine times greater than</span> <span class="subj">Brazil's</span> and <span class="data">nearly 90 times that of Ethiopia</span>, <span class="colloc">highlighting the profound wealth gap</span> between <span class="colloc">the two extremes</span>.
+  </div>
+
+  <div class="sentence-card purple">
+    <span class="subj">Internet access in Norway</span> <span class="struct">was more than six times</span> that recorded in <span class="data">Ethiopia</span> (<span class="data">98% versus 15%</span>), <span class="struct">representing</span> <span class="colloc">one of the most striking disparities in the table</span>.
+  </div>
+
+  <h3>Technique 3 — The Qualifying Adverb (Adds Nuance)</h3>
+  <p>Wrap your numbers in precise adverbs to add precision without adding length:</p>
+
+  <table class="colloc-table">
+    <tr><th>Adverb</th><th>Use When...</th><th>Example</th></tr>
+    <tr><td><span class="colloc-phrase">just / only / a mere</span></td><td>Value is surprisingly low</td><td>"a mere 15% internet access"</td></tr>
+    <tr><td><span class="colloc-phrase">approximately / roughly / around</span></td><td>You're rounding</td><td>"roughly 75 years"</td></tr>
+    <tr><td><span class="colloc-phrase">marginally / slightly</span></td><td>Small difference</td><td>"marginally higher than Brazil"</td></tr>
+    <tr><td><span class="colloc-phrase">considerably / substantially / markedly</span></td><td>Large difference</td><td>"considerably outperforming India"</td></tr>
+    <tr><td><span class="colloc-phrase">nearly / almost / just under</span></td><td>Close to a round number</td><td>"nearly 100% literacy"</td></tr>
+  </table>
+
+  <h3>Technique 4 — The Exception Clause (Shows Analysis)</h3>
+  <p>Band 8+ writers notice when one data point breaks a pattern. The exception clause lets you state a general trend AND acknowledge the outlier elegantly:</p>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">With the exception of</span> <span class="data">Ethiopia</span>, <span class="colloc">literacy rates were relatively high</span> across all nations, <span class="struct">ranging from</span> <span class="data">74% in India</span> to a <span class="colloc">perfect 100%</span> in <span class="data">Norway</span> — <span class="struct">suggesting that</span> <span class="colloc">basic education</span> has made <span class="colloc">broader gains</span> than economic development in these countries.
+  </div>
+
+  <div class="band-tab band8">Band 8+</div>
+  <div class="sentence-card gold">
+    <span class="struct">Although</span> <span class="subj">Brazil and India</span> <span class="verb">differed considerably in wealth</span>, their <span class="colloc">life expectancy figures</span> were <span class="colloc">relatively comparable</span> — <span class="data">75.9 and 69.7 years</span> respectively — an <span class="colloc">anomaly worth noting</span> given the <span class="colloc">stark economic contrast</span> between the two nations.
+  </div>
+
+  <div class="secret-box">
+    🏆 <strong>Secret Weapon for Data Integration:</strong> Always ask "So what?" after you mention a number. Add a brief interpretive phrase — "suggesting that...", "highlighting...", "reflecting..." — and you instantly sound like a Band 8 candidate who is <em>analyzing</em>, not just <em>reporting</em>.
+  </div>
+
+  <div class="mistake-box">
+    <h4>🚫 Don't Say...</h4>
+    <div class="mistake-item"><span class="wrong">The data is 82,500 for Norway and 925 for Ethiopia.</span> <span class="arrow">→</span> <span class="right">Never use "the data is [number]." Say: "Norway recorded a GDP of $82,500, dwarfing Ethiopia's figure of $925."</span></div>
+    <div class="mistake-item"><span class="wrong">Norway's percentage is 98%. Ethiopia's percentage is 15%.</span> <span class="arrow">→</span> <span class="right">Avoid "percentage is." Use: "internet access stood at / reached / was recorded at"</span></div>
+    <div class="mistake-item"><span class="wrong">Including every single data point from the table.</span> <span class="arrow">→</span> <span class="right">NEVER describe all data — select the most significant figures only. This is Task Achievement!</span></div>
+  </div>
+</div>
+
+<!-- ══════════ COLLOCATIONS ══════════ -->
+<div class="section colloc-section" id="collocations">
+  <div class="section-header">
+    <div class="section-num" style="background:#7f1d1d; color:white; font-size:1.1rem;">★</div>
+    <div>
+      <h2>Master List: 28 Examiner-Approved Table Collocations</h2>
+      <div class="subtitle">Memorize these — they appear in every Band 7–9 table response</div>
+    </div>
+  </div>
+  <p>These aren't random phrases. They are the exact collocations IELTS examiners associate with Lexical Resource Band 7+. Learn them with their example sentences and use them naturally.</p>
+
+  <table class="colloc-table">
+    <tr>
+      <th>#</th>
+      <th>Collocation</th>
+      <th>Category</th>
+      <th>Example in Context</th>
+    </tr>
+    <tr><td>1</td><td><span class="colloc-phrase">rank highest in</span></td><td>Ranking</td><td>"Norway ranked highest in all four categories."</td></tr>
+    <tr><td>2</td><td><span class="colloc-phrase">record the lowest figure for</span></td><td>Ranking</td><td>"Ethiopia recorded the lowest figure for internet access."</td></tr>
+    <tr><td>3</td><td><span class="colloc-phrase">stand at</span></td><td>Static Data</td><td>"Internet access stood at 43% in India."</td></tr>
+    <tr><td>4</td><td><span class="colloc-phrase">account for the largest share of</span></td><td>Proportion</td><td>"Norway accounted for the largest share of high scorers."</td></tr>
+    <tr><td>5</td><td><span class="colloc-phrase">outperform / outpace</span></td><td>Comparison</td><td>"Norway substantially outpaced all other countries in GDP."</td></tr>
+    <tr><td>6</td><td><span class="colloc-phrase">lag considerably behind</span></td><td>Comparison</td><td>"Ethiopia lagged considerably behind the other three nations."</td></tr>
+    <tr><td>7</td><td><span class="colloc-phrase">show a marked disparity</span></td><td>Contrast</td><td>"The table shows a marked disparity in internet access."</td></tr>
+    <tr><td>8</td><td><span class="colloc-phrase">range from X to Y</span></td><td>Span</td><td>"Life expectancy ranged from 66.2 to 82.5 years."</td></tr>
+    <tr><td>9</td><td><span class="colloc-phrase">be comparable to</span></td><td>Similarity</td><td>"Brazil's life expectancy was broadly comparable to India's."</td></tr>
+    <tr><td>10</td><td><span class="colloc-phrase">present a striking contrast</span></td><td>Contrast</td><td>"The GDP figures present a striking contrast between nations."</td></tr>
+    <tr><td>11</td><td><span class="colloc-phrase">with the exception of</span></td><td>Exception</td><td>"With the exception of Ethiopia, literacy was high."</td></tr>
+    <tr><td>12</td><td><span class="colloc-phrase">a notable outlier</span></td><td>Exception</td><td>"Ethiopia proved a notable outlier in literacy rate."</td></tr>
+    <tr><td>13</td><td><span class="colloc-phrase">consistently outperform</span></td><td>Pattern</td><td>"Norway consistently outperformed all others."</td></tr>
+    <tr><td>14</td><td><span class="colloc-phrase">a wide gulf between</span></td><td>Gap</td><td>"A wide gulf existed between Norway and Ethiopia."</td></tr>
+    <tr><td>15</td><td><span class="colloc-phrase">approximately X times greater than</span></td><td>Multiplier</td><td>"Norway's GDP was approximately 90 times greater than Ethiopia's."</td></tr>
+    <tr><td>16</td><td><span class="colloc-phrase">perform relatively well in</span></td><td>Assessment</td><td>"Brazil performed relatively well in life expectancy."</td></tr>
+    <tr><td>17</td><td><span class="colloc-phrase">achieve markedly superior outcomes</span></td><td>Assessment</td><td>"Wealthier nations achieved markedly superior outcomes."</td></tr>
+    <tr><td>18</td><td><span class="colloc-phrase">at the lower end of the spectrum</span></td><td>Position</td><td>"At the lower end of the spectrum, Ethiopia recorded..."</td></tr>
+    <tr><td>19</td><td><span class="colloc-phrase">highlight the profound gap</span></td><td>Interpretation</td><td>"These figures highlight the profound gap in development."</td></tr>
+    <tr><td>20</td><td><span class="colloc-phrase">in descending order</span></td><td>Listing</td><td>"In descending order, internet access stood at 98%, 70%, 43%, 15%."</td></tr>
+    <tr><td>21</td><td><span class="colloc-phrase">across all indicators / metrics</span></td><td>Scope</td><td>"Norway ranked first across all indicators."</td></tr>
+    <tr><td>22</td><td><span class="colloc-phrase">the most pronounced disparity</span></td><td>Extreme</td><td>"Internet access showed the most pronounced disparity."</td></tr>
+    <tr><td>23</td><td><span class="colloc-phrase">broadly similar to</span></td><td>Similarity</td><td>"Brazil's figures were broadly similar to India's in life expectancy."</td></tr>
+    <tr><td>24</td><td><span class="colloc-phrase">stand out markedly from</span></td><td>Distinction</td><td>"Norway stood out markedly from its counterparts."</td></tr>
+    <tr><td>25</td><td><span class="colloc-phrase">fall within a comparable range</span></td><td>Similarity</td><td>"Both nations fell within a comparable range for life expectancy."</td></tr>
+    <tr><td>26</td><td><span class="colloc-phrase">a mere X%</span></td><td>Emphasis</td><td>"Internet penetration reached a mere 15% in Ethiopia."</td></tr>
+    <tr><td>27</td><td><span class="colloc-phrase">reflecting the level of development</span></td><td>Interpretation</td><td>"...reflecting each country's level of economic development."</td></tr>
+    <tr><td>28</td><td><span class="colloc-phrase">a clear north-south / high-low divide</span></td><td>Pattern</td><td>"A clear north-south divide is evident in all metrics."</td></tr>
+  </table>
+</div>
+
+<!-- ══════════ PROGRESS GUIDE ══════════ -->
+<div class="progress-card" id="progress">
+  <h3>📈 Your Band Score Upgrade Path</h3>
+  <p style="opacity:0.8; font-size:13px; margin-bottom:18px;">Master structures in order — don't try to jump to Band 8 language without Band 6 foundations.</p>
+  <div class="level-bar">
+    <div class="level-label"><span>Band 6 — Safe Structures</span><span>Master first</span></div>
+    <div class="bar-outer"><div class="bar-inner bar-6"></div></div>
+  </div>
+  <div class="level-bar">
+    <div class="level-label"><span>Band 7 — Grouping + Collocations + Data Integration</span><span>2–4 weeks practice</span></div>
+    <div class="bar-outer"><div class="bar-inner bar-7"></div></div>
+  </div>
+  <div class="level-bar">
+    <div class="level-label"><span>Band 8+ — Multipliers + Exception Clauses + Interpretive Phrases</span><span>4–8 weeks practice</span></div>
+    <div class="bar-outer"><div class="bar-inner bar-8"></div></div>
+  </div>
+</div>
+
+<!-- ══════════ COMPLETE MODEL PARAGRAPH ══════════ -->
+<div class="section" style="border: 2px solid #1e3a5f;">
+  <div class="section-header">
+    <div class="section-num" style="background: #1e3a5f; color:white; font-size:1.2rem;">✍</div>
+    <div>
+      <h2>Complete Model Response — Band 8 Example</h2>
+      <div class="subtitle">See every technique working together in a full response</div>
+    </div>
+  </div>
+
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px; font-size: 15px; line-height: 2; color: #1e293b;">
+    <p><span class="colloc" style="background:#dbeafe; color:#1e40af;">The table compares four nations</span> — Norway, Brazil, India, and Ethiopia — across four key development indicators: GDP per capita, life expectancy, literacy rate, and internet access.</p>
+    <p><span class="trans" style="background:#fce7f3; color:#831843;">Overall,</span> a clear hierarchy is evident, with Norway <span class="colloc" style="background:#dcfce7; color:#166534;">consistently ranking first across all four categories</span>, while Ethiopia <span class="colloc" style="background:#dcfce7; color:#166534;">lagged considerably behind</span> the other nations in most respects.</p>
+    <p><span class="trans" style="background:#fce7f3; color:#831843;">In terms of economic performance,</span> Norway's GDP per capita of $82,500 <span class="colloc" style="background:#fef3c7; color:#78350f;">represented approximately 90 times that of Ethiopia</span> ($925), <span class="colloc" style="background:#fef3c7; color:#78350f;">highlighting the profound wealth gap</span> between the two extremes. Brazil and India occupied a middle ground at $8,920 and $2,100 respectively.</p>
+    <p><span class="trans" style="background:#fce7f3; color:#831843;">Shifting focus to social indicators,</span> life expectancy figures <span class="colloc" style="background:#dcfce7; color:#166534;">fell within a relatively narrow range</span> of 66 to 83 years across all countries, suggesting that basic healthcare has made broader gains than economic development. <span class="colloc" style="background:#f3e8ff; color:#4c1d95;">With the exception of Ethiopia</span> (38%), literacy rates were high, ranging from 74% in India to 100% in Norway.</p>
+    <p><span class="trans" style="background:#fce7f3; color:#831843;">Finally,</span> internet access showed <span class="colloc" style="background:#fef3c7; color:#78350f;">the most pronounced disparity</span> in the table, <span class="struct" style="background:#ecfeff; color:#164e63;">ranging from a mere 15% in Ethiopia to 98% in Norway</span> — a gap that arguably <span class="colloc" style="background:#fef3c7; color:#78350f;">reflects each country's level of overall development</span> most starkly of all.</p>
+  </div>
+
+  <div class="legend" style="margin-top: 14px;">
+    <span><span class="subj">green</span> Subject</span>
+    <span><span class="colloc">yellow</span> Key Collocation</span>
+    <span><span class="data">purple</span> Data Point</span>
+    <span><span class="trans">pink</span> Transition</span>
+    <span><span class="struct">cyan</span> Structure Template</span>
+  </div>
+
+  <div class="tip-box" style="margin-top: 16px;">
+    <strong>📊 Response Analysis:</strong> This 220-word response hits Band 8 because: (1) Clear overview with no specific numbers, (2) Data is grouped by category not row-by-row, (3) Multiplier used ("90 times"), (4) Exception clause used, (5) 7+ distinct collocations from the master list, (6) Interpretive phrase closes the final paragraph.
+  </div>
+</div>
+
+<!-- ══════════ QUICK REFERENCE ══════════ -->
+<div class="section" style="background: #fffbeb; border-color: #fde68a;">
+  <div class="section-header">
+    <div class="section-num" style="background:#d97706; color:white;">⚡</div>
+    <div>
+      <h2>Quick Reference — 2-Minute Checklist Before You Write</h2>
+      <div class="subtitle">Run through this before every timed practice</div>
+    </div>
+  </div>
+  <ol style="line-height: 2.2; font-size: 14px; color: #374151;">
+    <li>☐ <strong>Identified the highest and lowest values</strong> in each column</li>
+    <li>☐ <strong>Found the most striking gap</strong> (the biggest difference between any two cells)</li>
+    <li>☐ <strong>Grouped the data</strong> into 2–3 meaningful tiers or categories</li>
+    <li>☐ <strong>Identified any outliers</strong> or exceptions to the general pattern</li>
+    <li>☐ <strong>Chosen my overview pattern</strong> (overall winner, biggest gap, clear divide)</li>
+    <li>☐ <strong>Planned my two body paragraphs</strong> (each covering a different grouping)</li>
+    <li>☐ <strong>Selected 5–6 data points</strong> to include (NOT all of them!)</li>
+    <li>☐ <strong>Prepared at least one multiplier</strong> ("X times greater than")</li>
+    <li>☐ <strong>Ready to use exception language</strong> if there's an outlier</li>
+    <li>☐ <strong>Checked tense</strong> — past for dated tables, present for undated tables</li>
+  </ol>
+</div>
+
+</div><!-- end container -->
+
+<footer>
+  <p><strong>IELTS Task 1 Tables — Band 7–9 Masterclass Guide</strong></p>
+  <p style="margin-top:6px;">Practice daily, use structures naturally, and remember: the examiner rewards <em>analysis</em>, not description. You've got this! 🎯</p>
+</footer>
+
+</body>
+</html>
