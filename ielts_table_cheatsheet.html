@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Task 1 Tables — Exam Day Cheat Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0d0d0d;
+    --paper: #faf8f3;
+    --rule: #d8d0c0;
+    --gold: #c8860a;
+    --gold-light: #fef3d0;
+    --red: #b91c1c;
+    --red-light: #fee2e2;
+    --green: #166534;
+    --green-light: #dcfce7;
+    --blue: #1e3a8a;
+    --blue-light: #dbeafe;
+    --purple: #4c1d95;
+    --purple-light: #ede9fe;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; max-width: 100%; margin: 0; border-radius: 0; }
+    .no-print { display: none; }
+  }
+
+  body {
+    background: #2a2420;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 48px;
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    width: 100%;
+    max-width: 780px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #8a7a6a;
+    letter-spacing: 0.5px;
+  }
+  .print-btn {
+    background: #c8860a;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  .print-btn:hover { background: #a36e08; }
+
+  /* ── MAIN PAGE ── */
+  .page {
+    background: var(--paper);
+    width: 100%;
+    max-width: 780px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--ink);
+    padding: 16px 24px 14px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .header-left { display: flex; align-items: baseline; gap: 12px; }
+  .header-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #c8860a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #c8860a;
+    padding: 2px 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .header h1 span { color: #c8860a; }
+  .header-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #6a5a4a;
+    text-align: right;
+    line-height: 1.6;
+    flex-shrink: 0;
+  }
+
+  /* ── BODY GRID ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .col {
+    padding: 0;
+    border-right: 1.5px solid var(--rule);
+  }
+  .col:last-child { border-right: none; }
+
+  /* ── SECTION BLOCK ── */
+  .block {
+    border-bottom: 1.5px solid var(--rule);
+    padding: 13px 18px;
+  }
+  .block:last-child { border-bottom: none; }
+
+  .block-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .block-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── STRUCTURES LIST ── */
+  .struct-item {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 4px 8px;
+    margin-bottom: 8px;
+    align-items: start;
+  }
+  .struct-item:last-child { margin-bottom: 0; }
+
+  .struct-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    color: white;
+    background: var(--ink);
+    width: 16px; height: 16px;
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .struct-content { line-height: 1.4; }
+
+  .struct-template {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .struct-example {
+    font-size: 10.5px;
+    color: #5a4a3a;
+    font-style: italic;
+    display: block;
+    line-height: 1.35;
+  }
+  .ph { color: #9a8a7a; } /* placeholder slots */
+
+  /* ── COLLOCATIONS GRID ── */
+  .colloc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 10px;
+  }
+
+  .colloc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 4px 6px;
+    border-radius: 3px;
+  }
+  .colloc-item:nth-child(1),.colloc-item:nth-child(2) { background: var(--gold-light); }
+  .colloc-item:nth-child(3),.colloc-item:nth-child(4) { background: var(--blue-light); }
+  .colloc-item:nth-child(5),.colloc-item:nth-child(6) { background: var(--green-light); }
+  .colloc-item:nth-child(7),.colloc-item:nth-child(8) { background: var(--purple-light); }
+  .colloc-item:nth-child(9),.colloc-item:nth-child(10) { background: #fef2e8; }
+  .colloc-item:nth-child(11),.colloc-item:nth-child(12) { background: var(--red-light); }
+  .colloc-item:nth-child(13),.colloc-item:nth-child(14) { background: #f0fdf4; }
+  .colloc-item:nth-child(15),.colloc-item:nth-child(16) { background: #f5f3ff; }
+  .colloc-item:nth-child(17),.colloc-item:nth-child(18) { background: var(--gold-light); }
+  .colloc-item:nth-child(19),.colloc-item:nth-child(20) { background: var(--blue-light); }
+
+  .colloc-dot {
+    font-size: 14px;
+    line-height: 1;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .colloc-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  /* ── OVERVIEW FORMULA ── */
+  .formula-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  .f-block {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .f-plus { color: #9a8a7a; font-size: 12px; font-weight: 300; }
+  .f-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #8a7a6a; margin-bottom: 3px; font-family: 'DM Mono', monospace; }
+
+  /* ── DANGER RULES ── */
+  .danger-item {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .danger-item:last-child { margin-bottom: 0; }
+  .d-icon { flex-shrink: 0; font-size: 11px; margin-top: 1px; }
+  .d-bad { color: var(--red); text-decoration: line-through; font-style: italic; }
+  .d-arr { color: #9a8a7a; }
+  .d-good { color: var(--green); font-weight: 500; }
+
+  /* ── TENSE BOX ── */
+  .tense-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 5px;
+    align-items: center;
+  }
+  .tense-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: 500;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .t-past { background: #fef3c7; color: #78350f; }
+  .t-pres { background: #dcfce7; color: #14532d; }
+  .tense-rule { font-size: 10.5px; color: #3a2a1a; line-height: 1.35; }
+
+  /* ── SCORING CHECKLIST ── */
+  .check-item {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: #2a1a0a;
+  }
+  .check-box {
+    width: 11px; height: 11px;
+    border: 1.5px solid var(--ink);
+    border-radius: 1px;
+    flex-shrink: 0;
+    margin-top: 1.5px;
+  }
+
+  /* ── BAND SCALE ── */
+  .band-scale {
+    display: flex;
+    gap: 3px;
+    margin-top: 8px;
+  }
+  .band-seg {
+    flex: 1;
+    height: 18px;
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    color: white;
+  }
+  .b6 { background: #64748b; }
+  .b7 { background: #1e3a8a; }
+  .b8 { background: #166534; }
+  .b9 { background: #7c2d12; }
+  .band-labels {
+    display: flex;
+    gap: 3px;
+    margin-top: 3px;
+  }
+  .band-labels span {
+    flex: 1;
+    font-size: 8.5px;
+    color: #6a5a4a;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    line-height: 1.3;
+  }
+
+  /* ── FOOTER STRIP ── */
+  .footer-strip {
+    background: var(--ink);
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-strip p {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: #5a4a3a;
+    letter-spacing: 0.5px;
+  }
+  .footer-strip strong { color: #c8860a; }
+
+  /* ── FULL-WIDTH BLOCK ── */
+  .full-block {
+    border-bottom: 1.5px solid var(--rule);
+    padding: 11px 18px;
+    grid-column: 1 / -1;
+    display: flex; gap: 28px; align-items: flex-start;
+  }
+  .full-block .formula-col { flex: 1; }
+  .formula-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .body-inner {
+    display: contents;
+  }
+  .full-row {
+    grid-column: 1 / -1;
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar no-print">
+  <span>IELTS WRITING TASK 1 — TABLE CHEAT SHEET</span>
+  <button class="print-btn" onclick="window.print()">⎙ PRINT / SAVE PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <span class="header-tag">Task 1 · Tables</span>
+      <h1>Exam Day <span>Toolkit</span></h1>
+    </div>
+    <div class="header-right">
+      10-min review<br>before your test
+    </div>
+  </div>
+
+  <!-- OVERVIEW FORMULA — full width -->
+  <div style="border-bottom: 1.5px solid var(--rule); padding: 11px 18px; background: #f5f0e8;">
+    <div style="display:flex; gap: 32px; align-items: flex-start; flex-wrap: wrap;">
+
+      <div style="flex:1; min-width:220px;">
+        <div class="formula-title">SENTENCE 1 — Paraphrase</div>
+        <div class="formula-row">
+          <span class="f-block" style="background:#dbeafe; color:#1e3a8a;">The table compares / illustrates / presents data on</span>
+          <span class="f-plus">+</span>
+          <span class="f-block" style="background:#dcfce7; color:#14532d;">[TOPIC]</span>
+          <span class="f-plus">+</span>
+          <span class="f-block" style="background:#fef3c7; color:#78350f;">across [N] categories / for [N] countries</span>
+        </div>
+      </div>
+
+      <div style="flex:1; min-width:220px;">
+        <div class="formula-title">SENTENCE 2 — Overview (NO numbers!)</div>
+        <div class="formula-row">
+          <span class="f-block" style="background:#fce7f3; color:#831843;">Overall, / In general,</span>
+          <span class="f-plus">+</span>
+          <span class="f-block" style="background:#dbeafe; color:#1e3a8a;">[X] ranks highest / leads in all categories</span>
+          <span class="f-plus">+</span>
+          <span class="f-block" style="background:#fee2e2; color:#991b1b;">while [Y] lags far behind</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TWO-COLUMN BODY -->
+  <div class="body">
+
+    <!-- ───── LEFT COLUMN ───── -->
+    <div class="col">
+
+      <!-- TOP 10 STRUCTURES -->
+      <div class="block">
+        <div class="block-title">Top 10 Must-Use Structures</div>
+
+        <div class="struct-item">
+          <div class="struct-num">1</div>
+          <div class="struct-content">
+            <span class="struct-template"><span class="ph">[X]</span> ranked highest in <span class="ph">[category]</span>, at <span class="ph">[figure]</span></span>
+            <span class="struct-example">Norway ranked highest in GDP, at $82,500.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">2</div>
+          <div class="struct-content">
+            <span class="struct-template"><span class="ph">[X]</span> substantially outpaced <span class="ph">[Y]</span> in <span class="ph">[category]</span></span>
+            <span class="struct-example">Norway substantially outpaced Ethiopia in internet access.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">3</div>
+          <div class="struct-content">
+            <span class="struct-template">… ranged from <span class="ph">[low]</span> to <span class="ph">[high]</span></span>
+            <span class="struct-example">Life expectancy ranged from 66.2 to 82.5 years.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">4</div>
+          <div class="struct-content">
+            <span class="struct-template"><span class="ph">[X]</span> was approximately <span class="ph">[N]</span> times greater than <span class="ph">[Y]</span></span>
+            <span class="struct-example">Norway's GDP was ~90 times greater than Ethiopia's.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">5</div>
+          <div class="struct-content">
+            <span class="struct-template">With the exception of <span class="ph">[X]</span>, <span class="ph">[trend]</span></span>
+            <span class="struct-example">With the exception of Ethiopia, literacy was high.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">6</div>
+          <div class="struct-content">
+            <span class="struct-template">While <span class="ph">[X]</span> and <span class="ph">[Y]</span> <span class="ph">[shared feature]</span>, <span class="ph">[contrast]</span></span>
+            <span class="struct-example">While Brazil and India shared similar life expectancy, their GDPs differed greatly.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">7</div>
+          <div class="struct-content">
+            <span class="struct-template">In descending order, figures stood at <span class="ph">[A, B, C, D]</span></span>
+            <span class="struct-example">In descending order, internet access stood at 98%, 70%, 43%, 15%.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">8</div>
+          <div class="struct-content">
+            <span class="struct-template">Shifting focus to <span class="ph">[category]</span>, <span class="ph">[observation]</span></span>
+            <span class="struct-example">Shifting focus to social indicators, the picture becomes more nuanced.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">9</div>
+          <div class="struct-content">
+            <span class="struct-template"><span class="ph">[X]</span> proved a notable outlier, recording <span class="ph">[figure]</span></span>
+            <span class="struct-example">Ethiopia proved a notable outlier, recording just 38% literacy.</span>
+          </div>
+        </div>
+
+        <div class="struct-item">
+          <div class="struct-num">10</div>
+          <div class="struct-content">
+            <span class="struct-template">… reflecting each <span class="ph">[subject]</span>'s level of <span class="ph">[development]</span></span>
+            <span class="struct-example">…reflecting each country's level of economic development.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TENSE RULE -->
+      <div class="block">
+        <div class="block-title">Tense Rule</div>
+        <div class="tense-row">
+          <span class="tense-tag t-past">PAST</span>
+          <span class="tense-rule">Table has a specific year → <strong>simple past</strong>: "Norway <em>had</em>..."</span>
+        </div>
+        <div class="tense-row">
+          <span class="tense-tag t-pres">PRESENT</span>
+          <span class="tense-rule">No year given → <strong>simple present</strong>: "Norway <em>ranks</em>..."</span>
+        </div>
+      </div>
+
+      <!-- BAND BOOSTER -->
+      <div class="block">
+        <div class="block-title">Band Booster — Do These</div>
+        <div class="band-scale">
+          <div class="band-seg b6">6</div>
+          <div class="band-seg b7">7</div>
+          <div class="band-seg b8">8</div>
+          <div class="band-seg b9">9</div>
+        </div>
+        <div class="band-labels">
+          <span>Safe<br>vocab</span>
+          <span>Group +<br>collocate</span>
+          <span>Multiply +<br>interpret</span>
+          <span>Nuanced<br>analysis</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ───── RIGHT COLUMN ───── -->
+    <div class="col">
+
+      <!-- 20 POWER COLLOCATIONS -->
+      <div class="block">
+        <div class="block-title">20 Power Collocations</div>
+        <div class="colloc-grid">
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">rank highest in all categories</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">record the lowest figure for</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">stand out markedly from</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">lag considerably behind</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">consistently outperform</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">present a striking contrast</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">show a marked disparity in</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">fall within a comparable range</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">a wide gulf between</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">at the lower end of the spectrum</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">achieve markedly superior outcomes</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">highlight the profound gap</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">broadly similar / comparable to</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">the most pronounced disparity</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">across all indicators / metrics</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">a mere X% / just X years</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">perform relatively well in</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">occupy a middle ground</span>
+          </div>
+
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">approximately X times greater than</span>
+          </div>
+          <div class="colloc-item">
+            <span class="colloc-dot">◆</span>
+            <span class="colloc-text">reflecting the level of development</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 5 DEADLY MISTAKES -->
+      <div class="block">
+        <div class="block-title">5 Deadly Mistakes — Avoid These</div>
+
+        <div class="danger-item">
+          <span class="d-icon">✕</span>
+          <span><span class="d-bad">Numbers in your overview</span> <span class="d-arr">→</span> <span class="d-good">Overview = trends only, no figures</span></span>
+        </div>
+        <div class="danger-item">
+          <span class="d-icon">✕</span>
+          <span><span class="d-bad">Row-by-row description</span> <span class="d-arr">→</span> <span class="d-good">Group by tier or category</span></span>
+        </div>
+        <div class="danger-item">
+          <span class="d-icon">✕</span>
+          <span><span class="d-bad">Describing every data point</span> <span class="d-arr">→</span> <span class="d-good">Select the 5–6 most significant</span></span>
+        </div>
+        <div class="danger-item">
+          <span class="d-icon">✕</span>
+          <span><span class="d-bad">Mixing past and present tense</span> <span class="d-arr">→</span> <span class="d-good">One tense throughout (see rule ←)</span></span>
+        </div>
+        <div class="danger-item">
+          <span class="d-icon">✕</span>
+          <span><span class="d-bad">also / also / also (×5)</span> <span class="d-arr">→</span> <span class="d-good">Vary: similarly · moreover · in contrast · notably</span></span>
+        </div>
+      </div>
+
+      <!-- 3-MIN PLAN CHECKLIST -->
+      <div class="block">
+        <div class="block-title">3-Min Pre-Writing Checklist</div>
+        <div class="check-item"><div class="check-box"></div><span>Circled the highest & lowest value in each column</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Found the single biggest gap (your multiplier target)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Grouped data into 2 tiers or 2 categories</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Spotted any outlier for exception clause</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Decided overview pattern (winner · gap · divide)</span></div>
+        <div class="check-item"><div class="check-box"></div><span>Checked tense (year present? → past)</span></div>
+      </div>
+
+    </div>
+  </div><!-- end body grid -->
+
+  <!-- FOOTER -->
+  <div class="footer-strip">
+    <p>IELTS Writing Task 1 · Tables · Exam Day Toolkit</p>
+    <p><strong>Target:</strong> 1 overview · 2 body paragraphs · 150+ words · 20 mins</p>
+  </div>
+
+</div><!-- end page -->
+
+</body>
+</html>

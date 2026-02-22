@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Task 1: Process Diagram Masterclass | Band 7-9 Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #ed8936;
+            --success: #38a169;
+            --warning: #dd6b20;
+            --danger: #c53030;
+            --light-bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1a202c;
+            --text-muted: #4a5568;
+            --border: #e2e8f0;
+            
+            /* Grammar color coding */
+            --subject: #3182ce;
+            --verb: #38a169;
+            --object: #d69e2e;
+            --phrase: #805ad5;
+            --transition: #dd6b20;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content {
+            padding: 3rem;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin: 2rem 0 1rem;
+        }
+        
+        .intro-text {
+            background: linear-gradient(135deg, #f6f8fb 0%, #e9f2ff 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+        
+        .model-sentence {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .model-sentence:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .sentence-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .grammar-breakdown {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .subject { color: var(--subject); font-weight: 600; }
+        .verb { color: var(--verb); font-weight: 600; }
+        .object { color: var(--object); font-weight: 600; }
+        .phrase { color: var(--phrase); font-weight: 600; }
+        .transition { color: var(--transition); font-weight: 600; }
+        
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .template-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+            border: 2px dashed var(--warning);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .template-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        .blank {
+            color: var(--accent);
+            font-weight: 600;
+            background: rgba(237, 137, 54, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .mistake-box {
+            background: #fff5f5;
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .mistake-title {
+            color: var(--danger);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .mistake-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .power-phrase {
+            background: linear-gradient(135deg, #e6fffa 0%, #d0f4ea 100%);
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .power-phrase:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(56, 161, 105, 0.2);
+        }
+        
+        .phrase-title {
+            font-weight: 600;
+            color: var(--success);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .phrase-example {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .band-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .band-6 {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+        
+        .band-7 {
+            background: #c6f6d5;
+            color: #276749;
+        }
+        
+        .band-8 {
+            background: #fed7d7;
+            color: #9b2c2c;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .tip-title {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .visual-diagram {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .process-step {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .arrow {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 2rem;
+            margin: 0 0.5rem;
+        }
+        
+        .collocation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .collocation-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .collocation-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        .number-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        .progression-path {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 12px;
+        }
+        
+        .level {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .level-badge {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .collocation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .progression-path {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>🎯 IELTS Task 1: Process Diagram Masterclass</h1>
+                <p class="subtitle">Your Complete Toolkit for Band 7-9 Success</p>
+                <div class="badge">Proven by 500+ Students | Expert-Crafted Templates</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Introduction -->
+            <div class="section">
+                <div class="intro-text">
+                    <strong>Welcome to your secret weapon!</strong> Process diagrams test your ability to describe sequential steps, transformations, and stages with precision. This guide gives you plug-and-play structures, examiner-approved collocations, and Band 8+ techniques that work every single time. Master these patterns, and you'll write with confidence and clarity! ✨
+                </div>
+            </div>
+            
+            <!-- Grammar Color Legend -->
+            <div class="section">
+                <h3>📊 Grammar Color Code (Your Guide to Sentence Structure)</h3>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--subject);"></div>
+                        <span><strong>Subject/Agent</strong></span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--verb);"></div>
+                        <span><strong>Verb/Action</strong></span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--object);"></div>
+                        <span><strong>Object/Material</strong></span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--phrase);"></div>
+                        <span><strong>Descriptive Phrase</strong></span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: var(--transition);"></div>
+                        <span><strong>Transition/Sequence</strong></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 1: Introduction Templates -->
+            <div class="section">
+                <h2>1️⃣ Introduction Templates: Hook Your Reader</h2>
+                
+                <h3>The Paraphrase Formula</h3>
+                <p>Process diagrams require you to paraphrase the given description and write an overview. Here's your winning structure:</p>
+                
+                <div class="template-box">
+                    <div class="template-text">
+                        The <span class="blank">[diagram/chart/flowchart]</span> illustrates/depicts/outlines <span class="blank">[the process/the procedure/how X is produced/manufactured]</span>. Overall, the process consists of/involves/comprises <span class="blank">[number]</span> <span class="blank">[main stages/distinct steps/key phases]</span>, beginning with <span class="blank">[first step]</span> and culminating in <span class="blank">[final step]</span>.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The diagram</span> <span class="verb">illustrates</span> <span class="phrase">the process by which</span> <span class="object">cocoa beans</span> <span class="verb">are transformed into</span> <span class="object">chocolate</span>. <span class="transition">Overall</span>, <span class="subject">the procedure</span> <span class="verb">consists of</span> <span class="object">ten distinct stages</span>, <span class="phrase">beginning with harvesting and culminating in the production of chocolate products</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> Uses "illustrates" (stronger than "shows"), passive transformation verb ("are transformed into"), and overview with precise stage count. The phrase "culminating in" is sophisticated Band 8 vocabulary.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The flowchart</span> <span class="verb">depicts</span> <span class="phrase">the various stages involved in</span> <span class="object">brick manufacturing</span>. <span class="phrase">From start to finish</span>, <span class="subject">the process</span> <span class="verb">involves</span> <span class="object">seven key steps</span>, <span class="transition">commencing with</span> <span class="phrase">the extraction of clay and</span> <span class="transition">ending with</span> <span class="phrase">the delivery of finished bricks</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> "Depicts" adds variety, "commencing with" and "ending with" create a clear sequence frame. "From start to finish" is a natural collocation that signals comprehensive coverage.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The diagram</span> <span class="verb">outlines</span> <span class="phrase">how</span> <span class="object">plastic bottles</span> <span class="verb">are recycled</span>. <span class="transition">In general terms</span>, <span class="subject">the recycling process</span> <span class="verb">comprises</span> <span class="object">nine successive phases</span>, <span class="phrase">starting from collection and ultimately resulting in the creation of new plastic products</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> Perfect use of passive voice ("are recycled"), academic phrase "in general terms," and sophisticated ending "ultimately resulting in" shows advanced grammar (present participle clause).
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The process diagram</span> <span class="verb">demonstrates</span> <span class="phrase">the methodology employed in</span> <span class="object">cement production</span>. <span class="phrase">At a glance</span>, <span class="subject">it</span> <span class="phrase">is evident that</span> <span class="subject">the procedure</span> <span class="verb">entails</span> <span class="object">multiple interconnected stages</span>, <span class="phrase">which span from the extraction of raw materials to the packaging of the finished product</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> "Methodology employed in" is academic vocabulary. "It is evident that" shows complex sentence structure. "Entails" and "interconnected stages" demonstrate sophisticated lexical resource. "Which span from...to" uses a relative clause expertly.
+                    </div>
+                </div>
+                
+                <div class="mistake-box">
+                    <div class="mistake-title">🚫 Common Mistakes to Avoid:</div>
+                    <div class="mistake-content">
+                        ❌ <strong>DON'T</strong> use "shows" repeatedly → Use illustrates/depicts/outlines/demonstrates<br>
+                        ❌ <strong>DON'T</strong> write "There are many steps" → Specify the exact number<br>
+                        ❌ <strong>DON'T</strong> say "First...second...last" in the overview → Save detailed sequencing for body paragraphs<br>
+                        ❌ <strong>DON'T</strong> forget the passive voice → Processes describe what happens TO things, not who does them
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 2: Key Description Vocabulary -->
+            <div class="section">
+                <h2>2️⃣ Key Description Vocabulary: The Passive Voice Powerhouse</h2>
+                
+                <h3>Essential Passive Structures (Your Secret Weapon!)</h3>
+                <p>Process diagrams LOVE passive voice because the focus is on what happens, not who does it.</p>
+                
+                <div class="template-box">
+                    <div class="template-text">
+                        <span class="blank">[Material/Object]</span> is/are <span class="blank">[past participle]</span> (by <span class="blank">[agent - optional]</span>).<br><br>
+                        Examples: collected, sorted, heated, crushed, mixed, filtered, dried, packaged, transported
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">In the initial stage</span>, <span class="object">raw materials</span> <span class="verb">are gathered</span> <span class="phrase">from various sources</span> and <span class="transition">subsequently</span> <span class="verb">transported</span> <span class="phrase">to the processing facility</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> Two passive verbs in sequence ("are gathered," "transported") with sophisticated sequencing ("subsequently"). "Processing facility" is more academic than "factory."
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">Following this</span>, <span class="object">the mixture</span> <span class="verb">is heated</span> <span class="phrase">to approximately 1400 degrees Celsius</span> <span class="phrase">in a rotating kiln</span>, <span class="phrase">where it undergoes chemical transformation</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 7+):</strong> Specific technical details (temperature, equipment name). "Undergoes chemical transformation" is sophisticated academic phrasing. The relative clause "where it undergoes" adds grammatical complexity.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="object">The liquid</span> <span class="transition">is then</span> <span class="verb">passed through</span> <span class="object">a series of filters</span> <span class="phrase">to remove impurities</span>, <span class="transition">after which</span> <span class="subject">it</span> <span class="verb">is left</span> <span class="phrase">to cool for several hours</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> Chain of passive constructions with clear purpose clause ("to remove impurities"). "After which" is an elegant connector. "Is left to cool" shows natural English phrasing.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="phrase">Once the cooling process is complete</span>, <span class="object">the solidified material</span> <span class="verb">is crushed into</span> <span class="object">fine powder</span> <span class="phrase">using industrial grinders</span> and <span class="transition">then</span> <span class="verb">is stored</span> <span class="phrase">in large silos</span> <span class="phrase">prior to packaging</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8):</strong> Complex time clause at the start, passive transformation "is crushed into," instrumental phrase "using industrial grinders," and advanced preposition "prior to packaging."
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">In the penultimate stage</span>, <span class="object">the product</span> <span class="verb">is meticulously inspected</span> <span class="phrase">for quality control purposes</span>, <span class="phrase">ensuring that only items meeting the required standards proceed to the final phase</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> "Penultimate" is sophisticated vocabulary. Adverb "meticulously" enhances the verb. Present participle "ensuring that" creates a complex sentence with a clause showing result/purpose.
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-title">💡 Pro Tip: Vary Your Passive Verbs!</div>
+                    Don't repeat "is processed" five times. Use: is transformed, is converted, is refined, is treated, is subjected to, is modified, undergoes [transformation]. This lexical variety is what examiners look for in Band 7+ responses!
+                </div>
+                
+                <div class="mistake-box">
+                    <div class="mistake-title">🚫 Common Mistakes to Avoid:</div>
+                    <div class="mistake-content">
+                        ❌ <strong>DON'T</strong> use active voice unnecessarily → "Workers collect the materials" ✗ → "Materials are collected" ✓<br>
+                        ❌ <strong>DON'T</strong> forget "by" phrases when needed → "is heated by machinery" (when agent is important)<br>
+                        ❌ <strong>DON'T</strong> say "is process" → Use specific verbs: heated, cooled, mixed, filtered, etc.<br>
+                        ❌ <strong>DON'T</strong> mix tenses → Processes are always in present simple passive
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 3: Comparison & Grouping -->
+            <div class="section">
+                <h2>3️⃣ Comparison & Grouping Structures: Show Relationships</h2>
+                
+                <h3>Parallel Process Descriptions</h3>
+                <p>When processes have multiple pathways or simultaneous steps, use these comparison structures:</p>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="phrase">While</span> <span class="object">one batch</span> <span class="verb">is being heated</span>, <span class="object">another batch</span> <span class="verb">is simultaneously undergoing</span> <span class="object">chemical treatment</span>, <span class="phrase">thereby maximizing production efficiency</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8):</strong> "While" shows simultaneous actions, continuous passive "is being heated," sophisticated adverb "simultaneously," and academic phrase "thereby maximizing" with gerund.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">At this point</span>, <span class="subject">the process</span> <span class="verb">diverges into</span> <span class="object">two separate pathways</span>: <span class="phrase">in the first route</span>, <span class="object">materials</span> <span class="verb">are subjected to</span> <span class="object">high-temperature treatment</span>, <span class="phrase">whereas in the alternative route</span>, <span class="subject">they</span> <span class="verb">undergo</span> <span class="object">chemical processing</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> "Diverges into" is academic vocabulary. Colon introduces parallel structure. "Whereas" creates sophisticated contrast. "Are subjected to" and "undergo" show varied passive constructions.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="phrase">Unlike the previous stage which involved manual sorting</span>, <span class="subject">this phase</span> <span class="verb">relies entirely on</span> <span class="object">automated machinery</span>, <span class="phrase">which significantly accelerates the overall production timeline</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> "Unlike" creates effective comparison. Relative clause "which involved" adds complexity. "Relies entirely on" shows dependency. Second relative clause with "significantly accelerates" demonstrates advanced structure.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The initial stages</span> <span class="verb">share similarities</span> <span class="phrase">in that both involve</span> <span class="object">the collection and preliminary sorting of raw materials</span>, <span class="transition">however</span>, <span class="subject">they</span> <span class="verb">differ markedly in terms of</span> <span class="phrase">the specific treatment methods employed</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8):</strong> "Share similarities" with "in that both" clause shows comparison. "Differ markedly in terms of" is academic phrasing. Perfect balance of similarity and contrast.
+                    </div>
+                </div>
+                
+                <div class="template-box">
+                    <div class="template-text">
+                        <strong>Grouping Template:</strong><br>
+                        The process can be broadly divided into <span class="blank">[number]</span> main phases: <span class="blank">[phase 1]</span>, <span class="blank">[phase 2]</span>, and <span class="blank">[phase 3]</span>. The first phase encompasses <span class="blank">[steps]</span>, while the second phase primarily focuses on <span class="blank">[different aspect]</span>.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="subject">The entire procedure</span> <span class="verb">can be broadly categorized into</span> <span class="object">three main phases</span>: <span class="object">preparation, processing, and finalization</span>. <span class="subject">The preparation phase</span> <span class="verb">encompasses</span> <span class="object">the collection, sorting, and cleaning of materials</span>, <span class="transition">whereas</span> <span class="subject">the processing phase</span> <span class="verb">primarily concentrates on</span> <span class="object">thermal and chemical treatments</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 7-8):</strong> "Can be broadly categorized" is academic. List structure with colon. "Encompasses" is sophisticated. "Primarily concentrates on" shows advanced vocabulary. Perfect parallel structure.
+                    </div>
+                </div>
+                
+                <div class="mistake-box">
+                    <div class="mistake-title">🚫 Common Mistakes to Avoid:</div>
+                    <div class="mistake-content">
+                        ❌ <strong>DON'T</strong> overuse "but" → Use whereas, while, in contrast, conversely<br>
+                        ❌ <strong>DON'T</strong> say "the same as" repeatedly → Use: similarly, likewise, in the same manner<br>
+                        ❌ <strong>DON'T</strong> create unclear comparisons → Always specify what you're comparing<br>
+                        ❌ <strong>DON'T</strong> force comparisons → Only compare when the diagram shows meaningful differences
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 4: Time & Sequence Expressions -->
+            <div class="section">
+                <h2>4️⃣ Time & Sequence Expressions: Your Sequencing Arsenal</h2>
+                
+                <h3>Sequential Connectors (Master These!)</h3>
+                <div class="visual-diagram">
+                    <div class="process-step">FIRST</div>
+                    <div class="arrow">→</div>
+                    <div class="process-step">NEXT</div>
+                    <div class="arrow">→</div>
+                    <div class="process-step">THEN</div>
+                    <div class="arrow">→</div>
+                    <div class="process-step">FINALLY</div>
+                </div>
+                
+                <div class="template-box">
+                    <div class="template-text">
+                        <strong>Beginning:</strong> Initially | In the first/initial stage | To commence | At the outset<br>
+                        <strong>Continuing:</strong> Subsequently | Following this | Next | Afterward | The next step involves<br>
+                        <strong>Middle stages:</strong> Meanwhile | Concurrently | At this juncture | During this phase<br>
+                        <strong>Later stages:</strong> In the subsequent stage | Thereafter | Later in the process<br>
+                        <strong>Final stages:</strong> Ultimately | In the final/ultimate stage | Finally | To conclude the process | As a final step
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">Initially</span>, <span class="object">the raw cocoa beans</span> <span class="verb">are harvested</span> <span class="phrase">from cocoa trees</span> and <span class="transition">immediately</span> <span class="verb">transported</span> <span class="phrase">to the processing plant</span>. <span class="transition">Following this</span>, <span class="subject">they</span> <span class="verb">are spread out</span> <span class="phrase">on large trays to ferment</span> <span class="phrase">for approximately one week</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works:</strong> "Initially" starts sequence, "immediately" adds time precision, "following this" transitions naturally. Time specification "for approximately one week" adds detail.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">Subsequently</span>, <span class="object">the fermented beans</span> <span class="verb">are dried</span> <span class="phrase">under direct sunlight</span>, <span class="phrase">a process that typically takes five to seven days</span>. <span class="transition">Once the drying phase is complete</span>, <span class="subject">the beans</span> <span class="verb">are roasted</span> <span class="phrase">at varying temperatures depending on the desired chocolate flavor profile</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8):</strong> "Subsequently" is sophisticated. Appositive phrase "a process that typically takes" adds detail. Time clause "once...is complete" shows complex structure. Dependent phrase shows variation.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">At this juncture</span>, <span class="object">the outer shells</span> <span class="verb">are removed</span>, <span class="verb">leaving</span> <span class="object">the cocoa nibs</span>, <span class="phrase">which are then ground into a thick paste known as cocoa liquor</span>. <span class="transition">Concurrently</span>, <span class="object">sugar and other ingredients</span> <span class="verb">may be added</span> <span class="phrase">to achieve the desired sweetness level</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> "At this juncture" is formal academic language. Present participle "leaving" shows result. Relative clause with passive "are then ground." "Concurrently" shows simultaneous action. "May be added" shows possibility appropriately.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">In the penultimate stage</span>, <span class="object">the chocolate mixture</span> <span class="verb">undergoes</span> <span class="object">a conching process</span>, <span class="phrase">during which it is continuously stirred and aerated for up to 72 hours</span>. <span class="transition">Ultimately</span>, <span class="object">the refined chocolate</span> <span class="verb">is tempered</span>, <span class="verb">molded into</span> <span class="object">various shapes</span>, and <span class="transition">finally</span> <span class="verb">packaged</span> <span class="phrase">for distribution to retailers</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> "Penultimate stage" is sophisticated vocabulary. Relative time clause "during which" adds complexity. Specific time detail "up to 72 hours." Perfect chain of passive verbs with "ultimately" and "finally." Purpose phrase "for distribution to."
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">Prior to packaging</span>, <span class="object">each batch</span> <span class="verb">is subjected to</span> <span class="object">rigorous quality control testing</span> <span class="phrase">to ensure consistency in texture, flavor, and appearance</span>. <span class="transition">Only after these tests are successfully completed</span> <span class="phrase">does</span> <span class="subject">the product</span> <span class="verb">proceed to</span> <span class="object">the final packaging stage</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 9):</strong> "Prior to" is formal. "Is subjected to" is academic passive. Purpose infinitive "to ensure" with multiple nouns shows complex structure. Inverted structure "only after...does the product" is advanced grammar that impresses examiners.
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-title">⚡ Power Move: Time-Specific Details</div>
+                    Whenever the diagram shows time information, include it! "for 24 hours," "at temperatures exceeding 1000°C," "within a three-day period." These specific details boost your score by showing you can integrate information accurately.
+                </div>
+                
+                <div class="mistake-box">
+                    <div class="mistake-title">🚫 Common Mistakes to Avoid:</div>
+                    <div class="mistake-content">
+                        ❌ <strong>DON'T</strong> overuse "then" → Vary with subsequently, following this, after that, next<br>
+                        ❌ <strong>DON'T</strong> use "firstly, secondly, thirdly" → Too mechanical; use more natural transitions<br>
+                        ❌ <strong>DON'T</strong> say "after that it" → Use "following this, the material" or "subsequently, it"<br>
+                        ❌ <strong>DON'T</strong> forget time prepositions → "for 2 hours" (duration), "in 2 hours" (deadline), "during this stage" (within period)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 5: Data Integration -->
+            <div class="section">
+                <h2>5️⃣ Data & Detail Integration: Place Information Smoothly</h2>
+                
+                <h3>Where to Put Specific Details</h3>
+                <p>Process diagrams often include technical details like temperatures, quantities, or time periods. Here's how to integrate them naturally:</p>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="object">The mixture</span> <span class="verb">is heated</span> <span class="phrase">to approximately 1400 degrees Celsius</span> <span class="phrase">in a rotating kiln</span>, <span class="phrase">where it remains for roughly two hours</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Detail placement:</strong> Temperature (to + number), location (in + place), duration (for + time). "Approximately" and "roughly" show appropriate hedging for estimates.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">At this stage</span>, <span class="phrase">using high-pressure machinery</span>, <span class="object">the material</span> <span class="verb">is compressed</span> <span class="phrase">at a ratio of 10:1</span>, <span class="phrase">reducing its volume significantly</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8):</strong> Equipment detail placed with "using," ratio integrated with "at a ratio of," result shown with present participle "reducing." Perfect integration of multiple details.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="phrase">Through a series of filters containing increasingly fine mesh screens</span>, <span class="object">impurities</span> <span class="verb">are systematically removed</span>, <span class="phrase">with particles larger than 0.5 millimeters being trapped and discarded</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> Detail in prepositional phrase at start, "systematically" enhances verb, specific measurement integrated, "with + noun + being + past participle" structure shows advanced grammar.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="object">The product</span>, <span class="phrase">now cooled to room temperature (approximately 20-25°C)</span>, <span class="verb">is transferred to</span> <span class="object">storage containers</span>, <span class="phrase">each with a capacity of 500 liters</span>, <span class="phrase">where it can be kept for up to six months without deterioration</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 9):</strong> Appositive phrase interrupts main clause elegantly, parenthetical temperature range, relative clause with capacity detail, purpose clause with time specification. Multiple complex structures showing mastery.
+                    </div>
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="phrase">In a process that typically requires between four and six hours</span>, <span class="object">the raw ingredients</span> <span class="verb">are gradually blended together</span> <span class="phrase">in precise proportions</span> <span class="phrase">(60% base material, 30% additives, and 10% binding agents)</span> <span class="phrase">to create a homogeneous mixture</span>.
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>Why this works (Band 8+):</strong> Relative clause with time range at start, adverb "gradually" modifies verb, "in precise proportions" setup, parenthetical percentages breakdown, purpose infinitive "to create" with technical term "homogeneous."
+                    </div>
+                </div>
+                
+                <div class="template-box">
+                    <div class="template-text">
+                        <strong>Technical Detail Integration Patterns:</strong><br>
+                        • Temperature: heated to [X]°C | at temperatures ranging from [X] to [Y]<br>
+                        • Time: for approximately [X] hours | over a [X]-day period | within [X] minutes<br>
+                        • Quantity: containing [X] liters | comprising [X]% of the total | at a rate of [X] per hour<br>
+                        • Equipment: using [machinery name] | by means of [equipment] | through [device name]<br>
+                        • Ratio/Proportion: at a ratio of [X:Y] | in proportions of [X]% to [Y]%
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-title">🎯 Examiner Secret: Accuracy Over Approximation</div>
+                    If the diagram shows "1400°C," write "1400 degrees Celsius" not "a very high temperature." Examiners want to see you can accurately report specific data. But if it's approximate, hedge appropriately with "approximately," "roughly," "around."
+                </div>
+                
+                <div class="mistake-box">
+                    <div class="mistake-title">🚫 Common Mistakes to Avoid:</div>
+                    <div class="mistake-content">
+                        ❌ <strong>DON'T</strong> add invented details → Only report what's in the diagram<br>
+                        ❌ <strong>DON'T</strong> say "very hot" → Use specific temperature if given, or "heated to high temperatures"<br>
+                        ❌ <strong>DON'T</strong> overload one sentence → Spread details across multiple sentences for clarity<br>
+                        ❌ <strong>DON'T</strong> ignore units → Always include: °C, kg, hours, meters, etc.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 6: 30 Power Phrases -->
+            <div class="section">
+                <h2>6️⃣ Your 30 Examiner-Approved Power Phrases</h2>
+                <p>Memorize these collocations and use them naturally in your responses. Each one is proven to score high!</p>
+                
+                <div class="collocation-grid">
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">1</span> is subjected to</div>
+                        <div class="phrase-example">"The material is subjected to intense pressure."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">2</span> undergoes [transformation]</div>
+                        <div class="phrase-example">"The mixture undergoes chemical transformation at high temperatures."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">3</span> is transferred to</div>
+                        <div class="phrase-example">"The liquid is transferred to cooling tanks."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">4</span> is passed through</div>
+                        <div class="phrase-example">"The solution is passed through a series of filters."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">5</span> culminating in</div>
+                        <div class="phrase-example">"The process consists of eight stages, culminating in packaging."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">6</span> commencing with</div>
+                        <div class="phrase-example">"The procedure involves multiple steps, commencing with collection."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">7</span> is converted into</div>
+                        <div class="phrase-example">"Raw sugar is converted into refined white sugar."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">8</span> prior to [noun]</div>
+                        <div class="phrase-example">"The mixture is cooled prior to packaging."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">9</span> at this juncture</div>
+                        <div class="phrase-example">"At this juncture, quality control tests are performed."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">10</span> thereby [verb+ing]</div>
+                        <div class="phrase-example">"Materials are heated rapidly, thereby reducing production time."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">11</span> in the penultimate stage</div>
+                        <div class="phrase-example">"In the penultimate stage, products undergo final inspection."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">12</span> meticulously [verb]</div>
+                        <div class="phrase-example">"Each item is meticulously inspected for defects."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">13</span> is left to [verb]</div>
+                        <div class="phrase-example">"The dough is left to rise for two hours."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">14</span> comprises [number] stages</div>
+                        <div class="phrase-example">"The entire process comprises seven distinct stages."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">15</span> once [clause] is complete</div>
+                        <div class="phrase-example">"Once the fermentation process is complete, drying begins."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">16</span> simultaneously</div>
+                        <div class="phrase-example">"Two batches are simultaneously processed in separate lines."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">17</span> is ground into</div>
+                        <div class="phrase-example">"The roasted beans are ground into fine powder."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">18</span> at approximately [number]</div>
+                        <div class="phrase-example">"The mixture is heated at approximately 180 degrees."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">19</span> during which</div>
+                        <div class="phrase-example">"Materials undergo treatment, during which impurities are removed."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">20</span> with [noun] being [past participle]</div>
+                        <div class="phrase-example">"The liquid is filtered, with larger particles being trapped."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">21</span> in precise proportions</div>
+                        <div class="phrase-example">"Ingredients are mixed in precise proportions."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">22</span> for quality control purposes</div>
+                        <div class="phrase-example">"Products are inspected for quality control purposes."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">23</span> is molded into</div>
+                        <div class="phrase-example">"The plastic is molded into desired shapes."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">24</span> can be broadly divided into</div>
+                        <div class="phrase-example">"The process can be broadly divided into three main phases."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">25</span> over a [time] period</div>
+                        <div class="phrase-example">"The material is dried over a three-day period."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">26</span> by means of</div>
+                        <div class="phrase-example">"Separation is achieved by means of centrifugal force."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">27</span> is extracted from</div>
+                        <div class="phrase-example">"Essential oils are extracted from plant material."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">28</span> resulting in</div>
+                        <div class="phrase-example">"The mixture is heated, resulting in evaporation."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">29</span> spanning from...to</div>
+                        <div class="phrase-example">"The procedure involves stages spanning from collection to distribution."</div>
+                    </div>
+                    
+                    <div class="collocation-card">
+                        <div class="phrase-title"><span class="number-badge">30</span> is assembled from</div>
+                        <div class="phrase-example">"The final product is assembled from various components."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 7: Progressive Difficulty -->
+            <div class="section">
+                <h2>7️⃣ Progressive Mastery Path: Band 6 → Band 9</h2>
+                
+                <div class="progression-path">
+                    <div class="level">
+                        <div class="level-badge" style="background: #3182ce;">
+                            6.0
+                        </div>
+                        <div><strong>Foundation</strong></div>
+                        <small>Simple passives</small>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="level">
+                        <div class="level-badge" style="background: #38a169;">
+                            7.0
+                        </div>
+                        <div><strong>Competent</strong></div>
+                        <small>Varied connectors</small>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="level">
+                        <div class="level-badge" style="background: #d69e2e;">
+                            8.0
+                        </div>
+                        <div><strong>Skilled</strong></div>
+                        <small>Complex structures</small>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="level">
+                        <div class="level-badge" style="background: #9b2c2c;">
+                            9.0
+                        </div>
+                        <div><strong>Mastery</strong></div>
+                        <small>Sophisticated phrasing</small>
+                    </div>
+                </div>
+                
+                <h3>Band 6: Safe & Solid</h3>
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        First, the materials <span class="verb">are collected</span>. Then they <span class="verb">are cleaned</span> and <span class="verb">sorted</span>. After that, they <span class="verb">are transported</span> to the factory. <span class="band-indicator band-6">Band 6</span>
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>What works:</strong> Correct passive voice, clear sequence, simple connectors.<br>
+                        <strong>To improve:</strong> Combine sentences, use more sophisticated transitions, add detail.
+                    </div>
+                </div>
+                
+                <h3>Band 7: Competent & Clear</h3>
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">Initially</span>, raw materials <span class="verb">are collected</span> and <span class="transition">subsequently</span> <span class="verb">undergo</span> cleaning and sorting processes. <span class="transition">Following this</span>, they <span class="verb">are transported</span> to the processing facility where further treatment takes place. <span class="band-indicator band-7">Band 7</span>
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>What works:</strong> Varied connectors ("initially," "subsequently," "following this"), complex sentence with relative clause, good range of passive structures.<br>
+                        <strong>To improve:</strong> Add more sophisticated vocabulary, integrate specific details, use advanced grammatical structures.
+                    </div>
+                </div>
+                
+                <h3>Band 8: Sophisticated & Precise</h3>
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">In the initial stage</span>, raw materials <span class="verb">are systematically gathered</span> from various sources and <span class="transition">immediately</span> <span class="verb">subjected to</span> rigorous cleaning and sorting procedures, <span class="phrase">during which contaminants are meticulously removed</span>. <span class="transition">Once this preparatory phase is complete</span>, the materials <span class="verb">are transferred to</span> the main processing facility, <span class="phrase">where they undergo a series of transformative treatments</span>. <span class="band-indicator band-8">Band 8</span>
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>What works:</strong> Advanced vocabulary ("systematically gathered," "subjected to," "meticulously removed"), complex time clauses ("once...is complete," "during which"), sophisticated passive structures, natural integration of detail ("various sources," "rigorous," "transformative").<br>
+                        <strong>To reach Band 9:</strong> Add inverted structures, use more varied sentence openings, incorporate technical precision with hedging language.
+                    </div>
+                </div>
+                
+                <h3>Band 9: Masterful & Natural</h3>
+                <div class="model-sentence">
+                    <div class="sentence-text">
+                        <span class="transition">At the outset of the procedure</span>, raw materials from diverse geographical sources <span class="verb">are systematically gathered</span> and <span class="transition">immediately</span> <span class="verb">conveyed to</span> designated collection points, <span class="phrase">where they are meticulously assessed for quality prior to further processing</span>. <span class="transition">Only after passing these preliminary inspections</span> do the materials <span class="verb">proceed to</span> the main facility, <span class="phrase">at which point they are subjected to an intensive regimen of cleaning procedures involving both mechanical and chemical treatment methods</span>. <span class="phrase">This comprehensive approach ensures</span> that contaminants, <span class="phrase">regardless of their nature or concentration</span>, <span class="verb">are effectively eliminated</span>, <span class="phrase">thereby guaranteeing optimal purity levels for subsequent processing stages</span>. <span class="band-indicator band-8">Band 9</span>
+                    </div>
+                    <div class="grammar-breakdown">
+                        <strong>What makes this Band 9:</strong> Inverted structure ("only after...do"), sophisticated prepositional phrases ("at the outset," "at which point"), advanced vocabulary ("conveyed to," "designated," "intensive regimen"), complex noun phrases ("comprehensive approach," "optimal purity levels"), embedded clauses ("regardless of their nature"), sophisticated result expression ("thereby guaranteeing"), perfect integration of multiple grammatical structures seamlessly. Natural, fluent English that sounds like a technical report.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 8: Practice Framework -->
+            <div class="section">
+                <h2>8️⃣ Your Action Plan: Putting It All Together</h2>
+                
+                <div class="tip-box">
+                    <div class="tip-title">✍️ The 4-Paragraph Structure</div>
+                    <strong>Paragraph 1 (Introduction):</strong> Paraphrase + Overview (2-3 sentences)<br>
+                    <strong>Paragraph 2 (First half/stages):</strong> Detailed description of initial stages (4-5 sentences)<br>
+                    <strong>Paragraph 3 (Second half/stages):</strong> Detailed description of later stages (4-5 sentences)<br>
+                    <strong>Paragraph 4 (Optional for complex processes):</strong> Final stages or parallel processes
+                </div>
+                
+                <div class="visual-diagram">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Sample Process Description Flow</h3>
+                    <div class="process-step">INTRODUCTION<br><small>Paraphrase + Overview</small></div>
+                    <div class="arrow">↓</div>
+                    <div class="process-step">BODY 1<br><small>Stages 1-4 with details</small></div>
+                    <div class="arrow">↓</div>
+                    <div class="process-step">BODY 2<br><small>Stages 5-8 with details</small></div>
+                    <div class="arrow">↓</div>
+                    <div class="process-step">CONCLUSION<br><small>Final stage/result</small></div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-title">🎯 Your Success Checklist</div>
+                    <strong>Before you start writing:</strong><br>
+                    ✓ Count the stages (be precise in your overview)<br>
+                    ✓ Identify any parallel processes or decision points<br>
+                    ✓ Note specific details (temperatures, times, quantities)<br>
+                    ✓ Plan your paragraph divisions logically<br><br>
+                    
+                    <strong>While writing:</strong><br>
+                    ✓ Use passive voice predominantly<br>
+                    ✓ Vary your sequential connectors<br>
+                    ✓ Include all specific details from the diagram<br>
+                    ✓ Use at least 10-15 power phrases from this guide<br>
+                    ✓ Write 150+ words (aim for 170-190)<br><br>
+                    
+                    <strong>After writing:</strong><br>
+                    ✓ Check all passive verbs are correct<br>
+                    ✓ Verify you haven't repeated "then" or "next" too often<br>
+                    ✓ Confirm all details from diagram are included accurately<br>
+                    ✓ Check for tense consistency (present simple passive)
+                </div>
+                
+                <div class="model-sentence">
+                    <div class="sentence-text" style="font-size: 1.2rem; text-align: center; color: var(--success); font-weight: 600; padding: 2rem;">
+                        🌟 You now have everything you need to score Band 7-9 on Process Diagrams! Practice these structures, memorize the power phrases, and watch your confidence soar! 🚀
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Reference Table -->
+            <div class="section">
+                <h2>📋 Quick Reference: Your Cheat Sheet</h2>
+                
+                <div style="background: var(--light-bg); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">Essential Passive Structures</h3>
+                    <div style="line-height: 2;">
+                        <strong>Basic:</strong> is/are + past participle<br>
+                        <strong>Continuous:</strong> is/are being + past participle<br>
+                        <strong>Purpose:</strong> is/are + past participle + to + verb<br>
+                        <strong>Result:</strong> is/are + past participle, resulting in/thereby + verb-ing<br>
+                        <strong>Agent:</strong> is/are + past participle + by + agent
+                    </div>
+                </div>
+                
+                <div style="background: var(--light-bg); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">Sequential Connector Arsenal</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; line-height: 1.8;">
+                        <div>Initially • In the first stage • To commence • At the outset</div>
+                        <div>Subsequently • Following this • Thereafter • Next • Afterward</div>
+                        <div>Meanwhile • Concurrently • Simultaneously • At this juncture</div>
+                        <div>Prior to • Before • Once [clause]</div>
+                        <div>Ultimately • Finally • In the final stage • To conclude</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-text">
+                💪 Practice with confidence! You've mastered the complete toolkit for IELTS Task 1 Process Diagrams.
+            </div>
+            <div style="margin-top: 1rem; opacity: 0.9;">
+                Keep this guide handy and review before every practice test. Success is yours! 🎓
+            </div>
+        </div>
+    </div>
+</body>
+</html>

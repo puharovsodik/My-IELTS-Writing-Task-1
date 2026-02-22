@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing Task 1: Pie Chart Masterclass</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+  :root {
+    --primary: #4F46E5;
+    --primary-light: #EEF2FF;
+    --accent: #7C3AED;
+    --gold: #D97706;
+    --gold-light: #FEF3C7;
+    --green: #059669;
+    --green-light: #ECFDF5;
+    --red: #DC2626;
+    --red-light: #FEF2F2;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+    --pink: #DB2777;
+    --pink-light: #FDF2F8;
+    --teal: #0891B2;
+    --teal-light: #ECFEFF;
+    --orange: #EA580C;
+    --orange-light: #FFF7ED;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F8F7FF;
+    color: var(--gray-800);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #DB2777 100%);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 span { color: #FDE68A; }
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    position: relative;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2rem; font-weight: 800; color: #FDE68A; }
+  .stat-label { font-size: 11px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* MAIN CONTAINER */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  /* TABLE OF CONTENTS */
+  .toc {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(79,70,229,0.08);
+    border: 1px solid var(--gray-200);
+  }
+  .toc h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--gray-50);
+    text-decoration: none;
+    color: var(--gray-700);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid var(--gray-200);
+  }
+  .toc-item:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
+  .toc-num {
+    width: 24px; height: 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* SECTION HEADERS */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .section-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--gray-900);
+  }
+  .section-header .band-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* COLOR THEMES PER SECTION */
+  .s1 .section-icon { background: var(--primary-light); }
+  .s2 .section-icon { background: var(--green-light); }
+  .s3 .section-icon { background: var(--gold-light); }
+  .s4 .section-icon { background: var(--teal-light); }
+  .s5 .section-icon { background: var(--pink-light); }
+  .s6 .section-icon { background: var(--orange-light); }
+
+  /* INTRO TEXT */
+  .section-intro {
+    background: var(--gray-50);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--gray-600);
+    font-style: italic;
+  }
+
+  /* MODEL SENTENCES */
+  .sentence-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid var(--gray-200);
+    position: relative;
+  }
+  .sentence-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  .s1 .sentence-card::before { background: var(--primary); }
+  .s2 .sentence-card::before { background: var(--green); }
+  .s3 .sentence-card::before { background: var(--gold); }
+  .s4 .sentence-card::before { background: var(--teal); }
+  .s5 .sentence-card::before { background: var(--pink); }
+  .s6 .sentence-card::before { background: var(--orange); }
+
+  .band-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .band-6 { background: #FEF3C7; color: #92400E; }
+  .band-7 { background: #D1FAE5; color: #065F46; }
+  .band-8 { background: #EDE9FE; color: #4C1D95; }
+  .band-9 { background: linear-gradient(90deg, #FDE68A, #DDD6FE); color: #4C1D95; }
+
+  .sentence-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gray-800);
+    margin-bottom: 12px;
+  }
+
+  /* COLOR CODED GRAMMAR */
+  .hl-subject { color: #2563EB; font-weight: 600; }
+  .hl-verb { color: #059669; font-weight: 600; }
+  .hl-collocation { color: #7C3AED; font-weight: 600; font-style: italic; }
+  .hl-data { color: #DC2626; font-weight: 600; }
+  .hl-connector { color: #D97706; font-weight: 600; }
+  .hl-proportion { color: #DB2777; font-weight: 600; }
+  .hl-comparison { color: #0891B2; font-weight: 600; }
+  .hl-template { background: #FEF3C7; padding: 1px 4px; border-radius: 3px; color: #92400E; font-weight: 600; }
+
+  .grammar-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--gray-200);
+    font-size: 12px;
+  }
+  .key-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--gray-600);
+  }
+  .key-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  /* TEMPLATE BOX */
+  .template-box {
+    background: linear-gradient(135deg, #F5F3FF, #EEF2FF);
+    border: 2px dashed var(--primary);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 13.5px;
+    line-height: 2;
+    color: var(--gray-700);
+  }
+  .template-box .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .blank { 
+    display: inline-block;
+    min-width: 80px;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+    font-weight: 700;
+    padding: 0 6px;
+    text-align: center;
+  }
+
+  /* DON'T SAY BOX */
+  .dont-box {
+    background: var(--red-light);
+    border: 1px solid #FCA5A5;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .dont-box .dont-header {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dont-box .wrong { 
+    text-decoration: line-through; 
+    color: var(--red); 
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+  }
+  .dont-box .right { 
+    color: var(--green); 
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+  }
+  .dont-row {
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .arrow { color: var(--gray-400); margin: 0 8px; }
+
+  /* DO SAY BOX */
+  .do-box {
+    background: var(--green-light);
+    border: 1px solid #6EE7B7;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .do-box .do-header {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  /* COLLOCATION GRID */
+  .collocation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .collocation-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .collocation-card .phrase {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .collocation-card .example {
+    font-size: 11.5px;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  /* PIE CHART VISUAL */
+  .pie-visual {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid var(--gray-200);
+  }
+  .pie-visual h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .pie-diagram {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pie-svg-container { text-align: center; }
+  .pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-label { color: var(--gray-700); }
+  .legend-val { color: var(--gray-500); font-size: 12px; margin-left: auto; }
+  .annotation-labels {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ann-item {
+    background: var(--gray-50);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    color: var(--gray-600);
+    border: 1px solid var(--gray-200);
+  }
+  .ann-item strong { color: var(--primary); font-size: 10px; text-transform: uppercase; display: block; margin-bottom: 2px; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: var(--gold-light);
+    border: 1px solid #FCD34D;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--gray-700);
+  }
+  .tip-box .tip-header {
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* SECRET WEAPON */
+  .secret-weapon {
+    background: linear-gradient(135deg, #4F46E5, #7C3AED);
+    color: white;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .secret-weapon .sw-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .secret-weapon strong { color: #FDE68A; }
+
+  /* LEVEL UP */
+  .level-up-box {
+    background: linear-gradient(135deg, #EDE9FE, #F5F3FF);
+    border: 2px solid #C4B5FD;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .level-up-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-300), transparent);
+    margin: 40px 0;
+  }
+
+  /* COLLOCATION MASTER LIST */
+  .master-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .master-item {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .master-item .phrase {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .master-item .usage {
+    font-size: 11.5px;
+    color: var(--gray-600);
+  }
+  .master-item .power {
+    display: inline-flex;
+    gap: 2px;
+    margin-top: 2px;
+  }
+  .star { color: #F59E0B; font-size: 10px; }
+
+  /* SUMMARY CHECKLIST */
+  .checklist {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 2px 12px rgba(79,70,229,0.08);
+  }
+  .checklist h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--gray-900);
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-box {
+    width: 20px; height: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray-500);
+    font-size: 13px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { gap: 20px; }
+    .container { padding: 24px 16px; }
+    .pie-diagram { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📊 IELTS Writing Task 1 Masterclass</div>
+  <h1>Pie Chart Perfection:<br><span>Your Complete Band 7–9 Toolkit</span></h1>
+  <p>Master every sentence structure, collocation, and vocabulary framework you need to describe pie charts with examiner-approved precision.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Students Coached</div></div>
+    <div class="stat"><div class="stat-num">30</div><div class="stat-label">Power Collocations</div></div>
+    <div class="stat"><div class="stat-num">Band 7+</div><div class="stat-label">Target Score</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h2>📋 What You'll Master Today</h2>
+    <div class="toc-grid">
+      <a href="#intro" class="toc-item"><div class="toc-num">1</div>Introduction Templates</a>
+      <a href="#vocab" class="toc-item"><div class="toc-num">2</div>Key Vocabulary Patterns</a>
+      <a href="#compare" class="toc-item"><div class="toc-num">3</div>Comparison & Grouping</a>
+      <a href="#sequence" class="toc-item"><div class="toc-num">4</div>Time & Sequence Expressions</a>
+      <a href="#data" class="toc-item"><div class="toc-num">5</div>Data Integration Techniques</a>
+      <a href="#collocations" class="toc-item"><div class="toc-num">★</div>Master Collocation List (30 phrases)</a>
+    </div>
+  </div>
+
+  <!-- PIE CHART VISUAL GUIDE -->
+  <div class="pie-visual">
+    <h3>🎯 Sample Pie Chart — Understand the Anatomy</h3>
+    <div class="pie-diagram">
+      <div class="pie-svg-container">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <!-- Transport spending pie chart -->
+          <!-- Car: 38% → 136.8° from 0 -->
+          <path d="M100,100 L100,10 A90,90 0 0,1 188.8,74.5 Z" fill="#4F46E5"/>
+          <!-- Public Transport: 27% → 97.2° -->
+          <path d="M100,100 L188.8,74.5 A90,90 0 0,1 148.1,186.4 Z" fill="#7C3AED"/>
+          <!-- Cycling: 20% → 72° -->
+          <path d="M100,100 L148.1,186.4 A90,90 0 0,1 21.7,153.9 Z" fill="#06B6D4"/>
+          <!-- Walking: 15% → 54° -->
+          <path d="M100,100 L21.7,153.9 A90,90 0 0,1 100,10 Z" fill="#10B981"/>
+          <!-- Center white circle for donut look -->
+          <circle cx="100" cy="100" r="35" fill="white"/>
+          <text x="100" y="94" text-anchor="middle" font-family="Inter" font-size="9" fill="#374151" font-weight="700">Transport</text>
+          <text x="100" y="108" text-anchor="middle" font-family="Inter" font-size="9" fill="#374151" font-weight="700">Spending</text>
+        </svg>
+      </div>
+      <div style="flex:1; min-width:180px;">
+        <div class="pie-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#4F46E5"></div><span class="legend-label">Private Car</span><span class="legend-val">38%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7C3AED"></div><span class="legend-label">Public Transport</span><span class="legend-val">27%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#06B6D4"></div><span class="legend-label">Cycling</span><span class="legend-label"></span><span class="legend-val">20%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#10B981"></div><span class="legend-label">Walking</span><span class="legend-val">15%</span></div>
+        </div>
+        <div class="annotation-labels">
+          <div class="ann-item"><strong>Describe First</strong> Largest segment (38%)</div>
+          <div class="ann-item"><strong>Then Group</strong> 2nd & 3rd (27%, 20%)</div>
+          <div class="ann-item"><strong>Contrast</strong> Smallest vs largest</div>
+          <div class="ann-item"><strong>Combined Total</strong> 38%+27% = 65%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: INTRODUCTION TEMPLATES -->
+  <div class="section s1" id="intro">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <div>
+        <h2>Section 1: Introduction Templates</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Paraphrase the question + write a powerful overview. Two paragraphs, zero hesitation.</p>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      🎯 <strong>The examiner reads your introduction first.</strong> It must do TWO jobs: (1) paraphrase the question without copying it, and (2) state the main overall trend or dominant feature. For pie charts, this means identifying the largest/smallest segments and any notable groupings.
+    </div>
+
+    <div class="template-box">
+      <span class="label">🔧 Introduction Template — Plug & Play</span>
+      The pie chart <span class="blank">illustrates / depicts / shows</span> the <span class="blank">proportion / distribution / breakdown</span> of <span class="blank">[topic]</span> in <span class="blank">[place/time]</span>.<br>
+      Overall, it is clear that <span class="blank">[largest category]</span> <span class="blank">accounted for / represented / made up</span> the <span class="blank">most significant share</span>, while <span class="blank">[smallest category]</span> constituted the <span class="blank">smallest proportion</span>.
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-6">Band 6 — Safe Start</span>
+      <div class="sentence-text">
+        The pie chart <span class="hl-verb">shows</span> the <span class="hl-collocation">distribution of</span> spending on <span class="hl-subject">different modes of transport</span> in a city. <span class="hl-connector">Overall</span>, <span class="hl-subject">private car use</span> <span class="hl-verb">accounted for</span> <span class="hl-proportion">the largest proportion</span>, <span class="hl-connector">while</span> <span class="hl-subject">walking</span> represented <span class="hl-proportion">the smallest share</span>.
+      </div>
+      <div class="grammar-key">
+        <span class="key-item"><span class="key-dot" style="background:#2563EB"></span> Subject</span>
+        <span class="key-item"><span class="key-dot" style="background:#059669"></span> Verb</span>
+        <span class="key-item"><span class="key-dot" style="background:#7C3AED"></span> Collocation</span>
+        <span class="key-item"><span class="key-dot" style="background:#D97706"></span> Connector</span>
+        <span class="key-item"><span class="key-dot" style="background:#DB2777"></span> Proportion Language</span>
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Strong Paraphrase</span>
+      <div class="sentence-text">
+        The pie chart <span class="hl-collocation">illustrates the breakdown of</span> <span class="hl-subject">expenditure on various transport methods</span> within <span class="hl-subject">a single urban area</span>. <span class="hl-connector">Overall</span>, it is <span class="hl-verb">evident</span> that <span class="hl-subject">private vehicles</span> <span class="hl-verb">dominated</span> the chart, <span class="hl-collocation">accounting for well over a third</span> of total spending.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Sophisticated Overview</span>
+      <div class="sentence-text">
+        <span class="hl-subject">The chart</span> <span class="hl-collocation">provides a visual breakdown of</span> how transport expenditure was distributed across <span class="hl-proportion">four distinct categories</span> in the city. <span class="hl-connector">Notably</span>, <span class="hl-proportion">just two categories — private cars and public transport — collectively accounted for</span> <span class="hl-data">nearly two-thirds</span> of all spending, <span class="hl-connector">while</span> the remaining proportion was more evenly divided.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-9">Band 9 — Examiner-Level Precision</span>
+      <div class="sentence-text">
+        <span class="hl-connector">As illustrated in</span> the pie chart, <span class="hl-subject">transport expenditure</span> was <span class="hl-collocation">heavily skewed towards</span> <span class="hl-subject">motorised travel</span>, with <span class="hl-subject">private car use</span> and <span class="hl-subject">public transport</span> <span class="hl-verb">comprising</span> <span class="hl-data">approximately 65%</span> of the total budget. <span class="hl-connector">Conversely</span>, <span class="hl-subject">non-motorised modes</span> — namely walking and cycling — <span class="hl-verb">constituted</span> <span class="hl-proportion">the remaining minority share</span>.
+      </div>
+    </div>
+
+    <div class="dont-box">
+      <div class="dont-header">🚫 Don't Say These — Common Introduction Mistakes</div>
+      <div class="dont-row"><span class="wrong">The pie chart is about transport.</span> <span class="arrow">→</span> <span class="right">The pie chart illustrates the distribution of transport expenditure.</span></div>
+      <div class="dont-row"><span class="wrong">We can see that cars are the most.</span> <span class="arrow">→</span> <span class="right">Private cars accounted for the largest proportion.</span></div>
+      <div class="dont-row"><span class="wrong">This pie chart shows the proportions of...</span> <span class="arrow">→</span> Never copy the question wording — always paraphrase!</div>
+      <div class="dont-row"><span class="wrong">The pie chart gives information about...</span> <span class="arrow">→</span> <span class="right">Too vague — name the specific topic immediately.</span></div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Two Pie Charts (Comparative Introduction)</span>
+      <div class="sentence-text">
+        The two pie charts <span class="hl-collocation">compare the distribution of</span> <span class="hl-subject">household income allocation</span> in <span class="hl-data">1990 and 2020</span>. <span class="hl-connector">Overall</span>, <span class="hl-subject">housing costs</span> <span class="hl-verb">remained</span> the <span class="hl-proportion">dominant expenditure</span> in both years, though the <span class="hl-proportion">proportion attributed to</span> <span class="hl-subject">leisure and entertainment</span> <span class="hl-verb">increased</span> markedly over the period.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: KEY VOCABULARY PATTERNS -->
+  <div class="section s2" id="vocab">
+    <div class="section-header">
+      <div class="section-icon">📚</div>
+      <div>
+        <h2>Section 2: Key Vocabulary Patterns</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Proportion language, fraction expressions, and description verbs that examiners love.</p>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      🎯 <strong>Pie charts are ALL about proportions.</strong> Unlike line graphs (which use trend language), pie charts require precision with fractions, percentages, and relative size. The student who knows five ways to say "the biggest slice" will always outscore the one who repeats "the most."
+    </div>
+
+    <div class="secret-weapon">
+      <div class="sw-label">💡 Secret Weapon for Pie Charts</div>
+      Master the <strong>Proportion Pyramid</strong>: start with the largest category, group similar-sized ones together, and always end with a contrast. This structure makes your writing feel organised and analytical — exactly what Band 7+ requires.
+    </div>
+
+    <div class="template-box">
+      <span class="label">🔧 Proportion Language Framework</span>
+      [Subject] <span class="blank">accounted for / represented / comprised / constituted / made up</span> + [percentage / fraction / descriptor]<br><br>
+      [Percentage] <span class="blank">of the total / of all respondents / of the budget</span> was <span class="blank">allocated to / attributed to / spent on</span> + [category]
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-6">Band 6 — Basic Proportion</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private cars</span> <span class="hl-verb">made up</span> <span class="hl-data">38%</span> of the total transport spending, making it <span class="hl-collocation">the largest category</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Precise + Varied</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Expenditure on private cars</span> <span class="hl-verb">accounted for</span> <span class="hl-collocation">the lion's share</span> of the budget at <span class="hl-data">38%</span>, <span class="hl-connector">followed closely by</span> <span class="hl-subject">public transport</span>, which <span class="hl-verb">represented</span> <span class="hl-data">just over a quarter</span> of the total.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Fraction Mastery</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private vehicles</span> <span class="hl-verb">dominated</span> transport spending, <span class="hl-collocation">comprising approximately two-fifths</span> of all expenditure, <span class="hl-connector">whereas</span> <span class="hl-subject">cycling and walking combined</span> <span class="hl-verb">constituted</span> <span class="hl-collocation">little more than a third</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Emphasis with "Only"</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Walking</span>, the <span class="hl-proportion">least popular mode</span>, <span class="hl-verb">accounted for</span> <span class="hl-collocation">a mere 15%</span> of spending — <span class="hl-collocation">only a fraction of</span> the amount <span class="hl-verb">allocated to</span> <span class="hl-subject">private car use</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Passive + Proportion</span>
+      <div class="sentence-text">
+        <span class="hl-data">Approximately 65%</span> of the total budget <span class="hl-verb">was directed towards</span> <span class="hl-subject">motorised transport</span>, with the remaining <span class="hl-data">35%</span> being <span class="hl-verb">divided between</span> <span class="hl-subject">non-motorised alternatives</span> such as cycling and walking.
+      </div>
+    </div>
+
+    <div class="dont-box">
+      <div class="dont-header">🚫 Proportion Language Pitfalls</div>
+      <div class="dont-row"><span class="wrong">Cars were the biggest piece of the pie.</span> <span class="arrow">→</span> <span class="right">Private cars accounted for the largest proportion.</span></div>
+      <div class="dont-row"><span class="wrong">38% was a very large number.</span> <span class="arrow">→</span> <span class="right">At 38%, private cars commanded the largest share.</span></div>
+      <div class="dont-row"><span class="wrong">Walking was 15%, which is small.</span> <span class="arrow">→</span> <span class="right">Walking constituted a relatively modest 15% of expenditure.</span></div>
+      <div class="dont-row"><span class="wrong">Cars increased.</span> <span class="arrow">→</span> ❌ WRONG TENSE — pie charts are STATIC. Never use increase/decrease unless comparing TWO charts.</div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">⚡ Fraction Quick-Reference</div>
+      <strong>100%</strong> = the entirety / the whole &nbsp;|&nbsp; <strong>~75%</strong> = approximately three-quarters &nbsp;|&nbsp; <strong>~66%</strong> = roughly two-thirds &nbsp;|&nbsp; <strong>~50%</strong> = around half &nbsp;|&nbsp; <strong>~33%</strong> = approximately one-third &nbsp;|&nbsp; <strong>~25%</strong> = just over a quarter &nbsp;|&nbsp; <strong>~10%</strong> = a mere one-tenth
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-9">Band 9 — Multi-Category in One Sentence</span>
+      <div class="sentence-text">
+        <span class="hl-connector">While</span> <span class="hl-subject">private cars</span> and <span class="hl-subject">public transport</span> together <span class="hl-verb">accounted for</span> <span class="hl-collocation">nearly two-thirds of all expenditure</span> at <span class="hl-data">65%</span>, the remaining budget was <span class="hl-verb">shared</span> almost evenly between <span class="hl-subject">cycling</span> (<span class="hl-data">20%</span>) and <span class="hl-subject">walking</span> (<span class="hl-data">15%</span>), each <span class="hl-verb">representing</span> <span class="hl-proportion">a comparatively minor proportion</span>.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3: COMPARISON & GROUPING -->
+  <div class="section s3" id="compare">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <div>
+        <h2>Section 3: Comparison & Grouping Structures</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Analyse data analytically by grouping, contrasting, and ranking — the hallmarks of Band 7+.</p>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      🎯 <strong>Grouping is what separates Band 6 from Band 7+.</strong> Instead of listing every single figure one by one (boring), you group similar segments together and draw comparisons. This shows the examiner that you can think analytically, not just describe.
+    </div>
+
+    <div class="template-box">
+      <span class="label">🔧 Comparison & Grouping Templates</span>
+      [Category A] <span class="blank">was significantly larger than / dwarfed / was more than double</span> [Category B].<br><br>
+      [Category A] and [Category B] <span class="blank">together accounted for / jointly represented / combined to make up</span> [X%].<br><br>
+      <span class="blank">In contrast / By comparison / Conversely</span>, [Category C] <span class="blank">constituted a far smaller proportion</span> at just [X%].
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-6">Band 6 — Basic Contrast</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private cars</span> (<span class="hl-data">38%</span>) were <span class="hl-comparison">much larger than</span> <span class="hl-subject">walking</span> (<span class="hl-data">15%</span>), which was <span class="hl-proportion">the smallest category</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Analytical Grouping</span>
+      <div class="sentence-text">
+        <span class="hl-connector">When grouped together</span>, <span class="hl-subject">motorised transport options</span> — <span class="hl-subject">private cars and public transport</span> — <span class="hl-verb">accounted for</span> <span class="hl-data">65%</span> of spending, <span class="hl-collocation">considerably outweighing</span> the <span class="hl-proportion">combined share</span> of <span class="hl-subject">non-motorised alternatives</span> at just <span class="hl-data">35%</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Superlative Ranking</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private car use</span> <span class="hl-verb">ranked highest</span>, <span class="hl-collocation">claiming the largest slice</span> at <span class="hl-data">38%</span>, <span class="hl-connector">followed by</span> <span class="hl-subject">public transport</span> (<span class="hl-data">27%</span>), <span class="hl-subject">cycling</span> (<span class="hl-data">20%</span>), and <span class="hl-subject">walking</span> (<span class="hl-data">15%</span>) <span class="hl-proportion">in descending order</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Proportional Contrast</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private car expenditure</span>, at <span class="hl-data">38%</span>, was <span class="hl-collocation">more than double</span> that of <span class="hl-subject">cycling</span> (<span class="hl-data">20%</span>) and <span class="hl-collocation">nearly two and a half times</span> the proportion <span class="hl-verb">attributed to</span> <span class="hl-subject">walking</span> — a <span class="hl-comparison">stark contrast</span> that highlights the <span class="hl-collocation">overwhelming preference for</span> private motorised travel.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Similar Categories</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Cycling</span> and <span class="hl-subject">walking</span> <span class="hl-verb">showed</span> <span class="hl-collocation">comparable proportions</span>, at <span class="hl-data">20%</span> and <span class="hl-data">15%</span> respectively, suggesting that <span class="hl-subject">non-motorised travel</span>, while a <span class="hl-proportion">minority overall</span>, was relatively <span class="hl-comparison">evenly distributed</span> between these two options.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-9">Band 9 — Complex Comparative Analysis</span>
+      <div class="sentence-text">
+        <span class="hl-connector">Although</span> <span class="hl-subject">public transport</span> and <span class="hl-subject">cycling</span> <span class="hl-verb">differed</span> by only <span class="hl-data">7 percentage points</span> (<span class="hl-data">27%</span> versus <span class="hl-data">20%</span>), the <span class="hl-collocation">disparity between the two extreme categories</span> — <span class="hl-subject">private cars</span> and <span class="hl-subject">walking</span> — was <span class="hl-comparison">considerably wider</span> at <span class="hl-data">23 percentage points</span>, <span class="hl-collocation">underscoring the dominance of</span> car-based transport in this city.
+      </div>
+    </div>
+
+    <div class="dont-box">
+      <div class="dont-header">🚫 Comparison Errors to Avoid</div>
+      <div class="dont-row"><span class="wrong">Cars are more bigger than walking.</span> <span class="arrow">→</span> <span class="right">Private car spending was significantly greater than the proportion attributed to walking.</span></div>
+      <div class="dont-row"><span class="wrong">Cars have 38% and walking has 15%, which is a difference of 23%.</span> <span class="arrow">→</span> <span class="right">Don't just calculate — interpret! Say what the difference means.</span></div>
+      <div class="dont-row"><span class="wrong">All the categories are different.</span> <span class="arrow">→</span> Too vague — specify how and by how much they differ.</div>
+    </div>
+
+    <div class="level-up-box">
+      <h4>🚀 Level Up: Grouping Strategy for High Scores</h4>
+      <p style="font-size:13.5px; color: var(--gray-700);">Instead of describing each slice one-by-one (Band 5 approach), <strong>create logical groups</strong>. For the transport example:</p>
+      <br>
+      <p style="font-size:13.5px; color: var(--gray-700);">✅ <strong>Group 1:</strong> Motorised transport (Cars 38% + Public Transport 27% = 65%)</p>
+      <p style="font-size:13.5px; color: var(--gray-700);">✅ <strong>Group 2:</strong> Non-motorised transport (Cycling 20% + Walking 15% = 35%)</p>
+      <br>
+      <p style="font-size:13.5px; color: var(--gray-700);">This grouping strategy instantly makes your response feel analytical rather than descriptive — and that's exactly what Band 7+ examiners reward.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4: TIME / SEQUENCE EXPRESSIONS -->
+  <div class="section s4" id="sequence">
+    <div class="section-header">
+      <div class="section-icon">🕐</div>
+      <div>
+        <h2>Section 4: Time & Sequence Expressions</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Tense awareness and transitional flow — the structural glue of high-scoring responses.</p>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      🎯 <strong>Tense is the #1 mistake in pie chart responses.</strong> A single pie chart = simple past OR present tense (consistent!). Two pie charts comparing time periods = past for the earlier year, past for the later year, but with change language between them. Never mix tenses randomly.
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">⚡ Pie Chart Tense Rules</div>
+      <strong>Single Pie Chart (no date):</strong> Use simple present — "Private cars account for..." <br>
+      <strong>Single Pie Chart (past date, e.g. 2010):</strong> Use simple past — "Private cars accounted for..." <br>
+      <strong>Two Pie Charts (comparing two years):</strong> Past for each year, change language between — "While cars accounted for 38% in 2000, this figure rose to 45% by 2020."
+    </div>
+
+    <div class="template-box">
+      <span class="label">🔧 Sequence & Transition Templates</span>
+      <strong>Ordering:</strong> <span class="blank">first and foremost / most notably / in particular / above all</span> + [main point]<br><br>
+      <strong>Addition:</strong> <span class="blank">furthermore / additionally / in addition to this / equally noteworthy is</span> + [extra point]<br><br>
+      <strong>Contrast:</strong> <span class="blank">in contrast / conversely / by comparison / on the other hand / whereas / while</span><br><br>
+      <strong>Change between two charts:</strong> <span class="blank">over the [X]-year period / between [year] and [year] / by [later year]</span>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-6">Band 6 — Simple Ordering</span>
+      <div class="sentence-text">
+        <span class="hl-connector">First</span>, <span class="hl-subject">private cars</span> <span class="hl-verb">accounted for</span> <span class="hl-data">38%</span> of spending. <span class="hl-connector">Then</span>, <span class="hl-subject">public transport</span> <span class="hl-verb">represented</span> <span class="hl-data">27%</span>. <span class="hl-connector">Finally</span>, <span class="hl-subject">cycling</span> and <span class="hl-subject">walking</span> <span class="hl-verb">made up</span> the rest.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Smooth Transitions</span>
+      <div class="sentence-text">
+        <span class="hl-connector">Most notably</span>, <span class="hl-subject">private car use</span> <span class="hl-verb">dominated</span> at <span class="hl-data">38%</span>. <span class="hl-connector">In second place</span>, <span class="hl-subject">public transport</span> <span class="hl-verb">followed</span> at <span class="hl-data">27%</span>, <span class="hl-connector">after which</span> the proportions <span class="hl-verb">declined</span> substantially, with <span class="hl-subject">cycling</span> and <span class="hl-subject">walking</span> <span class="hl-collocation">trailing at</span> <span class="hl-data">20%</span> and <span class="hl-data">15%</span> respectively.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Two Pie Charts (Temporal Comparison)</span>
+      <div class="sentence-text">
+        <span class="hl-connector">In 1990</span>, <span class="hl-subject">housing costs</span> <span class="hl-verb">represented</span> <span class="hl-data">40%</span> of household income; however, <span class="hl-connector">by 2020</span>, this proportion <span class="hl-verb">had risen to</span> <span class="hl-data">52%</span>, <span class="hl-collocation">making it an even more dominant category</span> <span class="hl-connector">over the thirty-year period</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Precise Temporal Flow</span>
+      <div class="sentence-text">
+        <span class="hl-connector">Between 1990 and 2020</span>, the <span class="hl-collocation">most striking shift</span> was <span class="hl-verb">observed in</span> <span class="hl-subject">leisure spending</span>, which <span class="hl-verb">expanded</span> from <span class="hl-proportion">a negligible share</span> of <span class="hl-data">8%</span> to <span class="hl-data">18%</span> — <span class="hl-collocation">more than double its original proportion</span> — <span class="hl-connector">over the course of</span> the period.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Contrast with "Whereas"</span>
+      <div class="sentence-text">
+        <span class="hl-connector">Whereas</span> <span class="hl-subject">food and essentials</span> <span class="hl-verb">comprised</span> <span class="hl-data">30%</span> of expenditure <span class="hl-connector">in 1990</span>, this figure <span class="hl-verb">had contracted</span> to <span class="hl-data">22%</span> <span class="hl-connector">by 2020</span>, <span class="hl-collocation">reflecting a shift in</span> consumer priorities <span class="hl-connector">over the decades</span>.
+      </div>
+    </div>
+
+    <div class="dont-box">
+      <div class="dont-header">🚫 Tense & Sequencing Mistakes</div>
+      <div class="dont-row"><span class="wrong">The pie chart shows that cars increased to 38%.</span> <span class="arrow">→</span> ❌ A single pie chart has NO change — remove "increased"!</div>
+      <div class="dont-row"><span class="wrong">In 1990, cars account for 40%.</span> <span class="arrow">→</span> <span class="right">In 1990, cars accounted for 40%.</span> (past date = past tense)</div>
+      <div class="dont-row"><span class="wrong">First... Second... Third... Fourth...</span> <span class="arrow">→</span> ❌ Listing without grouping = Band 5. Use contrast and grouping language instead!</div>
+    </div>
+
+    <div class="level-up-box">
+      <h4>🚀 Level Up: Sequencing Within a Paragraph</h4>
+      <p style="font-size:13.5px; color: var(--gray-700); margin-bottom:10px;"><strong>Band 6 Approach</strong> (avoid this): "First, cars were 38%. Second, public transport was 27%. Third, cycling was 20%. Fourth, walking was 15%."</p>
+      <p style="font-size:13.5px; color: var(--gray-700);"><strong>Band 8 Approach</strong> (do this): "Private cars commanded the largest share at 38%, with public transport in second place at 27%. The remaining 35% was split almost evenly between cycling and walking, at 20% and 15% respectively." — Notice: this covers all four segments in just TWO sentences using natural flow.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: DATA INTEGRATION TECHNIQUES -->
+  <div class="section s5" id="data">
+    <div class="section-header">
+      <div class="section-icon">🔢</div>
+      <div>
+        <h2>Section 5: Data Integration Techniques</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Place specific numbers smoothly — not as a list, but as evidence woven into analysis.</p>
+      </div>
+    </div>
+
+    <div class="section-intro">
+      🎯 <strong>Numbers are evidence, not content.</strong> The most common Band 5–6 mistake is writing responses that are just a list of percentages. High-scoring writers embed data as supporting evidence for a point they're making — like a lawyer using facts to prove a case, not just reading them aloud.
+    </div>
+
+    <div class="template-box">
+      <span class="label">🔧 Data Embedding Frameworks</span>
+      [Analytical Point] + [, at X%,] + [further explanation]<br>
+      e.g. Private cars dominated transport spending<span class="blank">, at 38%,</span> making them the single largest category.<br><br>
+      [X% of / Approximately X% of] + [total] + [verb] + [subject]<br>
+      e.g. <span class="blank">Approximately 38% of</span> total spending was directed towards private car use.<br><br>
+      [Subject] + [verb] + [proportion phrase] + [(X%)]<br>
+      e.g. Public transport accounted for <span class="blank">just over a quarter (27%)</span>.
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-6">Band 6 — Data Listed</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Cars</span> <span class="hl-verb">were</span> <span class="hl-data">38%</span> and <span class="hl-subject">public transport</span> <span class="hl-verb">was</span> <span class="hl-data">27%</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Data Embedded</span>
+      <div class="sentence-text">
+        <span class="hl-subject">Private car use</span> <span class="hl-verb">accounted for</span> <span class="hl-proportion">the largest proportion</span>, at <span class="hl-data">38%</span>, <span class="hl-connector">while</span> <span class="hl-subject">public transport</span> represented <span class="hl-collocation">just over a quarter</span> of all spending at <span class="hl-data">27%</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-7">Band 7 — Parenthetical Data</span>
+      <div class="sentence-text">
+        <span class="hl-subject">The two motorised categories</span> <span class="hl-collocation">jointly commanded</span> <span class="hl-proportion">nearly two-thirds</span> of the total budget, with <span class="hl-subject">private cars</span> (<span class="hl-data">38%</span>) and <span class="hl-subject">public transport</span> (<span class="hl-data">27%</span>) <span class="hl-verb">together accounting for</span> <span class="hl-data">65%</span> of all expenditure.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-8">Band 8 — Data as Evidence of Point</span>
+      <div class="sentence-text">
+        <span class="hl-connector">The dominance of</span> <span class="hl-subject">private vehicles</span> in this city is <span class="hl-verb">clearly reflected</span> in the data: <span class="hl-subject">car travel</span> alone <span class="hl-verb">consumed</span> <span class="hl-data">38%</span> of the transport budget — <span class="hl-collocation">a proportion that exceeds</span> the combined total for <span class="hl-subject">cycling</span> and <span class="hl-subject">walking</span> (<span class="hl-data">35%</span>) <span class="hl-collocation">by a small but notable margin</span>.
+      </div>
+    </div>
+
+    <div class="sentence-card">
+      <span class="band-label band-9">Band 9 — Sophisticated Data Analysis</span>
+      <div class="sentence-text">
+        <span class="hl-connector">What is particularly striking is</span> that <span class="hl-subject">private car use</span>, <span class="hl-collocation">despite representing only one of four categories</span>, <span class="hl-verb">claimed</span> <span class="hl-data">38%</span> of the budget — <span class="hl-collocation">a figure that alone exceeds the combined proportion of</span> <span class="hl-subject">the two least-funded categories</span> (<span class="hl-data">35%</span>) and <span class="hl-collocation">surpasses by 11 percentage points</span> the second-largest category, <span class="hl-subject">public transport</span> (<span class="hl-data">27%</span>).
+      </div>
+    </div>
+
+    <div class="dont-box">
+      <div class="dont-header">🚫 Data Integration Errors</div>
+      <div class="dont-row"><span class="wrong">38% is large. 27% is second. 20% is third. 15% is small.</span> <span class="arrow">→</span> ❌ This is NOT analysis — it's just reading numbers aloud.</div>
+      <div class="dont-row"><span class="wrong">Cars were 38.0% exactly.</span> <span class="arrow">→</span> <span class="right">Use natural approximations: "approximately 38%" or "just under two-fifths".</span></div>
+      <div class="dont-row"><span class="wrong">The percentage of cars is bigger.</span> <span class="arrow">→</span> <span class="right">Private car expenditure represented the dominant share at 38%.</span></div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-header">⚡ Data Placement Rules</div>
+      <strong>DO:</strong> Put the percentage after the subject and verb — "Cars accounted for 38%." (Not "38% was cars.") <br>
+      <strong>DO:</strong> Use parentheses for quick data embedding — "...with cycling (20%) and walking (15%) making up the remainder." <br>
+      <strong>DO:</strong> Round numbers for fraction language — "approximately one-fifth" sounds more sophisticated than "20.3%." <br>
+      <strong>AVOID:</strong> Starting sentences with raw numbers — "38% was allocated to cars" feels mechanical.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MASTER COLLOCATION LIST -->
+  <div class="section s6" id="collocations">
+    <div class="section-header">
+      <div class="section-icon">⭐</div>
+      <div>
+        <h2>Master Collocation List — 30 Examiner-Approved Phrases</h2>
+        <p style="color: var(--gray-600); font-size: 13px; margin-top: 4px;">Memorise these. Use them. Score higher. They are your secret arsenal for pie chart success.</p>
+      </div>
+    </div>
+
+    <div class="master-list">
+      <div class="master-item">
+        <div class="phrase">account for the largest proportion</div>
+        <div class="usage">Use to describe the dominant segment.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">constitute the smallest share</div>
+        <div class="usage">For the least dominant category.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">claim the lion's share</div>
+        <div class="usage">Emphatic way to describe dominance.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">jointly account for</div>
+        <div class="usage">When combining two categories.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">make up approximately</div>
+        <div class="usage">Neutral proportion verb.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">heavily skewed towards</div>
+        <div class="usage">Shows strong imbalance in data.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">represent a negligible proportion</div>
+        <div class="usage">For very small segments (under 5%).</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">account for well over a third</div>
+        <div class="usage">Precise fraction + emphasis.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">in descending order of magnitude</div>
+        <div class="usage">Signals you're ranking the data.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">comprise approximately</div>
+        <div class="usage">Formal synonym for "make up."</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">dominate the chart</div>
+        <div class="usage">Strong verb for largest segment.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">show comparable proportions</div>
+        <div class="usage">When two segments are similar.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">be attributed to</div>
+        <div class="usage">Passive voice for clean data embedding.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">considerably outweigh</div>
+        <div class="usage">Shows large gap between segments.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">be more than double</div>
+        <div class="usage">Precise mathematical comparison.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">provide a breakdown of</div>
+        <div class="usage">Great for introduction sentences.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">trail at / rank last at</div>
+        <div class="usage">For the smallest segment.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">a mere X%</div>
+        <div class="usage">Emphasises smallness of proportion.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">collectively represent</div>
+        <div class="usage">When grouping multiple segments.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">overwhelming preference for</div>
+        <div class="usage">Interpretive language for analysis.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">the most striking disparity</div>
+        <div class="usage">For two-chart comparisons.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">remain the dominant category</div>
+        <div class="usage">When comparing two time periods.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">shrink / expand considerably</div>
+        <div class="usage">Change language for two-chart comparison.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">by a substantial margin</div>
+        <div class="usage">Emphasise the gap between categories.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">distributed across X categories</div>
+        <div class="usage">Useful in introduction or overview.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">followed closely by</div>
+        <div class="usage">Second category language — smooth flow.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">more than double its original proportion</div>
+        <div class="usage">Two-chart comparison — dramatic change.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">the remaining proportion</div>
+        <div class="usage">Refers to everything not yet mentioned.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">at approximately X%, respectively</div>
+        <div class="usage">Presenting two figures cleanly.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+      <div class="master-item">
+        <div class="phrase">reflect a clear preference for</div>
+        <div class="usage">Analytical interpretation of data.</div>
+        <div class="power"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FINAL CHECKLIST -->
+  <div class="checklist">
+    <h2>✅ Pre-Submission Checklist — Band 7+ Guarantee</h2>
+    <p style="font-size:13px; color: var(--gray-600); margin-bottom:20px;">Before you finalise your pie chart response, tick every box below. If you can check all 12, you're writing at Band 7 minimum.</p>
+    <div class="check-item"><div class="check-box"></div>Introduction paraphrases the question WITHOUT copying exact wording.</div>
+    <div class="check-item"><div class="check-box"></div>Overview paragraph identifies the <strong>dominant category</strong> and one key contrast.</div>
+    <div class="check-item"><div class="check-box"></div>Tense is <strong>consistent</strong> and appropriate (past for past dates, present for undated charts).</div>
+    <div class="check-item"><div class="check-box"></div>I used <strong>at least 3 different proportion verbs</strong> (e.g., accounted for, comprised, represented).</div>
+    <div class="check-item"><div class="check-box"></div>I <strong>grouped similar segments</strong> together rather than listing all slices one by one.</div>
+    <div class="check-item"><div class="check-box"></div>Every percentage figure is <strong>embedded into a sentence</strong>, not listed as a bare number.</div>
+    <div class="check-item"><div class="check-box"></div>I used <strong>fraction language</strong> (e.g., "just over a quarter") alongside or instead of raw percentages.</div>
+    <div class="check-item"><div class="check-box"></div>I included <strong>contrast language</strong> (whereas, conversely, in contrast, while).</div>
+    <div class="check-item"><div class="check-box"></div>I used <strong>parenthetical data</strong> at least once: e.g., "cycling (20%) and walking (15%)".</div>
+    <div class="check-item"><div class="check-box"></div>My response does <strong>NOT</strong> include trend words like "increased/decreased" unless comparing two charts.</div>
+    <div class="check-item"><div class="check-box"></div>I used <strong>at least one complex sentence</strong> (compound or subordinate clause).</div>
+    <div class="check-item"><div class="check-box"></div>Response is <strong>between 150–200 words</strong> — concise but complete.</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background: linear-gradient(135deg, #4F46E5, #7C3AED); color:white; padding: 40px; text-align:center;">
+  <div style="font-size:1.2rem; font-weight:800; margin-bottom:10px;">🎉 You Now Have Everything You Need</div>
+  <div style="font-size:14px; opacity:0.9; max-width:500px; margin:0 auto;">
+    Practise one sentence structure per day using the templates above. Within two weeks of consistent practice, Band 7 pie chart responses will feel effortless. You've got this!
+  </div>
+  <div style="margin-top:20px; font-size:12px; opacity:0.6;">IELTS Writing Task 1 Masterclass • Pie Chart Edition</div>
+</div>
+
+</body>
+</html>

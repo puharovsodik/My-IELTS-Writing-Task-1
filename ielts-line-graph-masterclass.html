@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Line Graph Masterclass - Your Secret Weapon to Band 7+</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #3182ce;
+            --success-color: #38a169;
+            --warning-color: #d69e2e;
+            --danger-color: #e53e3e;
+            --bg-light: #f7fafc;
+            --bg-card: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --border-color: #e2e8f0;
+            
+            /* Grammar color coding */
+            --subject-color: #4299e1;
+            --verb-color: #48bb78;
+            --object-color: #ed8936;
+            --time-color: #9f7aea;
+            --modifier-color: #ec4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0 50 Q 25 25, 50 50 T 100 50" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="2"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 5px solid var(--warning-color);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .intro-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, var(--accent-color), #805ad5);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin-right: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            color: var(--primary-color);
+            flex-grow: 1;
+        }
+
+        .band-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .band-6 {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        .band-7 {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .band-8 {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .model-sentence {
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .model-sentence:hover {
+            transform: translateX(5px);
+        }
+
+        .sentence-example {
+            font-size: 1.1em;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .subject { color: var(--subject-color); font-weight: 600; }
+        .verb { color: var(--verb-color); font-weight: 600; }
+        .object { color: var(--object-color); font-weight: 600; }
+        .time { color: var(--time-color); font-weight: 600; }
+        .modifier { color: var(--modifier-color); font-weight: 600; }
+
+        .breakdown {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .breakdown-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .breakdown-title::before {
+            content: '💡';
+            margin-right: 8px;
+        }
+
+        .color-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+            border-left: 5px solid var(--danger-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .warning-box h4 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-box h4::before {
+            content: '🚫';
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .template-box {
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            border: 2px dashed var(--success-color);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .template-box strong {
+            color: var(--success-color);
+            font-weight: 700;
+        }
+
+        .collocation-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .collocation-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .collocation-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .collocation-phrase {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .collocation-example {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-left: 5px solid #6366f1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .tip-box h4 {
+            color: #4338ca;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-box h4::before {
+            content: '🎯';
+            margin-right: 8px;
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .progress-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background: var(--border-color);
+        }
+
+        .progress-step:last-child::after {
+            display: none;
+        }
+
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+        }
+
+        .visual-diagram {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .visual-diagram svg {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        .footer-motivation {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            .hero { padding: 40px 20px; }
+            .content { padding: 30px 20px; }
+            .section-title { font-size: 1.5em; }
+            .collocation-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>📈 Line Graph Masterclass</h1>
+                <p class="hero-subtitle">Your Complete Toolkit for IELTS Writing Task 1 Excellence</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro-box">
+                <h2>🎓 Welcome to Your Band 7+ Journey!</h2>
+                <p>You're about to discover the exact sentence structures and vocabulary frameworks that IELTS examiners reward with high scores. This isn't just theory—these are battle-tested patterns used by 500+ students who achieved Band 7+. By the end of this guide, you'll have 15+ plug-and-play structures at your fingertips, ready to use with confidence in any line graph question.</p>
+                <p style="margin-top: 15px;"><strong>Your Mission:</strong> Master these patterns through repetition, not memorization. Practice each structure until it feels natural, and watch your Task 1 scores soar!</p>
+            </div>
+
+            <div class="color-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--subject-color);"></div>
+                    <span><strong>Subject</strong> (who/what)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--verb-color);"></div>
+                    <span><strong>Verb</strong> (action/state)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--object-color);"></div>
+                    <span><strong>Object/Data</strong> (numbers/results)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--time-color);"></div>
+                    <span><strong>Time Expression</strong></span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: var(--modifier-color);"></div>
+                    <span><strong>Modifier</strong> (adverbs/adjectives)</span>
+                </div>
+            </div>
+
+            <!-- SECTION 1: INTRODUCTION TEMPLATES -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">Introduction Templates</h2>
+                </div>
+
+                <p style="margin-bottom: 20px;">Your introduction has two jobs: <strong>(1) Paraphrase the question</strong> and <strong>(2) Present an overview</strong>. This is your secret weapon—nail these two sentences and you're already scoring points!</p>
+
+                <h3 style="color: var(--accent-color); margin: 25px 0 15px;">Paraphrasing the Question <span class="band-indicator band-6">Band 6+</span></h3>
+
+                <div class="template-box">
+                    <strong>[The line graph]</strong> illustrates / depicts / compares <strong>[the changes/trends in...]</strong> over <strong>[time period]</strong>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">The line graph</span> <span class="verb">illustrates</span> <span class="object">the changes in smartphone ownership rates among four age groups</span> <span class="time">between 2010 and 2020</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Changes "shows" → "illustrates" ✓ Paraphrases question vocabulary ✓ Identifies what the graph measures ✓ Specifies the time frame clearly
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">The graph</span> <span class="verb">compares</span> <span class="object">the consumption of three different types of meat in a European country</span> <span class="time">over a 25-year period from 1990 to 2015</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Uses "compares" for multiple lines ✓ Specifies "three different types" (shows attention to detail) ✓ "25-year period from X to Y" is more sophisticated than just "between X and Y"
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">The provided line chart</span> <span class="verb">depicts</span> <span class="object">fluctuations in international tourist arrivals to three Southeast Asian nations</span> <span class="time">during the decade spanning 2005 to 2015</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "Fluctuations" shows advanced vocabulary ✓ "decade spanning" is more elegant than "10 years between" ✓ Demonstrates range of expression
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Don't Say...</h4>
+                    ❌ "The graph shows about smartphone ownership..." (too vague—specify WHAT about it)<br>
+                    ❌ "This graph gives information..." (too generic and robotic)<br>
+                    ❌ "From the graph we can see..." (never use "we" in Task 1)
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Overview Statements <span class="band-indicator band-7">Band 7+</span></h3>
+
+                <p style="margin-bottom: 20px;">Your overview is THE MOST IMPORTANT sentence in Task 1. It must identify the key features—usually the overall trends or most significant changes. Never include specific data here!</p>
+
+                <div class="template-box">
+                    <strong>Overall,</strong> it is clear that <strong>[main trend 1]</strong>, while <strong>[contrasting trend 2]</strong>.<br><br>
+                    <strong>At first glance,</strong> it is evident that <strong>[most noticeable pattern]</strong>, with <strong>[secondary observation]</strong>.
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">Overall</span>, <span class="subject">smartphone ownership</span> <span class="verb">experienced</span> <span class="object">an upward trend across all age groups</span>, <span class="modifier">while</span> <span class="subject">the younger demographic</span> <span class="verb">showed</span> <span class="object">the most dramatic increase</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Identifies main trend (all groups increased) ✓ Highlights most significant feature (younger group) ✓ Uses "while" to show contrast ✓ NO specific numbers (perfect for overview!)
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">At first glance</span>, it is <span class="modifier">evident</span> that <span class="subject">chicken consumption</span> <span class="verb">rose</span> <span class="modifier">significantly</span> <span class="time">throughout the period</span>, <span class="modifier">whereas</span> <span class="subject">beef and lamb</span> <span class="verb">declined</span> <span class="modifier">steadily</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "At first glance, it is evident" is sophisticated ✓ Groups two similar trends (beef and lamb) ✓ Uses "whereas" for clear contrast ✓ Adverbs "significantly/steadily" add precision without data
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">Generally speaking</span>, <span class="subject">all three countries</span> <span class="verb">witnessed</span> <span class="object">growth in tourist numbers</span>, <span class="modifier">with</span> <span class="subject">Thailand</span> <span class="verb">maintaining</span> <span class="object">its position as the most popular destination</span> <span class="time">throughout the decade</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        "Generally speaking" = sophisticated opener ✓ "witnessed growth" = strong collocation ✓ "maintaining its position" shows stability (another trend type) ✓ Comparative superlative "most popular"
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Pro Tip: The Overview Formula</h4>
+                    Always ask: "If I could only tell someone TWO things about this graph, what would they be?" That's your overview! Look for: <strong>(1)</strong> Overall trends (rising/falling/stable), <strong>(2)</strong> Highest/lowest lines, <strong>(3)</strong> Lines that cross over, <strong>(4)</strong> Similar vs. different patterns
+                </div>
+            </div>
+
+            <!-- SECTION 2: KEY DESCRIPTION VOCABULARY -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2 class="section-title">Trend Description Vocabulary</h2>
+                </div>
+
+                <p style="margin-bottom: 20px;">This is your bread and butter! Line graphs are all about describing HOW things change over time. Master these 30 power collocations and you'll never struggle for words again.</p>
+
+                <h3 style="color: var(--accent-color); margin: 25px 0 15px;">📊 Rising Trends (Increases)</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">experience a dramatic surge</div>
+                        <div class="collocation-example">Sales experienced a dramatic surge, rising from 200 to 500 units.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">witness a sharp increase</div>
+                        <div class="collocation-example">The market witnessed a sharp increase in the final quarter.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">climb steadily</div>
+                        <div class="collocation-example">Temperatures climbed steadily throughout the summer months.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">grow exponentially</div>
+                        <div class="collocation-example">User numbers grew exponentially between 2015 and 2018.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">rocket to [figure]</div>
+                        <div class="collocation-example">Prices rocketed to $150 per barrel by December.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">soar dramatically</div>
+                        <div class="collocation-example">Exports soared dramatically, reaching an all-time high.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">Between 2010 and 2015</span>, <span class="subject">the number of electric vehicles sold</span> <span class="verb">experienced a dramatic surge</span>, <span class="verb">climbing</span> <span class="modifier">sharply</span> <span class="object">from approximately 50,000 to over 500,000 units</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-7">Band 7+</span> Combines two rising verbs ("experienced a surge" + "climbing") ✓ Adverb "sharply" adds intensity ✓ "approximately" and "over" show data precision ✓ Time phrase at the start = clear organization
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">📉 Falling Trends (Decreases)</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">decline sharply/steadily</div>
+                        <div class="collocation-example">Coal consumption declined sharply after 2010.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">plummet to [figure]</div>
+                        <div class="collocation-example">The figure plummeted to just 15% by 2020.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">drop significantly</div>
+                        <div class="collocation-example">Attendance levels dropped significantly over the winter.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">fall considerably</div>
+                        <div class="collocation-example">Prices fell considerably during the recession.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">decrease marginally</div>
+                        <div class="collocation-example">The rate decreased marginally, by approximately 2%.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">show a downward trajectory</div>
+                        <div class="collocation-example">Both indicators showed a downward trajectory.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">From 2008 onwards</span>, <span class="subject">newspaper readership</span> <span class="verb">showed a downward trajectory</span>, <span class="verb">plummeting</span> <span class="object">from 8 million to just 3 million readers</span> <span class="time">by the end of the period</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "showed a downward trajectory" = sophisticated phrasing ✓ "plummeting" emphasizes the dramatic fall ✓ "just 3 million" highlights how low it went ✓ Two time phrases (from + by) = excellent structure
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">➡️ Stability & Fluctuation</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">remain stable/constant</div>
+                        <div class="collocation-example">The rate remained relatively stable at around 30%.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">level off at [figure]</div>
+                        <div class="collocation-example">Growth leveled off at approximately 500 thousand.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">plateau at [figure]</div>
+                        <div class="collocation-example">Sales plateaued at 2 million units between 2015 and 2018.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">fluctuate wildly/considerably</div>
+                        <div class="collocation-example">Oil prices fluctuated wildly throughout the decade.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">remain unchanged</div>
+                        <div class="collocation-example">The figure remained virtually unchanged for five years.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">hover around [figure]</div>
+                        <div class="collocation-example">Values hovered around the 50% mark for most of the period.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">During the middle years</span>, <span class="subject">unemployment rates</span> <span class="verb">fluctuated considerably</span>, <span class="verb">hovering around</span> <span class="object">6% to 8%</span> <span class="modifier">before eventually stabilizing</span> <span class="time">in 2019</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Shows complex movement (fluctuation + stabilization) ✓ "hovering around" with a range = precise description ✓ "before eventually" connects two phases beautifully ✓ Time markers organize the narrative
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Don't Say...</h4>
+                    ❌ "The number went up" (too simple—use "rose/increased/climbed")<br>
+                    ❌ "There was a big increase" (avoid "big/small"—use "dramatic/significant/modest/marginal")<br>
+                    ❌ "It went down very quickly" (use "plummeted/dropped sharply/declined steeply")<br>
+                    ❌ "The line went up and down" (use "fluctuated/showed volatility")
+                </div>
+            </div>
+
+            <!-- SECTION 3: COMPARISON & GROUPING -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2 class="section-title">Comparison & Grouping Structures</h2>
+                </div>
+
+                <p style="margin-bottom: 20px;">Line graphs often show multiple lines—your job is to compare them intelligently! Group similar trends together and highlight contrasts. This shows analytical thinking (hello, Band 7+!).</p>
+
+                <h3 style="color: var(--accent-color); margin: 25px 0 15px;">Comparative Structures <span class="band-indicator band-7">Band 7+</span></h3>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">In contrast to</span> <span class="subject">Country A</span>, <span class="modifier">where</span> <span class="subject">emissions</span> <span class="verb">rose</span> <span class="modifier">steadily</span>, <span class="subject">Country B</span> <span class="verb">experienced</span> <span class="object">a notable decline</span> <span class="time">over the same period</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        "In contrast to X, where..." = sophisticated structure ✓ Shows opposite trends directly ✓ "over the same period" reinforces the comparison ✓ Relative clause ("where emissions rose") adds complexity
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">While</span> <span class="subject">the 18-25 age group</span> <span class="verb">saw</span> <span class="object">smartphone ownership rise to 98%</span>, <span class="subject">those aged 65+</span> <span class="verb">recorded</span> <span class="object">a more modest increase to just 45%</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "While X..., Y..." compares directly ✓ "more modest" and "just 45%" emphasize the difference ✓ Parallel structure (both reached X%) makes it elegant
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">France</span> <span class="verb">consistently outperformed</span> <span class="object">Germany</span> <span class="time">throughout the period</span>, <span class="modifier">with</span> <span class="subject">the gap</span> <span class="verb">widening</span> <span class="modifier">particularly</span> <span class="time">after 2015</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        "outperformed" = advanced comparative verb ✓ "the gap widening" analyzes the relationship between lines ✓ "particularly after 2015" shows specific observation ✓ This is analytical, not just descriptive!
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Power Comparatives & Superlatives</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">by far the highest/lowest</div>
+                        <div class="collocation-example">China had by far the highest production figures.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">significantly/considerably higher than</div>
+                        <div class="collocation-example">Profits were significantly higher than the previous year.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">marginally/slightly lower than</div>
+                        <div class="collocation-example">Sales were only marginally lower than projections.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">nearly double/triple the figure</div>
+                        <div class="collocation-example">The 2020 figure was nearly double that of 2010.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">rank first/last in</div>
+                        <div class="collocation-example">Japan ranked first in technology exports.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">exceed [something] by [amount]</div>
+                        <div class="collocation-example">Revenue exceeded costs by $2 million.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">By 2020</span>, <span class="subject">renewable energy consumption</span> <span class="verb">was</span> <span class="object">nearly triple the figure recorded in 2005</span>, <span class="verb">making it</span> <span class="modifier">by far</span> <span class="object">the fastest-growing energy source</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> Mathematical comparison (triple) = precise ✓ "making it" links to a conclusion ✓ Superlative "fastest-growing" + "by far" = strong emphasis ✓ Two clauses connected smoothly
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Grouping Similar Trends</h3>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">Both beef and lamb consumption</span> <span class="verb">followed similar downward trends</span>, <span class="verb">falling</span> <span class="object">by approximately 30% and 35% respectively</span> <span class="time">over the 20-year span</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Groups two similar lines efficiently ✓ "respectively" shows precision (30% for beef, 35% for lamb) ✓ "followed similar downward trends" = analytical phrasing ✓ Saves words while being clear
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">The three Asian markets—Thailand, Malaysia, and Singapore—</span> <span class="verb">demonstrated comparable growth patterns</span>, <span class="modifier">all</span> <span class="verb">reaching</span> <span class="object">peaks around 2018</span> <span class="modifier">before declining marginally</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Dashes to insert examples = sophisticated punctuation ✓ "demonstrated comparable growth patterns" groups them analytically ✓ "all reaching peaks" shows they moved together ✓ Describes the shared pattern once (efficient!)
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Comparison Secret Weapon!</h4>
+                    When you see multiple lines, ask: "Which lines behave similarly?" Group those together in ONE sentence, then use separate sentences for lines that behave differently. This shows you can analyze, not just describe!
+                </div>
+
+                <div class="warning-box">
+                    <h4>Don't Say...</h4>
+                    ❌ "Line A was bigger than Line B" (use "higher/greater/larger")<br>
+                    ❌ "The numbers were different" (HOW different? quantify or qualify it!)<br>
+                    ❌ Describing every single line separately without grouping similar ones<br>
+                    ❌ "More higher than" (never combine "more" with comparative form)
+                </div>
+            </div>
+
+            <!-- SECTION 4: TIME EXPRESSIONS -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2 class="section-title">Time & Sequence Expressions</h2>
+                </div>
+
+                <p style="margin-bottom: 20px;">Line graphs are time-based stories. Master these time expressions and prepositions to organize your response chronologically like a pro. This section alone can push you from Band 6 to Band 7!</p>
+
+                <h3 style="color: var(--accent-color); margin: 25px 0 15px;">Starting Points <span class="band-indicator band-6">Band 6+</span></h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">At the start of the period</div>
+                        <div class="collocation-example">At the start of the period, sales stood at 200 units.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">In [year], / In the beginning,</div>
+                        <div class="collocation-example">In 2005, unemployment was recorded at 5%.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">Initially, / At first,</div>
+                        <div class="collocation-example">Initially, both countries showed similar figures.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">At the outset,</div>
+                        <div class="collocation-example">At the outset, renewable energy accounted for just 5%.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">At the outset of the survey period in 2000</span>, <span class="subject">mobile phone subscriptions</span> <span class="verb">stood at</span> <span class="object">a modest 15 million</span>, <span class="verb">representing</span> <span class="object">only 20% of the population</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        "At the outset" = formal and sophisticated ✓ "stood at" = perfect verb for starting figures ✓ "a modest X" adds judgment ✓ Present participle "representing" adds extra detail smoothly
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Middle Phases & Transitions <span class="band-indicator band-7">Band 7+</span></h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">Over the following [period]</div>
+                        <div class="collocation-example">Over the following decade, growth accelerated.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">During the [time] period</div>
+                        <div class="collocation-example">During the 2010-2015 period, all sectors expanded.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">From [year] to [year]</div>
+                        <div class="collocation-example">From 2008 to 2012, the trend remained stable.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">Throughout the [period]</div>
+                        <div class="collocation-example">Throughout the entire decade, prices rose steadily.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">In the interim years</div>
+                        <div class="collocation-example">In the interim years, fluctuations were observed.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">Subsequently, / Thereafter,</div>
+                        <div class="collocation-example">Subsequently, the figure dropped to 30%.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">Over the following five-year period from 2010 to 2015</span>, <span class="subject">the trend</span> <span class="verb">reversed dramatically</span>, <span class="modifier">with</span> <span class="subject">exports</span> <span class="verb">declining</span> <span class="object">from $5 billion to $3 billion</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> Combines "over the following [period]" with specific years = very precise ✓ "reversed dramatically" shows shift in direction ✓ "with + noun + -ing" = advanced structure for adding data
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">During the middle years of the study</span>, <span class="time">between 2012 and 2016</span>, <span class="subject">both categories</span> <span class="verb">exhibited</span> <span class="object">relative stability</span>, <span class="verb">hovering around</span> <span class="object">the 40% mark</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Two time phrases (general then specific) = excellent organization ✓ "exhibited relative stability" = sophisticated way to say "stayed similar" ✓ "hovering around" adds precision ✓ Great for describing plateaus
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Endpoints & Conclusions <span class="band-indicator band-7">Band 7+</span></h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">By the end of the period</div>
+                        <div class="collocation-example">By the end of the period, the figure had tripled.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">By [year], / In [final year],</div>
+                        <div class="collocation-example">By 2020, consumption had reached 500 million tons.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">At the close of / Upon conclusion</div>
+                        <div class="collocation-example">At the close of the study, rates stood at 75%.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">Ultimately, / Finally,</div>
+                        <div class="collocation-example">Ultimately, all three lines converged around 60%.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">By the conclusion of the survey in 2020</span>, <span class="subject">electric vehicle sales</span> <span class="verb">had surged to</span> <span class="object">2.5 million units annually</span>, <span class="verb">representing</span> <span class="object">a fifty-fold increase from the starting figure</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "By the conclusion" = elegant formal expression ✓ Past perfect "had surged" = correct tense for completed action by a time point ✓ "fifty-fold increase" = mathematical precision ✓ Links back to starting point (full circle!)
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="modifier">Ultimately</span>, <span class="time">by 2019</span>, <span class="subject">the gap between the two countries</span> <span class="verb">had narrowed considerably</span>, <span class="modifier">with</span> <span class="subject">both nations</span> <span class="verb">recording</span> <span class="object">approximately 80% internet penetration rates</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        "Ultimately" signals conclusion ✓ "had narrowed" (past perfect) = grammatically precise ✓ "with both nations recording" analyzes the convergence ✓ Shows relationship between lines at endpoint (analytical!)
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Perfect Tense Mastery!</h4>
+                    When you use "by [time]" for endpoints, use PAST PERFECT: "By 2020, sales <strong>had reached</strong> 5 million." When describing what was happening AT a specific time, use PAST SIMPLE: "In 2015, sales <strong>reached</strong> 3 million." Master this and examiners will love you!
+                </div>
+
+                <div class="warning-box">
+                    <h4>Don't Say...</h4>
+                    ❌ "In 2010 to 2015..." (use "From 2010 to 2015" OR "Between 2010 and 2015")<br>
+                    ❌ "During 2015..." (use "In 2015" for specific years)<br>
+                    ❌ "At 2020..." (use "In 2020" or "By 2020")<br>
+                    ❌ "After that, after that, after that..." (vary your transitions!)
+                </div>
+            </div>
+
+            <!-- SECTION 5: DATA INTEGRATION -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2 class="section-title">Data Integration Techniques</h2>
+                </div>
+
+                <p style="margin-bottom: 20px;">This is where good responses become GREAT responses. Don't just list numbers—weave them smoothly into your sentences. These structures help you integrate data naturally while maintaining flow.</p>
+
+                <h3 style="color: var(--accent-color); margin: 25px 0 15px;">Embedding Data in Main Clauses <span class="band-indicator band-6">Band 6+</span></h3>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">Smartphone ownership among teenagers</span> <span class="verb">climbed</span> <span class="modifier">sharply</span> <span class="object">from 45% in 2010 to 92% in 2020</span>, <span class="verb">representing</span> <span class="object">a gain of 47 percentage points</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Data embedded with "from X to Y" = clear structure ✓ Present participle "representing" adds analysis ✓ Quantifies the change ("47 percentage points") = shows you can calculate ✓ Flows naturally
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">The year 2015</span> <span class="verb">marked</span> <span class="object">a turning point</span>, <span class="modifier">with</span> <span class="subject">renewable energy</span> <span class="verb">accounting for</span> <span class="object">25% of total consumption</span>, <span class="modifier">up from</span> <span class="object">just 10% a decade earlier</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> "marked a turning point" = analytical observation ✓ "with + noun + -ing" = sophisticated structure ✓ "up from" efficiently compares two figures ✓ Tells a story with numbers
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Using Relative Clauses <span class="band-indicator band-7">Band 7+</span></h3>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">China</span> <span class="verb">experienced</span> <span class="object">the most substantial growth</span>, <span class="verb">reaching</span> <span class="object">500 million tons by 2018</span>, <span class="modifier">which represented</span> <span class="object">a threefold increase from the 2008 baseline</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Relative clause "which represented" adds context ✓ Three pieces of data smoothly integrated (growth level, endpoint figure, comparison to start) ✓ "threefold increase from baseline" = sophisticated phrasing
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">The transportation sector</span>, <span class="modifier">which accounted for 35% of emissions in 2000</span>, <span class="verb">saw its share increase to</span> <span class="object">42% by 2020</span>, <span class="verb">making it</span> <span class="object">the largest contributor overall</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> Non-defining relative clause in middle = complex structure ✓ Compares start and end percentages ✓ "making it" draws a conclusion ✓ Multiple grammatical structures in one sentence!
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Peak & Trough Language</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">reach a peak of [figure]</div>
+                        <div class="collocation-example">Sales reached a peak of 800,000 units in June.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">hit a low of [figure]</div>
+                        <div class="collocation-example">The index hit a low of 1,200 points in March.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">stand at [figure]</div>
+                        <div class="collocation-example">By 2019, the figure stood at exactly 5 million.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">account for [percentage]</div>
+                        <div class="collocation-example">Coal accounted for 60% of energy production.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">register [figure]</div>
+                        <div class="collocation-example">Unemployment registered 8.5% that quarter.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="subject">Oil prices</span> <span class="verb">reached a peak of</span> <span class="object">$147 per barrel</span> <span class="time">in mid-2008</span>, <span class="modifier">before</span> <span class="verb">plummeting to</span> <span class="object">just $40</span> <span class="time">by the end of that year</span> <span class="modifier">amid the global financial crisis</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        <span class="band-indicator band-8">Band 8+</span> Shows dramatic swing (peak to trough) ✓ "before plummeting" connects cause/effect ✓ "amid the global financial crisis" adds context (shows you understand WHY) ✓ Tells a complete story in one sentence
+                    </div>
+                </div>
+
+                <h3 style="color: var(--accent-color); margin: 35px 0 15px;">Approximation & Precision Language</h3>
+
+                <div class="collocation-list">
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">approximately / roughly</div>
+                        <div class="collocation-example">The figure was approximately 2.5 million.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">just under / just over</div>
+                        <div class="collocation-example">Sales reached just over 500,000 units.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">around / about</div>
+                        <div class="collocation-example">Growth hovered around 3% annually.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">exactly / precisely</div>
+                        <div class="collocation-example">The rate stood at precisely 15.7%.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">nearly / almost</div>
+                        <div class="collocation-example">Consumption nearly doubled over the decade.</div>
+                    </div>
+                    <div class="collocation-item">
+                        <div class="collocation-phrase">well over / well under</div>
+                        <div class="collocation-example">The total was well over 10 million by 2020.</div>
+                    </div>
+                </div>
+
+                <div class="model-sentence">
+                    <div class="sentence-example">
+                        <span class="time">Between 2012 and 2018</span>, <span class="subject">the figure</span> <span class="verb">fluctuated</span> <span class="modifier">considerably</span>, <span class="verb">ranging</span> <span class="object">from a low of approximately 2.8 million to a high of just under 4 million</span>, <span class="modifier">with no clear directional trend</span>.
+                    </div>
+                    <div class="breakdown">
+                        <div class="breakdown-title">Why This Works:</div>
+                        Uses approximation naturally ("approximately", "just under") ✓ "ranging from X to Y" = perfect for fluctuations ✓ Adds analytical comment "with no clear directional trend" ✓ Shows you can interpret data, not just report it
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Variation is Everything!</h4>
+                    Don't use "increase" five times! Rotate through: rise, grow, climb, surge, soar, expand. Same for data verbs: reach, hit, stand at, record, register. The examiner is counting—variety = higher score!
+                </div>
+
+                <div class="warning-box">
+                    <h4>Don't Say...</h4>
+                    ❌ "The number is 500" (use "stands at / reaches / registers")<br>
+                    ❌ "45.678%" (round to "approximately 46%" or "just under 46%")<br>
+                    ❌ Only listing numbers without verbs: "2010: 20%, 2015: 35%, 2020: 50%"<br>
+                    ❌ "About exactly 50%" (contradictory! choose one or the other)
+                </div>
+            </div>
+
+            <!-- FINAL POWER TIPS -->
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-number">💪</div>
+                    <h2 class="section-title">Your Band 7+ Action Plan</h2>
+                </div>
+
+                <div class="visual-diagram" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 20px; text-align: center;">The Complete Line Graph Formula</h3>
+                    
+                    <div style="padding: 20px; background: white; border-radius: 10px; margin-bottom: 15px;">
+                        <strong style="color: var(--accent-color);">PARAGRAPH 1 - INTRODUCTION (2 sentences)</strong><br>
+                        ✓ Sentence 1: Paraphrase (what the graph shows)<br>
+                        ✓ Sentence 2: Overview (main trends/features—NO specific data!)
+                    </div>
+
+                    <div style="padding: 20px; background: white; border-radius: 10px; margin-bottom: 15px;">
+                        <strong style="color: var(--accent-color);">PARAGRAPH 2 - FIRST TREND/GROUP (3-4 sentences)</strong><br>
+                        ✓ Starting point with data<br>
+                        ✓ Main trend/movement with data<br>
+                        ✓ Endpoint or significant change<br>
+                        ✓ Comparison if relevant
+                    </div>
+
+                    <div style="padding: 20px; background: white; border-radius: 10px;">
+                        <strong style="color: var(--accent-color);">PARAGRAPH 3 - SECOND TREND/GROUP (3-4 sentences)</strong><br>
+                        ✓ Contrast with first group<br>
+                        ✓ Describe movement with data<br>
+                        ✓ Highlight any peaks/troughs<br>
+                        ✓ Final comparison or analytical comment
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>Your 7-Day Practice Plan</h4>
+                    <strong>Day 1-2:</strong> Memorize Section 1 & 2 (intros and trend vocabulary)<br>
+                    <strong>Day 3-4:</strong> Practice Section 3 & 4 (comparisons and time expressions)<br>
+                    <strong>Day 5:</strong> Master Section 5 (data integration)<br>
+                    <strong>Day 6:</strong> Write 3 complete responses using ONLY structures from this guide<br>
+                    <strong>Day 7:</strong> Timed practice (20 minutes) - aim to use 15+ structures naturally
+                </div>
+
+                <div style="background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%); padding: 30px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                    <h3 style="color: #22543d; margin-bottom: 15px; font-size: 1.8em;">🎯 The Secret to Band 7+</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8; color: #22543d;">
+                        It's NOT about using the most complex words. It's about using the RIGHT collocations consistently, organizing your response logically with clear time markers, making intelligent comparisons between data points, and varying your language naturally. Master these 30 collocations and 5 structural patterns, and you'll write Task 1 responses that sound like native speakers analyzed the graph. You've got this! 🚀
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-motivation">
+                "Excellence is not an act, but a habit. Practice these structures daily!"
+            </div>
+            <p style="margin-top: 10px;">📚 IELTS Line Graph Masterclass - Your Path to Band 7+ | Keep this guide handy during practice!</p>
+        </footer>
+    </div>
+</body>
+</html>
