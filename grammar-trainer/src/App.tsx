@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Category } from './data'
 import Header from './components/Header'
 import CategorySelector from './components/CategorySelector'
@@ -8,14 +8,22 @@ import CategoryComplete from './components/CategoryComplete'
 type Screen = 'categories' | 'typing' | 'complete'
 
 export default function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  )
   const [screen, setScreen] = useState<Screen>('categories')
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+    }
+  }, [theme])
+
   function toggleTheme() {
-    const next = theme === 'light' ? 'dark' : 'light'
-    setTheme(next)
-    document.documentElement.setAttribute('data-theme', next === 'dark' ? 'dark' : '')
+    setTheme(t => t === 'light' ? 'dark' : 'light')
   }
 
   function selectCategory(cat: Category) {
