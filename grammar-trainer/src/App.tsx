@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Category } from './data'
+import { Category, Sentence } from './data'
+import { shuffled } from './utils/array'
 import Header from './components/Header'
 import CategorySelector from './components/CategorySelector'
 import TypingArea from './components/TypingArea'
@@ -13,6 +14,8 @@ export default function App() {
   )
   const [screen, setScreen] = useState<Screen>('categories')
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
+  const [activeSentences, setActiveSentences] = useState<Sentence[]>([])
+  const [shuffle, setShuffle] = useState(false)
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -26,7 +29,13 @@ export default function App() {
     setTheme(t => t === 'light' ? 'dark' : 'light')
   }
 
+  function toggleShuffle() {
+    setShuffle(s => !s)
+  }
+
   function selectCategory(cat: Category) {
+    const sentences = shuffle ? shuffled(cat.sentences) : [...cat.sentences]
+    setActiveSentences(sentences)
     setSelectedCategory(cat)
     setScreen('typing')
   }
@@ -42,13 +51,19 @@ export default function App() {
 
   return (
     <div>
-      <Header theme={theme} onToggleTheme={toggleTheme} />
+      <Header
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        shuffle={shuffle}
+        onToggleShuffle={toggleShuffle}
+      />
       {screen === 'categories' && (
         <CategorySelector onSelect={selectCategory} />
       )}
       {screen === 'typing' && selectedCategory && (
         <TypingArea
           category={selectedCategory}
+          sentences={activeSentences}
           onComplete={completeCategory}
           onBack={goBack}
         />
