@@ -1,46 +1,59 @@
-import { useState, useEffect, useCallback } from 'react'
-import { Category } from '../data'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { Category, Sentence } from '../data'
 import { isComplete } from '../utils/typing'
+import { nextQueueState } from '../utils/queue'
 import PhraseDisplay from './PhraseDisplay'
 import ModeToggle from './ModeToggle'
 import ProgressBar from './ProgressBar'
 import GrammarNote from './GrammarNote'
+import BandBadge from './BandBadge'
 
 type TypingAreaProps = {
   category: Category
+  sentences: Sentence[]
   onComplete: () => void
   onBack: () => void
 }
 
-export default function TypingArea({ category, onComplete, onBack }: TypingAreaProps) {
-  const [phraseIndex, setPhraseIndex] = useState(0)
+export default function TypingArea({ category, sentences, onComplete, onBack }: TypingAreaProps) {
+  const [queue, setQueue] = useState<Sentence[]>(sentences)
+  const [queueIndex, setQueueIndex] = useState(0)
+  const [originalTotal] = useState(sentences.length)
   const [typed, setTyped] = useState('')
   const [mode, setMode] = useState<'basic' | 'memory'>('basic')
   const [success, setSuccess] = useState(false)
 
-  const phrase = category.sentences[phraseIndex]
+  const phraseHadErrorRef = useRef(false)
+  const phrase = queue[queueIndex]
+  const isRetrying = queue.length > originalTotal
 
-  // Detect completion
+  // Detect completion and advance queue
   useEffect(() => {
     if (typed.length > 0 && isComplete(typed, phrase.text)) {
       setSuccess(true)
+      const capturedQueue = queue
+      const capturedIndex = queueIndex
+      const capturedHadError = phraseHadErrorRef.current
+
       const timer = setTimeout(() => {
-        const next = phraseIndex + 1
-        if (next >= category.sentences.length) {
+        const result = nextQueueState(capturedQueue, capturedIndex, capturedHadError)
+        if (result.done) {
           onComplete()
         } else {
-          setPhraseIndex(next)
+          setQueue(result.queue)
+          setQueueIndex(result.index)
         }
       }, 800)
       return () => clearTimeout(timer)
     }
-  }, [typed, phrase.text, phraseIndex, category.sentences.length, onComplete])
+  }, [typed, phrase.text, queue, queueIndex, onComplete])
 
-  // Reset state when phrase advances
+  // Reset on phrase change
   useEffect(() => {
     setTyped('')
     setSuccess(false)
-  }, [phraseIndex])
+    phraseHadErrorRef.current = false
+  }, [queueIndex])
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (success) return
@@ -57,9 +70,15 @@ export default function TypingArea({ category, onComplete, onBack }: TypingAreaP
     }
 
     if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      setTyped(t => t.length < phrase.text.length ? t + e.key : t)
+      setTyped(t => {
+        if (t.length >= phrase.text.length) return t
+        if (e.key !== phrase.text[t.length]) {
+          phraseHadErrorRef.current = true
+        }
+        return t + e.key
+      })
     }
-  }, [success, phrase.text.length])
+  }, [success, phrase.text])
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown)
@@ -81,19 +100,23 @@ export default function TypingArea({ category, onComplete, onBack }: TypingAreaP
         >
           ← Back
         </button>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
             {category.icon} {category.name}
           </span>
-          <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
-            {phraseIndex + 1} / {category.sentences.length}
+          <span style={{
+            fontSize: 13,
+            color: isRetrying ? 'var(--incorrect)' : 'var(--text-muted)',
+          }}>
+            {queueIndex + 1} / {queue.length}
           </span>
+          {phrase.band && <BandBadge band={phrase.band} />}
         </div>
       </div>
 
       {/* Progress bar */}
       <div style={{ marginBottom: 32 }}>
-        <ProgressBar current={phraseIndex} total={category.sentences.length} />
+        <ProgressBar current={queueIndex} total={queue.length} />
       </div>
 
       {/* Phrase display */}
@@ -111,7 +134,7 @@ export default function TypingArea({ category, onComplete, onBack }: TypingAreaP
       {/* Grammar note */}
       {phrase.grammar && (
         <div style={{ marginBottom: 24 }}>
-          <GrammarNote text={phrase.grammar} />
+          <GrammarNote text={phrase.grammar} band={phrase.band} />
         </div>
       )}
 
@@ -123,7 +146,7 @@ export default function TypingArea({ category, onComplete, onBack }: TypingAreaP
 
       {success && (
         <p style={{ marginTop: 16, color: 'var(--accent)', fontSize: 14, fontWeight: 600 }}>
-          ✓ Correct! Moving to next phrase…
+          {phraseHadErrorRef.current ? '↩ Had errors — will retry later' : '✓ Correct! Moving to next phrase…'}
         </p>
       )}
     </main>
