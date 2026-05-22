@@ -1,8 +1,11 @@
+import BandBadge from './BandBadge'
+
 type GrammarNoteProps = {
   text: string
+  band?: 6 | 7 | 8
 }
 
-export default function GrammarNote({ text }: GrammarNoteProps) {
+export default function GrammarNote({ text, band }: GrammarNoteProps) {
   return (
     <div style={{
       fontSize: 12,
@@ -12,7 +15,11 @@ export default function GrammarNote({ text }: GrammarNoteProps) {
       padding: '8px 14px',
       borderRadius: '0 6px 6px 0',
       lineHeight: 1.6,
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 8,
     }}>
+      {band && <BandBadge band={band} />}
       {text}
     </div>
   )
