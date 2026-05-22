@@ -9,7 +9,7 @@ export default function ModeToggle({ mode, onToggle }: ModeToggleProps) {
       {(['basic', 'memory'] as const).map(m => (
         <button
           key={m}
-          onClick={onToggle}
+          onClick={m !== mode ? onToggle : undefined}
           style={{
             padding: '6px 16px',
             borderRadius: 20,
@@ -18,6 +18,7 @@ export default function ModeToggle({ mode, onToggle }: ModeToggleProps) {
             color: mode === m ? 'white' : 'var(--text-muted)',
             fontSize: 12,
             textTransform: 'capitalize',
+            cursor: m !== mode ? 'pointer' : 'default',
           }}
         >
           {m}
