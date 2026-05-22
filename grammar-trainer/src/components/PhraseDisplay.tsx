@@ -22,7 +22,7 @@ export default function PhraseDisplay({ phrase, typed, mode }: PhraseDisplayProp
           return <span key={i} style={{ color: 'var(--correct)' }}>{char}</span>
         }
         if (status === 'incorrect') {
-          return <span key={i} style={{ color: 'var(--incorrect)' }}>{char}</span>
+          return <span key={i} style={{ color: 'var(--incorrect)' }}>{typed[i]}</span>
         }
         if (status === 'cursor') {
           return (
