@@ -10,6 +10,13 @@
   --cursor-bg:   #7c6fcf;
   --pending:     #c8c0e0;
   --border:      #d4ccff;
+  /* Band badge */
+  --band6-bg:   #fef3c7;
+  --band6-text: #d97706;
+  --band7-bg:   var(--accent-soft);
+  --band7-text: var(--accent);
+  --band8-bg:   #dcfce7;
+  --band8-text: #16a34a;
 }
 
 [data-theme='dark'] {
@@ -24,6 +31,11 @@
   --cursor-bg:   #a78bfa;
   --pending:     #3d3060;
   --border:      #2d2050;
+  --band6-bg:   #78350f;
+  --band6-text: #fcd34d;
+  --band8-bg:   #14532d;
+  --band8-text: #86efac;
+  /* --band7-bg and --band7-text inherit from --accent-soft and --accent which already have dark overrides */
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
