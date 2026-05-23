@@ -4,82 +4,104 @@ type CategorySelectorProps = {
   onSelect: (cat: Category) => void
 }
 
-function CategoryGrid({ categories, onSelect }: { categories: Category[]; onSelect: (cat: Category) => void }) {
+function getBandRange(cat: Category): { min: 6 | 7 | 8; max: 6 | 7 | 8 } | null {
+  const bands = cat.sentences
+    .map(s => s.band)
+    .filter((b): b is 6 | 7 | 8 => b === 6 || b === 7 || b === 8)
+  if (!bands.length) return null
+  return { min: Math.min(...bands) as 6 | 7 | 8, max: Math.max(...bands) as 6 | 7 | 8 }
+}
+
+function BandTag({ cat }: { cat: Category }) {
+  const range = getBandRange(cat)
+  if (!range) return null
+  const label = range.min === range.max ? `B${range.min}` : `B${range.min}–B${range.max}`
+  return <span className={`band-tag b${range.max}`}>{label}</span>
+}
+
+function CategoryCard({ cat, onSelect }: { cat: Category; onSelect: (cat: Category) => void }) {
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-      gap: 14,
-    }}>
-      {categories.map(cat => (
-        <button
-          key={cat.id}
-          onClick={() => onSelect(cat)}
-          onMouseEnter={e => {
-            const el = e.currentTarget as HTMLButtonElement
-            el.style.borderColor = 'var(--accent)'
-            el.style.background = 'var(--accent-soft)'
-          }}
-          onMouseLeave={e => {
-            const el = e.currentTarget as HTMLButtonElement
-            el.style.borderColor = 'var(--border)'
-            el.style.background = 'var(--bg-surface)'
-          }}
-          style={{
-            padding: '20px 16px',
-            borderRadius: 12,
-            border: '1px solid var(--border)',
-            background: 'var(--bg-surface)',
-            color: 'var(--text)',
-            textAlign: 'left',
-            transition: 'border-color 0.15s, background 0.15s',
-          }}
-        >
-          <div style={{ fontSize: 26, marginBottom: 8 }}>{cat.icon}</div>
-          <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 3 }}>{cat.name}</div>
-          <div style={{ color: 'var(--text-muted)', fontSize: 11 }}>
-            {cat.sentences.length} phrases
-          </div>
-        </button>
-      ))}
-    </div>
+    <button className="card" onClick={() => onSelect(cat)} aria-label={`Start ${cat.name}, ${cat.sentences.length} phrases`}>
+      <span className="card-icon" aria-hidden>{cat.icon}</span>
+      <div className="card-body">
+        <span className="card-title">{cat.name}</span>
+        <span className="card-meta">
+          <span>{cat.sentences.length} phrases</span>
+          <span className="card-meta-dot" aria-hidden />
+          <BandTag cat={cat} />
+        </span>
+      </div>
+    </button>
   )
 }
 
-function SectionLabel({ children }: { children: string }) {
+function Section({ title, count, categories, onSelect }: {
+  title: string
+  count: number
+  categories: Category[]
+  onSelect: (cat: Category) => void
+}) {
   return (
-    <div style={{
-      fontSize: 11,
-      fontWeight: 700,
-      textTransform: 'uppercase',
-      letterSpacing: '1.5px',
-      color: 'var(--text-muted)',
-      marginBottom: 14,
-    }}>
-      {children}
-    </div>
+    <section className="section">
+      <div className="section-head">
+        <h2 className="section-title">{title}</h2>
+        <span className="section-count">{count} sets</span>
+      </div>
+      <div className="cat-grid">
+        {categories.map(cat => (
+          <CategoryCard key={cat.id} cat={cat} onSelect={onSelect} />
+        ))}
+      </div>
+    </section>
   )
 }
 
 export default function CategorySelector({ onSelect }: CategorySelectorProps) {
+  const allCategories = [...CATEGORIES, ...TASK1_CATEGORIES]
+  const totalPhrases = allCategories.reduce((sum, c) => sum + c.sentences.length, 0)
+  const totalCategories = allCategories.length
+
   return (
-    <main style={{ maxWidth: 760, margin: '40px auto', padding: '0 24px' }}>
-      <h1 style={{ fontSize: 22, marginBottom: 6, color: 'var(--text)' }}>
-        Choose a category
-      </h1>
-      <p style={{ color: 'var(--text-muted)', marginBottom: 36, fontSize: 13 }}>
-        Type each phrase to build automaticity with IELTS C1–C2 structures
-      </p>
+    <main className="shell">
+      <section className="hero">
+        <span className="hero-eyebrow">
+          <span className="hero-dot" aria-hidden />
+          Shadow typing trainer
+        </span>
+        <h1 className="hero-title">
+          Build automaticity for <em>IELTS Writing</em>.
+        </h1>
+        <p className="hero-desc">
+          Type C1–C2 grammar structures and Writing Task 1 vocabulary until they become muscle memory. Shadow over faint text, see your own mistakes, repeat until clean.
+        </p>
+        <ul className="hero-stats">
+          <li>
+            <span className="stat-num">{totalPhrases}</span>
+            <span className="stat-label">Phrases</span>
+          </li>
+          <li>
+            <span className="stat-num">{totalCategories}</span>
+            <span className="stat-label">Categories</span>
+          </li>
+          <li>
+            <span className="stat-num">B6 · B7 · B8</span>
+            <span className="stat-label">Bands covered</span>
+          </li>
+        </ul>
+      </section>
 
-      <div style={{ marginBottom: 36 }}>
-        <SectionLabel>Grammar Structures</SectionLabel>
-        <CategoryGrid categories={CATEGORIES} onSelect={onSelect} />
-      </div>
-
-      <div>
-        <SectionLabel>Writing Task 1</SectionLabel>
-        <CategoryGrid categories={TASK1_CATEGORIES} onSelect={onSelect} />
-      </div>
+      <Section
+        title="Grammar Structures"
+        count={CATEGORIES.length}
+        categories={CATEGORIES}
+        onSelect={onSelect}
+      />
+      <Section
+        title="Writing Task 1"
+        count={TASK1_CATEGORIES.length}
+        categories={TASK1_CATEGORIES}
+        onSelect={onSelect}
+      />
     </main>
   )
 }
