@@ -40,7 +40,7 @@ export default function PhraseDisplay({ phrase, typed, mode }: PhraseDisplayProp
         return (
           <span key={i} style={{
             color: 'var(--pending)',
-            opacity: mode === 'memory' ? 0 : 0.25,
+            opacity: mode === 'memory' ? 0 : 0.45,
           }}>
             {char}
           </span>
