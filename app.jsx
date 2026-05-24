@@ -14,6 +14,60 @@ function parseRoute(hash) {
   return parts;
 }
 
+// ── HomeScreen ────────────────────────────────────────────────────────────
+function HomeScreen() {
+  const grammarCats = window.SHADOW_DATA.grammar.categories;
+  const practiceCats = window.SHADOW_DATA.practice.categories;
+  const totalPhrases = [...grammarCats, ...practiceCats].reduce(
+    (sum, c) => sum + c.sentences.length, 0
+  );
+  const cards = [
+    {
+      id: 'guidebook',
+      title: 'Guidebook',
+      icon: '📖',
+      desc: 'Theory and reference for Writing Tasks 1 & 2',
+    },
+    {
+      id: 'grammar',
+      title: 'Grammar',
+      icon: '✏️',
+      desc: `${grammarCats.length} categories · shadow typing`,
+    },
+    {
+      id: 'practice',
+      title: 'Practice',
+      icon: '📊',
+      desc: `${practiceCats.length} categories · shadow typing`,
+    },
+  ];
+  return (
+    <div className="home">
+      <div className="home__hero">
+        <h1 className="home__title">IELTS Trainer</h1>
+        <p className="home__tagline">Build writing automaticity through shadow typing and structured practice.</p>
+      </div>
+      <div className="home__cards">
+        {cards.map(card => (
+          <a
+            key={card.id}
+            href={`#/${card.id}`}
+            className="home-card"
+            onClick={e => { e.preventDefault(); nav(`/${card.id}`); }}
+          >
+            <div className="home-card__icon">{card.icon}</div>
+            <div className="home-card__title">{card.title}</div>
+            <div className="home-card__desc">{card.desc}</div>
+          </a>
+        ))}
+      </div>
+      <div className="home__stats">
+        {totalPhrases} phrases · {grammarCats.length + practiceCats.length} categories · B6–B8
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const hash = useHashRoute();
   const route = useMemoA(() => parseRoute(hash), [hash]);
@@ -42,8 +96,18 @@ function App() {
   // Determine screen
   let screen;
   let chromeProps = { domainId: null };
+
   if (route.length === 0) {
-    screen = <Home />;
+    screen = <HomeScreen />;
+  } else if (route[0] === 'grammar' || route[0] === 'practice') {
+    chromeProps.domainId = route[0];
+    if (route.length === 1) {
+      screen = <ShadowCategorySelector domainId={route[0]} />;
+    } else if (route.length === 2) {
+      screen = <ShadowTypingPage domainId={route[0]} categoryId={route[1]} />;
+    } else {
+      screen = <NotFound />;
+    }
   } else if (route.length === 1) {
     chromeProps.domainId = route[0];
     screen = <DomainPage domainId={route[0]} />;
@@ -57,8 +121,7 @@ function App() {
     } else if (route[2] === 'cheatsheet') {
       screen = <CheatsheetPage domainId={route[0]} groupId={route[1]} />;
     } else {
-      // it's a topic → typing exercise
-      screen = <TypingPage domainId={route[0]} groupId={route[1]} topicId={route[2]} mode={t.mode} />;
+      screen = <NotFound />;
     }
   } else {
     screen = <NotFound />;
@@ -103,27 +166,37 @@ function App() {
 function TopBar({ route }) {
   const data = window.IELTS_DATA;
   const crumbs = [];
-  if (route[0]) {
-    const dom = data.domains.find((d) => d.id === route[0]);
-    if (dom) crumbs.push({ label: dom.title, path: `/${dom.id}`, domain: dom.id });
-  }
-  if (route[0] && route[1]) {
-    const dom = data.domains.find((d) => d.id === route[0]);
-    const grp = dom && dom.groups.find((g) => g.id === route[1]);
-    if (grp) crumbs.push({ label: grp.title, path: `/${route[0]}/${route[1]}`, domain: dom.id });
-  }
-  if (route[0] && route[1] && route[2]) {
-    // L3
-    let label = route[2];
-    if (label === 'instruction') label = 'Instruction';
-    else if (label === 'cheatsheet') label = 'Cheatsheet';
-    else {
+  const isShadowDomain = route[0] === 'grammar' || route[0] === 'practice';
+
+  if (isShadowDomain) {
+    const shadowDomain = window.SHADOW_DATA[route[0]];
+    crumbs.push({ label: shadowDomain.title, path: `/${route[0]}`, domain: route[0] });
+    if (route[1]) {
+      const cat = shadowDomain.categories.find(c => c.id === route[1]);
+      crumbs.push({ label: cat ? cat.title : route[1], path: null, domain: route[0] });
+    }
+  } else {
+    if (route[0]) {
+      const dom = data.domains.find((d) => d.id === route[0]);
+      if (dom) crumbs.push({ label: dom.title, path: `/${dom.id}`, domain: dom.id });
+    }
+    if (route[0] && route[1]) {
       const dom = data.domains.find((d) => d.id === route[0]);
       const grp = dom && dom.groups.find((g) => g.id === route[1]);
-      const top = grp && grp.topics && grp.topics.find((t) => t.id === route[2]);
-      if (top) label = top.title;
+      if (grp) crumbs.push({ label: grp.title, path: `/${route[0]}/${route[1]}`, domain: dom.id });
     }
-    crumbs.push({ label, path: null, domain: route[0] });
+    if (route[0] && route[1] && route[2]) {
+      let label = route[2];
+      if (label === 'instruction') label = 'Instruction';
+      else if (label === 'cheatsheet') label = 'Cheatsheet';
+      else {
+        const dom = data.domains.find((d) => d.id === route[0]);
+        const grp = dom && dom.groups.find((g) => g.id === route[1]);
+        const top = grp && grp.topics && grp.topics.find((t) => t.id === route[2]);
+        if (top) label = top.title;
+      }
+      crumbs.push({ label, path: null, domain: route[0] });
+    }
   }
 
   return (
