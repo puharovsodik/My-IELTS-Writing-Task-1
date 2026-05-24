@@ -72,6 +72,7 @@
   color: var(--ink);
 }
 .home__lede .lede-em--g { color: var(--guidebook); }
+.home__lede .lede-em--gr { color: var(--grammar); }
 .home__lede .lede-em--p { color: var(--practice); }
 .home__lede {
   margin: 20px 0 0;
@@ -1079,6 +1080,11 @@
 
 /* ── Home Screen (unified trainer) ──────────────────────────────────────── */
 
+/* Scale the name down so it fits 3 columns without clipping */
+@media (min-width: 921px) {
+  .home-card__name { font-size: clamp(52px, 4.5vw, 72px); }
+}
+
 .home {
   padding: var(--gutter) 0 48px;
 }
@@ -1115,7 +1121,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-height: 0;
   padding: 28px 24px;
   border-radius: var(--radius-lg);
   background: var(--glass-bg);

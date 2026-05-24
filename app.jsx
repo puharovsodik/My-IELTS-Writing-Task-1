@@ -16,53 +16,104 @@ function parseRoute(hash) {
 
 // ── HomeScreen ────────────────────────────────────────────────────────────
 function HomeScreen() {
+  const data = window.IELTS_DATA;
+  const guidebook = data.domains.find(d => d.id === 'guidebook');
   const grammarCats = window.SHADOW_DATA.grammar.categories;
   const practiceCats = window.SHADOW_DATA.practice.categories;
-  const totalPhrases = [...grammarCats, ...practiceCats].reduce(
-    (sum, c) => sum + c.sentences.length, 0
-  );
-  const cards = [
+
+  const domains = [
     {
       id: 'guidebook',
-      title: 'Guidebook',
-      icon: '📖',
-      desc: 'Theory and reference for Writing Tasks 1 & 2',
+      kicker: guidebook.kicker,
+      namePrefix: 'Guide', nameSuffix: 'book',
+      tagline: guidebook.tagline,
+      items: guidebook.groups.map(g => ({
+        label: g.title,
+        meta: g.topics ? `${g.topics.length} topics` : g.meta,
+      })),
+      index: '01 / 03',
+      cta: 'Enter Guidebook',
     },
     {
       id: 'grammar',
-      title: 'Grammar',
-      icon: '✏️',
-      desc: `${grammarCats.length} categories · shadow typing`,
+      kicker: 'Shadow Typing',
+      namePrefix: 'Gram', nameSuffix: 'mar',
+      tagline: 'C1–C2 structures — type until the form is automatic',
+      items: grammarCats.map(c => ({ label: c.title, meta: `${c.sentences.length} phrases` })),
+      index: '02 / 03',
+      cta: 'Enter Grammar',
     },
     {
       id: 'practice',
-      title: 'Practice',
-      icon: '📊',
-      desc: `${practiceCats.length} categories · shadow typing`,
+      kicker: 'Shadow Typing',
+      namePrefix: 'Prac', nameSuffix: 'tice',
+      tagline: 'Task 1 vocabulary and sentence patterns, B6–B8',
+      items: [
+        ...practiceCats.slice(0, 5).map(c => ({ label: c.title, meta: `${c.sentences.length} phrases` })),
+        { label: `+ ${practiceCats.length - 5} more`, meta: '' },
+      ],
+      index: '03 / 03',
+      cta: 'Enter Practice',
     },
   ];
+
   return (
     <div className="home">
       <div className="home__hero">
-        <h1 className="home__title">IELTS Trainer</h1>
-        <p className="home__tagline">Build writing automaticity through shadow typing and structured practice.</p>
+        <div className="home__eyebrow">
+          <span className="home__eyebrow-dot" />
+          IELTS Writing Trainer
+        </div>
+        <h1 className="home__title">
+          Three disciplines.<br />
+          One <em>examiner</em> standard.
+        </h1>
+        <p className="home__lede">
+          Master the structure, then drill the muscle.{' '}
+          <em className="lede-em lede-em--g">Guidebook</em> is the reference;{' '}
+          <em className="lede-em lede-em--gr">Grammar</em> and{' '}
+          <em className="lede-em lede-em--p">Practice</em> are where reps happen.
+        </p>
       </div>
+
       <div className="home__cards">
-        {cards.map(card => (
+        {domains.map(d => (
           <a
-            key={card.id}
-            href={`#/${card.id}`}
+            key={d.id}
             className="home-card"
-            onClick={e => { e.preventDefault(); nav(`/${card.id}`); }}
+            data-domain={d.id}
+            href={`#/${d.id}`}
+            onClick={e => { e.preventDefault(); nav(`/${d.id}`); }}
           >
-            <div className="home-card__icon">{card.icon}</div>
-            <div className="home-card__title">{card.title}</div>
-            <div className="home-card__desc">{card.desc}</div>
+            <div className="home-card__bg" />
+            <div className="home-card__inner">
+              <div className="home-card__top">
+                <span className="eyebrow">{d.kicker}</span>
+                <span className="home-card__index">{d.index}</span>
+              </div>
+              <h2 className="home-card__name">
+                <b>{d.namePrefix}</b>{d.nameSuffix}<span className="dot">.</span>
+              </h2>
+              <p className="home-card__tag">{d.tagline}</p>
+              <div className="home-card__contents">
+                <div className="home-card__contents-label">Contains</div>
+                <ul className="home-card__list">
+                  {d.items.map((item, i) => (
+                    <li key={i}>
+                      <span className="home-card__bullet" />
+                      <span>{item.label}</span>
+                      {item.meta && <span className="home-card__meta">{item.meta}</span>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="home-card__cta">
+                {d.cta}
+                <span className="arrow">→</span>
+              </div>
+            </div>
           </a>
         ))}
-      </div>
-      <div className="home__stats">
-        {totalPhrases} phrases · {grammarCats.length + practiceCats.length} categories · B6–B8
       </div>
     </div>
   );
