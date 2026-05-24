@@ -607,6 +607,7 @@ window.SHADOW_DATA = {
           { text: 'Coal consumption, at well over 40% in 1990, had declined to a little more than 15% by the end of the period.', band: 7 },
           { text: 'The figures for Germany and Japan were almost identical, both standing at somewhere in the region of 2.8 million.', band: 7 },
           { text: 'In the final year, the proportion had recovered to approximately its 2005 level, hovering at around 22% of the total.', band: 7 },
+          { text: 'Sales of electric vehicles grew from a negligible fraction in 2010 to account for roughly one-fifth of all new car purchases by 2022.', band: 8 },
         ],
       },
     ],
