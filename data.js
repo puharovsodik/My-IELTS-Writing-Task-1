@@ -1,0 +1,348 @@
+// data.js — IELTS Writing Trainer content tree
+// Three levels: Domain (L1) → Group (L2) → Content Node (L3)
+
+window.IELTS_DATA = {
+  domains: [
+    {
+      id: 'guidebook',
+      title: 'Guidebook',
+      kicker: 'Theory & Reference',
+      tagline: 'Structural anatomy of the Writing test — what examiners look for, what to deliver, how to score.',
+      summary: 'Static reference. Read once, return often. Two long-form modules with companion cheatsheets.',
+      groups: [
+        { id: 'task1', title: 'Writing Task 1', meta: '20 min · 150 words', nodes: ['instruction', 'cheatsheet'] },
+        { id: 'task2', title: 'Writing Task 2', meta: '40 min · 250 words', nodes: ['instruction', 'cheatsheet'] },
+      ],
+    },
+    {
+      id: 'practice',
+      title: 'Practice',
+      kicker: 'Active Drill',
+      tagline: 'Retype model answers under live correctness feedback. Reps build the muscle for exam day.',
+      summary: 'Live typing drills. Choose a topic, type the model answer, watch your accuracy and WPM in real time.',
+      groups: [
+        {
+          id: 'task1',
+          title: 'Task 1',
+          meta: 'Visual description',
+          topics: [
+            { id: 'line-graphs', title: 'Line Graphs', meta: 'Trends over time' },
+            { id: 'bar-charts', title: 'Bar Charts', meta: 'Discrete comparison' },
+            { id: 'pie-charts', title: 'Pie Charts', meta: 'Proportions' },
+            { id: 'maps', title: 'Maps', meta: 'Spatial change' },
+            { id: 'processes', title: 'Processes', meta: 'Stages & flow' },
+            { id: 'tables', title: 'Tables', meta: 'Multi-variable' },
+          ],
+        },
+        {
+          id: 'task2',
+          title: 'Task 2',
+          meta: 'Argumentative essays',
+          topics: [
+            { id: 'opinion', title: 'Opinion Essay', meta: 'Agree / disagree' },
+            { id: 'discussion', title: 'Discussion', meta: 'Both views + own' },
+            { id: 'problem-solution', title: 'Problem / Solution', meta: 'Cause-effect' },
+            { id: 'advantage-disadvantage', title: 'Advantages / Disadvantages', meta: 'Two-sided weigh-in' },
+            { id: 'two-part', title: 'Two-Part Question', meta: 'Direct questions' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// ─── Instruction pages ──────────────────────────────────────────────────────
+window.INSTRUCTIONS = {
+  'guidebook/task1': {
+    domain: 'guidebook',
+    title: 'Writing Task 1',
+    eyebrow: 'Module 01 · Instruction',
+    deck: 'You are given a visual — chart, map, or process diagram. You have 20 minutes to write at least 150 words describing what it shows, comparing the main features. No opinion. No speculation.',
+
+    article: [
+      { h: 'What examiners actually want', p: 'A clear overview that names the two or three biggest patterns, followed by paragraphs that group related data and compare it. Not a list of every data point. Not your interpretation of why the data looks that way.' },
+      { h: 'The four scoring bands', p: 'Task Achievement (did you cover the main features?), Coherence & Cohesion (do paragraphs flow with logical linkers?), Lexical Resource (range and accuracy of vocabulary), and Grammatical Range & Accuracy (complex structures used correctly). Each is scored 0–9 and averaged.' },
+      { h: 'Time budget', p: 'Two minutes reading the visual and noting the overview. Two minutes outlining body paragraphs. Fifteen minutes writing. One minute proofreading. The proofread minute saves more marks than any extra sentence.' },
+    ],
+
+    checklist: [
+      'Paraphrase the prompt — do not copy it.',
+      'Write a one-sentence overview naming the two biggest trends or features.',
+      'Group data into two body paragraphs by similarity, not chronology.',
+      'Use comparative and superlative forms — more than, the highest, roughly twice.',
+      'Reference specific numbers and units at least three times.',
+      'Vary sentence openers: prepositional phrases, gerunds, while-clauses.',
+      'Close without conclusion — Task 1 has no opinion line.',
+    ],
+
+    anatomy: {
+      label: 'Anatomy of a model answer',
+      blocks: [
+        { tag: 'Paraphrase', body: 'The line graph illustrates the changes in average sea-surface temperatures across three oceans between 1960 and 2020.', note: 'Source noun → "graph illustrates". Time range moved to end.' },
+        { tag: 'Overview', body: 'Overall, all three regions experienced an upward trend, with the Pacific recording the most pronounced increase.', note: 'No numbers. Names the headline pattern.' },
+        { tag: 'Body A', body: 'In 1960, the Pacific stood at approximately 14°C, while the Atlantic and Indian Oceans were slightly cooler at 13°C and 12.5°C respectively. Over the following two decades, all three rose gradually, gaining roughly 0.5°C each.', note: 'Groups the slow-rise period. Specific values, comparative language.' },
+        { tag: 'Body B', body: 'From 1990 onwards, the rate of warming accelerated. By 2020, the Pacific had climbed to 16.2°C, an increase of more than two degrees, whereas the other oceans rose to around 15°C.', note: 'Groups the acceleration phase. Past perfect for completed action.' },
+      ],
+    },
+  },
+
+  'guidebook/task2': {
+    domain: 'guidebook',
+    title: 'Writing Task 2',
+    eyebrow: 'Module 02 · Instruction',
+    deck: 'A short prompt asks you to discuss an issue and present your view. You have 40 minutes to write at least 250 words. Task 2 is worth two-thirds of your Writing band — invest accordingly.',
+
+    article: [
+      { h: 'Five question types', p: 'Opinion (agree/disagree), Discussion (discuss both views and give your own), Problem/Solution, Advantages/Disadvantages, and Two-Part Question. The structure varies by type. Identifying the type is the first 90 seconds of your work.' },
+      { h: 'The introduction does two jobs', p: 'Paraphrase the prompt in one sentence. State your thesis in the next. That is the entire introduction — three lines max. Examiners want to find your position immediately.' },
+      { h: 'Body paragraphs follow PEEL', p: 'Point (topic sentence), Evidence or Example, Explanation (why it matters), Link (back to the thesis or forward to the next point). Two body paragraphs is the standard. Three is acceptable if you can sustain depth.' },
+      { h: 'Conclusion is a restate, not a reveal', p: 'Restate your thesis in different words. Summarise the two strongest points. Do not introduce new arguments. Two sentences is enough.' },
+    ],
+
+    checklist: [
+      'Identify the question type before you outline.',
+      'Write the thesis sentence first, on scratch paper — everything else flexes around it.',
+      'Outline two body paragraphs with a point + an example each.',
+      'Use precise topic vocabulary; avoid generic words like "thing", "good", "many".',
+      'Connect paragraphs with discourse markers, not just "Also" or "And".',
+      'Keep an eye on the clock at the 20-minute mark — you should be halfway done.',
+      'Reserve 3 minutes to proofread for tense slips and article errors.',
+    ],
+
+    anatomy: {
+      label: 'Anatomy of a model answer',
+      blocks: [
+        { tag: 'Introduction', body: 'It is sometimes argued that governments should subsidise the arts rather than leave them to private funding. While I recognise the value of artistic freedom, I largely agree that public support is essential for a healthy cultural sector.', note: 'Paraphrase + clear thesis with concession.' },
+        { tag: 'Body A', body: 'Public funding ensures that cultural production is not confined to projects that generate immediate profit. Museums, regional theatres, and experimental work would struggle without state grants…', note: 'Point + evidence + extension.' },
+        { tag: 'Body B', body: 'However, over-dependence on public money risks creating art that conforms to political taste. A mixed funding model — combining state grants with private patronage — addresses this tension…', note: 'Concession that strengthens, not weakens, the thesis.' },
+        { tag: 'Conclusion', body: 'In conclusion, although there are legitimate concerns about state influence, the public good served by funded arts outweighs the alternative of a market-only model.', note: 'Restate, two-line summary, stop.' },
+      ],
+    },
+  },
+};
+
+// ─── Cheatsheet pages ───────────────────────────────────────────────────────
+window.CHEATSHEETS = {
+  'guidebook/task1': {
+    domain: 'guidebook',
+    title: 'Writing Task 1',
+    eyebrow: 'Module 01 · Cheatsheet',
+    deck: 'Reference card. Phrases grouped by rhetorical function, vocabulary table, and slot-templates ready to adapt.',
+
+    phraseBlocks: [
+      {
+        label: 'Introducing data',
+        items: [
+          'The chart illustrates / shows / depicts…',
+          'The diagram provides information about…',
+          'The graph compares X with Y over a period of…',
+          'It is clear from the data that…',
+        ],
+      },
+      {
+        label: 'Describing trends',
+        items: [
+          'rose steadily · climbed gradually · surged · jumped',
+          'declined sharply · fell modestly · plummeted',
+          'fluctuated · remained stable · plateaued at',
+          'reached a peak of … before falling to …',
+        ],
+      },
+      {
+        label: 'Comparing',
+        items: [
+          'X was roughly twice as high as Y',
+          'In contrast / By comparison / On the other hand',
+          'Whereas A grew, B remained unchanged',
+          'The difference between … and … was negligible',
+        ],
+      },
+      {
+        label: 'Concluding the overview',
+        items: [
+          'Overall, the most striking feature is…',
+          'In general, all three categories followed the same pattern…',
+          'The data reveals a clear upward / downward shift…',
+        ],
+      },
+    ],
+
+    vocabTable: {
+      label: 'Formal ↔ informal synonyms',
+      headers: ['Casual', 'Use this instead'],
+      rows: [
+        ['went up a lot', 'rose sharply / surged'],
+        ['went down', 'declined / decreased'],
+        ['stayed the same', 'remained constant / plateaued'],
+        ['big difference', 'a marked discrepancy'],
+        ['about', 'approximately / roughly'],
+        ['a lot of', 'a substantial number of'],
+        ['got bigger', 'expanded / grew significantly'],
+      ],
+    },
+
+    templates: [
+      { label: 'Opening sentence', body: 'The [chart type] [illustrates / shows] the [variable] in [units] across [categories] between [year] and [year].' },
+      { label: 'Overview', body: 'Overall, [the most prominent feature] is that [trend A], while [trend B / contrast].' },
+      { label: 'Comparison line', body: '[Category A] rose from [value] in [year] to [value] in [year], whereas [Category B] [contrasting verb] over the same period.' },
+    ],
+  },
+
+  'guidebook/task2': {
+    domain: 'guidebook',
+    title: 'Writing Task 2',
+    eyebrow: 'Module 02 · Cheatsheet',
+    deck: 'Phrase bank, formal alternatives to everyday words, and four reusable sentence templates.',
+
+    phraseBlocks: [
+      {
+        label: 'Stating your position',
+        items: [
+          'I firmly believe that…',
+          'In my view, … is preferable to …',
+          'While I acknowledge that …, I would argue that …',
+          'It is my contention that …',
+        ],
+      },
+      {
+        label: 'Introducing arguments',
+        items: [
+          'One compelling reason is that…',
+          'A further consideration concerns…',
+          'It is also worth noting that…',
+          'From an economic / social / environmental perspective…',
+        ],
+      },
+      {
+        label: 'Counter-arguments',
+        items: [
+          'Critics may contend that…',
+          'Although it is true that…, this argument overlooks…',
+          'While such concerns are not without merit, …',
+          'On the contrary, …',
+        ],
+      },
+      {
+        label: 'Concluding',
+        items: [
+          'To conclude / In conclusion / On balance, …',
+          'Weighing these considerations, I maintain that…',
+          'Although the issue is nuanced, the case for … is stronger because …',
+        ],
+      },
+    ],
+
+    vocabTable: {
+      label: 'Upgrade everyday words',
+      headers: ['Casual', 'Use this instead'],
+      rows: [
+        ['important', 'crucial / pivotal / paramount'],
+        ['good', 'beneficial / advantageous / constructive'],
+        ['bad', 'detrimental / harmful / adverse'],
+        ['people', 'individuals / citizens / the public'],
+        ['think', 'maintain / contend / assert'],
+        ['show', 'demonstrate / indicate / illustrate'],
+        ['help', 'facilitate / contribute to'],
+      ],
+    },
+
+    templates: [
+      { label: 'Thesis line', body: 'While [concession clause], I [strongly / largely / partially] agree that [position], primarily because [main reason].' },
+      { label: 'Topic sentence', body: 'A [crucial / significant] factor in support of [position] is that [argument], particularly in [context].' },
+      { label: 'Example introduction', body: 'A clear illustration of this can be found in [domain]: [specific example with detail].' },
+      { label: 'Conclusion', body: 'In conclusion, despite [acknowledged drawback], the [benefits / case for X] outweigh [the alternative], making [thesis restated] the more reasonable position.' },
+    ],
+  },
+};
+
+// ─── Practice exercises (typing) ────────────────────────────────────────────
+window.EXERCISES = {
+  'practice/task1/line-graphs': {
+    domain: 'practice',
+    title: 'Line Graphs',
+    eyebrow: 'Task 1 · Line Graphs',
+    prompt: 'The graph below shows the average sea-surface temperature of three oceans between 1960 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+    chartKind: 'line',
+    text: 'The line graph illustrates the changes in average sea-surface temperatures across three oceans — the Pacific, Atlantic, and Indian — between 1960 and 2020. Overall, all three regions experienced an upward trend, with the Pacific recording the most pronounced increase. In 1960, the Pacific stood at approximately 14 degrees Celsius, while the Atlantic and Indian Oceans were slightly cooler at 13 and 12.5 degrees respectively. Over the following two decades, all three rose gradually, gaining roughly half a degree each. From 1990 onwards, the rate of warming accelerated noticeably. By 2020, the Pacific had climbed to 16.2 degrees, an increase of more than two degrees from its starting point, whereas the Atlantic and Indian Oceans rose to around 15 and 14.7 degrees. The gap between the warmest and coolest ocean therefore widened over the sixty-year period.',
+  },
+  'practice/task1/bar-charts': {
+    domain: 'practice',
+    title: 'Bar Charts',
+    eyebrow: 'Task 1 · Bar Charts',
+    prompt: 'The chart below shows the percentage of households owning selected consumer goods in the United Kingdom in 1985 and 2015.',
+    chartKind: 'bar',
+    text: 'The bar chart compares household ownership of five consumer goods in the United Kingdom across two reference years, 1985 and 2015. Overall, ownership rose markedly for every item, with mobile phones and personal computers showing the most dramatic gains. In 1985, only a small fraction of households — around 5 percent — owned a personal computer, and mobile phones were effectively non-existent. By 2015, computer ownership had climbed to 84 percent and mobile phone ownership to 93 percent. Television sets, already widespread in 1985 at 95 percent, edged up marginally to 97 percent. Refrigerator ownership followed a similar pattern, rising from 92 to 99 percent. Dishwashers, the least common appliance throughout the period, grew more modestly from 11 to 41 percent. Across the three decades, traditional appliances reached near-saturation while digital devices transformed from rarities into household norms.',
+  },
+  'practice/task1/pie-charts': {
+    domain: 'practice',
+    title: 'Pie Charts',
+    eyebrow: 'Task 1 · Pie Charts',
+    prompt: 'The pie charts below show the breakdown of household energy consumption in a typical European country in 1990 and 2020.',
+    chartKind: 'pie',
+    text: 'The two pie charts illustrate how household energy was distributed across five end-uses in a typical European country in 1990 and in 2020. Overall, heating remained the dominant consumer of energy in both years, but its share decreased noticeably, while appliances and water heating both expanded. In 1990, space heating accounted for roughly two-thirds of total consumption, with water heating taking 15 percent and appliances a further 10 percent. Lighting and cooking made up the remaining 9 percent. By 2020, the picture had shifted: heating had fallen to just over half, water heating had grown to 22 percent, and appliances now consumed nearly a fifth of household energy. Lighting dropped slightly, reflecting the spread of efficient bulbs, while cooking remained largely unchanged. The data suggests that as homes became better insulated, secondary uses claimed a larger share of the energy budget.',
+  },
+  'practice/task1/maps': {
+    domain: 'practice',
+    title: 'Maps',
+    eyebrow: 'Task 1 · Maps',
+    prompt: 'The maps below show the development of a small coastal village between 1980 and 2020.',
+    chartKind: 'map',
+    text: 'The two maps depict the same coastal village as it appeared in 1980 and how it has been transformed by 2020. Overall, the settlement has shifted from a quiet fishing community into a tourism-oriented town, with significant residential and commercial expansion along the shoreline. In 1980, the village comprised a small cluster of houses around a central harbour, surrounded by farmland to the west and dense forest to the north. A single road connected the harbour to the inland highway. By 2020, the farmland has been replaced by a grid of holiday apartments, and a marina has been constructed adjacent to the original harbour. The northern forest has been partially cleared to make room for a hotel and an access road. A coastal promenade now links the marina to a new beach development at the southern end of the village. The original fishermen\'s cottages remain, though several have been converted into restaurants serving the tourist trade.',
+  },
+  'practice/task1/processes': {
+    domain: 'practice',
+    title: 'Processes',
+    eyebrow: 'Task 1 · Processes',
+    prompt: 'The diagram below illustrates the process by which bricks are manufactured for the construction industry.',
+    chartKind: 'process',
+    text: 'The diagram outlines the eight-stage process by which clay is transformed into bricks for use in construction. Overall, the procedure begins with the extraction of raw material and ends with the dispatch of finished bricks, with shaping, drying, and firing forming the central stages. Initially, clay is dug from the ground using a mechanical digger and transported to the processing site. The material is then passed through a metal grid that removes large stones, after which it enters a roller to be crushed into a finer consistency. Once refined, the clay is mixed with sand and water and forced into rectangular moulds, or alternatively cut from a continuous extruded strip using a wire cutter. The shaped bricks are dried for between 24 and 48 hours before being moved into a kiln, where they are fired at temperatures of up to 1300 degrees Celsius. After firing, the bricks are cooled gradually over a 48 to 72 hour period. Finally, the cooled bricks are packaged and dispatched to building sites by lorry.',
+  },
+  'practice/task1/tables': {
+    domain: 'practice',
+    title: 'Tables',
+    eyebrow: 'Task 1 · Tables',
+    prompt: 'The table below shows the consumption of three types of fast food by teenagers in Australia between 1975 and 2015.',
+    chartKind: 'table',
+    text: 'The table presents data on average annual fast-food consumption among Australian teenagers across four reference years between 1975 and 2015, broken down into pizza, hamburgers, and fish and chips. Overall, pizza and hamburger intake rose substantially over the four decades, while consumption of fish and chips declined steadily. In 1975, fish and chips was by far the most popular choice, with teenagers eating it on average 100 times per year, compared with just 5 servings of pizza and 10 of hamburgers. By 1985, this picture had begun to shift: hamburger consumption had tripled to 33 portions, pizza had risen to 20, and fish and chips had slipped to 90. The most dramatic change occurred between 1995 and 2015, during which pizza overtook fish and chips as the leading choice, reaching 82 servings annually by the final year. Hamburgers continued to climb to 95, while fish and chips fell to just 39 portions, a decline of more than 60 percent across the period.',
+  },
+  'practice/task2/opinion': {
+    domain: 'practice',
+    title: 'Opinion Essay',
+    eyebrow: 'Task 2 · Opinion',
+    prompt: 'Some people believe that universities should focus on practical, job-oriented courses rather than academic subjects. To what extent do you agree or disagree?',
+    chartKind: 'essay',
+    text: 'The proposition that universities should prioritise vocational training over traditional academic disciplines has gained considerable traction in recent debate. While I acknowledge the genuine economic pressures behind this view, I largely disagree that academic study should be displaced, primarily because a healthy society depends on both kinds of learning. Proponents argue that graduates emerging into a competitive labour market need immediately applicable skills, and there is real merit in this position. A computer science student who has only studied abstract theory may struggle in an entry-level developer role, whereas one trained on current frameworks can contribute from week one. Universities have a legitimate responsibility to prepare students for working life. However, equating education with job training risks impoverishing both the individual and the wider culture. Disciplines such as history, philosophy, and pure mathematics may not yield obvious career paths, yet they cultivate the analytical and ethical reasoning that complex modern professions increasingly demand. Moreover, the half-life of any specific vocational skill is short — a curriculum built around today\'s industry needs may be obsolete within a decade — whereas the habits of critical thought formed by academic study endure throughout a career. In conclusion, although vocational relevance is a fair expectation of higher education, it should complement rather than replace the academic mission. Universities serve students best when they teach them how to think, not merely what to do.',
+  },
+  'practice/task2/discussion': {
+    domain: 'practice',
+    title: 'Discussion',
+    eyebrow: 'Task 2 · Discussion',
+    prompt: 'Some people believe children should begin formal schooling at the age of four, while others argue that seven is more appropriate. Discuss both views and give your own opinion.',
+    chartKind: 'essay',
+    text: 'The age at which children should enter formal schooling remains a contested question among educators and parents alike. Some argue that an early start — around the age of four — gives children a crucial head start, whereas others insist that delaying formal instruction until seven produces healthier and ultimately more capable learners. In my view, the later starting age carries more substantial benefits. Those in favour of early enrolment point to the rapid pace of cognitive development between the ages of three and five. During this window, children acquire language and basic literacy with relative ease, and structured exposure to letters and numbers can lay a strong foundation. Early schooling also socialises children and provides reliable childcare for working families. By contrast, advocates of a later start, such as those in Finland or parts of Scandinavia, emphasise that young children learn best through play and unstructured exploration. Pushing formal academics too soon, they argue, can dampen curiosity and create anxiety around performance. Research from these countries suggests that children who begin school at seven catch up quickly and often outperform their peers by adolescence. On balance, I find the latter position more persuasive. The cognitive gains of early enrolment appear short-lived, while the developmental costs are real. A system that protects early childhood for play and only later introduces formal study seems better aligned with how children actually learn.',
+  },
+  'practice/task2/problem-solution': {
+    domain: 'practice',
+    title: 'Problem / Solution',
+    eyebrow: 'Task 2 · Problem / Solution',
+    prompt: 'Urban traffic congestion is worsening in many cities worldwide. What are the main causes of this problem, and what measures could be taken to address it?',
+    chartKind: 'essay',
+    text: 'Traffic congestion has become a defining feature of urban life in cities from São Paulo to Jakarta, with commuters routinely losing hours each week to gridlock. The causes are multiple and reinforcing, but a combination of targeted policies can meaningfully ease the burden. The most obvious driver is the sheer growth in private car ownership. As incomes rise, individual vehicles become attainable for households that previously relied on public transport, and road networks struggle to absorb the additional volume. Compounding this, many cities have grown outward rather than upward, producing sprawling suburbs whose residents have little practical alternative to driving. Underinvestment in mass transit and the historical privileging of car infrastructure over cycling and pedestrian routes have further locked in car dependency. A range of measures can reverse the trend. Congestion charging schemes, of the kind pioneered in London and Stockholm, have demonstrably reduced peak-hour traffic by pricing scarce road space. Significant investment in rapid transit — metros, light rail, and bus rapid transit corridors — gives commuters a faster alternative. Cities can also redesign streets to favour cycling and walking, narrowing lanes and widening pavements. In conclusion, urban congestion arises from a tangle of economic and planning failures, but it is not intractable. A coordinated programme of road pricing, transit investment, and street redesign can restore movement to cities that have ground to a halt.',
+  },
+  'practice/task2/advantage-disadvantage': {
+    domain: 'practice',
+    title: 'Advantages / Disadvantages',
+    eyebrow: 'Task 2 · Adv / Disadv',
+    prompt: 'More and more people are working remotely from home rather than commuting to an office. What are the advantages and disadvantages of this trend?',
+    chartKind: 'essay',
+    text: 'The mass shift to remote working, accelerated by the pandemic and now embedded in many sectors, has reshaped how organisations operate and how individuals structure their days. The trend carries clear benefits for both workers and employers, although it is not without significant drawbacks. On the positive side, remote work removes the daily commute, returning to workers an hour or more of time and reducing transport costs and carbon emissions at scale. Employees report greater autonomy over their schedules, which often translates into improved focus on deep tasks and a better balance between professional and personal demands. For employers, the talent pool expands geographically: a small firm in Manchester can hire a designer in Lisbon without relocation costs. Office overheads, too, decline as floor-space requirements shrink. The disadvantages, however, are equally real. Spontaneous collaboration — the unscheduled hallway conversation that sparks a new idea — is difficult to replicate over video calls, and junior employees in particular lose the informal mentorship that proximity provides. Many remote workers report a blurring of boundaries between work and home, with longer effective hours and a rising incidence of burnout. Team cohesion can erode over time as colleagues become avatars on a screen. On balance, the trend has produced genuine gains in flexibility and autonomy, but organisations that adopt it must invest deliberately in maintaining culture and protecting the boundaries that an office once enforced.',
+  },
+  'practice/task2/two-part': {
+    domain: 'practice',
+    title: 'Two-Part Question',
+    eyebrow: 'Task 2 · Two-Part',
+    prompt: 'In many countries, the gap between rich and poor is widening. Why is this happening, and what steps could governments take to reduce it?',
+    chartKind: 'essay',
+    text: 'Across both developed and developing economies, the gap between the wealthiest households and those at the bottom of the income distribution has widened significantly over recent decades. Understanding the mechanisms behind this divergence is essential before useful policy can be designed. Several forces have combined to drive the trend. Globalisation has rewarded workers with portable, high-skill qualifications while suppressing wages for those whose jobs can be offshored or automated. The decline of trade union membership has weakened the bargaining position of lower-paid workers, and tax systems in many countries have grown less progressive, with capital gains and inheritance taxed more lightly than ordinary wages. Asset price inflation, particularly in housing, has further enriched those who already own property while pushing it out of reach for younger and lower-income households. Governments have a number of levers available. Reforming taxation to close loopholes around capital, property, and inheritance can fund redistribution. Sustained investment in public education and vocational retraining gives workers a fighting chance against technological change. Stronger floor wages, paid sick leave, and tenancy protections directly improve the position of those at the bottom. In conclusion, rising inequality is not a natural phenomenon but the product of specific policy choices, and reversing it requires equally deliberate intervention across the tax code, labour law, and the public investment budget.',
+  },
+};
