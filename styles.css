@@ -17,6 +17,17 @@
   --practice-fill: oklch(0.95 0.020 35);
   --practice-glow: oklch(0.68 0.17 30 / 0.38);
 
+  --grammar: oklch(0.68 0.19 80);
+  --grammar-soft: oklch(0.68 0.19 80 / 0.10);
+  --grammar-mid: oklch(0.68 0.19 80 / 0.22);
+  --grammar-ink: oklch(0.52 0.15 80);
+  --grammar-fill: oklch(0.95 0.03 80);
+  --grammar-glow: oklch(0.76 0.20 80 / 0.38);
+
+  --band6-bg: #fef3c7; --band6-text: #92400e;
+  --band7-bg: #dbeafe; --band7-text: #1d4ed8;
+  --band8-bg: #d1fae5; --band8-text: #065f46;
+
   /* Cool, near-white matte stone */
   --paper: #F4F4F2;
   --paper-2: #ECECE8;
@@ -84,6 +95,17 @@
   --practice-fill: oklch(0.26 0.06 30);
   --practice-glow: oklch(0.78 0.18 30 / 0.32);
 
+  --grammar: oklch(0.82 0.18 80);
+  --grammar-soft: oklch(0.82 0.18 80 / 0.12);
+  --grammar-mid: oklch(0.82 0.18 80 / 0.24);
+  --grammar-ink: oklch(0.90 0.15 80);
+  --grammar-fill: oklch(0.26 0.06 80);
+  --grammar-glow: oklch(0.82 0.20 80 / 0.30);
+
+  --band6-bg: #78350f; --band6-text: #fde68a;
+  --band7-bg: #1e3a8a; --band7-text: #bfdbfe;
+  --band8-bg: #064e3b; --band8-text: #a7f3d0;
+
   --glass-bg: rgba(28,30,36,0.55);
   --glass-bg-strong: rgba(34,36,42,0.72);
   --glass-border: rgba(255,255,255,0.08);
@@ -147,6 +169,24 @@ button {
   --d-fill: var(--practice-fill);
   --d-glow: var(--practice-glow);
 }
+[data-domain="grammar"] {
+  --d-color: var(--grammar);
+  --d-soft: var(--grammar-soft);
+  --d-mid: var(--grammar-mid);
+  --d-ink: var(--grammar-ink);
+  --d-fill: var(--grammar-fill);
+  --d-glow: var(--grammar-glow);
+}
+
+/* Per-domain --accent for components inside .shell */
+.topbar[data-domain="guidebook"],
+.topbar[data-domain="guidebook"] ~ .shell { --accent: #3b82f6; --accent-soft: #dbeafe; --accent-hover: #2563eb; }
+
+.topbar[data-domain="grammar"],
+.topbar[data-domain="grammar"] ~ .shell   { --accent: #f59e0b; --accent-soft: #fef3c7; --accent-hover: #d97706; }
+
+.topbar[data-domain="practice"],
+.topbar[data-domain="practice"] ~ .shell  { --accent: #10b981; --accent-soft: #d1fae5; --accent-hover: #059669; }
 
 /* When no domain is set on an element (e.g. neutral surfaces), avoid blank glow */
 :root, .neutral-glass {
