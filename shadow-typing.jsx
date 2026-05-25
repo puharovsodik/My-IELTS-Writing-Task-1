@@ -66,14 +66,14 @@ function GrammarNote({ note, band }) {
 function ShadowCategorySelector({ domainId }) {
   const domainData = window.SHADOW_DATA[domainId];
   return (
-    <div className="shadow-selector">
+    <div className="shadow-selector" data-domain={domainId}>
       <h2 className="shadow-selector__heading">{domainData.title}</h2>
       <div className="shadow-cat-grid">
         {domainData.categories.map(cat => {
           const bands = cat.sentences.map(s => s.band).filter(Boolean);
-          const bandRange = bands.length
-            ? `B${Math.min(...bands)}–B${Math.max(...bands)}`
-            : '';
+          const bandMin = bands.length ? Math.min(...bands) : null;
+          const bandMax = bands.length ? Math.max(...bands) : null;
+          const bandRange = bandMin ? (bandMin === bandMax ? `B${bandMin}` : `B${bandMin}–B${bandMax}`) : '';
           return (
             <a
               key={cat.id}
@@ -81,12 +81,26 @@ function ShadowCategorySelector({ domainId }) {
               className="shadow-cat-card"
               onClick={e => { e.preventDefault(); nav(`/${domainId}/${cat.id}`); }}
             >
-              <span className="shadow-cat-card__icon">{cat.icon}</span>
-              <div className="shadow-cat-card__body">
-                <div className="shadow-cat-card__title">{cat.title}</div>
-                <div className="shadow-cat-card__meta">
-                  {cat.sentences.length} phrases{bandRange ? ` · ${bandRange}` : ''}
+              <div className="gc-head">
+                <div>
+                  <div className="gc-title">{cat.icon} {cat.title}</div>
+                  <div className="gc-meta" style={{ marginTop: 4 }}>
+                    {cat.sentences.length} phrases{bandRange ? ` · ${bandRange}` : ''}
+                  </div>
                 </div>
+                <span className="gc-arrow">→</span>
+              </div>
+              <div className="gc-pills">
+                {bandRange && (
+                  <span className="pill">
+                    <span className="pill-dot" />
+                    {bandRange}
+                  </span>
+                )}
+                <span className="pill">
+                  <span className="pill-dot" />
+                  {cat.sentences.length} phrases
+                </span>
               </div>
             </a>
           );
