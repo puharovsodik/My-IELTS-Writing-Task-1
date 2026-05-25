@@ -10,12 +10,12 @@
   --guidebook-fill: oklch(0.94 0.018 258);
   --guidebook-glow: oklch(0.62 0.18 258 / 0.40);
 
-  --practice: oklch(0.54 0.11 30);
-  --practice-soft: oklch(0.54 0.11 30 / 0.10);
-  --practice-mid: oklch(0.54 0.11 30 / 0.22);
-  --practice-ink: oklch(0.40 0.09 30);
-  --practice-fill: oklch(0.95 0.020 35);
-  --practice-glow: oklch(0.68 0.17 30 / 0.38);
+  --practice: oklch(0.52 0.13 160);
+  --practice-soft: oklch(0.52 0.13 160 / 0.10);
+  --practice-mid: oklch(0.52 0.13 160 / 0.22);
+  --practice-ink: oklch(0.38 0.11 160);
+  --practice-fill: oklch(0.95 0.025 160);
+  --practice-glow: oklch(0.68 0.17 160 / 0.38);
 
   --grammar: oklch(0.68 0.19 80);
   --grammar-soft: oklch(0.68 0.19 80 / 0.10);
@@ -88,12 +88,12 @@
   --guidebook-fill: oklch(0.24 0.05 258);
   --guidebook-glow: oklch(0.78 0.18 258 / 0.32);
 
-  --practice: oklch(0.78 0.10 30);
-  --practice-soft: oklch(0.78 0.10 30 / 0.12);
-  --practice-mid: oklch(0.78 0.10 30 / 0.24);
-  --practice-ink: oklch(0.86 0.08 30);
-  --practice-fill: oklch(0.26 0.06 30);
-  --practice-glow: oklch(0.78 0.18 30 / 0.32);
+  --practice: oklch(0.76 0.13 160);
+  --practice-soft: oklch(0.76 0.13 160 / 0.12);
+  --practice-mid: oklch(0.76 0.13 160 / 0.24);
+  --practice-ink: oklch(0.88 0.10 160);
+  --practice-fill: oklch(0.26 0.07 160);
+  --practice-glow: oklch(0.76 0.18 160 / 0.32);
 
   --grammar: oklch(0.82 0.18 80);
   --grammar-soft: oklch(0.82 0.18 80 / 0.12);
@@ -122,7 +122,7 @@ html, body {
   background: var(--paper);
   background-image:
     radial-gradient(1200px 600px at 8% 0%, oklch(0.92 0.04 258 / 0.6), transparent 60%),
-    radial-gradient(1100px 700px at 100% 100%, oklch(0.94 0.04 30 / 0.45), transparent 55%);
+    radial-gradient(1100px 700px at 100% 100%, oklch(0.94 0.04 160 / 0.45), transparent 55%);
   background-attachment: fixed;
   color: var(--ink-soft);
   font-family: var(--sans);
@@ -135,7 +135,7 @@ html, body {
 [data-theme="dark"] body {
   background-image:
     radial-gradient(1200px 600px at 8% 0%, oklch(0.40 0.10 258 / 0.35), transparent 60%),
-    radial-gradient(1100px 700px at 100% 100%, oklch(0.42 0.10 30 / 0.30), transparent 55%);
+    radial-gradient(1100px 700px at 100% 100%, oklch(0.42 0.10 160 / 0.30), transparent 55%);
 }
 
 a { color: inherit; text-decoration: none; }
@@ -413,36 +413,43 @@ button {
   box-shadow: var(--glass-shadow-hover);
   transform: translateY(-1px);
 }
-.group-card .gc-head {
+.group-card .gc-head,
+.shadow-cat-card .gc-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
-.group-card .gc-title {
+.group-card .gc-title,
+.shadow-cat-card .gc-title {
   font-family: var(--sans);
   font-size: 18px;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.005em;
 }
-.group-card .gc-meta {
+.group-card .gc-meta,
+.shadow-cat-card .gc-meta {
   font-family: var(--mono);
   font-size: 11px;
   color: var(--ink-mute);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.group-card .gc-arrow {
+.group-card .gc-arrow,
+.shadow-cat-card .gc-arrow {
   font-size: 18px;
   color: var(--ink-mid);
   transition: transform 0.2s;
+  flex-shrink: 0;
 }
-.group-card:hover .gc-arrow {
+.group-card:hover .gc-arrow,
+.shadow-cat-card:hover .gc-arrow {
   transform: translateX(4px);
   color: var(--d-color);
 }
-.group-card .gc-pills {
+.group-card .gc-pills,
+.shadow-cat-card .gc-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -465,18 +472,21 @@ button {
   transition: background 0.18s, color 0.18s, box-shadow 0.18s;
 }
 [data-theme="dark"] .pill { background: rgba(255,255,255,0.06); }
-.group-card:hover .pill {
+.group-card:hover .pill,
+.shadow-cat-card:hover .pill {
   background: rgba(255,255,255,0.78);
   box-shadow: 0 1px 2px rgba(20,22,26,0.04);
 }
-[data-theme="dark"] .group-card:hover .pill { background: rgba(255,255,255,0.10); }
+[data-theme="dark"] .group-card:hover .pill,
+[data-theme="dark"] .shadow-cat-card:hover .pill { background: rgba(255,255,255,0.10); }
 .pill .pill-dot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background: var(--d-color);
 }
-.group-card:hover .pill {
+.group-card:hover .pill,
+.shadow-cat-card:hover .pill {
   border-color: var(--d-mid);
 }
 

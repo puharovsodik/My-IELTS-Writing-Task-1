@@ -1177,49 +1177,48 @@
 }
 
 .shadow-cat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .shadow-cat-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  border-radius: var(--radius);
+  position: relative;
+  display: block;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
+  padding: calc(var(--pad-block) + 4px) calc(var(--pad-block) + 10px);
+  margin-bottom: var(--row-gap);
+  overflow: hidden;
+  isolation: isolate;
   text-decoration: none;
   color: var(--ink);
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(.2,.7,.3,1);
 }
-
+.shadow-cat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, var(--d-glow), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.shadow-cat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--glass-ring);
+  pointer-events: none;
+  z-index: 0;
+}
+.shadow-cat-card > * { position: relative; z-index: 1; }
 .shadow-cat-card:hover {
-  transform: translateY(-2px);
   box-shadow: var(--glass-shadow-hover);
-  border-color: var(--accent, var(--ink-mute));
-}
-
-.shadow-cat-card__icon {
-  font-size: 1.6rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.shadow-cat-card__title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-
-.shadow-cat-card__meta {
-  font-size: 0.78rem;
-  color: var(--ink-mute);
-  font-family: var(--mono);
+  transform: translateY(-1px);
 }
 
 /* ── Shadow Typing Page ───────────────────────────────────────────────────── */
