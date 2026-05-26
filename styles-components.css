@@ -1165,7 +1165,9 @@
 /* ── Shadow Category Selector ────────────────────────────────────────────── */
 
 .shadow-selector {
-  padding: var(--gutter) 0;
+  padding: 48px var(--gutter) 96px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .shadow-selector__heading {
@@ -1224,8 +1226,9 @@
 /* ── Shadow Typing Page ───────────────────────────────────────────────────── */
 
 .shadow-typing-page {
-  padding: var(--gutter) 0;
-  max-width: 720px;
+  padding: 40px var(--gutter) 96px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .shadow-typing-page__header {
