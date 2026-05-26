@@ -70,11 +70,17 @@ export default function DocumentView({ category, sentences, onComplete, onBack }
     <div>
       {/* Sub-nav: back, category name, mode toggle, progress */}
       <div style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 9,
         borderBottom: '1px solid var(--border)',
         padding: '12px 32px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        background: 'color-mix(in srgb, var(--bg) 88%, transparent)',
+        backdropFilter: 'saturate(180%) blur(12px)',
+        WebkitBackdropFilter: 'saturate(180%) blur(12px)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <button
