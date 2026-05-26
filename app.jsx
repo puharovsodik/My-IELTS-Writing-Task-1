@@ -180,7 +180,7 @@ function App() {
 
   return (
     <div className="app">
-      <TopBar route={route} />
+      <TopBar route={route} dark={t.dark} onToggleDark={() => setTweak('dark', !t.dark)} />
       <div className="shell">{screen}</div>
 
       <TweaksPanel>
@@ -214,7 +214,7 @@ function App() {
 // ─────────────────────────────────────────────────────────────────────────────
 // Top bar
 // ─────────────────────────────────────────────────────────────────────────────
-function TopBar({ route }) {
+function TopBar({ route, dark, onToggleDark }) {
   const data = window.IELTS_DATA;
   const crumbs = [];
   const isShadowDomain = route[0] === 'grammar' || route[0] === 'practice';
@@ -274,12 +274,15 @@ function TopBar({ route }) {
           );
         })}
       </nav>
-      <div className="right mono">
-        {route.length === 0 ? 'Home' :
-         route.length === 1 ? 'L1 · Domain' :
-         route.length === 2 ? 'L2 · Group' :
-         'L3 · Content'}
-      </div>
+      <button
+        type="button"
+        className="topbar-theme-btn"
+        onClick={onToggleDark}
+        aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+        title={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {dark ? '☀️' : '🌙'}
+      </button>
     </div>
   );
 }
