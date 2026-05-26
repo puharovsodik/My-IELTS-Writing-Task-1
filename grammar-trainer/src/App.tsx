@@ -3,7 +3,7 @@ import { Category, Sentence } from './data'
 import { shuffled } from './utils/array'
 import Header from './components/Header'
 import CategorySelector from './components/CategorySelector'
-import TypingArea from './components/TypingArea'
+import DocumentView from './components/DocumentView'
 import CategoryComplete from './components/CategoryComplete'
 
 type Screen = 'categories' | 'typing' | 'complete'
@@ -61,7 +61,7 @@ export default function App() {
         <CategorySelector onSelect={selectCategory} />
       )}
       {screen === 'typing' && selectedCategory && (
-        <TypingArea
+        <DocumentView
           category={selectedCategory}
           sentences={activeSentences}
           onComplete={completeCategory}
