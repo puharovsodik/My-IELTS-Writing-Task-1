@@ -1,0 +1,7 @@
+.claude/
+.superpowers/
+build_trainer.py
+unify_design.py
+*.py
+node_modules/
+dist/
