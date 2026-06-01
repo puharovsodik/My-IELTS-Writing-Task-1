@@ -38,7 +38,7 @@ def add_grammar_note(m):
     if 'grammar:' in trailing:
         return full_match
 
-    note = grammar_map[text].replace("\\", "\\\\").replace("'", "\\'")
+    note = grammar_map[text]
     patched += 1
 
     # Insert grammar: 'note' before the closing } of this object
