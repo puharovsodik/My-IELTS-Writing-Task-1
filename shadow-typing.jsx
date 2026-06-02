@@ -357,6 +357,7 @@ function ShadowTypingPage({ domainId, categoryId }) {
         return;
       }
       if (e.key.length === 1) {
+        if (e.key === ' ') e.preventDefault();
         const newTyped = inputsRef.current[i] + e.key;
         inputsRef.current = inputsRef.current.map((t, idx) => idx === i ? newTyped : t);
         setPhraseInputs([...inputsRef.current]);
@@ -428,7 +429,8 @@ function ShadowTypingPage({ domainId, categoryId }) {
               <div className={'phrase-row__text' + (memoryActive ? ' phrase-row__text--memory-active' : '')}>
                 {sentence.text.split('').map((char, j) => {
                   if (isDone) return <span key={j} className="char char--done">{char}</span>;
-                  return <span key={j} className={'char char--' + statuses[j]}>{char}</span>;
+                  const st = (!isActive && statuses[j] === 'cursor') ? 'pending' : statuses[j];
+                  return <span key={j} className={'char char--' + st}>{char}</span>;
                 })}
               </div>
               {sentence.grammar && <GrammarNote note={sentence.grammar} band={sentence.band} />}
