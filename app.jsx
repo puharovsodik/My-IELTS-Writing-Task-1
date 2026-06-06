@@ -19,7 +19,9 @@ function HomeScreen() {
   const data = window.IELTS_DATA;
   const guidebook = data.domains.find(d => d.id === 'guidebook');
   const grammarCats = window.SHADOW_DATA.grammar.categories;
-  const practiceCats = window.SHADOW_DATA.practice.categories;
+  const practiceData = window.SHADOW_DATA.practice;
+  const practiceGroups = practiceData.taskGroups;
+  const countCatsInGroup = (g) => g.categoryIds.length;
 
   const domains = [
     {
@@ -47,11 +49,11 @@ function HomeScreen() {
       id: 'practice',
       kicker: 'Shadow Typing',
       namePrefix: 'Prac', nameSuffix: 'tice',
-      tagline: 'Task 1 vocabulary and sentence patterns, B6–B8',
-      items: [
-        ...practiceCats.slice(0, 5).map(c => ({ label: c.title, meta: `${c.sentences.length} phrases` })),
-        { label: `+ ${practiceCats.length - 5} more`, meta: '' },
-      ],
+      tagline: 'Task 1 visuals and Task 2 essays — B6–B8',
+      items: practiceGroups.map(g => ({
+        label: `${g.icon} ${g.title}`,
+        meta: `${countCatsInGroup(g)} categories`,
+      })),
       index: '03 / 03',
       cta: 'Enter Practice',
     },
@@ -150,12 +152,23 @@ function App() {
 
   if (route.length === 0) {
     screen = <HomeScreen />;
-  } else if (route[0] === 'grammar' || route[0] === 'practice') {
-    chromeProps.domainId = route[0];
+  } else if (route[0] === 'grammar') {
+    chromeProps.domainId = 'grammar';
     if (route.length === 1) {
-      screen = <ShadowCategorySelector domainId={route[0]} />;
+      screen = <ShadowCategorySelector domainId="grammar" />;
     } else if (route.length === 2) {
-      screen = <ShadowTypingPage domainId={route[0]} categoryId={route[1]} />;
+      screen = <ShadowTypingPage domainId="grammar" categoryId={route[1]} />;
+    } else {
+      screen = <NotFound />;
+    }
+  } else if (route[0] === 'practice') {
+    chromeProps.domainId = 'practice';
+    if (route.length === 1) {
+      screen = <PracticeTaskSelector />;
+    } else if (route.length === 2) {
+      screen = <ShadowCategorySelector domainId="practice" taskId={route[1]} />;
+    } else if (route.length === 3) {
+      screen = <ShadowTypingPage domainId="practice" categoryId={route[2]} taskId={route[1]} />;
     } else {
       screen = <NotFound />;
     }
@@ -222,7 +235,20 @@ function TopBar({ route, dark, onToggleDark }) {
   if (isShadowDomain) {
     const shadowDomain = window.SHADOW_DATA[route[0]];
     crumbs.push({ label: shadowDomain.title, path: `/${route[0]}`, domain: route[0] });
-    if (route[1]) {
+    if (route[0] === 'practice' && shadowDomain.taskGroups) {
+      // 3-level practice: /practice/task1/lineGraphs
+      if (route[1]) {
+        const tg = shadowDomain.taskGroups.find(g => g.id === route[1]);
+        const tgLabel = tg ? tg.title : route[1];
+        const tgPath = route[2] ? `/${route[0]}/${route[1]}` : null;
+        crumbs.push({ label: tgLabel, path: tgPath, domain: route[0] });
+      }
+      if (route[2]) {
+        const cat = shadowDomain.categories.find(c => c.id === route[2]);
+        crumbs.push({ label: cat ? cat.title : route[2], path: null, domain: route[0] });
+      }
+    } else if (route[1]) {
+      // 2-level grammar: /grammar/conditionals
       const cat = shadowDomain.categories.find(c => c.id === route[1]);
       crumbs.push({ label: cat ? cat.title : route[1], path: null, domain: route[0] });
     }

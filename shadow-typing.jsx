@@ -253,13 +253,60 @@ function GrammarNote({ note, band }) {
 
 // ── ShadowCategorySelector ────────────────────────────────────────────────
 
-function ShadowCategorySelector({ domainId }) {
-  const domainData = window.SHADOW_DATA[domainId];
+function PracticeTaskSelector() {
+  const domainData = window.SHADOW_DATA.practice;
+  const groups = domainData.taskGroups;
   return (
-    <div className="shadow-selector" data-domain={domainId}>
+    <div className="shadow-selector" data-domain="practice">
       <h2 className="shadow-selector__heading">{domainData.title}</h2>
       <div className="shadow-cat-grid">
-        {domainData.categories.map(cat => {
+        {groups.map(g => (
+          <a
+            key={g.id}
+            href={`#/practice/${g.id}`}
+            className="shadow-cat-card"
+            onClick={e => { e.preventDefault(); nav(`/practice/${g.id}`); }}
+          >
+            <div className="gc-head">
+              <div>
+                <div className="gc-title">{g.icon} {g.title}</div>
+                <div className="gc-meta" style={{ marginTop: 4 }}>{g.tagline}</div>
+              </div>
+              <span className="gc-arrow">→</span>
+            </div>
+            <div className="gc-pills">
+              <span className="pill">
+                <span className="pill-dot" />
+                {g.categoryIds.length} categories
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ShadowCategorySelector({ domainId, taskId }) {
+  const domainData = window.SHADOW_DATA[domainId];
+  let cats = domainData.categories;
+  let headingSuffix = '';
+  let hrefPrefix = `#/${domainId}`;
+  let navPrefix = `/${domainId}`;
+  if (taskId && domainData.taskGroups) {
+    const g = domainData.taskGroups.find(gg => gg.id === taskId);
+    if (g) {
+      cats = cats.filter(c => g.categoryIds.includes(c.id));
+      headingSuffix = ` · ${g.title}`;
+      hrefPrefix = `#/${domainId}/${taskId}`;
+      navPrefix = `/${domainId}/${taskId}`;
+    }
+  }
+  return (
+    <div className="shadow-selector" data-domain={domainId}>
+      <h2 className="shadow-selector__heading">{domainData.title}{headingSuffix}</h2>
+      <div className="shadow-cat-grid">
+        {cats.map(cat => {
           const bands = cat.sentences.map(s => s.band).filter(Boolean);
           const bandMin = bands.length ? Math.min(...bands) : null;
           const bandMax = bands.length ? Math.max(...bands) : null;
@@ -267,9 +314,9 @@ function ShadowCategorySelector({ domainId }) {
           return (
             <a
               key={cat.id}
-              href={`#/${domainId}/${cat.id}`}
+              href={`${hrefPrefix}/${cat.id}`}
               className="shadow-cat-card"
-              onClick={e => { e.preventDefault(); nav(`/${domainId}/${cat.id}`); }}
+              onClick={e => { e.preventDefault(); nav(`${navPrefix}/${cat.id}`); }}
             >
               <div className="gc-head">
                 <div>
@@ -302,8 +349,10 @@ function ShadowCategorySelector({ domainId }) {
 
 // ── ShadowCompletePage ────────────────────────────────────────────────────
 
-function ShadowCompletePage({ domainId, categoryId }) {
+function ShadowCompletePage({ domainId, categoryId, taskId }) {
   const category = window.SHADOW_DATA[domainId].categories.find(c => c.id === categoryId);
+  const drillPath = taskId ? `/${domainId}/${taskId}/${categoryId}` : `/${domainId}/${categoryId}`;
+  const categoriesPath = taskId ? `/${domainId}/${taskId}` : `/${domainId}`;
   return (
     <div className="shadow-complete">
       <div className="shadow-complete__check">✓</div>
@@ -311,14 +360,14 @@ function ShadowCompletePage({ domainId, categoryId }) {
       <p className="shadow-complete__sub">All phrases typed without errors.</p>
       <div className="shadow-complete__actions">
         <a
-          href={`#/${domainId}/${categoryId}`}
+          href={`#${drillPath}`}
           className="shadow-btn shadow-btn--primary"
-          onClick={e => { e.preventDefault(); nav(`/${domainId}/${categoryId}`); }}
+          onClick={e => { e.preventDefault(); nav(drillPath); }}
         >Practice again</a>
         <a
-          href={`#/${domainId}`}
+          href={`#${categoriesPath}`}
           className="shadow-btn shadow-btn--secondary"
-          onClick={e => { e.preventDefault(); nav(`/${domainId}`); }}
+          onClick={e => { e.preventDefault(); nav(categoriesPath); }}
         >All categories</a>
       </div>
     </div>
@@ -327,7 +376,7 @@ function ShadowCompletePage({ domainId, categoryId }) {
 
 // ── ShadowTypingPage ──────────────────────────────────────────────────────
 
-function ShadowTypingPage({ domainId, categoryId }) {
+function ShadowTypingPage({ domainId, categoryId, taskId }) {
   const category = window.SHADOW_DATA[domainId].categories.find(c => c.id === categoryId);
   const sentences = category.sentences;
 
@@ -380,16 +429,16 @@ function ShadowTypingPage({ domainId, categoryId }) {
     setActivePhraseIndex(i);
   }
 
-  if (done) return <ShadowCompletePage domainId={domainId} categoryId={categoryId} />;
+  if (done) return <ShadowCompletePage domainId={domainId} categoryId={categoryId} taskId={taskId} />;
 
   return (
     <div className="doc-view">
       <div className="doc-subnav">
         <div className="doc-subnav__left">
           <a
-            href={'#/' + domainId}
+            href={'#' + (taskId ? `/${domainId}/${taskId}` : '/' + domainId)}
             className="doc-back-btn"
-            onClick={e => { e.preventDefault(); nav('/' + domainId); }}
+            onClick={e => { e.preventDefault(); nav(taskId ? `/${domainId}/${taskId}` : '/' + domainId); }}
           >← Back</a>
           <span className="doc-subnav__title">{category.icon} {category.title}</span>
         </div>
