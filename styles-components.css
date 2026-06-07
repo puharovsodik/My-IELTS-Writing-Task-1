@@ -1575,7 +1575,7 @@
   padding: 14px 16px;
 }
 .structure-item__pattern {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--mono);
   font-size: 0.95rem;
 }
 .structure-item__example {
