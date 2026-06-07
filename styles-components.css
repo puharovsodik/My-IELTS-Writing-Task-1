@@ -1530,3 +1530,134 @@
 .phrase-row__text .char--pending { color: var(--ink-mute); opacity: 0.5; }
 .phrase-row__text--memory-active .char--pending { opacity: 0; }
 .char--done { color: var(--accent); }
+
+/* ── Model sentence ──────────────────────────────────────────────────────── */
+.model-sentence {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.model-sentence__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--d-ink);
+  margin-bottom: 8px;
+}
+.model-sentence__text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.model-sentence__note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--ink-mute);
+  font-style: italic;
+}
+.role-subject { color: var(--role-subject); font-weight: 600; }
+.role-verb { color: var(--role-verb); font-weight: 600; }
+.role-object { color: var(--role-object); font-weight: 600; }
+.role-connector { color: var(--role-connector); font-weight: 600; }
+.role-time { color: var(--role-time); font-weight: 600; }
+
+/* ── Structure list (cheatsheet) ──────────────────────────────────────────── */
+.structure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+.structure-item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+.structure-item__pattern {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.95rem;
+}
+.structure-item__example {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-mute);
+}
+
+/* ── Callouts (tip / danger) ──────────────────────────────────────────────── */
+.callout {
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.callout__title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.callout__list {
+  margin: 0;
+  padding-left: 20px;
+}
+.callout__list li {
+  margin-bottom: 4px;
+}
+.callout--tip {
+  background: var(--tip-bg);
+  color: var(--tip-text);
+  border-color: var(--tip-border);
+}
+.callout--danger {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border-color: var(--danger-border);
+}
+
+/* ── Collocation grid (cheatsheet) ────────────────────────────────────────── */
+.collocation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.collocation-item {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+}
+.collocation-item__phrase {
+  font-weight: 600;
+}
+.collocation-item__use {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+/* ── Static / dynamic comparison (cheatsheet) ─────────────────────────────── */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.compare-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+.compare-box__title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--d-ink);
+}
+.compare-box__list {
+  margin: 0;
+  padding-left: 20px;
+}
+.compare-box__list li {
+  margin-bottom: 4px;
+}
