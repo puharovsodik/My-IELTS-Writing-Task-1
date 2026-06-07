@@ -183,6 +183,23 @@ function CheatsheetPage({ domainId, groupId }) {
   );
 }
 
+function ModelSentence({ label, parts, note }) {
+  return (
+    <div className="model-sentence">
+      {label && <div className="model-sentence__label">{label}</div>}
+      <p className="model-sentence__text">
+        {parts.map((p, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && ' '}
+            <span className={p.role ? `role-${p.role}` : undefined}>{p.text}</span>
+          </React.Fragment>
+        ))}
+      </p>
+      {note && <p className="model-sentence__note">{note}</p>}
+    </div>
+  );
+}
+
 // Render [slot] markers in templates as styled chips
 function renderTemplateSlots(text) {
   const parts = text.split(/(\[[^\]]+\])/g);
@@ -194,4 +211,4 @@ function renderTemplateSlots(text) {
   });
 }
 
-Object.assign(window, { InstructionPage, CheatsheetPage });
+Object.assign(window, { InstructionPage, CheatsheetPage, ModelSentence });
