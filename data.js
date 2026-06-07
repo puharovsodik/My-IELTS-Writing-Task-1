@@ -1,6 +1,15 @@
 // data.js — IELTS Writing Trainer content tree
 // Three levels: Domain (L1) → Group (L2) → Content Node (L3)
 
+const TASK1_CHART_TOPICS = [
+  { id: 'line-graphs', title: 'Line Graphs', icon: '📈' },
+  { id: 'bar-charts', title: 'Bar Charts', icon: '📊' },
+  { id: 'pie-charts', title: 'Pie Charts', icon: '🥧' },
+  { id: 'maps', title: 'Maps', icon: '🗺️' },
+  { id: 'processes', title: 'Process Diagrams', icon: '⚙️' },
+  { id: 'tables', title: 'Tables', icon: '📋' },
+];
+
 window.IELTS_DATA = {
   domains: [
     {
@@ -10,7 +19,25 @@ window.IELTS_DATA = {
       tagline: 'Structural anatomy of the Writing test — what examiners look for, what to deliver, how to score.',
       summary: 'Static reference. Read once, return often. Two long-form modules with companion cheatsheets.',
       groups: [
-        { id: 'task1', title: 'Writing Task 1', meta: '20 min · 150 words', nodes: ['instruction', 'cheatsheet'] },
+        {
+          id: 'task1',
+          title: 'Writing Task 1',
+          meta: '20 min · 150 words',
+          guideSections: [
+            {
+              id: 'guide',
+              title: 'Guide',
+              summary: 'Model sentences, templates, and checklists for every chart type.',
+              topics: TASK1_CHART_TOPICS,
+            },
+            {
+              id: 'cheatsheet',
+              title: 'Cheatsheet',
+              summary: 'Structures, collocations, and quick-reference vocabulary at a glance.',
+              topics: TASK1_CHART_TOPICS,
+            },
+          ],
+        },
         { id: 'task2', title: 'Writing Task 2', meta: '40 min · 250 words', nodes: ['instruction', 'cheatsheet'] },
       ],
     },
@@ -53,39 +80,6 @@ window.IELTS_DATA = {
 
 // ─── Instruction pages ──────────────────────────────────────────────────────
 window.INSTRUCTIONS = {
-  'guidebook/task1': {
-    domain: 'guidebook',
-    title: 'Writing Task 1',
-    eyebrow: 'Module 01 · Instruction',
-    deck: 'You are given a visual — chart, map, or process diagram. You have 20 minutes to write at least 150 words describing what it shows, comparing the main features. No opinion. No speculation.',
-
-    article: [
-      { h: 'What examiners actually want', p: 'A clear overview that names the two or three biggest patterns, followed by paragraphs that group related data and compare it. Not a list of every data point. Not your interpretation of why the data looks that way.' },
-      { h: 'The four scoring bands', p: 'Task Achievement (did you cover the main features?), Coherence & Cohesion (do paragraphs flow with logical linkers?), Lexical Resource (range and accuracy of vocabulary), and Grammatical Range & Accuracy (complex structures used correctly). Each is scored 0–9 and averaged.' },
-      { h: 'Time budget', p: 'Two minutes reading the visual and noting the overview. Two minutes outlining body paragraphs. Fifteen minutes writing. One minute proofreading. The proofread minute saves more marks than any extra sentence.' },
-    ],
-
-    checklist: [
-      'Paraphrase the prompt — do not copy it.',
-      'Write a one-sentence overview naming the two biggest trends or features.',
-      'Group data into two body paragraphs by similarity, not chronology.',
-      'Use comparative and superlative forms — more than, the highest, roughly twice.',
-      'Reference specific numbers and units at least three times.',
-      'Vary sentence openers: prepositional phrases, gerunds, while-clauses.',
-      'Close without conclusion — Task 1 has no opinion line.',
-    ],
-
-    anatomy: {
-      label: 'Anatomy of a model answer',
-      blocks: [
-        { tag: 'Paraphrase', body: 'The line graph illustrates the changes in average sea-surface temperatures across three oceans between 1960 and 2020.', note: 'Source noun → "graph illustrates". Time range moved to end.' },
-        { tag: 'Overview', body: 'Overall, all three regions experienced an upward trend, with the Pacific recording the most pronounced increase.', note: 'No numbers. Names the headline pattern.' },
-        { tag: 'Body A', body: 'In 1960, the Pacific stood at approximately 14°C, while the Atlantic and Indian Oceans were slightly cooler at 13°C and 12.5°C respectively. Over the following two decades, all three rose gradually, gaining roughly 0.5°C each.', note: 'Groups the slow-rise period. Specific values, comparative language.' },
-        { tag: 'Body B', body: 'From 1990 onwards, the rate of warming accelerated. By 2020, the Pacific had climbed to 16.2°C, an increase of more than two degrees, whereas the other oceans rose to around 15°C.', note: 'Groups the acceleration phase. Past perfect for completed action.' },
-      ],
-    },
-  },
-
   'guidebook/task2': {
     domain: 'guidebook',
     title: 'Writing Task 2',
@@ -123,71 +117,6 @@ window.INSTRUCTIONS = {
 
 // ─── Cheatsheet pages ───────────────────────────────────────────────────────
 window.CHEATSHEETS = {
-  'guidebook/task1': {
-    domain: 'guidebook',
-    title: 'Writing Task 1',
-    eyebrow: 'Module 01 · Cheatsheet',
-    deck: 'Reference card. Phrases grouped by rhetorical function, vocabulary table, and slot-templates ready to adapt.',
-
-    phraseBlocks: [
-      {
-        label: 'Introducing data',
-        items: [
-          'The chart illustrates / shows / depicts…',
-          'The diagram provides information about…',
-          'The graph compares X with Y over a period of…',
-          'It is clear from the data that…',
-        ],
-      },
-      {
-        label: 'Describing trends',
-        items: [
-          'rose steadily · climbed gradually · surged · jumped',
-          'declined sharply · fell modestly · plummeted',
-          'fluctuated · remained stable · plateaued at',
-          'reached a peak of … before falling to …',
-        ],
-      },
-      {
-        label: 'Comparing',
-        items: [
-          'X was roughly twice as high as Y',
-          'In contrast / By comparison / On the other hand',
-          'Whereas A grew, B remained unchanged',
-          'The difference between … and … was negligible',
-        ],
-      },
-      {
-        label: 'Concluding the overview',
-        items: [
-          'Overall, the most striking feature is…',
-          'In general, all three categories followed the same pattern…',
-          'The data reveals a clear upward / downward shift…',
-        ],
-      },
-    ],
-
-    vocabTable: {
-      label: 'Formal ↔ informal synonyms',
-      headers: ['Casual', 'Use this instead'],
-      rows: [
-        ['went up a lot', 'rose sharply / surged'],
-        ['went down', 'declined / decreased'],
-        ['stayed the same', 'remained constant / plateaued'],
-        ['big difference', 'a marked discrepancy'],
-        ['about', 'approximately / roughly'],
-        ['a lot of', 'a substantial number of'],
-        ['got bigger', 'expanded / grew significantly'],
-      ],
-    },
-
-    templates: [
-      { label: 'Opening sentence', body: 'The [chart type] [illustrates / shows] the [variable] in [units] across [categories] between [year] and [year].' },
-      { label: 'Overview', body: 'Overall, [the most prominent feature] is that [trend A], while [trend B / contrast].' },
-      { label: 'Comparison line', body: '[Category A] rose from [value] in [year] to [value] in [year], whereas [Category B] [contrasting verb] over the same period.' },
-    ],
-  },
-
   'guidebook/task2': {
     domain: 'guidebook',
     title: 'Writing Task 2',
