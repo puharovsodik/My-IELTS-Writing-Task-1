@@ -203,12 +203,12 @@ function ModelSentence({ label, parts, note }) {
 function GuidePage({ domainId, groupId, topicId }) {
   const key = `${domainId}/${groupId}/${topicId}`;
   const guide = window.GUIDES[key];
+  if (!guide) return <NotFound />;
+
   const data = window.IELTS_DATA;
   const dom = data.domains.find(d => d.id === domainId);
-  const grp = dom.groups.find(g => g.id === groupId);
-  const topic = grp.guideSections[0].topics.find(t => t.id === topicId);
-
-  if (!guide) return <NotFound />;
+  const grp = dom?.groups.find(g => g.id === groupId);
+  const topic = grp?.guideSections[0].topics.find(t => t.id === topicId);
 
   return (
     <div className="page page--reading">
