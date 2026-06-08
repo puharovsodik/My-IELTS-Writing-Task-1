@@ -404,6 +404,11 @@
   width: 28px;
   flex-shrink: 0;
 }
+.topic-card__icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
 .topic-card__body { flex: 1; min-width: 0; }
 .topic-card__title {
   font-size: 17px;
@@ -420,6 +425,9 @@
 /* ── Reading pages (Instruction & Cheatsheet) ── */
 .page--reading {
   max-width: 880px;
+}
+.topic-hub .topic-grid {
+  margin-top: 28px;
 }
 /* L3 reading-head badge — promote to bigger glass pill to match photo */
 .reading-head .badge {
