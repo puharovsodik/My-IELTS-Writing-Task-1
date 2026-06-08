@@ -184,6 +184,490 @@ window.CHEATSHEETS = {
   },
 };
 
+window.GUIDES = {
+  'guidebook/task1/bar-charts': {
+    title: 'Bar Charts',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Bar charts compare discrete categories — countries, age groups, products — at one or more points in time. The examiner is looking for accurate comparison language, grouped description, and controlled paraphrase of the chart’s subject.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Open by paraphrasing the chart’s title and scope — what is measured, how many categories, and the time frame — without copying the wording verbatim.',
+        template: 'The bar chart [illustrates / compares / presents] the [what is measured] in [number] [categories / countries / years], [between [year] and [year] / in [year]].',
+        sentences: [
+          {
+            label: 'Model 1 — Basic Paraphrase (Band 6)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'illustrates', role: 'verb' },
+              { text: 'the amount of water consumed per person', role: 'object' },
+              { text: 'in six countries in 2020', role: 'time' },
+            ],
+            note: '✔ [SUBJECT] + [verb] + [what] + [scope]. Safe and correct.',
+          },
+          {
+            label: 'Model 2 — Synonym Upgrade (Band 7)',
+            parts: [
+              { text: 'The given chart', role: 'subject' },
+              { text: 'compares', role: 'verb' },
+              { text: 'average household water usage', role: 'object' },
+              { text: 'across six different nations in the year 2020', role: 'time' },
+            ],
+            note: 'Swaps "bar chart" → "given chart" and "in" → "across" to avoid repeating the prompt’s wording.',
+          },
+          {
+            label: 'Model 3 — Reduced Relative Clause (Band 7)',
+            parts: [
+              { text: 'The chart', role: 'subject' },
+              { text: 'presents', role: 'verb' },
+              { text: 'data comparing the amount of water consumed', role: 'object' },
+              { text: 'by households in six countries in 2020', role: 'time' },
+            ],
+            note: 'Embeds the comparison inside a reduced relative clause ("data comparing...") rather than stating it as a second verb.',
+          },
+          {
+            label: 'Model 4 — Passive Framing (Band 7–8)',
+            parts: [
+              { text: 'The amount of water consumed by households in six countries in 2020', role: 'subject' },
+              { text: 'is illustrated', role: 'verb' },
+              { text: 'in the bar chart', role: 'connector' },
+            ],
+            note: 'Fronts the data, not the chart — a passive structure that signals strong control of complex sentences.',
+          },
+          {
+            label: 'Model 5 — Two-Part Overview (Band 8)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'illustrates', role: 'verb' },
+              { text: 'how much water was used by an average household', role: 'object' },
+              { text: 'in six countries, while also showing the breakdown by activity', role: 'connector' },
+            ],
+            note: 'Signals that the chart has two layers of information (totals and breakdown) — sets up the overview that follows.',
+          },
+          {
+            label: 'Model 6 — Subordinate Clause Opening (Band 8)',
+            parts: [
+              { text: 'As the bar chart shows', role: 'connector' },
+              { text: ',', role: null },
+              { text: 'household water consumption', role: 'subject' },
+              { text: 'varied considerably', role: 'verb' },
+              { text: 'across the six countries surveyed in 2020', role: 'time' },
+            ],
+            note: 'Opens with a subordinate clause referencing the chart, then makes the data — not the chart — the grammatical subject.',
+          },
+          {
+            label: 'Model 7 — Nominalisation (Band 8)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'provides', role: 'verb' },
+              { text: 'a comparison of average household water consumption', role: 'object' },
+              { text: 'across six countries in 2020', role: 'time' },
+            ],
+            note: '"Provides a comparison of" turns the verb "compare" into a noun phrase — a hallmark of higher-band academic style.',
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Once the introduction is in place, the body paragraphs need precise verbs and adjectives for describing levels, gaps, and trends between categories.',
+        sentences: [
+          {
+            label: 'Model 1 — Describing a Gap (Band 7)',
+            parts: [
+              { text: 'There', role: null },
+              { text: 'was', role: 'verb' },
+              { text: 'a substantial gap', role: 'object' },
+              { text: 'between', role: 'connector' },
+              { text: 'the highest and lowest figures, with Norway consuming almost three times as much water as Spain', role: 'time' },
+            ],
+            note: '"A substantial gap between X and Y" is a flexible frame for any large difference between two categories.',
+          },
+          {
+            label: 'Model 2 — Ranking Language (Band 7–8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: 'recorded', role: 'verb' },
+              { text: 'the highest level of consumption', role: 'object' },
+              { text: ', followed closely by Sweden and Denmark', role: 'connector' },
+            ],
+            note: '"Recorded the highest/lowest" plus "followed closely/distantly by" lets you rank three or more categories in one sentence.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Avoid these in description sentences',
+            items: [
+              'Do not use "a lot of" or "lots of" — replace with "a substantial amount of" / "considerably more than".',
+              'Do not repeat "consume/consumption" in every sentence — vary with "use", "usage", "figures for".',
+              'Do not write bare numbers without a unit or comparison ("Norway had 200") — always frame the figure ("at approximately 200 litres, almost double Spain’s figure").',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison & Grouping',
+        intro: 'Bar charts reward grouped description: clusters of similar categories described together, rather than one sentence per bar.',
+        sentences: [
+          {
+            label: 'Model 1 — Grouping High Performers (Band 7)',
+            parts: [
+              { text: 'Norway, Sweden, and Denmark', role: 'subject' },
+              { text: 'all recorded', role: 'verb' },
+              { text: 'figures above the overall average', role: 'object' },
+              { text: ', with only marginal differences between them', role: 'connector' },
+            ],
+            note: 'Grouping three similar categories into one sentence avoids repetition and shows you can synthesise data, not just list it.',
+          },
+          {
+            label: 'Model 2 — Em-Dash Aside (Band 8)',
+            parts: [
+              { text: 'The three highest-performing countries', role: 'subject' },
+              { text: '— Norway, Sweden, and Denmark —', role: null },
+              { text: 'all exceeded', role: 'verb' },
+              { text: '70%', role: 'object' },
+              { text: ', whereas the remaining three fell well short of this threshold', role: 'connector' },
+            ],
+            note: 'The em-dash aside names the group without breaking the main clause — a punctuation device examiners associate with Band 8 control.',
+          },
+          {
+            label: 'Model 3 — Contrast Pair (Band 7)',
+            parts: [
+              { text: 'While Country A recorded the highest figure', role: 'connector' },
+              { text: ',', role: null },
+              { text: 'Country B', role: 'subject' },
+              { text: 'registered', role: 'verb' },
+              { text: 'the lowest, at less than half that amount', role: 'object' },
+            ],
+            note: '"While X..., Y..." is the cleanest contrast frame — keep both halves grammatically parallel.',
+          },
+          {
+            label: 'Model 4 — Proportional Comparison (Band 7–8)',
+            parts: [
+              { text: 'Spain’s figure', role: 'subject' },
+              { text: 'amounted to', role: 'verb' },
+              { text: 'just over a third of Norway’s', role: 'object' },
+            ],
+            note: '"Amounted to [fraction] of [X]’s" is a precise way to express ratios without doing visible arithmetic.',
+          },
+          {
+            label: 'Model 5 — Clustering by Range (Band 8)',
+            parts: [
+              { text: 'Three of the six countries', role: 'subject' },
+              { text: 'clustered', role: 'verb' },
+              { text: 'within a narrow range of 150–170 litres', role: 'object' },
+              { text: ', suggesting broadly similar usage patterns', role: 'connector' },
+            ],
+            note: '"Clustered within a narrow range of X–Y" is a sophisticated way to group near-identical bars instead of describing each one.',
+          },
+          {
+            label: 'Model 6 — Superlative with Margin (Band 8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: 'comfortably topped the table', role: 'verb' },
+              { text: ', outstripping its nearest rival by almost 40 litres', role: 'connector' },
+            ],
+            note: '"Outstripping its nearest rival by [margin]" expresses both rank and gap size in one clause.',
+          },
+          {
+            label: 'Model 7 — Near-Equality (Band 7)',
+            parts: [
+              { text: 'Sweden and Denmark', role: 'subject' },
+              { text: 'posted', role: 'verb' },
+              { text: 'almost identical figures', role: 'object' },
+              { text: ', differing by fewer than five litres', role: 'connector' },
+            ],
+            note: '"Almost identical, differing by [small margin]" is the standard frame for two bars that are visually indistinguishable.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Group before you write',
+            items: [
+              'Scan the chart first and mentally sort the bars into 2–3 groups (high / mid / low, or above-average / below-average) before writing a single sentence.',
+              'Each group becomes one sentence — this naturally produces the synthesis examiners reward, instead of a flat list.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Grouping pitfalls',
+            items: [
+              'Do not group categories that do not actually share a pattern just to save words — inaccurate grouping is penalised more than slightly repetitive description.',
+              'Do not list more than three items in one "X, Y, and Z" subject — it becomes hard to follow and dilutes the comparison.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time & Scope Expressions',
+        intro: 'Many bar charts compare two time points (e.g. 2010 vs 2020) or two regions side by side. These expressions frame that scope precisely.',
+        sentences: [
+          {
+            label: 'Model 1 — Two-Point Comparison (Band 7)',
+            parts: [
+              { text: 'Between 2010 and 2020', role: 'time' },
+              { text: ', the figure for Country A', role: 'subject' },
+              { text: 'rose', role: 'verb' },
+              { text: 'from just under 100 to nearly 150 units', role: 'object' },
+            ],
+            note: '"Between [year] and [year], the figure for X rose from A to B" is the standard two-point comparison frame.',
+          },
+          {
+            label: 'Model 2 — Overall Period Framing (Band 7–8)',
+            parts: [
+              { text: 'Over the ten-year period shown', role: 'time' },
+              { text: ', most categories', role: 'subject' },
+              { text: 'experienced', role: 'verb' },
+              { text: 'a moderate increase, with one notable exception', role: 'object' },
+            ],
+            note: '"Over the [n]-year period shown" is a safe, precise way to refer to the chart’s timeframe without repeating both years each time.',
+          },
+          {
+            label: 'Model 3 — Single-Year Snapshot (Band 6–7)',
+            parts: [
+              { text: 'In 2020', role: 'time' },
+              { text: ', the gap between the highest and lowest figures', role: 'subject' },
+              { text: 'had narrowed', role: 'verb' },
+              { text: 'to roughly half its 2010 level', role: 'object' },
+            ],
+            note: 'Past perfect ("had narrowed") signals that this snapshot is being compared back to an earlier point — useful for two-bar-set charts.',
+          },
+          {
+            label: 'Model 4 — Regional Scope (Band 7)',
+            parts: [
+              { text: 'Across the European countries surveyed', role: 'time' },
+              { text: ', consumption levels', role: 'subject' },
+              { text: 'remained', role: 'verb' },
+              { text: 'broadly comparable, unlike the wider variation seen elsewhere', role: 'object' },
+            ],
+            note: '"Across the [region] countries surveyed" frames a sub-group within the chart — useful when categories can be naturally clustered geographically.',
+          },
+          {
+            label: 'Model 5 — Projected/Future Framing (Band 8)',
+            parts: [
+              { text: 'By the end of the period shown', role: 'time' },
+              { text: ', three categories', role: 'subject' },
+              { text: 'had overtaken', role: 'verb' },
+              { text: 'their initial frontrunner', role: 'object' },
+            ],
+            note: '"By the end of the period shown, X had overtaken Y" — past perfect for an end-state that resulted from change across the chart’s timeframe.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Preposition reference for time/scope',
+            items: [
+              'between [year] and [year] — for a defined two-point span',
+              'over the [n]-year period — for describing change across the whole range',
+              'by [year] / by the end of [period] — for an end-state result',
+              'across [countries/categories] — for scope, not time',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Time-expression mistakes',
+            items: [
+              'Do not write "in the period of 2010 to 2020" — use "between 2010 and 2020" or "over the period from 2010 to 2020".',
+              'Do not mix tenses within one time frame — if the chart shows a completed past period, stay in past simple/past perfect throughout that sentence.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data & Detail Integration',
+        intro: 'The strongest reports weave specific figures into comparison sentences rather than listing them separately — this section models that integration.',
+        sentences: [
+          {
+            label: 'Model 1 — Figure Embedded in Comparison (Band 7)',
+            parts: [
+              { text: 'At approximately 220 litres per day', role: 'time' },
+              { text: ', Norway’s consumption', role: 'subject' },
+              { text: 'was', role: 'verb' },
+              { text: 'almost double the figure recorded for Spain', role: 'object' },
+            ],
+            note: 'Opening with the figure ("At approximately X...") keeps the comparison, not the number, as the sentence’s focus.',
+          },
+          {
+            label: 'Model 2 — Approximation Language (Band 7)',
+            parts: [
+              { text: 'The figure for Country C', role: 'subject' },
+              { text: 'stood at just over', role: 'verb' },
+              { text: '150 units, slightly above the group average', role: 'object' },
+            ],
+            note: '"Stood at just over / just under / roughly / in the region of" — approximation phrases that avoid claiming false precision.',
+          },
+          {
+            label: 'Model 3 — Percentage-Point Change (Band 8)',
+            parts: [
+              { text: 'This', role: 'subject' },
+              { text: 'represented', role: 'verb' },
+              { text: 'an increase of some 15 percentage points on the previous figure', role: 'object' },
+            ],
+            note: '"Represented an increase/decrease of some [n] percentage points" is the precise academic phrase for comparing proportions, not raw values.',
+          },
+          {
+            label: 'Model 4 — Fraction Framing (Band 7–8)',
+            parts: [
+              { text: 'Roughly two-thirds of the countries surveyed', role: 'subject' },
+              { text: 'recorded', role: 'verb' },
+              { text: 'figures within ten units of one another', role: 'object' },
+            ],
+            note: 'Fractions ("roughly two-thirds", "just under half") let you summarise a sub-group without naming every member.',
+          },
+          {
+            label: 'Model 5 — Multiple-Detail Synthesis (Band 8)',
+            parts: [
+              { text: 'Although the two leading countries were separated by fewer than ten units', role: 'connector' },
+              { text: ', both', role: 'subject' },
+              { text: 'remained', role: 'verb' },
+              { text: 'far ahead of the third-placed country, whose figure was barely half that of the leader', role: 'object' },
+            ],
+            note: 'Combines a near-tie, a group ranking, and a proportional gap in a single sentence — the kind of synthesis that distinguishes Band 8 reports.',
+          },
+          {
+            label: 'Model 6 — Rounded Total (Band 7)',
+            parts: [
+              { text: 'Combined', role: 'connector' },
+              { text: ', the top three countries', role: 'subject' },
+              { text: 'accounted for', role: 'verb' },
+              { text: 'well over half of the total figure shown', role: 'object' },
+            ],
+            note: '"Accounted for [proportion] of the total" is useful when the chart invites a part-to-whole comparison.',
+          },
+          {
+            label: 'Model 7 — Closing Synthesis Sentence (Band 8)',
+            parts: [
+              { text: 'Overall', role: 'connector' },
+              { text: ', the data', role: 'subject' },
+              { text: 'reveal', role: 'verb' },
+              { text: 'a clear divide between the higher- and lower-consuming countries, with little common ground between the two groups', role: 'object' },
+            ],
+            note: 'A strong closing sentence names the overall pattern (a "divide" between groups) rather than restating individual figures.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Integrating numbers smoothly',
+            items: [
+              'Lead with the comparison word, not the number, when possible: "almost double", "well over half", "fewer than half" — these carry more meaning than a bare figure.',
+              'Round figures to sensible units ("around 220 litres", not "218.6 litres") — IELTS Task 1 rewards clarity over false precision.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Common data-integration errors',
+            items: [
+              'Do not stack more than two figures in one sentence — it becomes a list, not an analysis.',
+              'Do not invent figures that are not visible on the chart, even approximate ones — only describe what is shown.',
+              'Do not end every body paragraph with a bare restatement of the highest/lowest figure — vary your closing sentences with synthesis language ("a clear divide", "broadly comparable", "considerable variation").',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Paraphrased the chart’s title and scope in the introduction — did not copy the prompt wording verbatim.',
+      'Wrote a clear overview identifying the two or three most significant overall patterns.',
+      'Grouped similar categories together rather than describing every bar in sequence.',
+      'Used at least three different comparison structures (e.g. "while X..., Y...", "amounted to a third of", "clustered within a narrow range of").',
+      'Embedded specific figures inside comparison sentences rather than listing them separately.',
+      'Used approximation language ("just over", "roughly", "in the region of") instead of false precision.',
+      'Varied verbs of comparison and ranking — avoided repeating "is higher than" / "is lower than".',
+      'Used appropriate time-scope expressions matching the chart’s actual timeframe (single year vs. period vs. two-point comparison).',
+      'Closed body paragraphs with synthesis statements, not bare repeated figures.',
+      'Checked tense consistency — past simple/past perfect for completed historical data, present simple only for general/timeless charts.',
+    ],
+  },
+};
+
+window.CHART_CHEATSHEETS = {
+  'guidebook/task1/bar-charts': {
+    title: 'Bar Charts',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing bar charts under timed conditions.',
+    structures: [
+      { pattern: 'The bar chart [illustrates / compares / shows] [what] in [number] [categories], [time frame].', example: 'The bar chart compares average household water usage in six countries in 2020.' },
+      { pattern: '[Category A, B, and C] all [recorded / posted] [figures] [comparison phrase].', example: 'Norway, Sweden, and Denmark all recorded figures above the overall average.' },
+      { pattern: 'There was a [substantial / marginal] [gap / difference] between [X] and [Y], with [detail].', example: 'There was a substantial gap between Norway and Spain, with the former consuming almost double the latter’s figure.' },
+      { pattern: 'While [Category A] [verb phrase], [Category B] [contrasting verb phrase].', example: 'While Norway recorded the highest figure, Spain registered the lowest, at less than half that amount.' },
+      { pattern: '[Category]’s figure amounted to [fraction] of [Category]’s.', example: 'Spain’s figure amounted to just over a third of Norway’s.' },
+      { pattern: '[Number] of the [categories] clustered within a narrow range of [X–Y units].', example: 'Three of the six countries clustered within a narrow range of 150–170 litres.' },
+      { pattern: 'Between [year] and [year], the figure for [category] [rose / fell] from [A] to [B].', example: 'Between 2010 and 2020, the figure for Country A rose from just under 100 to nearly 150 units.' },
+      { pattern: 'Over the [n]-year period shown, [categories] experienced [a moderate / a sharp / little] [change].', example: 'Over the ten-year period shown, most categories experienced a moderate increase.' },
+      { pattern: 'At [approximately / just over / just under] [figure], [category]’s [measure] was [comparison].', example: 'At approximately 220 litres per day, Norway’s consumption was almost double the figure recorded for Spain.' },
+      { pattern: 'Overall, the data reveal [a clear pattern / a divide / little variation] [detail].', example: 'Overall, the data reveal a clear divide between the higher- and lower-consuming countries.' },
+    ],
+    collocations: [
+      { phrase: 'recorded the highest/lowest figure', use: 'naming the top or bottom category in a ranking' },
+      { phrase: 'followed closely/distantly by', use: 'linking the runner-up to the leader, signalling gap size' },
+      { phrase: 'comfortably topped the table', use: 'emphasising a clear, uncontested leader' },
+      { phrase: 'outstripped its nearest rival by [margin]', use: 'expressing rank and gap size together' },
+      { phrase: 'posted almost identical figures', use: 'describing two near-equal categories' },
+      { phrase: 'differing by fewer than [n]', use: 'quantifying a small gap between near-equal figures' },
+      { phrase: 'clustered within a narrow range of', use: 'grouping several similar values without listing each one' },
+      { phrase: 'amounted to [fraction] of', use: 'expressing a precise ratio between two figures' },
+      { phrase: 'accounted for well over half of the total', use: 'part-to-whole comparison across categories' },
+      { phrase: 'a substantial gap between X and Y', use: 'flagging a large difference between two categories' },
+      { phrase: 'broadly comparable', use: 'describing categories that are similar without being identical' },
+      { phrase: 'considerable variation', use: 'summarising a spread of very different figures' },
+      { phrase: 'a clear divide between [groups]', use: 'closing-sentence synthesis of two distinct clusters' },
+      { phrase: 'stood at just over/under [figure]', use: 'reporting a figure with controlled approximation' },
+      { phrase: 'in the region of [figure]', use: 'alternative approximation phrase for a specific value' },
+      { phrase: 'an increase of some [n] percentage points', use: 'precise change language for proportions, not raw values' },
+      { phrase: 'roughly two-thirds / just under half', use: 'summarising a sub-group of categories by fraction' },
+      { phrase: 'had overtaken its initial frontrunner', use: 'describing a change in ranking by the end of the period' },
+      { phrase: 'remained broadly comparable, unlike X', use: 'contrasting one region/group’s stability with variation elsewhere' },
+      { phrase: 'far ahead of the third-placed category', use: 'extending a ranking beyond first and second place' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use present simple when the chart shows a single, timeless snapshot (no years given): "The chart shows that Country A consumes more than Country B."',
+        'Use present simple for general comparisons that hold across the whole dataset: "Norway’s figure is roughly double Spain’s."',
+        'Treat percentages and proportions shown for one period as static facts: "Renewables account for 40% of the total."',
+        'Keep verb tense consistent across an entire static-comparison sentence — do not slip into past tense mid-sentence.',
+        'When unsure whether a chart is time-based, check the axis labels before choosing a tense — a single-year chart with multiple categories is usually static.',
+      ],
+      dynamic: [
+        'Use past simple/past perfect when the chart shows change across two or more named years: "Consumption rose between 2010 and 2020."',
+        'Use "had + past participle" to describe a state that resulted from earlier change: "By 2020, three countries had overtaken the original leader."',
+        'Pair dynamic verbs (rose, fell, increased, declined) with a clear time expression — never leave a change-verb without "between X and Y" or "over the period".',
+        'For projected/future charts, use modal forms ("is expected to", "will likely") rather than past tense.',
+        'Do not switch between static and dynamic framing within the same paragraph — pick the framing that matches the chart and stay consistent.',
+      ],
+    },
+    danger: [
+      'The most common mistake: writing a static-style sentence ("Norway has the highest consumption") about a chart that actually shows change over time — always check the axis for years before choosing a tense.',
+      'Do not copy phrases directly from the chart title — paraphrase using synonyms ("illustrates" for "shows", "households" for "people").',
+      'Do not list every single bar in sequence — group categories that share a pattern into single sentences.',
+      'Do not use vague quantifiers ("a lot", "lots of", "many") — replace with precise comparison language ("a substantial amount", "considerably more than").',
+      'Do not invent figures not shown on the chart, even rough ones — only describe what is visible.',
+      'Do not end every paragraph with a bare repeated figure — close with a synthesis statement instead.',
+      'Do not mix static and dynamic tenses within one sentence or paragraph — this is the single biggest grammar-accuracy penalty in bar-chart reports.',
+    ],
+    tips: [
+      'Spend 1–2 minutes grouping the bars mentally into 2–3 clusters before writing — this produces natural synthesis instead of a flat list.',
+      'Open with a paraphrase sentence, follow with a two-part overview, then describe each group in its own paragraph.',
+      'Lead comparison sentences with the comparison word ("almost double", "well over half") rather than the bare number.',
+      'Use approximation language ("just over", "roughly", "in the region of") to avoid false precision and keep sentences flowing.',
+      'Vary your ranking vocabulary across the report — do not repeat "is higher/lower than" more than twice.',
+      'Check the axis labels first to decide whether the chart is static (one snapshot) or dynamic (change over time) — this single decision shapes your entire tense choice.',
+      'Reserve your most complex structure (passive framing, em-dash asides, nominalisation) for the overview and closing sentences, where they have the most impact.',
+    ],
+    prepositions: [
+      { key: 'between [year] and [year]', value: 'for a defined two-point time span' },
+      { key: 'over the [n]-year period', value: 'for describing change across a whole range' },
+      { key: 'by [year] / by the end of [period]', value: 'for an end-state result of change' },
+      { key: 'across [countries / categories]', value: 'for scope across categories, not time' },
+      { key: 'at [approximately / just over / just under] [figure]', value: 'for introducing a specific value with controlled precision' },
+      { key: 'in the region of [figure]', value: 'alternative way to approximate a value' },
+      { key: 'on [the previous figure / the 2010 level]', value: 'for expressing change relative to an earlier reference point' },
+    ],
+  },
+};
+
 // ─── Practice exercises (typing) ────────────────────────────────────────────
 window.EXERCISES = {
   'practice/task1/line-graphs': {
