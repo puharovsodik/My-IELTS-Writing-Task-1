@@ -211,7 +211,7 @@ function GuidePage({ domainId, groupId, topicId }) {
   if (!guide) return <NotFound />;
 
   return (
-    <div className="reading">
+    <div className="page page--reading">
       <div className="reading-head">
         <span className="badge badge--instruction">{guide.eyebrow}</span>
         <h1 className="reading-title">{guide.title}</h1>
@@ -224,7 +224,7 @@ function GuidePage({ domainId, groupId, topicId }) {
           {section.intro && <p className="article">{section.intro}</p>}
           {section.template && (
             <div className="template">
-              <p className="template__pattern">{renderTemplateSlots(section.template)}</p>
+              <p className="template__body">{renderTemplateSlots(section.template)}</p>
             </div>
           )}
           {section.sentences.map((s, j) => (
@@ -250,7 +250,7 @@ function GuidePage({ domainId, groupId, topicId }) {
         </ul>
       </section>
 
-      <div className="reading-footer">
+      <div className="reading-foot">
         <a
           className="btn"
           href={`#/${domainId}/${groupId}/cheatsheet/${topicId}`}
@@ -277,7 +277,7 @@ function ChartCheatsheetPage({ domainId, groupId, topicId }) {
   if (!sheet) return <NotFound />;
 
   return (
-    <div className="reading">
+    <div className="page page--reading">
       <div className="reading-head">
         <span className="badge badge--cheatsheet">{sheet.eyebrow}</span>
         <h1 className="reading-title">{sheet.title}</h1>
@@ -355,7 +355,7 @@ function ChartCheatsheetPage({ domainId, groupId, topicId }) {
         </table>
       </section>
 
-      <div className="reading-footer">
+      <div className="reading-foot">
         <a
           className="btn"
           href={`#/${domainId}/${groupId}/guide/${topicId}`}
