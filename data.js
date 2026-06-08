@@ -184,6 +184,7 @@ window.CHEATSHEETS = {
   },
 };
 
+// ─── Guidebook chart guides ─────────────────────────────────────────────────
 window.GUIDES = {
   'guidebook/task1/bar-charts': {
     title: 'Bar Charts',
@@ -583,6 +584,7 @@ window.GUIDES = {
   },
 };
 
+// ─── Guidebook chart cheatsheets ────────────────────────────────────────────
 window.CHART_CHEATSHEETS = {
   'guidebook/task1/bar-charts': {
     title: 'Bar Charts',
