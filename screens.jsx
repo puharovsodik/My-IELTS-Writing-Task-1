@@ -265,7 +265,7 @@ function ChartHubPage({ domainId, groupId, sectionId }) {
       </div>
       <p className="article">{section.summary}</p>
       <div className="topic-grid">
-        {section.topics.map(topic => (
+        {(section.topics || []).map(topic => (
           <a
             key={topic.id}
             className="topic-card"
