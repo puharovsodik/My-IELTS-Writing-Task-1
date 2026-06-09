@@ -1342,6 +1342,315 @@ window.GUIDES = {
       'Response is between 150 and 200 words.',
     ],
   },
+  'guidebook/task1/maps': {
+    title: 'Maps',
+    eyebrow: 'Task 1 · Guidebook',
+    deck: 'Maps test spatial description, passive voice, and transformation vocabulary. Unlike graphs, maps require specific language for directions, locations, and developments.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Identify whether the maps show time-based change or a comparison of two proposed layouts. Choose the appropriate template and follow with a clear overview.',
+        template: "The [maps/diagrams] illustrate how [area name] has [transformed/developed/changed] over [time period]. Overall, the area [underwent substantial development], with [main change 1] and [main change 2], while [something that stayed the same] remained unchanged.",
+        sentences: [
+          {
+            label: 'Time-based intro',
+            parts: [
+              { text: 'The diagrams', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrate', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'how Westley village has transformed over a 30-year period from 1990 to 2020', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Comparison intro',
+            parts: [
+              { text: 'The plans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'compare', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'two proposed designs for a city center redevelopment, showing how the layout would differ between the residential-focused and commercial-focused options', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 1',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'the area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'underwent substantial urbanization', role: 'verb' },
+              { text: ', with numerous residential buildings constructed and farmland replaced by infrastructure, while the river running through the center remained unchanged.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 2',
+            parts: [
+              { text: 'The most notable changes', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'include the demolition of agricultural buildings and the construction of a shopping complex and parking facilities', role: 'verb' },
+              { text: ', transforming the area from a rural village to a suburban commercial hub.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Key mistake',
+            items: [
+              'Use passive voice consistently: A school was built — NOT They built a school.',
+              'Do not copy the names of features from the map without paraphrasing the overall context.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Overview = two main changes + one thing that stayed the same.',
+              'Do not include specific locations in the overview — save those for body paragraphs.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use passive voice for all changes. Location phrases come before or after the main clause.',
+        sentences: [
+          {
+            label: 'Replacement',
+            parts: [
+              { text: 'The farmland in the southern area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was replaced by', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'a large residential estate', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Conversion',
+            parts: [
+              { text: 'The old warehouse', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was converted into', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'a community sports center', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Construction',
+            parts: [
+              { text: 'A shopping complex', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'to the northeast of the town center', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Unchanged feature',
+            parts: [
+              { text: 'The river running through the center', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'remained unchanged', role: 'verb' },
+              { text: ' throughout the period.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Transformation verbs',
+            items: [
+              'Change: was replaced by, was converted into, was transformed into, was extended, was demolished.',
+              'New features: was constructed, was built, was developed, was added, appeared, emerged.',
+              'Unchanged: remained unchanged, stayed the same, retained its original function.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Group similar changes together by area or by type. Use contrast structures for areas that developed differently.',
+        template: "Several [types of building/facility] were [verb], including [example 1], [example 2], and [example 3].",
+        sentences: [
+          {
+            label: 'Grouping by type',
+            parts: [
+              { text: 'Several commercial facilities', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'were constructed', role: 'verb' },
+              { text: ', including a shopping mall, a cinema complex, and a supermarket.', role: null },
+            ],
+          },
+          {
+            label: 'Area contrast',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'the eastern side', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'underwent extensive residential development', role: 'verb' },
+              { text: ', the western area remained largely agricultural.', role: null },
+            ],
+          },
+          {
+            label: 'Conversely',
+            parts: [
+              { text: 'Conversely', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the southern section', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'remained largely unchanged', role: 'verb' },
+              { text: ', with the original park and green space preserved throughout the period.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Grouping strategies',
+            items: [
+              'Group by direction: northern changes in one sentence, southern in another.',
+              'Group by type: commercial facilities, residential buildings, transport infrastructure.',
+              'Use Several... including to list multiple changes efficiently.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Sequence Expressions',
+        intro: 'Use past simple throughout for historical map changes. Sequence connectors help organize the description logically.',
+        sentences: [
+          {
+            label: 'Initial state',
+            parts: [
+              { text: 'Initially', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the village', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consisted mainly of farmland and a small cluster of residential properties', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'in 1990', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'By year',
+            parts: [
+              { text: 'By 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had been transformed beyond recognition', role: 'verb' },
+              { text: ', with the majority of green space replaced by residential and commercial buildings.', role: null },
+            ],
+          },
+          {
+            label: 'Over the period',
+            parts: [
+              { text: 'Over the 30-year period', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the road network', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was significantly extended', role: 'verb' },
+              { text: ', with new routes connecting the residential areas to the town center.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rule',
+            items: [
+              'Use simple past throughout for historical maps: was built, was replaced, was extended.',
+              'Use between [year] and [year] for the time span — not in X and Y.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use present tense for past map changes.',
+              'Do not write In 1990 and 2020 — use between 1990 and 2020 or over the 30-year period.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data and Detail Integration',
+        intro: 'Add specific locations, purposes, and connecting details to upgrade from Band 6 to Band 8.',
+        template: "[Feature] was [verb] in [specific location], [additional detail about size/purpose/connection].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was built', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' across the river in the northern section.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8+',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' across the river in the northern section, ', role: null },
+              { text: 'connecting the residential area to the newly developed commercial district', role: 'verb' },
+              { text: ', thereby improving accessibility.', role: null },
+            ],
+          },
+          {
+            label: 'Complex with purpose',
+            parts: [
+              { text: 'The farmland', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was replaced by a housing estate, which occupied approximately half of the available land', role: 'verb' },
+              { text: ', while the remainder was converted into a public park to provide recreational facilities for the new residents.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Detail upgrade formula',
+            items: [
+              'Add a compass direction: in the northeastern corner, to the south of the town center.',
+              'Add a purpose: to provide, thereby improving, in order to connect.',
+              'Add a connection: connecting X to Y, linking the residential area to the commercial zone.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Used passive voice consistently throughout: was built, was replaced, was converted.',
+      'Overview identifies two main changes and one thing that stayed the same — no locations or details.',
+      'Grouped similar changes together rather than describing features one by one.',
+      'Used contrast language for areas that developed differently: while, conversely, whereas.',
+      'Added specific compass locations to at least three changes: northeastern corner, to the south of.',
+      'Included purpose or result for at least one change: thereby improving, to provide, connecting X to Y.',
+      'Maintained consistent past simple tense for all historical changes.',
+      'Used at least five different transformation verbs: replaced, constructed, converted, demolished, extended.',
+      'Described at least one feature that remained unchanged.',
+      'Response is between 150 and 200 words.',
+    ],
+  },
 };
 
 // ─── Guidebook chart cheatsheets ────────────────────────────────────────────
@@ -1579,6 +1888,83 @@ window.CHART_CHEATSHEETS = {
       { key: 'from [X%] to [Y%]', value: 'for expressing a change in proportion between two charts' },
       { key: 'by [X percentage points]', value: 'for quantifying the gap between two proportions' },
       { key: 'among / across [categories]', value: 'for scope across multiple segments' },
+    ],
+  },
+  'guidebook/task1/maps': {
+    title: 'Maps',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing maps under timed conditions.',
+    structures: [
+      { pattern: 'The [maps/diagrams] illustrate how [area] has [transformed] over [period].', example: 'The diagrams illustrate how Westley village transformed over the 30-year period from 1990 to 2020.' },
+      { pattern: 'Overall, the area [underwent substantial development], with [change 1] and [change 2].', example: 'Overall, the area underwent substantial urbanization, with farmland replaced by housing and new roads constructed throughout.' },
+      { pattern: '[Feature] was [replaced by] [new feature].', example: 'The farmland in the southern area was replaced by a large residential estate.' },
+      { pattern: '[Building] was [constructed] [to the north/south/east/west of] [location].', example: 'A shopping complex was constructed to the northeast of the original town center.' },
+      { pattern: 'Several [facilities] were [built], including [X], [Y], and [Z].', example: 'Several commercial facilities were built, including a supermarket, a cinema, and a car park.' },
+      { pattern: '[While] [area 1] underwent [change], [area 2] remained [unchanged].', example: 'While the eastern side underwent extensive development, the western area remained largely agricultural.' },
+      { pattern: '[Old building] was [converted into] [new purpose].', example: 'The old warehouse was converted into a community sports center.' },
+      { pattern: 'By [year], [feature] had been [constructed].', example: 'By 2020, a new bridge had been constructed across the river in the northern section.' },
+      { pattern: 'A [feature] was [added], [connecting] [location A] to [location B].', example: 'A new road was added connecting the residential estate to the commercial district.' },
+      { pattern: '[Conversely], the [area/feature] [remained] largely [unchanged].', example: 'Conversely, the river and the park to its south remained largely unchanged throughout the period.' },
+    ],
+    collocations: [
+      { phrase: 'was replaced by', use: 'one feature taking the place of another' },
+      { phrase: 'was converted into', use: 'same structure, changed purpose' },
+      { phrase: 'was constructed', use: 'new building or structure' },
+      { phrase: 'was demolished', use: 'building removed entirely' },
+      { phrase: 'was extended', use: 'existing feature made larger' },
+      { phrase: 'underwent development', use: 'area changed significantly' },
+      { phrase: 'was added', use: 'new feature introduced' },
+      { phrase: 'was removed', use: 'feature disappeared' },
+      { phrase: 'remained unchanged', use: 'no change over the period' },
+      { phrase: 'disappeared', use: 'feature no longer present' },
+      { phrase: 'to the north/south of', use: 'directional location' },
+      { phrase: 'in the [direction] corner', use: 'corner location' },
+      { phrase: 'adjacent to', use: 'directly next to' },
+      { phrase: 'opposite / facing', use: 'across from another feature' },
+      { phrase: 'situated in / located near', use: 'general position' },
+      { phrase: 'on both sides of', use: 'flanking a central feature' },
+      { phrase: 'running through', use: 'a feature that passes through the area' },
+      { phrase: 'at the intersection of', use: 'where two roads or features meet' },
+      { phrase: 'connecting X to Y', use: 'a linking feature such as a bridge or road' },
+      { phrase: 'thereby improving accessibility', use: 'purpose/result clause' },
+    ],
+    staticDynamic: {
+      static: [
+        'Maps showing a single point in time: use simple present if undated, simple past if dated.',
+        'For proposed/future maps: use conditional or modal forms (would be, is proposed).',
+      ],
+      dynamic: [
+        'For maps showing change over time: use simple past throughout (was built, was replaced).',
+        'Use past perfect (had been constructed) only for features completed before the final year shown.',
+      ],
+    },
+    danger: [
+      'Do not use active voice: NOT They built a school. USE A school was built.',
+      'Do not describe the overview with specific locations — keep it general.',
+      'Do not list features one by one without grouping or comparing.',
+      'Do not use present tense for historical changes.',
+      'Do not ignore unchanged features — mentioning what stayed the same shows analytical awareness.',
+      'Do not use vague location language: say northeastern corner, not up there.',
+    ],
+    tips: [
+      'Always use passive voice: was built, was replaced, was constructed.',
+      'Write the overview first: state two main changes and one thing that remained the same.',
+      'Add a compass direction to every change: to the north of, in the southeastern corner.',
+      'Show contrast: use while and conversely for areas that changed differently.',
+      'Use past simple for all historical changes — do not mix tenses.',
+      'Group similar changes: Several facilities including... saves words and sounds analytical.',
+      'Add purpose or result to at least one change: thereby, to provide, connecting X to Y.',
+    ],
+    prepositions: [
+      { key: 'to the north/south/east/west of', value: 'for directional position of a feature' },
+      { key: 'in the northeastern/northwestern/southeastern/southwestern corner', value: 'for corner positions' },
+      { key: 'adjacent to / next to', value: 'for directly neighboring features' },
+      { key: 'at the intersection of', value: 'for features at a crossroads or junction' },
+      { key: 'on both sides of', value: 'for features flanking a road or river' },
+      { key: 'between [year] and [year]', value: 'for the time span of change' },
+      { key: 'over the [n]-year period', value: 'for change across the whole timeframe' },
+      { key: 'by [year]', value: 'for an end-state after change' },
+      { key: 'throughout the period', value: 'for features that stayed the same' },
     ],
   },
 };
