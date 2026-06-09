@@ -585,7 +585,7 @@ window.GUIDES = {
 
   'guidebook/task1/line-graphs': {
     title: 'Line Graphs',
-    eyebrow: 'Task 1 · Guidebook',
+    eyebrow: 'Task 1 · Guide',
     deck: 'Line graphs show change over time. Master trend vocabulary, time expressions, and comparison structures to describe rises, falls, and fluctuations with precision.',
     sections: [
       {
@@ -1024,7 +1024,7 @@ window.GUIDES = {
   },
   'guidebook/task1/pie-charts': {
     title: 'Pie Charts',
-    eyebrow: 'Task 1 · Guidebook',
+    eyebrow: 'Task 1 · Guide',
     deck: 'Pie charts present proportions. Master fraction language, proportion verbs, and grouping structures to describe segments analytically rather than just listing percentages.',
     sections: [
       {
@@ -1344,7 +1344,7 @@ window.GUIDES = {
   },
   'guidebook/task1/maps': {
     title: 'Maps',
-    eyebrow: 'Task 1 · Guidebook',
+    eyebrow: 'Task 1 · Guide',
     deck: 'Maps test spatial description, passive voice, and transformation vocabulary. Unlike graphs, maps require specific language for directions, locations, and developments.',
     sections: [
       {
@@ -1653,7 +1653,7 @@ window.GUIDES = {
   },
   'guidebook/task1/processes': {
     title: 'Process Diagrams',
-    eyebrow: 'Task 1 · Guidebook',
+    eyebrow: 'Task 1 · Guide',
     deck: 'Process diagrams test sequential description using passive voice, connectors, and precise detail. The key features are passive constructions, sequential connectors, and accurate stage descriptions.',
     sections: [
       {
@@ -1971,7 +1971,7 @@ window.GUIDES = {
   },
   'guidebook/task1/tables': {
     title: 'Tables',
-    eyebrow: 'Task 1 · Guidebook',
+    eyebrow: 'Task 1 · Guide',
     deck: 'Tables present multiple categories across multiple variables simultaneously. Your task is to identify the most striking comparisons, group data meaningfully, and avoid describing every cell.',
     sections: [
       {
