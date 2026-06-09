@@ -1,4 +1,4 @@
-// data.js — IELTS Writing Trainer content tree
+﻿// data.js — IELTS Writing Trainer content tree
 // Three levels: Domain (L1) → Group (L2) → Content Node (L3)
 
 const TASK1_CHART_TOPICS = [
@@ -1969,6 +1969,333 @@ window.GUIDES = {
       'Response is between 150 and 190 words.',
     ],
   },
+  'guidebook/task1/tables': {
+    title: 'Tables',
+    eyebrow: 'Task 1 · Guidebook',
+    deck: 'Tables present multiple categories across multiple variables simultaneously. Your task is to identify the most striking comparisons, group data meaningfully, and avoid describing every cell.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Paraphrase the table topic, name the variables, and follow with an overview that identifies the overall pattern without any specific figures.',
+        template: "The table [compares / illustrates / presents data on] [topic] across [N] [categories / countries / variables].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'The table', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'provides information about', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'four development indicators across four selected countries', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8+ (opening participle)',
+            parts: [
+              { text: 'Drawn from a cross-national dataset', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the table', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates striking disparities in living standards and connectivity', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'among four nations at differing stages of development', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 6 overview',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'ranks highest in all four categories', role: 'verb' },
+              { text: ', while Ethiopia records the lowest figures across most indicators.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 overview',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'a clear north-south divide', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is evident', role: 'verb' },
+              { text: ', with wealthier nations consistently outperforming lower-income countries across every metric presented, most dramatically in terms of internet access.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Common mistakes',
+            items: [
+              'Never include specific figures in the overview — state the overall pattern only.',
+              'Do not use "In conclusion" — use "Overall" or "In general" for the overview.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Identify the biggest gap between the highest and lowest value in any column.',
+              'State which category/country leads and which lags, without any numbers.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use ranking, comparison, and gap language. Combine all three for Band 8+ sentences.',
+        sentences: [
+          {
+            label: 'Ranking (Band 6)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had the highest GDP per capita', role: 'verb' },
+              { text: ', at $82,500.', role: null },
+            ],
+          },
+          {
+            label: 'Ranking (Band 8)',
+            parts: [
+              { text: 'Ranking highest across all indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'stood out markedly from its counterparts', role: 'verb' },
+              { text: ', with a GDP per capita of $82,500 — nearly 90 times greater than Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Range (Band 8)',
+            parts: [
+              { text: 'Internet access', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'showed the most pronounced disparity', role: 'verb' },
+              { text: ', ranging from a mere 15% in Ethiopia to 98% in Norway.', role: null },
+            ],
+          },
+          {
+            label: 'Comparison (Band 8)',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'Brazil and India', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'occupied a middle ground in most indicators', role: 'verb' },
+              { text: ', Brazil outperformed India in life expectancy by over six years and in internet access by a substantial margin of 27 percentage points.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not write Norway is more high than India. USE Norway ranked considerably higher than India.',
+              'Do not write "India\'s internet access is 43% and Ethiopia\'s is 15%." — USE India\'s internet access (43%) was nearly three times that of Ethiopia (15%).',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping Structures',
+        intro: 'Group data by tier (high vs low performers) or by category (economic vs social vs digital). Never describe the table row by row or column by column.',
+        sentences: [
+          {
+            label: 'Tier grouping (Band 6)',
+            parts: [
+              { text: 'In terms of economic indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway and Brazil', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'performed significantly better than India and Ethiopia', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Tier grouping (Band 8)',
+            parts: [
+              { text: 'Grouping the countries into two tiers', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway and Brazil', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consistently outperformed the remaining two', role: 'verb' },
+              { text: ', though even within this upper group, Norway stood in a category of its own, ranking first in all four indicators.', role: null },
+            ],
+          },
+          {
+            label: 'Similarity (Band 8)',
+            parts: [
+              { text: 'A notable parallel', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'can be observed between India and Brazil regarding life expectancy', role: 'verb' },
+              { text: ': both countries fell within a comparable range of 69–76 years, in contrast to the extremes represented by Norway and Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Exception (Band 8+)',
+            parts: [
+              { text: 'Interestingly', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'all four nations', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'shared relatively high literacy rates', role: 'verb' },
+              { text: ' — with the exception of Ethiopia, which lagged far behind at 38% — suggesting that basic education has reached a wider population than digital or economic development.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Row-by-row mistake',
+            items: [
+              'Norway had 82,500. Brazil had 8,920. India had 2,100. Ethiopia had 925. — This list style is Band 4–5. Group and compare instead.',
+              'Never describe columns by name: not In the first column but In terms of GDP per capita.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Transitional Expressions',
+        intro: 'Table transitions move between data groups, not through time. Use category transitions to organize body paragraphs.',
+        sentences: [
+          {
+            label: 'Category transition (Band 6)',
+            parts: [
+              { text: 'Regarding internet access', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'led with 98%', role: 'verb' },
+              { text: ', while Ethiopia had only 15%.', role: null },
+            ],
+          },
+          {
+            label: 'Category transition (Band 8)',
+            parts: [
+              { text: 'Shifting focus to social indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the picture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'becomes more nuanced', role: 'verb' },
+              { text: ': literacy rates were consistently high across the first three countries, ranging between 74% and 100%, though Ethiopia proved a notable outlier at 38%.', role: null },
+            ],
+          },
+          {
+            label: 'Descending order',
+            parts: [
+              { text: 'In descending order', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'internet access figures', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'stood at 98% (Norway), 70% (Brazil), 43% (India), and 15% (Ethiopia)', role: 'verb' },
+              { text: ', reflecting each country level of economic development.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rule',
+            items: [
+              'Table with a specific year: use simple past (Norway had the highest GDP).',
+              'Table with no year: use simple present (Norway has the highest GDP / Norway ranks first).',
+              'Never mix tenses without reason.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use First... Second... Third... Fourth... for each row — use category transitions instead.',
+              'Do not overuse also, moreover, furthermore — vary with similarly, in contrast, notably.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data Integration Techniques',
+        intro: 'Use four techniques: bracket method, multiplier, qualifying adverbs, and exception clause.',
+        template: "[Comparative claim] + [, recording a figure of $X — compared to $Y for B, $Z for C, and a mere $W for D].",
+        sentences: [
+          {
+            label: 'Bracket method (Band 8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'substantially outpaced all three other nations in terms of GDP per capita', role: 'verb' },
+              { text: ', recording a figure of $82,500 — compared to $8,920 for Brazil, $2,100 for India, and a mere $925 for Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Multiplier (Band 8)',
+            parts: [
+              { text: 'Internet access in Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was more than six times that recorded in Ethiopia', role: 'verb' },
+              { text: ' (98% versus 15%), representing one of the most striking disparities in the table.', role: null },
+            ],
+          },
+          {
+            label: 'Exception clause (Band 8)',
+            parts: [
+              { text: 'With the exception of Ethiopia', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'literacy rates', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'were relatively high across all nations, ranging from 74% in India to 100% in Norway', role: 'verb' },
+              { text: ' — suggesting that basic education has made broader gains than economic development.', role: null },
+            ],
+          },
+          {
+            label: 'Anomaly (Band 8+)',
+            parts: [
+              { text: 'Although', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'Brazil and India', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'differed considerably in wealth', role: 'verb' },
+              { text: ', their life expectancy figures were relatively comparable — 75.9 and 69.7 years respectively — an anomaly worth noting given the stark economic contrast between the two nations.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Data integration rule',
+            items: [
+              'Multiplier: calculate the ratio between two values (Norway GDP is approximately 90 times Ethiopia).',
+              'After every number, ask So what? and add suggesting that, highlighting, or reflecting.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not write The data is 82,500. USE Norway recorded a GDP of $82,500.',
+              'Do not describe every single data point — select only the most significant figures.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Identified the highest and lowest values in each column before writing.',
+      'Found the most striking gap (biggest difference between any two cells) for the multiplier.',
+      'Grouped the data into 2–3 meaningful tiers or categories.',
+      'Identified any outliers or exceptions to the general pattern.',
+      'Overview states the overall pattern — no specific figures.',
+      'Body paragraphs organized by tier or category, not row by row.',
+      'Used at least one multiplier (approximately X times greater than).',
+      'Used at least one exception clause (with the exception of).',
+      'Used 5 or more collocations from the master list.',
+      'Tense is consistent: past for dated tables, present for undated tables.',
+    ],
+  },
 };
 
 // ─── Guidebook chart cheatsheets ────────────────────────────────────────────
@@ -2098,6 +2425,7 @@ window.CHART_CHEATSHEETS = {
       static: [
         'Use simple present only when describing a single snapshot chart with no year given.',
         'For timeless general comparisons within the data: "Chicken consumption is higher than beef."',
+        'Keep verb tense consistent across an entire static-comparison sentence - do not slip into past tense mid-sentence.',
       ],
       dynamic: [
         'Use simple past for completed trends within named years: "Ownership rose between 2010 and 2020."',
@@ -2175,10 +2503,12 @@ window.CHART_CHEATSHEETS = {
       static: [
         'Use simple present for a single undated pie chart: Cars account for 38%.',
         'Use simple past for a single pie chart with a past date: Cars accounted for 38% in 2010.',
+        'Keep tense consistent within the whole response - choose one tense for each chart and stick to it.',
       ],
       dynamic: [
         'For two pie charts: use simple past for each year plus change verbs: expanded, contracted, rose, fell.',
         'Never use increased or decreased for a single static pie chart — there is no trend to describe.',
+        'Use change-of-proportion language for dynamic pie charts: grew from X% to Y%, contracted, halved.',
       ],
     },
     danger: [
@@ -2250,10 +2580,12 @@ window.CHART_CHEATSHEETS = {
       static: [
         'Maps showing a single point in time: use simple present if undated, simple past if dated.',
         'For proposed/future maps: use conditional or modal forms (would be, is proposed).',
+        'Keep tense consistent across all passive structures in the same paragraph (was built, was replaced, was demolished).',
       ],
       dynamic: [
         'For maps showing change over time: use simple past throughout (was built, was replaced).',
         'Use past perfect (had been constructed) only for features completed before the final year shown.',
+        'For single-date maps, always use passive voice regardless of whether past or present tense is chosen.',
       ],
     },
     danger: [
@@ -2327,10 +2659,12 @@ window.CHART_CHEATSHEETS = {
       static: [
         'Use present simple passive throughout: is heated, is filtered, is packaged.',
         'Process diagrams are always described in present tense — not past, not future.',
+        'Every stage verb must be in passive form - there is no exception for process diagrams.',
       ],
       dynamic: [
         'For parallel or simultaneous stages: use While [X] is being [verb], [Y] simultaneously undergoes...',
         'For stages that depend on a previous stage: use Once [clause] is complete, [next step].',
+        'Use is being + past participle (continuous passive) for a stage in progress alongside another.',
       ],
     },
     danger: [
@@ -2358,6 +2692,81 @@ window.CHART_CHEATSHEETS = {
       { key: 'in precise proportions', value: 'for mixing stages' },
       { key: 'through [a series of filters / a kiln]', value: 'material passing through a device' },
       { key: 'into [containers / powder / liquid]', value: 'final form of the material at a stage' },
+    ],
+  },
+  'guidebook/task1/tables': {
+    title: 'Tables',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing tables under timed conditions.',
+    structures: [
+      { pattern: '[X] ranked highest in [category], at [figure].', example: 'Norway ranked highest in GDP per capita, at $82,500.' },
+      { pattern: '[X] substantially outpaced [Y] in [category].', example: 'Norway substantially outpaced Ethiopia in internet access (98% vs 15%).' },
+      { pattern: '... ranged from [low] to [high].', example: 'Life expectancy ranged from 66.2 to 82.5 years across all four countries.' },
+      { pattern: '[X] was approximately [N] times greater than [Y].', example: 'Norway GDP was approximately 90 times greater than Ethiopia.' },
+      { pattern: 'With the exception of [X], [trend].', example: 'With the exception of Ethiopia, literacy was relatively high across all nations.' },
+      { pattern: 'While [X] and [Y] [shared feature], [contrast].', example: 'While Brazil and India shared similar life expectancy, their GDPs differed enormously.' },
+      { pattern: 'In descending order, figures stood at [A, B, C, D].', example: 'In descending order, internet access stood at 98% (Norway), 70% (Brazil), 43% (India), 15% (Ethiopia).' },
+      { pattern: 'Shifting focus to [category], [observation].', example: 'Shifting focus to social indicators, the picture becomes more nuanced.' },
+      { pattern: '[X] proved a notable outlier, recording [figure].', example: 'Ethiopia proved a notable outlier in literacy, recording just 38%.' },
+      { pattern: '... reflecting each [subject] level of [development].', example: '...reflecting each country level of economic development.' },
+    ],
+    collocations: [
+      { phrase: 'rank highest in all categories', use: 'overall leader' },
+      { phrase: 'record the lowest figure for', use: 'bottom of a column' },
+      { phrase: 'stand out markedly from', use: 'one outlier much higher than others' },
+      { phrase: 'lag considerably behind', use: 'one country well below the others' },
+      { phrase: 'consistently outperform', use: 'one group always higher than another' },
+      { phrase: 'present a striking contrast', use: 'large gap between two values' },
+      { phrase: 'show a marked disparity in', use: 'notable difference in one category' },
+      { phrase: 'fall within a comparable range', use: 'two values that are similar' },
+      { phrase: 'a wide gulf between', use: 'very large gap between two extremes' },
+      { phrase: 'at the lower end of the spectrum', use: 'the weakest performers' },
+      { phrase: 'achieve markedly superior outcomes', use: 'high performers across all metrics' },
+      { phrase: 'highlight the profound gap', use: 'interpretive closing phrase' },
+      { phrase: 'broadly similar / comparable to', use: 'two values that are close' },
+      { phrase: 'the most pronounced disparity', use: 'the biggest gap in the table' },
+      { phrase: 'across all indicators / metrics', use: 'scope across the whole table' },
+      { phrase: 'a mere X% / just X years', use: 'emphasise a surprisingly low value' },
+      { phrase: 'perform relatively well in', use: 'mid-range assessment' },
+      { phrase: 'occupy a middle ground', use: 'neither highest nor lowest' },
+      { phrase: 'approximately X times greater than', use: 'multiplier ratio' },
+      { phrase: 'reflecting the level of development', use: 'interpretive phrase after data' },
+    ],
+    staticDynamic: {
+      static: [
+        'Table with a specific year: use simple past throughout (Norway had the highest GDP).',
+        'Table with no year: use simple present (Norway has / Norway ranks / Norway leads).',
+        'When unsure if a table is dated, check the title or column headers before choosing a tense.',
+      ],
+      dynamic: [
+        'Never use future tense to describe table data.',
+        'Do not mix past and present tense within a single response about one table.',
+        'For comparisons across rows or columns, keep tense constant - past for all dated figures, present for undated.',
+      ],
+    },
+    danger: [
+      'Never include specific figures in the overview — state the overall pattern only.',
+      'Do not describe the table row by row — group by tier or category.',
+      'Do not include every single data point — select the 5–6 most significant figures.',
+      'Do not mix past and present tense.',
+      'Do not overuse also / also / also — vary with similarly, in contrast, notably.',
+    ],
+    tips: [
+      'Identify the highest and lowest value in each column before writing.',
+      'Find the single biggest gap in the table — use it as your multiplier.',
+      'Group countries into 2 tiers or 2 categories for your body paragraphs.',
+      'Use with the exception of to handle an outlier elegantly.',
+      'Add an interpretive phrase after every key figure: suggesting, reflecting, highlighting.',
+      'Use in descending order to list all four values in a single efficient sentence.',
+      'Aim for 150–200 words: one overview + two body paragraphs.',
+    ],
+    prepositions: [
+      { key: 'in [category / GDP per capita / life expectancy]', value: 'for specifying which metric is being discussed' },
+      { key: 'across all [indicators / metrics / categories]', value: 'for scope across the whole table' },
+      { key: 'by [gap amount / percentage points]', value: 'for quantifying a difference between two values' },
+      { key: 'at [figure]', value: 'for appending a specific value after a claim' },
+      { key: 'in [year]', value: 'for a table with a specific year given' },
+      { key: 'between [X] and [Y]', value: 'for comparing two specific values or countries' },
     ],
   },
 };
