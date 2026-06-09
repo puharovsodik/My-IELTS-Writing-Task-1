@@ -1651,6 +1651,324 @@ window.GUIDES = {
       'Response is between 150 and 200 words.',
     ],
   },
+  'guidebook/task1/processes': {
+    title: 'Process Diagrams',
+    eyebrow: 'Task 1 · Guidebook',
+    deck: 'Process diagrams test sequential description using passive voice, connectors, and precise detail. The key features are passive constructions, sequential connectors, and accurate stage descriptions.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Identify the diagram type and give the number of stages in your overview. Begin with the first step and end with the final product.',
+        template: "The [diagram/chart/flowchart] illustrates/depicts/outlines [the process/the procedure/how X is produced]. Overall, the process consists of/involves/comprises [number] [main stages/distinct steps/key phases], beginning with [first step] and culminating in [final step].",
+        sentences: [
+          {
+            label: 'Intro 1',
+            parts: [
+              { text: 'The diagram', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the process by which cocoa beans are transformed into chocolate', role: 'object' },
+              { text: '. Overall, the procedure consists of ten distinct stages, beginning with harvesting and culminating in the production of chocolate products.', role: null },
+            ],
+          },
+          {
+            label: 'Intro 2',
+            parts: [
+              { text: 'The flowchart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'depicts', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the various stages involved in brick manufacturing', role: 'object' },
+              { text: '. From start to finish, the process involves seven key steps, commencing with the extraction of clay and ending with the delivery of finished bricks.', role: null },
+            ],
+          },
+          {
+            label: 'Intro 3',
+            parts: [
+              { text: 'The diagram', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'outlines', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'how plastic bottles are recycled', role: 'object' },
+              { text: '. In general terms, the recycling process comprises nine successive phases, starting from collection and ultimately resulting in the creation of new plastic products.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Overview formula',
+            items: [
+              'Overview = exact number of stages + first step + final step.',
+              'Count the stages carefully before writing — be precise.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use active voice: NOT Workers heat the mixture. USE The mixture is heated.',
+              'Do not use future tense — use present simple passive throughout.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use present simple passive for all stages. State what happens to the material at each step.',
+        template: "[Material/Object] is/are [past participle] (by [agent — optional]).",
+        sentences: [
+          {
+            label: 'Initial collection',
+            parts: [
+              { text: 'In the initial stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'raw materials', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are gathered from various sources and subsequently transported to the processing facility', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Heating stage',
+            parts: [
+              { text: 'Following this', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is heated to approximately 1400 degrees Celsius in a rotating kiln', role: 'verb' },
+              { text: ', where it undergoes chemical transformation.', role: null },
+            ],
+          },
+          {
+            label: 'Filtering stage',
+            parts: [
+              { text: 'The liquid', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is then passed through a series of filters to remove impurities', role: 'verb' },
+              { text: ', after which it is left to cool for several hours.', role: null },
+            ],
+          },
+          {
+            label: 'Passive chain',
+            parts: [
+              { text: 'Once the cooling process is complete', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the solidified material', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is crushed into fine powder using industrial grinders and then stored in large silos prior to packaging', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Quality control',
+            parts: [
+              { text: 'In the penultimate stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the product', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is meticulously inspected for quality control purposes', role: 'verb' },
+              { text: ', ensuring that only items meeting the required standards proceed to the final phase.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Passive verb bank',
+            items: [
+              'Core passives: is collected, is sorted, is heated, is crushed, is mixed, is filtered, is dried, is packaged, is transported, is stored.',
+              'Advanced passives: is subjected to, is transferred to, is passed through, is converted into, is ground into.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Describe parallel processes, diverging pathways, and contrasts between stages.',
+        sentences: [
+          {
+            label: 'Parallel process',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' one batch is being heated, another batch is ', role: null },
+              { text: 'simultaneously undergoing chemical treatment', role: 'verb' },
+              { text: ', thereby maximizing production efficiency.', role: null },
+            ],
+          },
+          {
+            label: 'Diverging pathways',
+            parts: [
+              { text: 'At this point', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the process', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'diverges into two separate pathways', role: 'verb' },
+              { text: ': in the first route, materials are subjected to high-temperature treatment, whereas in the alternative route, they undergo chemical processing.', role: null },
+            ],
+          },
+          {
+            label: 'Phase categorization',
+            parts: [
+              { text: 'The entire procedure', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'can be broadly categorized into three main phases', role: 'verb' },
+              { text: ': preparation, processing, and finalization.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Parallel process tip',
+            items: [
+              'Use While [X] is being [verb], [Y] simultaneously undergoes [process] for parallel stages.',
+              'Use can be broadly divided into for grouping stages into phases.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Sequence Expressions',
+        intro: 'Vary connectors across the response. Do not rely on next or then more than once each.',
+        sentences: [
+          {
+            label: 'Start to ferment',
+            parts: [
+              { text: 'Initially', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the raw cocoa beans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are harvested from cocoa trees and immediately transported to the processing plant', role: 'verb' },
+              { text: '. Following this, they are spread out on large trays to ferment for approximately one week.', role: null },
+            ],
+          },
+          {
+            label: 'Drying to roasting',
+            parts: [
+              { text: 'Subsequently', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the fermented beans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are dried under direct sunlight, a process that typically takes five to seven days', role: 'verb' },
+              { text: '. Once the drying phase is complete, the beans are roasted at varying temperatures.', role: null },
+            ],
+          },
+          {
+            label: 'Conching to packaging',
+            parts: [
+              { text: 'In the penultimate stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the chocolate mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'undergoes a conching process, during which it is continuously stirred and aerated for up to 72 hours', role: 'verb' },
+              { text: '. Ultimately, the refined chocolate is tempered, molded into various shapes, and finally packaged for distribution.', role: null },
+            ],
+          },
+          {
+            label: 'Quality gate',
+            parts: [
+              { text: 'Prior to packaging', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'each batch', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is subjected to rigorous quality control testing', role: 'verb' },
+              { text: '. Only after these tests are successfully completed does the product proceed to the final packaging stage.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Connector bank',
+            items: [
+              'Use in order: Initially, Following this, Subsequently, Once [clause] is complete, At this juncture, In the penultimate stage, Ultimately.',
+              'For simultaneous steps: Concurrently, Meanwhile, At the same time.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not repeat then or next more than once each — vary with Subsequently, Following this, Thereafter.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data and Detail Integration',
+        intro: 'Include specific figures (temperatures, times, quantities) from the diagram. Frame them with at approximately or over a [time] period.',
+        template: "[Material] is [verb] at approximately [temperature / measurement], [during which / where] [specific transformation occurs].",
+        sentences: [
+          {
+            label: 'Temperature detail',
+            parts: [
+              { text: 'The mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is heated to approximately 1400 degrees Celsius in a rotating kiln', role: 'verb' },
+              { text: ', where it remains for roughly two hours.', role: null },
+            ],
+          },
+          {
+            label: 'Ratio detail',
+            parts: [
+              { text: 'At this stage', role: 'time' },
+              { text: ', using high-pressure machinery, ', role: null },
+              { text: 'the material', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is compressed at a ratio of 10:1, reducing its volume significantly', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Impurity removal',
+            parts: [
+              { text: 'Through a series of filters containing increasingly fine mesh screens', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'impurities', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are systematically removed', role: 'verb' },
+              { text: ', with particles larger than 0.5 millimeters being trapped and discarded.', role: null },
+            ],
+          },
+          {
+            label: 'Blending detail',
+            parts: [
+              { text: 'In a process that typically requires between four and six hours', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the raw ingredients', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are gradually blended together in precise proportions', role: 'verb' },
+              { text: ' (60% base material, 30% additives, and 10% binding agents) to create a homogeneous mixture.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Detail tip',
+            items: [
+              'Include at approximately [number] for any temperatures, times, or quantities shown in the diagram.',
+              'Use during which or where to add explanatory detail within a passive clause.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Counted the exact number of stages and stated it in the overview.',
+      'Named the first step and the final product in the overview.',
+      'Used passive voice throughout: is heated, is filtered, is packaged.',
+      'Varied sequential connectors: Initially, Subsequently, Following this, Once complete, Ultimately.',
+      'Included all specific details from the diagram: temperatures, times, quantities.',
+      'Used at least 10 different passive verbs from the core verb bank.',
+      'Used prior to [noun] and once [clause] is complete at least once each.',
+      'Described any parallel processes using While [X] is being [verb], [Y] simultaneously undergoes...',
+      'Maintained present simple passive tense consistently throughout.',
+      'Response is between 150 and 190 words.',
+    ],
+  },
 };
 
 // ─── Guidebook chart cheatsheets ────────────────────────────────────────────
@@ -1965,6 +2283,81 @@ window.CHART_CHEATSHEETS = {
       { key: 'over the [n]-year period', value: 'for change across the whole timeframe' },
       { key: 'by [year]', value: 'for an end-state after change' },
       { key: 'throughout the period', value: 'for features that stayed the same' },
+    ],
+  },
+  'guidebook/task1/processes': {
+    title: 'Process Diagrams',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing process diagrams under timed conditions.',
+    structures: [
+      { pattern: 'The [diagram] illustrates [how X is produced]. Overall, the process comprises [#] stages, commencing with [first step] and culminating in [final step].', example: 'The diagram illustrates the process by which cocoa beans are transformed into chocolate. Overall, the procedure consists of ten stages, commencing with harvesting and culminating in packaging.' },
+      { pattern: '[Material] is/are [past participle].', example: 'The beans are roasted at 180 degrees Celsius.' },
+      { pattern: '[X] is converted/transformed into [Y].', example: 'Cocoa beans are converted into a thick paste known as cocoa liquor.' },
+      { pattern: '[Transition], [material] is [verb] [specific detail].', example: 'Subsequently, the mixture is heated to 1400 degrees Celsius in a rotating kiln.' },
+      { pattern: '[X] is [verb1], [verb2], and then [verb3].', example: 'The liquid is filtered, cooled, and then stored in large containers.' },
+      { pattern: 'Once/After [process] is complete, [next step].', example: 'Once cooling is complete, the solidified material is crushed into fine powder.' },
+      { pattern: '[Material] is [verb] to [purpose].', example: 'Materials are filtered to remove impurities.' },
+      { pattern: '[Action], thereby [verb-ing] [result].', example: 'Materials are heated rapidly, thereby reducing production time significantly.' },
+      { pattern: 'While [X] is being [verb], [Y] simultaneously undergoes [process].', example: 'While one batch is heated, another simultaneously undergoes chemical treatment.' },
+      { pattern: '[Material] is subjected to [process], during which [detail].', example: 'The mixture is subjected to intense pressure, during which air bubbles are removed.' },
+    ],
+    collocations: [
+      { phrase: 'commencing with', use: 'starting the process description' },
+      { phrase: 'culminating in', use: 'ending with the final product' },
+      { phrase: 'in the initial stage', use: 'first step' },
+      { phrase: 'subsequently', use: 'next step in sequence' },
+      { phrase: 'in the penultimate stage', use: 'second-to-last step' },
+      { phrase: 'is subjected to', use: 'material undergoes a process' },
+      { phrase: 'undergoes [transformation]', use: 'material changes state' },
+      { phrase: 'is transferred to', use: 'material moves to next station' },
+      { phrase: 'is passed through', use: 'material moves through a device' },
+      { phrase: 'is converted into', use: 'material changes identity' },
+      { phrase: 'is ground into', use: 'material made into powder' },
+      { phrase: 'is left to [cool/dry/settle]', use: 'natural process without active agent' },
+      { phrase: 'at approximately [number]', use: 'specific temperature, time, or quantity' },
+      { phrase: 'over a [time] period', use: 'duration of a stage' },
+      { phrase: 'prior to [noun]', use: 'before a step' },
+      { phrase: 'in precise proportions', use: 'mixing stage with ratios' },
+      { phrase: 'by means of', use: 'using a specific method or tool' },
+      { phrase: 'at this juncture', use: 'at this point in the process' },
+      { phrase: 'thereby [verb-ing]', use: 'result of the previous action' },
+      { phrase: 'meticulously [verb]', use: 'carefully done, quality emphasis' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use present simple passive throughout: is heated, is filtered, is packaged.',
+        'Process diagrams are always described in present tense — not past, not future.',
+      ],
+      dynamic: [
+        'For parallel or simultaneous stages: use While [X] is being [verb], [Y] simultaneously undergoes...',
+        'For stages that depend on a previous stage: use Once [clause] is complete, [next step].',
+      ],
+    },
+    danger: [
+      'Do not use active voice: NOT Workers heat the mixture. USE The mixture is heated.',
+      'Do not repeat then or next more than once each — vary with Subsequently, Following this, Thereafter.',
+      'Do not omit specific details (temperatures, times) shown in the diagram.',
+      'Do not use past tense — process diagrams use present simple passive throughout.',
+      'Do not ignore parallel processes if shown in the diagram — describe them with concurrently or simultaneously.',
+      'Do not skip the overview — state the number of stages, first step, and final product.',
+    ],
+    tips: [
+      'Count stages precisely before writing and state the exact number in the overview.',
+      'Use passive voice for every stage: is collected, is heated, is packaged.',
+      'Vary your sequential connectors: Initially, Subsequently, Following this, At this juncture, Ultimately.',
+      'Include all specific details: temperatures, times, quantities — these show accuracy.',
+      'Use prior to [noun] and once [clause] is complete for elegant sequencing.',
+      'Describe parallel processes using while and simultaneously.',
+      'Aim for 150–190 words — include all stages without padding.',
+    ],
+    prepositions: [
+      { key: 'at approximately [temperature/number]', value: 'for specific measurements in the diagram' },
+      { key: 'over a [time] period', value: 'for duration of a stage' },
+      { key: 'prior to [noun]', value: 'before a step' },
+      { key: 'by means of [tool/method]', value: 'the instrument or method used' },
+      { key: 'in precise proportions', value: 'for mixing stages' },
+      { key: 'through [a series of filters / a kiln]', value: 'material passing through a device' },
+      { key: 'into [containers / powder / liquid]', value: 'final form of the material at a stage' },
     ],
   },
 };
