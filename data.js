@@ -1022,6 +1022,326 @@ window.GUIDES = {
       'Response is between 150 and 200 words — focused and complete without listing every data point.',
     ],
   },
+  'guidebook/task1/pie-charts': {
+    title: 'Pie Charts',
+    eyebrow: 'Task 1 · Guidebook',
+    deck: 'Pie charts present proportions. Master fraction language, proportion verbs, and grouping structures to describe segments analytically rather than just listing percentages.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Paraphrase the question, name the chart type, and identify the context. Follow immediately with an overview that states the dominant segment and a key contrast.',
+        template: "The pie chart [illustrates / depicts / shows] the [proportion / distribution / breakdown] of [topic] in [place/time]. Overall, it is clear that [largest category] [accounted for / represented / made up] the most significant share, while [smallest category] constituted the smallest proportion.",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'The pie chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'shows', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the distribution of spending on different modes of transport in a city', role: 'object' },
+              { text: '. Overall, private car use accounted for the largest proportion, while walking represented the smallest share.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'The pie chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the breakdown of expenditure on various transport methods within a single urban area', role: 'object' },
+              { text: '. Overall, private vehicles dominated the chart, accounting for well over a third of total spending.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'The chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'provides a visual breakdown of how transport expenditure was distributed across four distinct categories in the city', role: 'verb' },
+              { text: '. Notably, just two categories combined accounted for nearly two-thirds of all spending.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (two charts)',
+            parts: [
+              { text: 'The two pie charts', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'compare the distribution of household income allocation in 1990 and 2020', role: 'verb' },
+              { text: '. Overall, housing costs remained the dominant expenditure in both years, though the proportion attributed to leisure increased markedly.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Common mistakes',
+            items: [
+              'Never include specific percentage figures in the overview sentence.',
+              'Do not use trend words like increased or decreased unless comparing two charts.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Overview = name the dominant segment + name the smallest or one key contrast.',
+              'For two charts: state what stayed dominant and what changed most markedly.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Vocabulary Patterns',
+        intro: 'Use proportion verbs to embed percentages analytically. Vary across accounted for, represented, comprised, constituted, made up.',
+        template: "[Subject] [accounted for / represented / comprised / constituted / made up] + [percentage / fraction / descriptor].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'Private cars', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'made up', role: 'verb' },
+              { text: ' ', role: null },
+              { text: '38% of the total transport spending', role: 'object' },
+              { text: ', making it the largest category.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Expenditure on private cars', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'accounted for the largest share at 38%', role: 'verb' },
+              { text: ', followed closely by public transport, which ', role: null },
+              { text: 'represented just over a quarter of the total', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'Private vehicles', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'dominated transport spending, comprising approximately two-fifths of all expenditure', role: 'verb' },
+              { text: ', whereas cycling and walking combined ', role: 'connector' },
+              { text: 'constituted little more than a third', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 (passive)',
+            parts: [
+              { text: 'Approximately 65% of the total budget', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was directed towards motorised transport', role: 'verb' },
+              { text: ', with the remaining 35% being divided between non-motorised alternatives.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Fraction reference',
+            items: [
+              '~75% = three-quarters | ~66% = two-thirds | ~50% = half',
+              '~40% = two-fifths | ~33% = one-third | ~25% = a quarter | ~20% = one-fifth',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Group similar segments together and contrast clusters rather than listing every slice in sequence.',
+        template: "[Category A] and [Category B] [together accounted for / jointly represented] [X%]. [In contrast / Conversely], [Category C] [constituted a far smaller proportion] at just [X%].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'Private cars (38%)', role: 'subject' },
+              { text: ' were much larger than ', role: null },
+              { text: 'walking (15%), which was the smallest category.', role: 'object' },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Motorised transport options', role: 'subject' },
+              { text: ' — private cars and public transport — ', role: null },
+              { text: 'accounted for 65% of spending', role: 'verb' },
+              { text: ', considerably outweighing the combined share of non-motorised alternatives at just 35%.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'Private car expenditure, at 38%', role: 'subject' },
+              { text: ', was ', role: null },
+              { text: 'more than double that of cycling (20%) and nearly two and a half times the proportion attributed to walking', role: 'verb' },
+              { text: ' — a stark contrast highlighting the preference for private motorised travel.', role: null },
+            ],
+          },
+          {
+            label: 'Band 9',
+            parts: [
+              { text: 'Although public transport and cycling differed by only 7 percentage points', role: 'connector' },
+              { text: ', the disparity between ', role: null },
+              { text: 'private cars and walking', role: 'subject' },
+              { text: ' was considerably wider at 23 percentage points, ', role: null },
+              { text: 'underscoring the dominance of car-based transport', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Grouping strategy',
+            items: [
+              'Group segments by similarity: motorised vs non-motorised; essential vs discretionary.',
+              'Use jointly accounted for and together represented for combined group figures.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not list every segment in sequence: "Cars were 38%, transport was 27%..." — group and compare instead.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Tense and Time Expressions',
+        intro: 'Tense choice depends on whether the chart has a date. For two charts, use past tense for each year and change-language to describe shifts.',
+        sentences: [
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Most notably', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'private car use', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'dominated at 38%', role: 'verb' },
+              { text: '. In second place, public transport followed at 27%, after which proportions declined substantially.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (two charts)',
+            parts: [
+              { text: 'In 1990', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'housing costs', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'represented 40% of household income', role: 'verb' },
+              { text: '; however, by 2020, this proportion had risen to 52%, making it an even more dominant category.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 (temporal shift)',
+            parts: [
+              { text: 'Between 1990 and 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the most striking shift', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was observed in leisure spending', role: 'verb' },
+              { text: ', which ', role: null },
+              { text: 'expanded from 8% to 18%', role: 'verb' },
+              { text: ' — more than double its original proportion.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rules',
+            items: [
+              'No date given: use simple present (Cars account for 38%).',
+              'Past date given: use simple past (Cars accounted for 38%).',
+              'Two charts: past for each year + change verbs (expanded, contracted, rose).',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data Integration Techniques',
+        intro: 'Embed figures parenthetically, use fraction language alongside raw percentages, and add interpretive phrases.',
+        template: "[Analytical Point] + [, at X%,] + [further explanation].",
+        sentences: [
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Private car use', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'accounted for the largest proportion, at 38%', role: 'verb' },
+              { text: ', while public transport ', role: 'connector' },
+              { text: 'represented just over a quarter of all spending at 27%', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (parenthetical)',
+            parts: [
+              { text: 'The two motorised categories', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'jointly commanded nearly two-thirds of the total budget', role: 'verb' },
+              { text: ', with private cars (38%) and public transport (27%) together accounting for 65% of all expenditure.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'The dominance of private vehicles is clearly reflected in the data: car travel alone', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consumed 38% of the transport budget', role: 'verb' },
+              { text: ' — a proportion that exceeds the combined total for cycling and walking (35%) by a small but notable margin.', role: null },
+            ],
+          },
+          {
+            label: 'Band 9',
+            parts: [
+              { text: 'What is particularly striking is that private car use, despite representing only one of four categories,', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'claimed 38% of the budget', role: 'verb' },
+              { text: ' — a figure that alone exceeds the combined proportion of the two least-funded categories (35%) and surpasses public transport (27%) by 11 percentage points.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Parenthetical data',
+            items: [
+              'Use the form category (X%) and category (Y%) to embed two figures elegantly in one sentence.',
+              'Always add an interpretive phrase after a figure: reflecting, highlighting, suggesting.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use trend words (increased, rose) for a single static pie chart — reserve these for two-chart comparisons.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Introduction paraphrases the question without copying exact wording.',
+      'Overview identifies the dominant category and one key contrast — no specific numbers.',
+      'Tense is consistent: present for undated charts, past for dated charts.',
+      'Used at least three different proportion verbs (accounted for, comprised, represented).',
+      'Grouped similar segments together rather than listing all slices individually.',
+      'Every percentage figure is embedded in a sentence, not presented as a bare number.',
+      'Used fraction language (just over a quarter, nearly two-thirds) alongside or instead of raw percentages.',
+      'Included contrast language (whereas, conversely, in contrast, while).',
+      'Used parenthetical data at least once: e.g., cycling (20%) and walking (15%).',
+      'Response does not include trend words unless comparing two charts.',
+      'Used at least one complex sentence with a subordinate or compound clause.',
+      'Response is between 150 and 200 words.',
+    ],
+  },
 };
 
 // ─── Guidebook chart cheatsheets ────────────────────────────────────────────
@@ -1184,6 +1504,81 @@ window.CHART_CHEATSHEETS = {
       { key: 'from [year] onwards', value: 'from a point in time continuing forward' },
       { key: 'at the outset / at the beginning of the period', value: 'for the starting point' },
       { key: 'by the end of the period', value: 'for the final state' },
+    ],
+  },
+  'guidebook/task1/pie-charts': {
+    title: 'Pie Charts',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing pie charts under timed conditions.',
+    structures: [
+      { pattern: 'The pie chart [illustrates] the [breakdown of] [topic] in [context].', example: 'The pie chart illustrates the breakdown of expenditure on various transport methods in an urban area.' },
+      { pattern: 'Overall, it is clear that [X] [accounted for] [the largest proportion], while [Y] [constituted] [the smallest share].', example: 'Overall, it is clear that private cars accounted for the largest proportion, while walking constituted the smallest share.' },
+      { pattern: '[X] [dominated] the chart, [accounting for] [well over a third] at [38%].', example: 'Private car use dominated the chart, accounting for well over a third at 38%.' },
+      { pattern: '[X] and [Y] [together accounted for] [nearly two-thirds] of the total at [65%].', example: 'Private cars and public transport together accounted for nearly two-thirds of the total at 65%.' },
+      { pattern: '[X] ranked highest at [38%], followed by [Y] ([27%]), [Z] ([20%]), and [W] ([15%]) in descending order.', example: 'Private car use ranked highest at 38%, followed by public transport (27%), cycling (20%), and walking (15%) in descending order.' },
+      { pattern: 'Whereas [X] comprised approximately two-fifths, [Y] constituted a mere [15%].', example: 'Whereas private vehicles comprised approximately two-fifths, walking constituted a mere 15%.' },
+      { pattern: '[X] share was more than double that of [Y] ([38%] vs [15%]), a stark contrast.', example: 'Car expenditure was more than double that of cycling (38% vs 20%), highlighting preference for motorised travel.' },
+      { pattern: '[65%] of the total was directed towards [motorised transport], with the remaining [35%] divided between [X] and [Y].', example: '65% of the total was directed towards motorised transport, with the remaining 35% divided between cycling and walking.' },
+      { pattern: '[X] and [Y] showed comparable proportions at [20%] and [15%] respectively.', example: 'Cycling and walking showed comparable proportions at 20% and 15% respectively.' },
+      { pattern: 'Between [Year A] and [Year B], [X] share expanded from [8%] to [18%] — more than double its original proportion.', example: 'Between 1990 and 2020, leisure spending expanded from 8% to 18% — more than double its original proportion.' },
+    ],
+    collocations: [
+      { phrase: 'account for the largest proportion', use: 'dominant segment' },
+      { phrase: 'constitute the smallest share', use: 'least-common category' },
+      { phrase: 'claim the largest slice', use: 'emphatic dominance' },
+      { phrase: 'jointly account for', use: 'combining two segments' },
+      { phrase: 'heavily skewed towards', use: 'strong imbalance in one direction' },
+      { phrase: 'considerably outweigh', use: 'large gap between two groups' },
+      { phrase: 'be more than double', use: 'precise comparison between two values' },
+      { phrase: 'represent a negligible proportion', use: 'very small segments' },
+      { phrase: 'a mere X%', use: 'emphasise smallness' },
+      { phrase: 'in descending order of magnitude', use: 'ranking language' },
+      { phrase: 'show comparable proportions', use: 'two similar segments' },
+      { phrase: 'followed closely by', use: 'second-place smooth flow' },
+      { phrase: 'collectively represent', use: 'grouping multiple slices' },
+      { phrase: 'be attributed to', use: 'passive data embedding' },
+      { phrase: 'reflect a clear preference for', use: 'analytical interpretation' },
+      { phrase: 'remain the dominant category', use: 'two-chart comparison' },
+      { phrase: 'the remaining proportion', use: 'clean wrap-up language' },
+      { phrase: 'by a substantial margin', use: 'emphasise gap size' },
+      { phrase: 'well over a third / just under half', use: 'fraction with hedge' },
+      { phrase: 'at X% and Y% respectively', use: 'two figures in one sentence' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use simple present for a single undated pie chart: Cars account for 38%.',
+        'Use simple past for a single pie chart with a past date: Cars accounted for 38% in 2010.',
+      ],
+      dynamic: [
+        'For two pie charts: use simple past for each year plus change verbs: expanded, contracted, rose, fell.',
+        'Never use increased or decreased for a single static pie chart — there is no trend to describe.',
+      ],
+    },
+    danger: [
+      'Do not use trend language (rose, increased) for a single static pie chart.',
+      'Do not include specific figures in the overview sentence — state the dominant pattern only.',
+      'Do not list every segment in sequence — group and compare instead.',
+      'Do not omit fraction language — just over a quarter is stronger than 27% alone.',
+      'Do not mix past and present tense within a response about a single chart.',
+      'Do not ignore the overview — it is the most important sentence for your Task Achievement score.',
+      'Do not use "In conclusion" — use "Overall" or "In general" for your overview.',
+    ],
+    tips: [
+      'Open with a paraphrase + immediately follow with an overview (no data in overview).',
+      'Group segments into two clusters and describe each group in its body paragraph.',
+      'Use parenthetical data: private cars (38%) and public transport (27%) to embed two figures efficiently.',
+      'Use fraction language alongside raw percentages: accounting for roughly two-fifths (38%).',
+      'For two charts: identify what stayed the same and what changed most dramatically.',
+      'Aim for 150–200 words; four sentences per body paragraph is ideal.',
+      'Vary proportion verbs: accounted for, comprised, represented, constituted, made up.',
+    ],
+    prepositions: [
+      { key: 'of the total / of all expenditure', value: 'for expressing a part-to-whole proportion' },
+      { key: 'at [X%]', value: 'for appending a percentage after a proportion verb' },
+      { key: 'between [Year A] and [Year B]', value: 'for two-chart temporal comparison' },
+      { key: 'from [X%] to [Y%]', value: 'for expressing a change in proportion between two charts' },
+      { key: 'by [X percentage points]', value: 'for quantifying the gap between two proportions' },
+      { key: 'among / across [categories]', value: 'for scope across multiple segments' },
     ],
   },
 };
