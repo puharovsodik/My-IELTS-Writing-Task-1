@@ -183,6 +183,191 @@ function CheatsheetPage({ domainId, groupId }) {
   );
 }
 
+function ModelSentence({ label, parts, note }) {
+  return (
+    <div className="model-sentence">
+      {label && <div className="model-sentence__label">{label}</div>}
+      <p className="model-sentence__text">
+        {parts.map((p, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && ' '}
+            <span className={p.role ? `role-${p.role}` : undefined}>{p.text}</span>
+          </React.Fragment>
+        ))}
+      </p>
+      {note && <p className="model-sentence__note">{note}</p>}
+    </div>
+  );
+}
+
+function GuidePage({ domainId, groupId, topicId }) {
+  const key = `${domainId}/${groupId}/${topicId}`;
+  const guide = window.GUIDES[key];
+  if (!guide) return <NotFound />;
+
+  const data = window.IELTS_DATA;
+  const dom = data.domains.find(d => d.id === domainId);
+  const grp = dom?.groups.find(g => g.id === groupId);
+  const topic = grp?.guideSections[0].topics.find(t => t.id === topicId);
+
+  return (
+    <div className="page page--reading">
+      <div className="reading-head">
+        <span className="badge badge--instruction">{guide.eyebrow}</span>
+        <h1 className="reading-title">{guide.title}</h1>
+      </div>
+      <p className="article">{guide.deck}</p>
+
+      {guide.sections.map((section, i) => (
+        <section key={i} className="reading-section">
+          <h2>{section.title}</h2>
+          {section.intro && <p className="article">{section.intro}</p>}
+          {section.template && (
+            <div className="template">
+              <p className="template__body">{renderTemplateSlots(section.template)}</p>
+            </div>
+          )}
+          {section.sentences.map((s, j) => (
+            <ModelSentence key={j} label={s.label} parts={s.parts} note={s.note} />
+          ))}
+          {section.callouts && section.callouts.map((c, k) => (
+            <div key={k} className={`callout callout--${c.type}`}>
+              <div className="callout__title">{c.title}</div>
+              <ul className="callout__list">
+                {c.items.map((item, m) => <li key={m}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </section>
+      ))}
+
+      <section className="reading-section">
+        <h2>Checklist</h2>
+        <ul className="checklist">
+          {guide.checklist.map((item, i) => (
+            <li key={i} className="checklist__item">{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="reading-foot">
+        <a
+          className="btn"
+          href={`#/${domainId}/${groupId}/cheatsheet/${topicId}`}
+          onClick={e => { e.preventDefault(); nav(`/${domainId}/${groupId}/cheatsheet/${topicId}`); }}
+        >
+          Open Cheatsheet
+        </a>
+        <a
+          className="btn btn--primary"
+          href={`#/practice/${groupId}/${topicId}`}
+          onClick={e => { e.preventDefault(); nav(`/practice/${groupId}/${topicId}`); }}
+        >
+          Go practise {topic ? topic.title : ''}
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function ChartCheatsheetPage({ domainId, groupId, topicId }) {
+  const key = `${domainId}/${groupId}/${topicId}`;
+  const sheet = window.CHART_CHEATSHEETS[key];
+
+  if (!sheet) return <NotFound />;
+
+  return (
+    <div className="page page--reading">
+      <div className="reading-head">
+        <span className="badge badge--cheatsheet">{sheet.eyebrow}</span>
+        <h1 className="reading-title">{sheet.title}</h1>
+      </div>
+      <p className="article">{sheet.deck}</p>
+
+      <section className="reading-section">
+        <h2>Structures</h2>
+        <div className="structure-list">
+          {sheet.structures.map((s, i) => (
+            <div key={i} className="structure-item">
+              <p className="structure-item__pattern">{renderTemplateSlots(s.pattern)}</p>
+              <p className="structure-item__example">{s.example}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="reading-section">
+        <h2>Collocations</h2>
+        <div className="collocation-grid">
+          {sheet.collocations.map((c, i) => (
+            <div key={i} className="collocation-item">
+              <div className="collocation-item__phrase">{c.phrase}</div>
+              <div className="collocation-item__use">{c.use}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="reading-section">
+        <h2>Static vs. Dynamic Description</h2>
+        <div className="compare-grid">
+          <div className="compare-box">
+            <div className="compare-box__title">Static (no time change)</div>
+            <ul className="compare-box__list">
+              {sheet.staticDynamic.static.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+          <div className="compare-box">
+            <div className="compare-box__title">Dynamic (change over time)</div>
+            <ul className="compare-box__list">
+              {sheet.staticDynamic.dynamic.map((item, i) => <li key={i}>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="reading-section">
+        <div className="callout callout--danger">
+          <div className="callout__title">Avoid</div>
+          <ul className="callout__list">
+            {sheet.danger.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+        <div className="callout callout--tip">
+          <div className="callout__title">Tips</div>
+          <ul className="callout__list">
+            {sheet.tips.map((item, i) => <li key={i}>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="reading-section">
+        <h2>Prepositions & Time Expressions</h2>
+        <table className="vocab">
+          <tbody>
+            {sheet.prepositions.map((p, i) => (
+              <tr key={i}>
+                <td className="vocab__casual">{p.key}</td>
+                <td className="vocab__formal">{p.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <div className="reading-foot">
+        <a
+          className="btn"
+          href={`#/${domainId}/${groupId}/guide/${topicId}`}
+          onClick={e => { e.preventDefault(); nav(`/${domainId}/${groupId}/guide/${topicId}`); }}
+        >
+          Open Guide
+        </a>
+      </div>
+    </div>
+  );
+}
+
 // Render [slot] markers in templates as styled chips
 function renderTemplateSlots(text) {
   const parts = text.split(/(\[[^\]]+\])/g);
@@ -194,4 +379,4 @@ function renderTemplateSlots(text) {
   });
 }
 
-Object.assign(window, { InstructionPage, CheatsheetPage });
+Object.assign(window, { InstructionPage, CheatsheetPage, ModelSentence, GuidePage, ChartCheatsheetPage });

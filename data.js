@@ -1,5 +1,14 @@
-// data.js — IELTS Writing Trainer content tree
+﻿// data.js — IELTS Writing Trainer content tree
 // Three levels: Domain (L1) → Group (L2) → Content Node (L3)
+
+const TASK1_CHART_TOPICS = [
+  { id: 'line-graphs', title: 'Line Graphs', icon: '📈' },
+  { id: 'bar-charts', title: 'Bar Charts', icon: '📊' },
+  { id: 'pie-charts', title: 'Pie Charts', icon: '🥧' },
+  { id: 'maps', title: 'Maps', icon: '🗺️' },
+  { id: 'processes', title: 'Process Diagrams', icon: '⚙️' },
+  { id: 'tables', title: 'Tables', icon: '📋' },
+];
 
 window.IELTS_DATA = {
   domains: [
@@ -10,7 +19,25 @@ window.IELTS_DATA = {
       tagline: 'Structural anatomy of the Writing test — what examiners look for, what to deliver, how to score.',
       summary: 'Static reference. Read once, return often. Two long-form modules with companion cheatsheets.',
       groups: [
-        { id: 'task1', title: 'Writing Task 1', meta: '20 min · 150 words', nodes: ['instruction', 'cheatsheet'] },
+        {
+          id: 'task1',
+          title: 'Writing Task 1',
+          meta: '20 min · 150 words',
+          guideSections: [
+            {
+              id: 'guide',
+              title: 'Guide',
+              summary: 'Model sentences, templates, and checklists for every chart type.',
+              topics: TASK1_CHART_TOPICS,
+            },
+            {
+              id: 'cheatsheet',
+              title: 'Cheatsheet',
+              summary: 'Structures, collocations, and quick-reference vocabulary at a glance.',
+              topics: TASK1_CHART_TOPICS,
+            },
+          ],
+        },
         { id: 'task2', title: 'Writing Task 2', meta: '40 min · 250 words', nodes: ['instruction', 'cheatsheet'] },
       ],
     },
@@ -53,39 +80,6 @@ window.IELTS_DATA = {
 
 // ─── Instruction pages ──────────────────────────────────────────────────────
 window.INSTRUCTIONS = {
-  'guidebook/task1': {
-    domain: 'guidebook',
-    title: 'Writing Task 1',
-    eyebrow: 'Module 01 · Instruction',
-    deck: 'You are given a visual — chart, map, or process diagram. You have 20 minutes to write at least 150 words describing what it shows, comparing the main features. No opinion. No speculation.',
-
-    article: [
-      { h: 'What examiners actually want', p: 'A clear overview that names the two or three biggest patterns, followed by paragraphs that group related data and compare it. Not a list of every data point. Not your interpretation of why the data looks that way.' },
-      { h: 'The four scoring bands', p: 'Task Achievement (did you cover the main features?), Coherence & Cohesion (do paragraphs flow with logical linkers?), Lexical Resource (range and accuracy of vocabulary), and Grammatical Range & Accuracy (complex structures used correctly). Each is scored 0–9 and averaged.' },
-      { h: 'Time budget', p: 'Two minutes reading the visual and noting the overview. Two minutes outlining body paragraphs. Fifteen minutes writing. One minute proofreading. The proofread minute saves more marks than any extra sentence.' },
-    ],
-
-    checklist: [
-      'Paraphrase the prompt — do not copy it.',
-      'Write a one-sentence overview naming the two biggest trends or features.',
-      'Group data into two body paragraphs by similarity, not chronology.',
-      'Use comparative and superlative forms — more than, the highest, roughly twice.',
-      'Reference specific numbers and units at least three times.',
-      'Vary sentence openers: prepositional phrases, gerunds, while-clauses.',
-      'Close without conclusion — Task 1 has no opinion line.',
-    ],
-
-    anatomy: {
-      label: 'Anatomy of a model answer',
-      blocks: [
-        { tag: 'Paraphrase', body: 'The line graph illustrates the changes in average sea-surface temperatures across three oceans between 1960 and 2020.', note: 'Source noun → "graph illustrates". Time range moved to end.' },
-        { tag: 'Overview', body: 'Overall, all three regions experienced an upward trend, with the Pacific recording the most pronounced increase.', note: 'No numbers. Names the headline pattern.' },
-        { tag: 'Body A', body: 'In 1960, the Pacific stood at approximately 14°C, while the Atlantic and Indian Oceans were slightly cooler at 13°C and 12.5°C respectively. Over the following two decades, all three rose gradually, gaining roughly 0.5°C each.', note: 'Groups the slow-rise period. Specific values, comparative language.' },
-        { tag: 'Body B', body: 'From 1990 onwards, the rate of warming accelerated. By 2020, the Pacific had climbed to 16.2°C, an increase of more than two degrees, whereas the other oceans rose to around 15°C.', note: 'Groups the acceleration phase. Past perfect for completed action.' },
-      ],
-    },
-  },
-
   'guidebook/task2': {
     domain: 'guidebook',
     title: 'Writing Task 2',
@@ -123,71 +117,6 @@ window.INSTRUCTIONS = {
 
 // ─── Cheatsheet pages ───────────────────────────────────────────────────────
 window.CHEATSHEETS = {
-  'guidebook/task1': {
-    domain: 'guidebook',
-    title: 'Writing Task 1',
-    eyebrow: 'Module 01 · Cheatsheet',
-    deck: 'Reference card. Phrases grouped by rhetorical function, vocabulary table, and slot-templates ready to adapt.',
-
-    phraseBlocks: [
-      {
-        label: 'Introducing data',
-        items: [
-          'The chart illustrates / shows / depicts…',
-          'The diagram provides information about…',
-          'The graph compares X with Y over a period of…',
-          'It is clear from the data that…',
-        ],
-      },
-      {
-        label: 'Describing trends',
-        items: [
-          'rose steadily · climbed gradually · surged · jumped',
-          'declined sharply · fell modestly · plummeted',
-          'fluctuated · remained stable · plateaued at',
-          'reached a peak of … before falling to …',
-        ],
-      },
-      {
-        label: 'Comparing',
-        items: [
-          'X was roughly twice as high as Y',
-          'In contrast / By comparison / On the other hand',
-          'Whereas A grew, B remained unchanged',
-          'The difference between … and … was negligible',
-        ],
-      },
-      {
-        label: 'Concluding the overview',
-        items: [
-          'Overall, the most striking feature is…',
-          'In general, all three categories followed the same pattern…',
-          'The data reveals a clear upward / downward shift…',
-        ],
-      },
-    ],
-
-    vocabTable: {
-      label: 'Formal ↔ informal synonyms',
-      headers: ['Casual', 'Use this instead'],
-      rows: [
-        ['went up a lot', 'rose sharply / surged'],
-        ['went down', 'declined / decreased'],
-        ['stayed the same', 'remained constant / plateaued'],
-        ['big difference', 'a marked discrepancy'],
-        ['about', 'approximately / roughly'],
-        ['a lot of', 'a substantial number of'],
-        ['got bigger', 'expanded / grew significantly'],
-      ],
-    },
-
-    templates: [
-      { label: 'Opening sentence', body: 'The [chart type] [illustrates / shows] the [variable] in [units] across [categories] between [year] and [year].' },
-      { label: 'Overview', body: 'Overall, [the most prominent feature] is that [trend A], while [trend B / contrast].' },
-      { label: 'Comparison line', body: '[Category A] rose from [value] in [year] to [value] in [year], whereas [Category B] [contrasting verb] over the same period.' },
-    ],
-  },
-
   'guidebook/task2': {
     domain: 'guidebook',
     title: 'Writing Task 2',
@@ -251,6 +180,2593 @@ window.CHEATSHEETS = {
       { label: 'Topic sentence', body: 'A [crucial / significant] factor in support of [position] is that [argument], particularly in [context].' },
       { label: 'Example introduction', body: 'A clear illustration of this can be found in [domain]: [specific example with detail].' },
       { label: 'Conclusion', body: 'In conclusion, despite [acknowledged drawback], the [benefits / case for X] outweigh [the alternative], making [thesis restated] the more reasonable position.' },
+    ],
+  },
+};
+
+// ─── Guidebook chart guides ─────────────────────────────────────────────────
+window.GUIDES = {
+  'guidebook/task1/bar-charts': {
+    title: 'Bar Charts',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Bar charts compare discrete categories — countries, age groups, products — at one or more points in time. The examiner is looking for accurate comparison language, grouped description, and controlled paraphrase of the chart’s subject.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Open by paraphrasing the chart’s title and scope — what is measured, how many categories, and the time frame — without copying the wording verbatim.',
+        template: 'The bar chart [illustrates / compares / presents] the [what is measured] in [number] [categories / countries / years], [between [year] and [year] / in [year]].',
+        sentences: [
+          {
+            label: 'Model 1 — Basic Paraphrase (Band 6)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'illustrates', role: 'verb' },
+              { text: 'the amount of water consumed per person', role: 'object' },
+              { text: 'in six countries in 2020', role: 'time' },
+            ],
+            note: '✔ [SUBJECT] + [verb] + [what] + [scope]. Safe and correct.',
+          },
+          {
+            label: 'Model 2 — Synonym Upgrade (Band 7)',
+            parts: [
+              { text: 'The given chart', role: 'subject' },
+              { text: 'compares', role: 'verb' },
+              { text: 'average household water usage', role: 'object' },
+              { text: 'across six different nations in the year 2020', role: 'time' },
+            ],
+            note: 'Swaps "bar chart" → "given chart" and "in" → "across" to avoid repeating the prompt’s wording.',
+          },
+          {
+            label: 'Model 3 — Reduced Relative Clause (Band 7)',
+            parts: [
+              { text: 'The chart', role: 'subject' },
+              { text: 'presents', role: 'verb' },
+              { text: 'data comparing the amount of water consumed', role: 'object' },
+              { text: 'by households in six countries in 2020', role: 'time' },
+            ],
+            note: 'Embeds the comparison inside a reduced relative clause ("data comparing...") rather than stating it as a second verb.',
+          },
+          {
+            label: 'Model 4 — Passive Framing (Band 7–8)',
+            parts: [
+              { text: 'The amount of water consumed by households in six countries in 2020', role: 'subject' },
+              { text: 'is illustrated', role: 'verb' },
+              { text: 'in the bar chart', role: 'connector' },
+            ],
+            note: 'Fronts the data, not the chart — a passive structure that signals strong control of complex sentences.',
+          },
+          {
+            label: 'Model 5 — Two-Part Overview (Band 8)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'illustrates', role: 'verb' },
+              { text: 'how much water was used by an average household', role: 'object' },
+              { text: 'in six countries, while also showing the breakdown by activity', role: 'connector' },
+            ],
+            note: 'Signals that the chart has two layers of information (totals and breakdown) — sets up the overview that follows.',
+          },
+          {
+            label: 'Model 6 — Subordinate Clause Opening (Band 8)',
+            parts: [
+              { text: 'As the bar chart shows', role: 'connector' },
+              { text: ',', role: null },
+              { text: 'household water consumption', role: 'subject' },
+              { text: 'varied considerably', role: 'verb' },
+              { text: 'across the six countries surveyed in 2020', role: 'time' },
+            ],
+            note: 'Opens with a subordinate clause referencing the chart, then makes the data — not the chart — the grammatical subject.',
+          },
+          {
+            label: 'Model 7 — Nominalisation (Band 8)',
+            parts: [
+              { text: 'The bar chart', role: 'subject' },
+              { text: 'provides', role: 'verb' },
+              { text: 'a comparison of average household water consumption', role: 'object' },
+              { text: 'across six countries in 2020', role: 'time' },
+            ],
+            note: '"Provides a comparison of" turns the verb "compare" into a noun phrase — a hallmark of higher-band academic style.',
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Once the introduction is in place, the body paragraphs need precise verbs and adjectives for describing levels, gaps, and trends between categories.',
+        sentences: [
+          {
+            label: 'Model 1 — Describing a Gap (Band 7)',
+            parts: [
+              { text: 'There', role: null },
+              { text: 'was', role: 'verb' },
+              { text: 'a substantial gap', role: 'object' },
+              { text: 'between', role: 'connector' },
+              { text: 'the highest and lowest figures, with Norway consuming almost three times as much water as Spain', role: 'time' },
+            ],
+            note: '"A substantial gap between X and Y" is a flexible frame for any large difference between two categories.',
+          },
+          {
+            label: 'Model 2 — Ranking Language (Band 7–8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: 'recorded', role: 'verb' },
+              { text: 'the highest level of consumption', role: 'object' },
+              { text: ', followed closely by Sweden and Denmark', role: 'connector' },
+            ],
+            note: '"Recorded the highest/lowest" plus "followed closely/distantly by" lets you rank three or more categories in one sentence.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Avoid these in description sentences',
+            items: [
+              'Do not use "a lot of" or "lots of" — replace with "a substantial amount of" / "considerably more than".',
+              'Do not repeat "consume/consumption" in every sentence — vary with "use", "usage", "figures for".',
+              'Do not write bare numbers without a unit or comparison ("Norway had 200") — always frame the figure ("at approximately 200 litres, almost double Spain’s figure").',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison & Grouping',
+        intro: 'Bar charts reward grouped description: clusters of similar categories described together, rather than one sentence per bar.',
+        sentences: [
+          {
+            label: 'Model 1 — Grouping High Performers (Band 7)',
+            parts: [
+              { text: 'Norway, Sweden, and Denmark', role: 'subject' },
+              { text: 'all recorded', role: 'verb' },
+              { text: 'figures above the overall average', role: 'object' },
+              { text: ', with only marginal differences between them', role: 'connector' },
+            ],
+            note: 'Grouping three similar categories into one sentence avoids repetition and shows you can synthesise data, not just list it.',
+          },
+          {
+            label: 'Model 2 — Em-Dash Aside (Band 8)',
+            parts: [
+              { text: 'The three highest-performing countries', role: 'subject' },
+              { text: '— Norway, Sweden, and Denmark —', role: null },
+              { text: 'all exceeded', role: 'verb' },
+              { text: '70%', role: 'object' },
+              { text: ', whereas the remaining three fell well short of this threshold', role: 'connector' },
+            ],
+            note: 'The em-dash aside names the group without breaking the main clause — a punctuation device examiners associate with Band 8 control.',
+          },
+          {
+            label: 'Model 3 — Contrast Pair (Band 7)',
+            parts: [
+              { text: 'While Country A recorded the highest figure', role: 'connector' },
+              { text: ',', role: null },
+              { text: 'Country B', role: 'subject' },
+              { text: 'registered', role: 'verb' },
+              { text: 'the lowest, at less than half that amount', role: 'object' },
+            ],
+            note: '"While X..., Y..." is the cleanest contrast frame — keep both halves grammatically parallel.',
+          },
+          {
+            label: 'Model 4 — Proportional Comparison (Band 7–8)',
+            parts: [
+              { text: 'Spain’s figure', role: 'subject' },
+              { text: 'amounted to', role: 'verb' },
+              { text: 'just over a third of Norway’s', role: 'object' },
+            ],
+            note: '"Amounted to [fraction] of [X]’s" is a precise way to express ratios without doing visible arithmetic.',
+          },
+          {
+            label: 'Model 5 — Clustering by Range (Band 8)',
+            parts: [
+              { text: 'Three of the six countries', role: 'subject' },
+              { text: 'clustered', role: 'verb' },
+              { text: 'within a narrow range of 150–170 litres', role: 'object' },
+              { text: ', suggesting broadly similar usage patterns', role: 'connector' },
+            ],
+            note: '"Clustered within a narrow range of X–Y" is a sophisticated way to group near-identical bars instead of describing each one.',
+          },
+          {
+            label: 'Model 6 — Superlative with Margin (Band 8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: 'comfortably topped the table', role: 'verb' },
+              { text: ', outstripping its nearest rival by almost 40 litres', role: 'connector' },
+            ],
+            note: '"Outstripping its nearest rival by [margin]" expresses both rank and gap size in one clause.',
+          },
+          {
+            label: 'Model 7 — Near-Equality (Band 7)',
+            parts: [
+              { text: 'Sweden and Denmark', role: 'subject' },
+              { text: 'posted', role: 'verb' },
+              { text: 'almost identical figures', role: 'object' },
+              { text: ', differing by fewer than five litres', role: 'connector' },
+            ],
+            note: '"Almost identical, differing by [small margin]" is the standard frame for two bars that are visually indistinguishable.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Group before you write',
+            items: [
+              'Scan the chart first and mentally sort the bars into 2–3 groups (high / mid / low, or above-average / below-average) before writing a single sentence.',
+              'Each group becomes one sentence — this naturally produces the synthesis examiners reward, instead of a flat list.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Grouping pitfalls',
+            items: [
+              'Do not group categories that do not actually share a pattern just to save words — inaccurate grouping is penalised more than slightly repetitive description.',
+              'Do not list more than three items in one "X, Y, and Z" subject — it becomes hard to follow and dilutes the comparison.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time & Scope Expressions',
+        intro: 'Many bar charts compare two time points (e.g. 2010 vs 2020) or two regions side by side. These expressions frame that scope precisely.',
+        sentences: [
+          {
+            label: 'Model 1 — Two-Point Comparison (Band 7)',
+            parts: [
+              { text: 'Between 2010 and 2020', role: 'time' },
+              { text: ', the figure for Country A', role: 'subject' },
+              { text: 'rose', role: 'verb' },
+              { text: 'from just under 100 to nearly 150 units', role: 'object' },
+            ],
+            note: '"Between [year] and [year], the figure for X rose from A to B" is the standard two-point comparison frame.',
+          },
+          {
+            label: 'Model 2 — Overall Period Framing (Band 7–8)',
+            parts: [
+              { text: 'Over the ten-year period shown', role: 'time' },
+              { text: ', most categories', role: 'subject' },
+              { text: 'experienced', role: 'verb' },
+              { text: 'a moderate increase, with one notable exception', role: 'object' },
+            ],
+            note: '"Over the [n]-year period shown" is a safe, precise way to refer to the chart’s timeframe without repeating both years each time.',
+          },
+          {
+            label: 'Model 3 — Single-Year Snapshot (Band 6–7)',
+            parts: [
+              { text: 'In 2020', role: 'time' },
+              { text: ', the gap between the highest and lowest figures', role: 'subject' },
+              { text: 'had narrowed', role: 'verb' },
+              { text: 'to roughly half its 2010 level', role: 'object' },
+            ],
+            note: 'Past perfect ("had narrowed") signals that this snapshot is being compared back to an earlier point — useful for two-bar-set charts.',
+          },
+          {
+            label: 'Model 4 — Regional Scope (Band 7)',
+            parts: [
+              { text: 'Across the European countries surveyed', role: 'time' },
+              { text: ', consumption levels', role: 'subject' },
+              { text: 'remained', role: 'verb' },
+              { text: 'broadly comparable, unlike the wider variation seen elsewhere', role: 'object' },
+            ],
+            note: '"Across the [region] countries surveyed" frames a sub-group within the chart — useful when categories can be naturally clustered geographically.',
+          },
+          {
+            label: 'Model 5 — Projected/Future Framing (Band 8)',
+            parts: [
+              { text: 'By the end of the period shown', role: 'time' },
+              { text: ', three categories', role: 'subject' },
+              { text: 'had overtaken', role: 'verb' },
+              { text: 'their initial frontrunner', role: 'object' },
+            ],
+            note: '"By the end of the period shown, X had overtaken Y" — past perfect for an end-state that resulted from change across the chart’s timeframe.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Preposition reference for time/scope',
+            items: [
+              'between [year] and [year] — for a defined two-point span',
+              'over the [n]-year period — for describing change across the whole range',
+              'by [year] / by the end of [period] — for an end-state result',
+              'across [countries/categories] — for scope, not time',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Time-expression mistakes',
+            items: [
+              'Do not write "in the period of 2010 to 2020" — use "between 2010 and 2020" or "over the period from 2010 to 2020".',
+              'Do not mix tenses within one time frame — if the chart shows a completed past period, stay in past simple/past perfect throughout that sentence.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data & Detail Integration',
+        intro: 'The strongest reports weave specific figures into comparison sentences rather than listing them separately — this section models that integration.',
+        sentences: [
+          {
+            label: 'Model 1 — Figure Embedded in Comparison (Band 7)',
+            parts: [
+              { text: 'At approximately 220 litres per day', role: 'time' },
+              { text: ', Norway’s consumption', role: 'subject' },
+              { text: 'was', role: 'verb' },
+              { text: 'almost double the figure recorded for Spain', role: 'object' },
+            ],
+            note: 'Opening with the figure ("At approximately X...") keeps the comparison, not the number, as the sentence’s focus.',
+          },
+          {
+            label: 'Model 2 — Approximation Language (Band 7)',
+            parts: [
+              { text: 'The figure for Country C', role: 'subject' },
+              { text: 'stood at just over', role: 'verb' },
+              { text: '150 units, slightly above the group average', role: 'object' },
+            ],
+            note: '"Stood at just over / just under / roughly / in the region of" — approximation phrases that avoid claiming false precision.',
+          },
+          {
+            label: 'Model 3 — Percentage-Point Change (Band 8)',
+            parts: [
+              { text: 'This', role: 'subject' },
+              { text: 'represented', role: 'verb' },
+              { text: 'an increase of some 15 percentage points on the previous figure', role: 'object' },
+            ],
+            note: '"Represented an increase/decrease of some [n] percentage points" is the precise academic phrase for comparing proportions, not raw values.',
+          },
+          {
+            label: 'Model 4 — Fraction Framing (Band 7–8)',
+            parts: [
+              { text: 'Roughly two-thirds of the countries surveyed', role: 'subject' },
+              { text: 'recorded', role: 'verb' },
+              { text: 'figures within ten units of one another', role: 'object' },
+            ],
+            note: 'Fractions ("roughly two-thirds", "just under half") let you summarise a sub-group without naming every member.',
+          },
+          {
+            label: 'Model 5 — Multiple-Detail Synthesis (Band 8)',
+            parts: [
+              { text: 'Although the two leading countries were separated by fewer than ten units', role: 'connector' },
+              { text: ', both', role: 'subject' },
+              { text: 'remained', role: 'verb' },
+              { text: 'far ahead of the third-placed country, whose figure was barely half that of the leader', role: 'object' },
+            ],
+            note: 'Combines a near-tie, a group ranking, and a proportional gap in a single sentence — the kind of synthesis that distinguishes Band 8 reports.',
+          },
+          {
+            label: 'Model 6 — Rounded Total (Band 7)',
+            parts: [
+              { text: 'Combined', role: 'connector' },
+              { text: ', the top three countries', role: 'subject' },
+              { text: 'accounted for', role: 'verb' },
+              { text: 'well over half of the total figure shown', role: 'object' },
+            ],
+            note: '"Accounted for [proportion] of the total" is useful when the chart invites a part-to-whole comparison.',
+          },
+          {
+            label: 'Model 7 — Closing Synthesis Sentence (Band 8)',
+            parts: [
+              { text: 'Overall', role: 'connector' },
+              { text: ', the data', role: 'subject' },
+              { text: 'reveal', role: 'verb' },
+              { text: 'a clear divide between the higher- and lower-consuming countries, with little common ground between the two groups', role: 'object' },
+            ],
+            note: 'A strong closing sentence names the overall pattern (a "divide" between groups) rather than restating individual figures.',
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Integrating numbers smoothly',
+            items: [
+              'Lead with the comparison word, not the number, when possible: "almost double", "well over half", "fewer than half" — these carry more meaning than a bare figure.',
+              'Round figures to sensible units ("around 220 litres", not "218.6 litres") — IELTS Task 1 rewards clarity over false precision.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Common data-integration errors',
+            items: [
+              'Do not stack more than two figures in one sentence — it becomes a list, not an analysis.',
+              'Do not invent figures that are not visible on the chart, even approximate ones — only describe what is shown.',
+              'Do not end every body paragraph with a bare restatement of the highest/lowest figure — vary your closing sentences with synthesis language ("a clear divide", "broadly comparable", "considerable variation").',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Paraphrased the chart’s title and scope in the introduction — did not copy the prompt wording verbatim.',
+      'Wrote a clear overview identifying the two or three most significant overall patterns.',
+      'Grouped similar categories together rather than describing every bar in sequence.',
+      'Used at least three different comparison structures (e.g. "while X..., Y...", "amounted to a third of", "clustered within a narrow range of").',
+      'Embedded specific figures inside comparison sentences rather than listing them separately.',
+      'Used approximation language ("just over", "roughly", "in the region of") instead of false precision.',
+      'Varied verbs of comparison and ranking — avoided repeating "is higher than" / "is lower than".',
+      "Used appropriate time-scope expressions matching the chart's actual timeframe (single year vs. period vs. two-point comparison).",
+      'Closed body paragraphs with synthesis statements, not bare repeated figures.',
+      'Checked tense consistency — past simple/past perfect for completed historical data, present simple only for general/timeless charts.',
+    ],
+  },
+
+  'guidebook/task1/line-graphs': {
+    title: 'Line Graphs',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Line graphs show change over time. Master trend vocabulary, time expressions, and comparison structures to describe rises, falls, and fluctuations with precision.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Never copy the question. Paraphrase the subject, verb, and time frame. Use the template below and vary the verb each time.',
+        template: 'The [line graph / graph / chart] [illustrates / depicts / compares] [the changes/trends in ...] over [time period].',
+        sentences: [
+          {
+            label: 'Paraphrase 1',
+            parts: [
+              { text: 'The line graph', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the changes in smartphone ownership rates among four age groups', role: 'object' },
+              { text: ' ', role: null },
+              { text: 'between 2010 and 2020', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Paraphrase 2',
+            parts: [
+              { text: 'The graph', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'compares', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the consumption of three different types of meat in a European country', role: 'object' },
+              { text: ' ', role: null },
+              { text: 'over a 25-year period from 1990 to 2015', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Paraphrase 3',
+            parts: [
+              { text: 'The provided line chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'depicts', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'fluctuations in international tourist arrivals to three Southeast Asian nations', role: 'object' },
+              { text: ' ', role: null },
+              { text: 'during the decade spanning 2005 to 2015', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 1',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'smartphone ownership', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'experienced an upward trend', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'across all age groups', role: 'object' },
+              { text: ', while the younger demographic showed the most dramatic increase.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 2',
+            parts: [
+              { text: 'At first glance', role: null },
+              { text: ', it is evident that ', role: null },
+              { text: 'chicken consumption', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'rose significantly', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'throughout the period', role: 'time' },
+              { text: ', whereas beef and lamb declined steadily.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 3',
+            parts: [
+              { text: 'Generally speaking', role: null },
+              { text: ', ', role: null },
+              { text: 'all three countries', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'witnessed growth in tourist numbers', role: 'verb' },
+              { text: ', with Thailand maintaining its position as the most popular destination throughout the decade.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Common mistakes',
+            items: [
+              'Do not include specific figures in the overview — state overall patterns only.',
+              'Do not write "The graph shows information about..." — name what specifically is being shown.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview formula',
+            items: [
+              'Overall sentence = dominant trend + one key contrast or exception.',
+              'Write the overview immediately after the paraphrase, before any body paragraph.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Trend Description Vocabulary',
+        intro: 'Vary your verb and adverb combinations. Pair each trend verb with a matching adverb for precision.',
+        sentences: [
+          {
+            label: 'Rising trend',
+            parts: [
+              { text: 'Between 2010 and 2015', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the number of electric vehicles sold', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'experienced a dramatic surge, climbing sharply', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'from approximately 50,000 to over 500,000 units', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Falling trend',
+            parts: [
+              { text: 'From 2008 onwards', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'newspaper readership', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'showed a downward trajectory, plummeting', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'from 8 million to just 3 million readers', role: 'object' },
+              { text: ' ', role: null },
+              { text: 'by the end of the period', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Stability and fluctuation',
+            parts: [
+              { text: 'During the middle years', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'unemployment rates', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'fluctuated considerably, hovering around 6% to 8%', role: 'verb' },
+              { text: ' before eventually stabilizing ', role: null },
+              { text: 'in 2019', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Avoid repetition',
+            items: [
+              'Do not use "increased" or "decreased" more than twice per response — vary with surge, climb, plummet, dip, plateau.',
+              'Do not write "went up" or "went down" — these are informal; use formal equivalents.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping Structures',
+        intro: 'Use these to compare two lines or group similar trends into one sentence.',
+        sentences: [
+          {
+            label: 'Contrast structure',
+            parts: [
+              { text: 'In contrast to Country A', role: 'connector' },
+              { text: ', where emissions ', role: null },
+              { text: 'rose steadily', role: 'verb' },
+              { text: ', ', role: null },
+              { text: 'Country B', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'experienced a notable decline', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'over the same period', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'While structure',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'the 18–25 age group', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'saw smartphone ownership rise to 98%', role: 'verb' },
+              { text: ', those aged 65+ ', role: null },
+              { text: 'recorded a more modest increase to just 45%', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Consistent performance',
+            parts: [
+              { text: 'France', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consistently outperformed Germany', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'throughout the period', role: 'time' },
+              { text: ', with the gap widening particularly after 2015.', role: null },
+            ],
+          },
+          {
+            label: 'Ratio comparison',
+            parts: [
+              { text: 'By 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'renewable energy consumption', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was nearly triple the figure recorded in 2005', role: 'verb' },
+              { text: ', making it by far the fastest-growing energy source.', role: null },
+            ],
+          },
+          {
+            label: 'Parallel decline',
+            parts: [
+              { text: 'Both beef and lamb consumption', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'followed similar downward trends, falling', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'by approximately 30% and 35% respectively', role: 'object' },
+              { text: ' ', role: null },
+              { text: 'over the 20-year span', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Group with peaks',
+            parts: [
+              { text: 'The three Asian markets', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'demonstrated comparable growth patterns', role: 'verb' },
+              { text: ', all reaching peaks around 2018 before declining marginally.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Grouping strategy',
+            items: [
+              'Group lines that share similar trends into one sentence using "Both X and Y...".',
+              'Use "while" or "whereas" to contrast two diverging lines in a single sentence.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid this',
+            items: [
+              'Do not describe each line separately in its own paragraph — always make cross-line comparisons.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Sequence Expressions',
+        intro: 'Use specific time markers to anchor your description to the chart. Vary expressions to avoid repetition.',
+        sentences: [
+          {
+            label: 'Starting point',
+            parts: [
+              { text: 'At the outset of the survey period in 2000', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'mobile phone subscriptions', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'stood at a modest 15 million', role: 'verb' },
+              { text: ', representing only 20% of the population.', role: null },
+            ],
+          },
+          {
+            label: 'Middle period',
+            parts: [
+              { text: 'Over the following five-year period from 2010 to 2015', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the trend', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'reversed dramatically', role: 'verb' },
+              { text: ', with exports declining from $5 billion to $3 billion.', role: null },
+            ],
+          },
+          {
+            label: 'Mid-period stability',
+            parts: [
+              { text: 'During the middle years of the study, between 2012 and 2016', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'both categories', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'exhibited relative stability', role: 'verb' },
+              { text: ', hovering around the 40% mark.', role: null },
+            ],
+          },
+          {
+            label: 'End point',
+            parts: [
+              { text: 'By the conclusion of the survey in 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'electric vehicle sales', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had surged to 2.5 million units annually', role: 'verb' },
+              { text: ', representing a fifty-fold increase from the starting figure.', role: null },
+            ],
+          },
+          {
+            label: 'Final convergence',
+            parts: [
+              { text: 'Ultimately, by 2019', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the gap between the two countries', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had narrowed considerably', role: 'verb' },
+              { text: ', with both nations recording approximately 80% internet penetration rates.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense tip',
+            items: [
+              'Use past perfect ("had surged", "had narrowed") for states that resulted from earlier change within the period.',
+              'Pair every dynamic verb with an explicit time marker — never write "rose" without "between X and Y" or "from X to Y".',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not write "In 2010 and 2020" to mean between those years — use "between 2010 and 2020".',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data Integration Techniques',
+        intro: 'Embed specific figures into analytical sentences. Always frame numbers with a comparison or interpretive phrase.',
+        sentences: [
+          {
+            label: 'From-to with gain',
+            parts: [
+              { text: 'Smartphone ownership among teenagers', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'climbed sharply', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'from 45% in 2010 to 92% in 2020', role: 'object' },
+              { text: ', representing a gain of 47 percentage points.', role: null },
+            ],
+          },
+          {
+            label: 'Turning point',
+            parts: [
+              { text: 'The year 2015', role: 'time' },
+              { text: ' ', role: null },
+              { text: 'marked a turning point', role: 'verb' },
+              { text: ', with renewable energy ', role: null },
+              { text: 'accounting for 25% of total consumption', role: 'object' },
+              { text: ', up from just 10% a decade earlier.', role: null },
+            ],
+          },
+          {
+            label: 'Relative clause with ratio',
+            parts: [
+              { text: 'China', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'experienced the most substantial growth, reaching 500 million tons', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'by 2018', role: 'time' },
+              { text: ', which represented a threefold increase from the 2008 baseline.', role: null },
+            ],
+          },
+          {
+            label: 'Relative clause for sector share',
+            parts: [
+              { text: 'The transportation sector', role: 'subject' },
+              { text: ', which accounted for 35% of emissions in 2000, ', role: null },
+              { text: 'saw its share increase to 42%', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'by 2020', role: 'time' },
+              { text: ', making it the largest contributor overall.', role: null },
+            ],
+          },
+          {
+            label: 'Peak and fall',
+            parts: [
+              { text: 'Oil prices', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'reached a peak of $147 per barrel', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'in mid-2008', role: 'time' },
+              { text: ', before plummeting to just $40 by the end of that year.', role: null },
+            ],
+          },
+          {
+            label: 'Fluctuation range',
+            parts: [
+              { text: 'Between 2012 and 2018', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the figure', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'fluctuated considerably', role: 'verb' },
+              { text: ', ranging from a low of approximately 2.8 million to a high of just under 4 million, with no clear directional trend.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Data integration rule',
+            items: [
+              'State the comparison or interpretation first, then provide the number in brackets or after a comma.',
+              'Always ask "So what?" after a figure — add "representing", "reflecting", or "highlighting" to show analysis.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid bare numbers',
+            items: [
+              'Do not write isolated figures: "In 2010 it was 45% and in 2020 it was 92%." — embed them into a comparison sentence.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Paraphrased the question without copying any exact wording from the task.',
+      'Wrote an overview sentence immediately after the introduction, identifying the dominant trend and one key contrast.',
+      'Used at least four different trend verbs (e.g., surged, plummeted, levelled off, fluctuated).',
+      'Paired every trend verb with a precise time expression (between X and Y, from X to Y, by X).',
+      'Grouped lines with similar trends into single sentences rather than describing each line in isolation.',
+      'Embedded all specific figures into analytical or comparative sentences — no bare standalone numbers.',
+      'Used past perfect ("had climbed", "had narrowed") at least once for a state resulting from earlier change.',
+      'Included at least one multiplier or ratio comparison (e.g., "nearly triple", "twice the figure").',
+      'Varied approximation language across the response (just over, roughly, approximately, just under).',
+      'Response is between 150 and 200 words — focused and complete without listing every data point.',
+    ],
+  },
+  'guidebook/task1/pie-charts': {
+    title: 'Pie Charts',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Pie charts present proportions. Master fraction language, proportion verbs, and grouping structures to describe segments analytically rather than just listing percentages.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Paraphrase the question, name the chart type, and identify the context. Follow immediately with an overview that states the dominant segment and a key contrast.',
+        template: "The pie chart [illustrates / depicts / shows] the [proportion / distribution / breakdown] of [topic] in [place/time]. Overall, it is clear that [largest category] [accounted for / represented / made up] the most significant share, while [smallest category] constituted the smallest proportion.",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'The pie chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'shows', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the distribution of spending on different modes of transport in a city', role: 'object' },
+              { text: '. Overall, private car use accounted for the largest proportion, while walking represented the smallest share.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'The pie chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the breakdown of expenditure on various transport methods within a single urban area', role: 'object' },
+              { text: '. Overall, private vehicles dominated the chart, accounting for well over a third of total spending.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'The chart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'provides a visual breakdown of how transport expenditure was distributed across four distinct categories in the city', role: 'verb' },
+              { text: '. Notably, just two categories combined accounted for nearly two-thirds of all spending.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (two charts)',
+            parts: [
+              { text: 'The two pie charts', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'compare the distribution of household income allocation in 1990 and 2020', role: 'verb' },
+              { text: '. Overall, housing costs remained the dominant expenditure in both years, though the proportion attributed to leisure increased markedly.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Common mistakes',
+            items: [
+              'Never include specific percentage figures in the overview sentence.',
+              'Do not use trend words like increased or decreased unless comparing two charts.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Overview = name the dominant segment + name the smallest or one key contrast.',
+              'For two charts: state what stayed dominant and what changed most markedly.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Vocabulary Patterns',
+        intro: 'Use proportion verbs to embed percentages analytically. Vary across accounted for, represented, comprised, constituted, made up.',
+        template: "[Subject] [accounted for / represented / comprised / constituted / made up] + [percentage / fraction / descriptor].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'Private cars', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'made up', role: 'verb' },
+              { text: ' ', role: null },
+              { text: '38% of the total transport spending', role: 'object' },
+              { text: ', making it the largest category.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Expenditure on private cars', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'accounted for the largest share at 38%', role: 'verb' },
+              { text: ', followed closely by public transport, which ', role: null },
+              { text: 'represented just over a quarter of the total', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'Private vehicles', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'dominated transport spending, comprising approximately two-fifths of all expenditure', role: 'verb' },
+              { text: ', whereas cycling and walking combined ', role: 'connector' },
+              { text: 'constituted little more than a third', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 (passive)',
+            parts: [
+              { text: 'Approximately 65% of the total budget', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was directed towards motorised transport', role: 'verb' },
+              { text: ', with the remaining 35% being divided between non-motorised alternatives.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Fraction reference',
+            items: [
+              '~75% = three-quarters | ~66% = two-thirds | ~50% = half',
+              '~40% = two-fifths | ~33% = one-third | ~25% = a quarter | ~20% = one-fifth',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Group similar segments together and contrast clusters rather than listing every slice in sequence.',
+        template: "[Category A] and [Category B] [together accounted for / jointly represented] [X%]. [In contrast / Conversely], [Category C] [constituted a far smaller proportion] at just [X%].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'Private cars (38%)', role: 'subject' },
+              { text: ' were much larger than ', role: null },
+              { text: 'walking (15%), which was the smallest category.', role: 'object' },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Motorised transport options', role: 'subject' },
+              { text: ' — private cars and public transport — ', role: null },
+              { text: 'accounted for 65% of spending', role: 'verb' },
+              { text: ', considerably outweighing the combined share of non-motorised alternatives at just 35%.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'Private car expenditure, at 38%', role: 'subject' },
+              { text: ', was ', role: null },
+              { text: 'more than double that of cycling (20%) and nearly two and a half times the proportion attributed to walking', role: 'verb' },
+              { text: ' — a stark contrast highlighting the preference for private motorised travel.', role: null },
+            ],
+          },
+          {
+            label: 'Band 9',
+            parts: [
+              { text: 'Although public transport and cycling differed by only 7 percentage points', role: 'connector' },
+              { text: ', the disparity between ', role: null },
+              { text: 'private cars and walking', role: 'subject' },
+              { text: ' was considerably wider at 23 percentage points, ', role: null },
+              { text: 'underscoring the dominance of car-based transport', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Grouping strategy',
+            items: [
+              'Group segments by similarity: motorised vs non-motorised; essential vs discretionary.',
+              'Use jointly accounted for and together represented for combined group figures.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not list every segment in sequence: "Cars were 38%, transport was 27%..." — group and compare instead.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Tense and Time Expressions',
+        intro: 'Tense choice depends on whether the chart has a date. For two charts, use past tense for each year and change-language to describe shifts.',
+        sentences: [
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Most notably', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'private car use', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'dominated at 38%', role: 'verb' },
+              { text: '. In second place, public transport followed at 27%, after which proportions declined substantially.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (two charts)',
+            parts: [
+              { text: 'In 1990', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'housing costs', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'represented 40% of household income', role: 'verb' },
+              { text: '; however, by 2020, this proportion had risen to 52%, making it an even more dominant category.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 (temporal shift)',
+            parts: [
+              { text: 'Between 1990 and 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the most striking shift', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was observed in leisure spending', role: 'verb' },
+              { text: ', which ', role: null },
+              { text: 'expanded from 8% to 18%', role: 'verb' },
+              { text: ' — more than double its original proportion.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rules',
+            items: [
+              'No date given: use simple present (Cars account for 38%).',
+              'Past date given: use simple past (Cars accounted for 38%).',
+              'Two charts: past for each year + change verbs (expanded, contracted, rose).',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data Integration Techniques',
+        intro: 'Embed figures parenthetically, use fraction language alongside raw percentages, and add interpretive phrases.',
+        template: "[Analytical Point] + [, at X%,] + [further explanation].",
+        sentences: [
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'Private car use', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'accounted for the largest proportion, at 38%', role: 'verb' },
+              { text: ', while public transport ', role: 'connector' },
+              { text: 'represented just over a quarter of all spending at 27%', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7 (parenthetical)',
+            parts: [
+              { text: 'The two motorised categories', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'jointly commanded nearly two-thirds of the total budget', role: 'verb' },
+              { text: ', with private cars (38%) and public transport (27%) together accounting for 65% of all expenditure.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8',
+            parts: [
+              { text: 'The dominance of private vehicles is clearly reflected in the data: car travel alone', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consumed 38% of the transport budget', role: 'verb' },
+              { text: ' — a proportion that exceeds the combined total for cycling and walking (35%) by a small but notable margin.', role: null },
+            ],
+          },
+          {
+            label: 'Band 9',
+            parts: [
+              { text: 'What is particularly striking is that private car use, despite representing only one of four categories,', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'claimed 38% of the budget', role: 'verb' },
+              { text: ' — a figure that alone exceeds the combined proportion of the two least-funded categories (35%) and surpasses public transport (27%) by 11 percentage points.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Parenthetical data',
+            items: [
+              'Use the form category (X%) and category (Y%) to embed two figures elegantly in one sentence.',
+              'Always add an interpretive phrase after a figure: reflecting, highlighting, suggesting.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use trend words (increased, rose) for a single static pie chart — reserve these for two-chart comparisons.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Introduction paraphrases the question without copying exact wording.',
+      'Overview identifies the dominant category and one key contrast — no specific numbers.',
+      'Tense is consistent: present for undated charts, past for dated charts.',
+      'Used at least three different proportion verbs (accounted for, comprised, represented).',
+      'Grouped similar segments together rather than listing all slices individually.',
+      'Every percentage figure is embedded in a sentence, not presented as a bare number.',
+      'Used fraction language (just over a quarter, nearly two-thirds) alongside or instead of raw percentages.',
+      'Included contrast language (whereas, conversely, in contrast, while).',
+      'Used parenthetical data at least once: e.g., cycling (20%) and walking (15%).',
+      'Response does not include trend words unless comparing two charts.',
+      'Used at least one complex sentence with a subordinate or compound clause.',
+      'Response is between 150 and 200 words.',
+    ],
+  },
+  'guidebook/task1/maps': {
+    title: 'Maps',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Maps test spatial description, passive voice, and transformation vocabulary. Unlike graphs, maps require specific language for directions, locations, and developments.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Identify whether the maps show time-based change or a comparison of two proposed layouts. Choose the appropriate template and follow with a clear overview.',
+        template: "The [maps/diagrams] illustrate how [area name] has [transformed/developed/changed] over [time period]. Overall, the area [underwent substantial development], with [main change 1] and [main change 2], while [something that stayed the same] remained unchanged.",
+        sentences: [
+          {
+            label: 'Time-based intro',
+            parts: [
+              { text: 'The diagrams', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrate', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'how Westley village has transformed over a 30-year period from 1990 to 2020', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Comparison intro',
+            parts: [
+              { text: 'The plans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'compare', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'two proposed designs for a city center redevelopment, showing how the layout would differ between the residential-focused and commercial-focused options', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 1',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'the area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'underwent substantial urbanization', role: 'verb' },
+              { text: ', with numerous residential buildings constructed and farmland replaced by infrastructure, while the river running through the center remained unchanged.', role: null },
+            ],
+          },
+          {
+            label: 'Overview 2',
+            parts: [
+              { text: 'The most notable changes', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'include the demolition of agricultural buildings and the construction of a shopping complex and parking facilities', role: 'verb' },
+              { text: ', transforming the area from a rural village to a suburban commercial hub.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Key mistake',
+            items: [
+              'Use passive voice consistently: A school was built — NOT They built a school.',
+              'Do not copy the names of features from the map without paraphrasing the overall context.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Overview = two main changes + one thing that stayed the same.',
+              'Do not include specific locations in the overview — save those for body paragraphs.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use passive voice for all changes. Location phrases come before or after the main clause.',
+        sentences: [
+          {
+            label: 'Replacement',
+            parts: [
+              { text: 'The farmland in the southern area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was replaced by', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'a large residential estate', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Conversion',
+            parts: [
+              { text: 'The old warehouse', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was converted into', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'a community sports center', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Construction',
+            parts: [
+              { text: 'A shopping complex', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'to the northeast of the town center', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Unchanged feature',
+            parts: [
+              { text: 'The river running through the center', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'remained unchanged', role: 'verb' },
+              { text: ' throughout the period.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Transformation verbs',
+            items: [
+              'Change: was replaced by, was converted into, was transformed into, was extended, was demolished.',
+              'New features: was constructed, was built, was developed, was added, appeared, emerged.',
+              'Unchanged: remained unchanged, stayed the same, retained its original function.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Group similar changes together by area or by type. Use contrast structures for areas that developed differently.',
+        template: "Several [types of building/facility] were [verb], including [example 1], [example 2], and [example 3].",
+        sentences: [
+          {
+            label: 'Grouping by type',
+            parts: [
+              { text: 'Several commercial facilities', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'were constructed', role: 'verb' },
+              { text: ', including a shopping mall, a cinema complex, and a supermarket.', role: null },
+            ],
+          },
+          {
+            label: 'Area contrast',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'the eastern side', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'underwent extensive residential development', role: 'verb' },
+              { text: ', the western area remained largely agricultural.', role: null },
+            ],
+          },
+          {
+            label: 'Conversely',
+            parts: [
+              { text: 'Conversely', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the southern section', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'remained largely unchanged', role: 'verb' },
+              { text: ', with the original park and green space preserved throughout the period.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Grouping strategies',
+            items: [
+              'Group by direction: northern changes in one sentence, southern in another.',
+              'Group by type: commercial facilities, residential buildings, transport infrastructure.',
+              'Use Several... including to list multiple changes efficiently.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Sequence Expressions',
+        intro: 'Use past simple throughout for historical map changes. Sequence connectors help organize the description logically.',
+        sentences: [
+          {
+            label: 'Initial state',
+            parts: [
+              { text: 'Initially', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the village', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consisted mainly of farmland and a small cluster of residential properties', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'in 1990', role: 'time' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'By year',
+            parts: [
+              { text: 'By 2020', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the area', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had been transformed beyond recognition', role: 'verb' },
+              { text: ', with the majority of green space replaced by residential and commercial buildings.', role: null },
+            ],
+          },
+          {
+            label: 'Over the period',
+            parts: [
+              { text: 'Over the 30-year period', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the road network', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was significantly extended', role: 'verb' },
+              { text: ', with new routes connecting the residential areas to the town center.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rule',
+            items: [
+              'Use simple past throughout for historical maps: was built, was replaced, was extended.',
+              'Use between [year] and [year] for the time span — not in X and Y.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use present tense for past map changes.',
+              'Do not write In 1990 and 2020 — use between 1990 and 2020 or over the 30-year period.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data and Detail Integration',
+        intro: 'Add specific locations, purposes, and connecting details to upgrade from Band 6 to Band 8.',
+        template: "[Feature] was [verb] in [specific location], [additional detail about size/purpose/connection].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was built', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 7',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' across the river in the northern section.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8+',
+            parts: [
+              { text: 'A bridge', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was constructed', role: 'verb' },
+              { text: ' across the river in the northern section, ', role: null },
+              { text: 'connecting the residential area to the newly developed commercial district', role: 'verb' },
+              { text: ', thereby improving accessibility.', role: null },
+            ],
+          },
+          {
+            label: 'Complex with purpose',
+            parts: [
+              { text: 'The farmland', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was replaced by a housing estate, which occupied approximately half of the available land', role: 'verb' },
+              { text: ', while the remainder was converted into a public park to provide recreational facilities for the new residents.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Detail upgrade formula',
+            items: [
+              'Add a compass direction: in the northeastern corner, to the south of the town center.',
+              'Add a purpose: to provide, thereby improving, in order to connect.',
+              'Add a connection: connecting X to Y, linking the residential area to the commercial zone.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Used passive voice consistently throughout: was built, was replaced, was converted.',
+      'Overview identifies two main changes and one thing that stayed the same — no locations or details.',
+      'Grouped similar changes together rather than describing features one by one.',
+      'Used contrast language for areas that developed differently: while, conversely, whereas.',
+      'Added specific compass locations to at least three changes: northeastern corner, to the south of.',
+      'Included purpose or result for at least one change: thereby improving, to provide, connecting X to Y.',
+      'Maintained consistent past simple tense for all historical changes.',
+      'Used at least five different transformation verbs: replaced, constructed, converted, demolished, extended.',
+      'Described at least one feature that remained unchanged.',
+      'Response is between 150 and 200 words.',
+    ],
+  },
+  'guidebook/task1/processes': {
+    title: 'Process Diagrams',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Process diagrams test sequential description using passive voice, connectors, and precise detail. The key features are passive constructions, sequential connectors, and accurate stage descriptions.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Identify the diagram type and give the number of stages in your overview. Begin with the first step and end with the final product.',
+        template: "The [diagram/chart/flowchart] illustrates/depicts/outlines [the process/the procedure/how X is produced]. Overall, the process consists of/involves/comprises [number] [main stages/distinct steps/key phases], beginning with [first step] and culminating in [final step].",
+        sentences: [
+          {
+            label: 'Intro 1',
+            parts: [
+              { text: 'The diagram', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the process by which cocoa beans are transformed into chocolate', role: 'object' },
+              { text: '. Overall, the procedure consists of ten distinct stages, beginning with harvesting and culminating in the production of chocolate products.', role: null },
+            ],
+          },
+          {
+            label: 'Intro 2',
+            parts: [
+              { text: 'The flowchart', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'depicts', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'the various stages involved in brick manufacturing', role: 'object' },
+              { text: '. From start to finish, the process involves seven key steps, commencing with the extraction of clay and ending with the delivery of finished bricks.', role: null },
+            ],
+          },
+          {
+            label: 'Intro 3',
+            parts: [
+              { text: 'The diagram', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'outlines', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'how plastic bottles are recycled', role: 'object' },
+              { text: '. In general terms, the recycling process comprises nine successive phases, starting from collection and ultimately resulting in the creation of new plastic products.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Overview formula',
+            items: [
+              'Overview = exact number of stages + first step + final step.',
+              'Count the stages carefully before writing — be precise.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use active voice: NOT Workers heat the mixture. USE The mixture is heated.',
+              'Do not use future tense — use present simple passive throughout.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use present simple passive for all stages. State what happens to the material at each step.',
+        template: "[Material/Object] is/are [past participle] (by [agent — optional]).",
+        sentences: [
+          {
+            label: 'Initial collection',
+            parts: [
+              { text: 'In the initial stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'raw materials', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are gathered from various sources and subsequently transported to the processing facility', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Heating stage',
+            parts: [
+              { text: 'Following this', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is heated to approximately 1400 degrees Celsius in a rotating kiln', role: 'verb' },
+              { text: ', where it undergoes chemical transformation.', role: null },
+            ],
+          },
+          {
+            label: 'Filtering stage',
+            parts: [
+              { text: 'The liquid', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is then passed through a series of filters to remove impurities', role: 'verb' },
+              { text: ', after which it is left to cool for several hours.', role: null },
+            ],
+          },
+          {
+            label: 'Passive chain',
+            parts: [
+              { text: 'Once the cooling process is complete', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the solidified material', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is crushed into fine powder using industrial grinders and then stored in large silos prior to packaging', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Quality control',
+            parts: [
+              { text: 'In the penultimate stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the product', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is meticulously inspected for quality control purposes', role: 'verb' },
+              { text: ', ensuring that only items meeting the required standards proceed to the final phase.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Passive verb bank',
+            items: [
+              'Core passives: is collected, is sorted, is heated, is crushed, is mixed, is filtered, is dried, is packaged, is transported, is stored.',
+              'Advanced passives: is subjected to, is transferred to, is passed through, is converted into, is ground into.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping',
+        intro: 'Describe parallel processes, diverging pathways, and contrasts between stages.',
+        sentences: [
+          {
+            label: 'Parallel process',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' one batch is being heated, another batch is ', role: null },
+              { text: 'simultaneously undergoing chemical treatment', role: 'verb' },
+              { text: ', thereby maximizing production efficiency.', role: null },
+            ],
+          },
+          {
+            label: 'Diverging pathways',
+            parts: [
+              { text: 'At this point', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the process', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'diverges into two separate pathways', role: 'verb' },
+              { text: ': in the first route, materials are subjected to high-temperature treatment, whereas in the alternative route, they undergo chemical processing.', role: null },
+            ],
+          },
+          {
+            label: 'Phase categorization',
+            parts: [
+              { text: 'The entire procedure', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'can be broadly categorized into three main phases', role: 'verb' },
+              { text: ': preparation, processing, and finalization.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Parallel process tip',
+            items: [
+              'Use While [X] is being [verb], [Y] simultaneously undergoes [process] for parallel stages.',
+              'Use can be broadly divided into for grouping stages into phases.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Sequence Expressions',
+        intro: 'Vary connectors across the response. Do not rely on next or then more than once each.',
+        sentences: [
+          {
+            label: 'Start to ferment',
+            parts: [
+              { text: 'Initially', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the raw cocoa beans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are harvested from cocoa trees and immediately transported to the processing plant', role: 'verb' },
+              { text: '. Following this, they are spread out on large trays to ferment for approximately one week.', role: null },
+            ],
+          },
+          {
+            label: 'Drying to roasting',
+            parts: [
+              { text: 'Subsequently', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the fermented beans', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are dried under direct sunlight, a process that typically takes five to seven days', role: 'verb' },
+              { text: '. Once the drying phase is complete, the beans are roasted at varying temperatures.', role: null },
+            ],
+          },
+          {
+            label: 'Conching to packaging',
+            parts: [
+              { text: 'In the penultimate stage', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the chocolate mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'undergoes a conching process, during which it is continuously stirred and aerated for up to 72 hours', role: 'verb' },
+              { text: '. Ultimately, the refined chocolate is tempered, molded into various shapes, and finally packaged for distribution.', role: null },
+            ],
+          },
+          {
+            label: 'Quality gate',
+            parts: [
+              { text: 'Prior to packaging', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'each batch', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is subjected to rigorous quality control testing', role: 'verb' },
+              { text: '. Only after these tests are successfully completed does the product proceed to the final packaging stage.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Connector bank',
+            items: [
+              'Use in order: Initially, Following this, Subsequently, Once [clause] is complete, At this juncture, In the penultimate stage, Ultimately.',
+              'For simultaneous steps: Concurrently, Meanwhile, At the same time.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not repeat then or next more than once each — vary with Subsequently, Following this, Thereafter.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data and Detail Integration',
+        intro: 'Include specific figures (temperatures, times, quantities) from the diagram. Frame them with at approximately or over a [time] period.',
+        template: "[Material] is [verb] at approximately [temperature / measurement], [during which / where] [specific transformation occurs].",
+        sentences: [
+          {
+            label: 'Temperature detail',
+            parts: [
+              { text: 'The mixture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is heated to approximately 1400 degrees Celsius in a rotating kiln', role: 'verb' },
+              { text: ', where it remains for roughly two hours.', role: null },
+            ],
+          },
+          {
+            label: 'Ratio detail',
+            parts: [
+              { text: 'At this stage', role: 'time' },
+              { text: ', using high-pressure machinery, ', role: null },
+              { text: 'the material', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is compressed at a ratio of 10:1, reducing its volume significantly', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Impurity removal',
+            parts: [
+              { text: 'Through a series of filters containing increasingly fine mesh screens', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'impurities', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are systematically removed', role: 'verb' },
+              { text: ', with particles larger than 0.5 millimeters being trapped and discarded.', role: null },
+            ],
+          },
+          {
+            label: 'Blending detail',
+            parts: [
+              { text: 'In a process that typically requires between four and six hours', role: 'time' },
+              { text: ', ', role: null },
+              { text: 'the raw ingredients', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'are gradually blended together in precise proportions', role: 'verb' },
+              { text: ' (60% base material, 30% additives, and 10% binding agents) to create a homogeneous mixture.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Detail tip',
+            items: [
+              'Include at approximately [number] for any temperatures, times, or quantities shown in the diagram.',
+              'Use during which or where to add explanatory detail within a passive clause.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Counted the exact number of stages and stated it in the overview.',
+      'Named the first step and the final product in the overview.',
+      'Used passive voice throughout: is heated, is filtered, is packaged.',
+      'Varied sequential connectors: Initially, Subsequently, Following this, Once complete, Ultimately.',
+      'Included all specific details from the diagram: temperatures, times, quantities.',
+      'Used at least 10 different passive verbs from the core verb bank.',
+      'Used prior to [noun] and once [clause] is complete at least once each.',
+      'Described any parallel processes using While [X] is being [verb], [Y] simultaneously undergoes...',
+      'Maintained present simple passive tense consistently throughout.',
+      'Response is between 150 and 190 words.',
+    ],
+  },
+  'guidebook/task1/tables': {
+    title: 'Tables',
+    eyebrow: 'Task 1 · Guide',
+    deck: 'Tables present multiple categories across multiple variables simultaneously. Your task is to identify the most striking comparisons, group data meaningfully, and avoid describing every cell.',
+    sections: [
+      {
+        title: 'Introduction Templates',
+        intro: 'Paraphrase the table topic, name the variables, and follow with an overview that identifies the overall pattern without any specific figures.',
+        template: "The table [compares / illustrates / presents data on] [topic] across [N] [categories / countries / variables].",
+        sentences: [
+          {
+            label: 'Band 6',
+            parts: [
+              { text: 'The table', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'provides information about', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'four development indicators across four selected countries', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8+ (opening participle)',
+            parts: [
+              { text: 'Drawn from a cross-national dataset', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the table', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'illustrates striking disparities in living standards and connectivity', role: 'verb' },
+              { text: ' ', role: null },
+              { text: 'among four nations at differing stages of development', role: 'object' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Band 6 overview',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'ranks highest in all four categories', role: 'verb' },
+              { text: ', while Ethiopia records the lowest figures across most indicators.', role: null },
+            ],
+          },
+          {
+            label: 'Band 8 overview',
+            parts: [
+              { text: 'Overall', role: null },
+              { text: ', ', role: null },
+              { text: 'a clear north-south divide', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'is evident', role: 'verb' },
+              { text: ', with wealthier nations consistently outperforming lower-income countries across every metric presented, most dramatically in terms of internet access.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Common mistakes',
+            items: [
+              'Never include specific figures in the overview — state the overall pattern only.',
+              'Do not use "In conclusion" — use "Overall" or "In general" for the overview.',
+            ],
+          },
+          {
+            type: 'tip',
+            title: 'Overview tip',
+            items: [
+              'Identify the biggest gap between the highest and lowest value in any column.',
+              'State which category/country leads and which lags, without any numbers.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Key Description Vocabulary',
+        intro: 'Use ranking, comparison, and gap language. Combine all three for Band 8+ sentences.',
+        sentences: [
+          {
+            label: 'Ranking (Band 6)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'had the highest GDP per capita', role: 'verb' },
+              { text: ', at $82,500.', role: null },
+            ],
+          },
+          {
+            label: 'Ranking (Band 8)',
+            parts: [
+              { text: 'Ranking highest across all indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'stood out markedly from its counterparts', role: 'verb' },
+              { text: ', with a GDP per capita of $82,500 — nearly 90 times greater than Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Range (Band 8)',
+            parts: [
+              { text: 'Internet access', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'showed the most pronounced disparity', role: 'verb' },
+              { text: ', ranging from a mere 15% in Ethiopia to 98% in Norway.', role: null },
+            ],
+          },
+          {
+            label: 'Comparison (Band 8)',
+            parts: [
+              { text: 'While', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'Brazil and India', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'occupied a middle ground in most indicators', role: 'verb' },
+              { text: ', Brazil outperformed India in life expectancy by over six years and in internet access by a substantial margin of 27 percentage points.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not write Norway is more high than India. USE Norway ranked considerably higher than India.',
+              'Do not write "India\'s internet access is 43% and Ethiopia\'s is 15%." — USE India\'s internet access (43%) was nearly three times that of Ethiopia (15%).',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Comparison and Grouping Structures',
+        intro: 'Group data by tier (high vs low performers) or by category (economic vs social vs digital). Never describe the table row by row or column by column.',
+        sentences: [
+          {
+            label: 'Tier grouping (Band 6)',
+            parts: [
+              { text: 'In terms of economic indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway and Brazil', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'performed significantly better than India and Ethiopia', role: 'verb' },
+              { text: '.', role: null },
+            ],
+          },
+          {
+            label: 'Tier grouping (Band 8)',
+            parts: [
+              { text: 'Grouping the countries into two tiers', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway and Brazil', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'consistently outperformed the remaining two', role: 'verb' },
+              { text: ', though even within this upper group, Norway stood in a category of its own, ranking first in all four indicators.', role: null },
+            ],
+          },
+          {
+            label: 'Similarity (Band 8)',
+            parts: [
+              { text: 'A notable parallel', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'can be observed between India and Brazil regarding life expectancy', role: 'verb' },
+              { text: ': both countries fell within a comparable range of 69–76 years, in contrast to the extremes represented by Norway and Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Exception (Band 8+)',
+            parts: [
+              { text: 'Interestingly', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'all four nations', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'shared relatively high literacy rates', role: 'verb' },
+              { text: ' — with the exception of Ethiopia, which lagged far behind at 38% — suggesting that basic education has reached a wider population than digital or economic development.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'danger',
+            title: 'Row-by-row mistake',
+            items: [
+              'Norway had 82,500. Brazil had 8,920. India had 2,100. Ethiopia had 925. — This list style is Band 4–5. Group and compare instead.',
+              'Never describe columns by name: not In the first column but In terms of GDP per capita.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Time and Transitional Expressions',
+        intro: 'Table transitions move between data groups, not through time. Use category transitions to organize body paragraphs.',
+        sentences: [
+          {
+            label: 'Category transition (Band 6)',
+            parts: [
+              { text: 'Regarding internet access', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'led with 98%', role: 'verb' },
+              { text: ', while Ethiopia had only 15%.', role: null },
+            ],
+          },
+          {
+            label: 'Category transition (Band 8)',
+            parts: [
+              { text: 'Shifting focus to social indicators', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'the picture', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'becomes more nuanced', role: 'verb' },
+              { text: ': literacy rates were consistently high across the first three countries, ranging between 74% and 100%, though Ethiopia proved a notable outlier at 38%.', role: null },
+            ],
+          },
+          {
+            label: 'Descending order',
+            parts: [
+              { text: 'In descending order', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'internet access figures', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'stood at 98% (Norway), 70% (Brazil), 43% (India), and 15% (Ethiopia)', role: 'verb' },
+              { text: ', reflecting each country level of economic development.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Tense rule',
+            items: [
+              'Table with a specific year: use simple past (Norway had the highest GDP).',
+              'Table with no year: use simple present (Norway has the highest GDP / Norway ranks first).',
+              'Never mix tenses without reason.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not use First... Second... Third... Fourth... for each row — use category transitions instead.',
+              'Do not overuse also, moreover, furthermore — vary with similarly, in contrast, notably.',
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Data Integration Techniques',
+        intro: 'Use four techniques: bracket method, multiplier, qualifying adverbs, and exception clause.',
+        template: "[Comparative claim] + [, recording a figure of $X — compared to $Y for B, $Z for C, and a mere $W for D].",
+        sentences: [
+          {
+            label: 'Bracket method (Band 8)',
+            parts: [
+              { text: 'Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'substantially outpaced all three other nations in terms of GDP per capita', role: 'verb' },
+              { text: ', recording a figure of $82,500 — compared to $8,920 for Brazil, $2,100 for India, and a mere $925 for Ethiopia.', role: null },
+            ],
+          },
+          {
+            label: 'Multiplier (Band 8)',
+            parts: [
+              { text: 'Internet access in Norway', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'was more than six times that recorded in Ethiopia', role: 'verb' },
+              { text: ' (98% versus 15%), representing one of the most striking disparities in the table.', role: null },
+            ],
+          },
+          {
+            label: 'Exception clause (Band 8)',
+            parts: [
+              { text: 'With the exception of Ethiopia', role: 'connector' },
+              { text: ', ', role: null },
+              { text: 'literacy rates', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'were relatively high across all nations, ranging from 74% in India to 100% in Norway', role: 'verb' },
+              { text: ' — suggesting that basic education has made broader gains than economic development.', role: null },
+            ],
+          },
+          {
+            label: 'Anomaly (Band 8+)',
+            parts: [
+              { text: 'Although', role: 'connector' },
+              { text: ' ', role: null },
+              { text: 'Brazil and India', role: 'subject' },
+              { text: ' ', role: null },
+              { text: 'differed considerably in wealth', role: 'verb' },
+              { text: ', their life expectancy figures were relatively comparable — 75.9 and 69.7 years respectively — an anomaly worth noting given the stark economic contrast between the two nations.', role: null },
+            ],
+          },
+        ],
+        callouts: [
+          {
+            type: 'tip',
+            title: 'Data integration rule',
+            items: [
+              'Multiplier: calculate the ratio between two values (Norway GDP is approximately 90 times Ethiopia).',
+              'After every number, ask So what? and add suggesting that, highlighting, or reflecting.',
+            ],
+          },
+          {
+            type: 'danger',
+            title: 'Avoid',
+            items: [
+              'Do not write The data is 82,500. USE Norway recorded a GDP of $82,500.',
+              'Do not describe every single data point — select only the most significant figures.',
+            ],
+          },
+        ],
+      },
+    ],
+    checklist: [
+      'Identified the highest and lowest values in each column before writing.',
+      'Found the most striking gap (biggest difference between any two cells) for the multiplier.',
+      'Grouped the data into 2–3 meaningful tiers or categories.',
+      'Identified any outliers or exceptions to the general pattern.',
+      'Overview states the overall pattern — no specific figures.',
+      'Body paragraphs organized by tier or category, not row by row.',
+      'Used at least one multiplier (approximately X times greater than).',
+      'Used at least one exception clause (with the exception of).',
+      'Used 5 or more collocations from the master list.',
+      'Tense is consistent: past for dated tables, present for undated tables.',
+    ],
+  },
+};
+
+// ─── Guidebook chart cheatsheets ────────────────────────────────────────────
+window.CHART_CHEATSHEETS = {
+  'guidebook/task1/bar-charts': {
+    title: 'Bar Charts',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing bar charts under timed conditions.',
+    structures: [
+      { pattern: 'The bar chart [illustrates / compares / shows] [what] in [number] [categories], [time frame].', example: 'The bar chart compares average household water usage in six countries in 2020.' },
+      { pattern: '[Category A, B, and C] all [recorded / posted] [figures] [comparison phrase].', example: 'Norway, Sweden, and Denmark all recorded figures above the overall average.' },
+      { pattern: 'There was a [substantial / marginal] [gap / difference] between [X] and [Y], with [detail].', example: 'There was a substantial gap between Norway and Spain, with the former consuming almost double the latter’s figure.' },
+      { pattern: 'While [Category A] [verb phrase], [Category B] [contrasting verb phrase].', example: 'While Norway recorded the highest figure, Spain registered the lowest, at less than half that amount.' },
+      { pattern: '[Category]’s figure amounted to [fraction] of [Category]’s.', example: 'Spain’s figure amounted to just over a third of Norway’s.' },
+      { pattern: '[Number] of the [categories] clustered within a narrow range of [X–Y units].', example: 'Three of the six countries clustered within a narrow range of 150–170 litres.' },
+      { pattern: 'Between [year] and [year], the figure for [category] [rose / fell] from [A] to [B].', example: 'Between 2010 and 2020, the figure for Country A rose from just under 100 to nearly 150 units.' },
+      { pattern: 'Over the [n]-year period shown, [categories] experienced [a moderate / a sharp / little] [change].', example: 'Over the ten-year period shown, most categories experienced a moderate increase.' },
+      { pattern: 'At [approximately / just over / just under] [figure], [category]’s [measure] was [comparison].', example: 'At approximately 220 litres per day, Norway’s consumption was almost double the figure recorded for Spain.' },
+      { pattern: 'Overall, the data reveal [a clear pattern / a divide / little variation] [detail].', example: 'Overall, the data reveal a clear divide between the higher- and lower-consuming countries.' },
+    ],
+    collocations: [
+      { phrase: 'recorded the highest/lowest figure', use: 'naming the top or bottom category in a ranking' },
+      { phrase: 'followed closely/distantly by', use: 'linking the runner-up to the leader, signalling gap size' },
+      { phrase: 'comfortably topped the table', use: 'emphasising a clear, uncontested leader' },
+      { phrase: 'outstripped its nearest rival by [margin]', use: 'expressing rank and gap size together' },
+      { phrase: 'posted almost identical figures', use: 'describing two near-equal categories' },
+      { phrase: 'differing by fewer than [n]', use: 'quantifying a small gap between near-equal figures' },
+      { phrase: 'clustered within a narrow range of', use: 'grouping several similar values without listing each one' },
+      { phrase: 'amounted to [fraction] of', use: 'expressing a precise ratio between two figures' },
+      { phrase: 'accounted for well over half of the total', use: 'part-to-whole comparison across categories' },
+      { phrase: 'a substantial gap between X and Y', use: 'flagging a large difference between two categories' },
+      { phrase: 'broadly comparable', use: 'describing categories that are similar without being identical' },
+      { phrase: 'considerable variation', use: 'summarising a spread of very different figures' },
+      { phrase: 'a clear divide between [groups]', use: 'closing-sentence synthesis of two distinct clusters' },
+      { phrase: 'stood at just over/under [figure]', use: 'reporting a figure with controlled approximation' },
+      { phrase: 'in the region of [figure]', use: 'alternative approximation phrase for a specific value' },
+      { phrase: 'an increase of some [n] percentage points', use: 'precise change language for proportions, not raw values' },
+      { phrase: 'roughly two-thirds / just under half', use: 'summarising a sub-group of categories by fraction' },
+      { phrase: 'had overtaken its initial frontrunner', use: 'describing a change in ranking by the end of the period' },
+      { phrase: 'remained broadly comparable, unlike X', use: 'contrasting one region/group’s stability with variation elsewhere' },
+      { phrase: 'far ahead of the third-placed category', use: 'extending a ranking beyond first and second place' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use present simple when the chart shows a single, timeless snapshot (no years given): "The chart shows that Country A consumes more than Country B."',
+        'Use present simple for general comparisons that hold across the whole dataset: "Norway’s figure is roughly double Spain’s."',
+        'Treat percentages and proportions shown for one period as static facts: "Renewables account for 40% of the total."',
+        'Keep verb tense consistent across an entire static-comparison sentence — do not slip into past tense mid-sentence.',
+        'When unsure whether a chart is time-based, check the axis labels before choosing a tense — a single-year chart with multiple categories is usually static.',
+      ],
+      dynamic: [
+        'Use past simple/past perfect when the chart shows change across two or more named years: "Consumption rose between 2010 and 2020."',
+        'Use "had + past participle" to describe a state that resulted from earlier change: "By 2020, three countries had overtaken the original leader."',
+        'Pair dynamic verbs (rose, fell, increased, declined) with a clear time expression — never leave a change-verb without "between X and Y" or "over the period".',
+        'For projected/future charts, use modal forms ("is expected to", "will likely") rather than past tense.',
+        'Do not switch between static and dynamic framing within the same paragraph — pick the framing that matches the chart and stay consistent.',
+      ],
+    },
+    danger: [
+      'The most common mistake: writing a static-style sentence ("Norway has the highest consumption") about a chart that actually shows change over time — always check the axis for years before choosing a tense.',
+      'Do not copy phrases directly from the chart title — paraphrase using synonyms ("illustrates" for "shows", "households" for "people").',
+      'Do not list every single bar in sequence — group categories that share a pattern into single sentences.',
+      'Do not use vague quantifiers ("a lot", "lots of", "many") — replace with precise comparison language ("a substantial amount", "considerably more than").',
+      'Do not invent figures not shown on the chart, even rough ones — only describe what is visible.',
+      'Do not end every paragraph with a bare repeated figure — close with a synthesis statement instead.',
+      'Do not mix static and dynamic tenses within one sentence or paragraph — this is the single biggest grammar-accuracy penalty in bar-chart reports.',
+    ],
+    tips: [
+      'Spend 1–2 minutes grouping the bars mentally into 2–3 clusters before writing — this produces natural synthesis instead of a flat list.',
+      'Open with a paraphrase sentence, follow with a two-part overview, then describe each group in its own paragraph.',
+      'Lead comparison sentences with the comparison word ("almost double", "well over half") rather than the bare number.',
+      'Use approximation language ("just over", "roughly", "in the region of") to avoid false precision and keep sentences flowing.',
+      'Vary your ranking vocabulary across the report — do not repeat "is higher/lower than" more than twice.',
+      'Check the axis labels first to decide whether the chart is static (one snapshot) or dynamic (change over time) — this single decision shapes your entire tense choice.',
+      'Reserve your most complex structure (passive framing, em-dash asides, nominalisation) for the overview and closing sentences, where they have the most impact.',
+    ],
+    prepositions: [
+      { key: 'between [year] and [year]', value: 'for a defined two-point time span' },
+      { key: 'over the [n]-year period', value: 'for describing change across a whole range' },
+      { key: 'by [year] / by the end of [period]', value: 'for an end-state result of change' },
+      { key: 'across [countries / categories]', value: 'for scope across categories, not time' },
+      { key: 'at [approximately / just over / just under] [figure]', value: 'for introducing a specific value with controlled precision' },
+      { key: 'in the region of [figure]', value: 'alternative way to approximate a value' },
+      { key: 'on [the previous figure / the 2010 level]', value: 'for expressing change relative to an earlier reference point' },
+    ],
+  },
+
+  'guidebook/task1/line-graphs': {
+    title: 'Line Graphs',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing line graphs under timed conditions.',
+    structures: [
+      { pattern: 'The [graph/chart] [illustrates / compares] [changes/trends in ...] over [time period].', example: 'The graph illustrates changes in smartphone ownership rates among four age groups between 2010 and 2020.' },
+      { pattern: 'Overall, it is clear that [main trend], while [contrasting trend].', example: 'Overall, it is clear that chicken consumption rose steadily, while beef and lamb declined.' },
+      { pattern: 'At the outset, [subject] stood at [figure].', example: 'At the outset of the period in 2000, mobile subscriptions stood at 15 million.' },
+      { pattern: 'Over the following [period], [subject] experienced a [adjective] [increase/decline].', example: 'Over the following five years, exports experienced a dramatic decline.' },
+      { pattern: '[Subject] climbed from [X] in [year] to [Y] in [year].', example: 'Smartphone ownership among teenagers climbed from 45% in 2010 to 92% in 2020.' },
+      { pattern: 'In contrast to [X], where [trend], [Y] showed [opposite trend].', example: 'In contrast to Country A, where emissions rose steadily, Country B experienced a notable decline.' },
+      { pattern: 'While [X] rose to [%], [Y] recorded a more modest increase to [%].', example: 'While the 18–25 age group rose to 98%, those aged 65+ recorded a more modest increase to just 45%.' },
+      { pattern: '[Subject] reached a peak of [figure] in [year], before declining to [figure].', example: 'Oil prices reached a peak of $147 per barrel in mid-2008, before plummeting to just $40 by year end.' },
+      { pattern: 'By the end of the period, [subject] had reached/stood at [figure].', example: 'By 2020, electric vehicle sales had surged to 2.5 million units annually.' },
+      { pattern: 'Both [X] and [Y] followed similar trends, falling by approximately [%] and [%] respectively.', example: 'Both beef and lamb followed similar downward trends, falling by approximately 30% and 35% respectively.' },
+    ],
+    collocations: [
+      { phrase: 'experience a dramatic surge', use: 'steep upward movement' },
+      { phrase: 'witness a sharp increase', use: 'fast rise, often short-term' },
+      { phrase: 'climb steadily', use: 'gradual consistent rise' },
+      { phrase: 'soar dramatically', use: 'very fast sharp rise' },
+      { phrase: 'rocket to [figure]', use: 'extreme rapid increase to a specific value' },
+      { phrase: 'decline sharply/steadily', use: 'fast or gradual downward movement' },
+      { phrase: 'plummet to [figure]', use: 'dramatic fall to a specific low value' },
+      { phrase: 'show a downward trajectory', use: 'sustained falling trend' },
+      { phrase: 'remain stable/constant', use: 'no significant change' },
+      { phrase: 'level off at [figure]', use: 'growth stops at a plateau' },
+      { phrase: 'plateau at [figure]', use: 'reaches a ceiling and stays flat' },
+      { phrase: 'hover around [figure]', use: 'fluctuates near a central value' },
+      { phrase: 'fluctuate considerably', use: 'irregular movement without clear direction' },
+      { phrase: 'consistently outperformed', use: 'one line always higher than another' },
+      { phrase: 'nearly double/triple', use: 'ratio comparison between two values' },
+      { phrase: 'by far the highest/lowest', use: 'emphatic superlative for a clear extreme' },
+      { phrase: 'significantly higher than', use: 'large gap between two values' },
+      { phrase: 'marginally lower than', use: 'small gap between two values' },
+      { phrase: 'ranging from a low of X to a high of Y', use: 'expressing total range of fluctuation' },
+      { phrase: 'representing a [X]-fold increase', use: 'multiplier to quantify growth ratio' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use simple present only when describing a single snapshot chart with no year given.',
+        'For timeless general comparisons within the data: "Chicken consumption is higher than beef."',
+        'Keep verb tense consistent across an entire static-comparison sentence - do not slip into past tense mid-sentence.',
+      ],
+      dynamic: [
+        'Use simple past for completed trends within named years: "Ownership rose between 2010 and 2020."',
+        'Use past perfect for a state resulting from earlier change: "By 2020, sales had tripled."',
+        'Pair every trend verb with an explicit time expression — never leave a change verb unanchored.',
+      ],
+    },
+    danger: [
+      'Do not include specific figures in your overview — state overall trends and contrasts only.',
+      'Do not repeat "increased" or "decreased" — use surge, climb, plummet, level off, fluctuate.',
+      'Do not write "In 2010 and 2020" to mean a span — use "between 2010 and 2020".',
+      'Do not describe each line in its own paragraph without cross-line comparisons.',
+      'Do not use active voice for impersonal subjects: prefer "a rise was observed" over "we can see a rise".',
+      'Do not mix static and dynamic tenses within one paragraph.',
+      'Do not write bare numbers without embedding them in a comparison or interpretive frame.',
+    ],
+    tips: [
+      'Write the overview immediately after the paraphrase — identify the dominant trend and one key contrast.',
+      'Group lines with similar trends into a single sentence using "Both X and Y..." or "All three...".',
+      'Use past perfect at least once to show a resulting state: "By 2020, X had tripled."',
+      'Vary approximation language: just over, roughly, approximately, just under, in the region of.',
+      'Use at least one multiplier or ratio: "nearly double", "three times the figure recorded in...".',
+      'Identify any turning point or peak/trough and describe it with "reached a peak/trough of X in Y".',
+      'Aim for 170–180 words; include starting figures, key changes, and end-point values.',
+    ],
+    prepositions: [
+      { key: 'between [year] and [year]', value: 'for a defined two-point time span' },
+      { key: 'from [year] to [year]', value: 'alternative span expression, less formal' },
+      { key: 'over the [n]-year period', value: 'for describing change across a whole range' },
+      { key: 'by [year]', value: 'for an end-state result of change' },
+      { key: 'from [year] onwards', value: 'from a point in time continuing forward' },
+      { key: 'at the outset / at the beginning of the period', value: 'for the starting point' },
+      { key: 'by the end of the period', value: 'for the final state' },
+    ],
+  },
+  'guidebook/task1/pie-charts': {
+    title: 'Pie Charts',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing pie charts under timed conditions.',
+    structures: [
+      { pattern: 'The pie chart [illustrates] the [breakdown of] [topic] in [context].', example: 'The pie chart illustrates the breakdown of expenditure on various transport methods in an urban area.' },
+      { pattern: 'Overall, it is clear that [X] [accounted for] [the largest proportion], while [Y] [constituted] [the smallest share].', example: 'Overall, it is clear that private cars accounted for the largest proportion, while walking constituted the smallest share.' },
+      { pattern: '[X] [dominated] the chart, [accounting for] [well over a third] at [38%].', example: 'Private car use dominated the chart, accounting for well over a third at 38%.' },
+      { pattern: '[X] and [Y] [together accounted for] [nearly two-thirds] of the total at [65%].', example: 'Private cars and public transport together accounted for nearly two-thirds of the total at 65%.' },
+      { pattern: '[X] ranked highest at [38%], followed by [Y] ([27%]), [Z] ([20%]), and [W] ([15%]) in descending order.', example: 'Private car use ranked highest at 38%, followed by public transport (27%), cycling (20%), and walking (15%) in descending order.' },
+      { pattern: 'Whereas [X] comprised approximately two-fifths, [Y] constituted a mere [15%].', example: 'Whereas private vehicles comprised approximately two-fifths, walking constituted a mere 15%.' },
+      { pattern: '[X] share was more than double that of [Y] ([38%] vs [15%]), a stark contrast.', example: 'Car expenditure was more than double that of cycling (38% vs 20%), highlighting preference for motorised travel.' },
+      { pattern: '[65%] of the total was directed towards [motorised transport], with the remaining [35%] divided between [X] and [Y].', example: '65% of the total was directed towards motorised transport, with the remaining 35% divided between cycling and walking.' },
+      { pattern: '[X] and [Y] showed comparable proportions at [20%] and [15%] respectively.', example: 'Cycling and walking showed comparable proportions at 20% and 15% respectively.' },
+      { pattern: 'Between [Year A] and [Year B], [X] share expanded from [8%] to [18%] — more than double its original proportion.', example: 'Between 1990 and 2020, leisure spending expanded from 8% to 18% — more than double its original proportion.' },
+    ],
+    collocations: [
+      { phrase: 'account for the largest proportion', use: 'dominant segment' },
+      { phrase: 'constitute the smallest share', use: 'least-common category' },
+      { phrase: 'claim the largest slice', use: 'emphatic dominance' },
+      { phrase: 'jointly account for', use: 'combining two segments' },
+      { phrase: 'heavily skewed towards', use: 'strong imbalance in one direction' },
+      { phrase: 'considerably outweigh', use: 'large gap between two groups' },
+      { phrase: 'be more than double', use: 'precise comparison between two values' },
+      { phrase: 'represent a negligible proportion', use: 'very small segments' },
+      { phrase: 'a mere X%', use: 'emphasise smallness' },
+      { phrase: 'in descending order of magnitude', use: 'ranking language' },
+      { phrase: 'show comparable proportions', use: 'two similar segments' },
+      { phrase: 'followed closely by', use: 'second-place smooth flow' },
+      { phrase: 'collectively represent', use: 'grouping multiple slices' },
+      { phrase: 'be attributed to', use: 'passive data embedding' },
+      { phrase: 'reflect a clear preference for', use: 'analytical interpretation' },
+      { phrase: 'remain the dominant category', use: 'two-chart comparison' },
+      { phrase: 'the remaining proportion', use: 'clean wrap-up language' },
+      { phrase: 'by a substantial margin', use: 'emphasise gap size' },
+      { phrase: 'well over a third / just under half', use: 'fraction with hedge' },
+      { phrase: 'at X% and Y% respectively', use: 'two figures in one sentence' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use simple present for a single undated pie chart: Cars account for 38%.',
+        'Use simple past for a single pie chart with a past date: Cars accounted for 38% in 2010.',
+        'Keep tense consistent within the whole response - choose one tense for each chart and stick to it.',
+      ],
+      dynamic: [
+        'For two pie charts: use simple past for each year plus change verbs: expanded, contracted, rose, fell.',
+        'Never use increased or decreased for a single static pie chart — there is no trend to describe.',
+        'Use change-of-proportion language for dynamic pie charts: grew from X% to Y%, contracted, halved.',
+      ],
+    },
+    danger: [
+      'Do not use trend language (rose, increased) for a single static pie chart.',
+      'Do not include specific figures in the overview sentence — state the dominant pattern only.',
+      'Do not list every segment in sequence — group and compare instead.',
+      'Do not omit fraction language — just over a quarter is stronger than 27% alone.',
+      'Do not mix past and present tense within a response about a single chart.',
+      'Do not ignore the overview — it is the most important sentence for your Task Achievement score.',
+      'Do not use "In conclusion" — use "Overall" or "In general" for your overview.',
+    ],
+    tips: [
+      'Open with a paraphrase + immediately follow with an overview (no data in overview).',
+      'Group segments into two clusters and describe each group in its body paragraph.',
+      'Use parenthetical data: private cars (38%) and public transport (27%) to embed two figures efficiently.',
+      'Use fraction language alongside raw percentages: accounting for roughly two-fifths (38%).',
+      'For two charts: identify what stayed the same and what changed most dramatically.',
+      'Aim for 150–200 words; four sentences per body paragraph is ideal.',
+      'Vary proportion verbs: accounted for, comprised, represented, constituted, made up.',
+    ],
+    prepositions: [
+      { key: 'of the total / of all expenditure', value: 'for expressing a part-to-whole proportion' },
+      { key: 'at [X%]', value: 'for appending a percentage after a proportion verb' },
+      { key: 'between [Year A] and [Year B]', value: 'for two-chart temporal comparison' },
+      { key: 'from [X%] to [Y%]', value: 'for expressing a change in proportion between two charts' },
+      { key: 'by [X percentage points]', value: 'for quantifying the gap between two proportions' },
+      { key: 'among / across [categories]', value: 'for scope across multiple segments' },
+    ],
+  },
+  'guidebook/task1/maps': {
+    title: 'Maps',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing maps under timed conditions.',
+    structures: [
+      { pattern: 'The [maps/diagrams] illustrate how [area] has [transformed] over [period].', example: 'The diagrams illustrate how Westley village transformed over the 30-year period from 1990 to 2020.' },
+      { pattern: 'Overall, the area [underwent substantial development], with [change 1] and [change 2].', example: 'Overall, the area underwent substantial urbanization, with farmland replaced by housing and new roads constructed throughout.' },
+      { pattern: '[Feature] was [replaced by] [new feature].', example: 'The farmland in the southern area was replaced by a large residential estate.' },
+      { pattern: '[Building] was [constructed] [to the north/south/east/west of] [location].', example: 'A shopping complex was constructed to the northeast of the original town center.' },
+      { pattern: 'Several [facilities] were [built], including [X], [Y], and [Z].', example: 'Several commercial facilities were built, including a supermarket, a cinema, and a car park.' },
+      { pattern: '[While] [area 1] underwent [change], [area 2] remained [unchanged].', example: 'While the eastern side underwent extensive development, the western area remained largely agricultural.' },
+      { pattern: '[Old building] was [converted into] [new purpose].', example: 'The old warehouse was converted into a community sports center.' },
+      { pattern: 'By [year], [feature] had been [constructed].', example: 'By 2020, a new bridge had been constructed across the river in the northern section.' },
+      { pattern: 'A [feature] was [added], [connecting] [location A] to [location B].', example: 'A new road was added connecting the residential estate to the commercial district.' },
+      { pattern: '[Conversely], the [area/feature] [remained] largely [unchanged].', example: 'Conversely, the river and the park to its south remained largely unchanged throughout the period.' },
+    ],
+    collocations: [
+      { phrase: 'was replaced by', use: 'one feature taking the place of another' },
+      { phrase: 'was converted into', use: 'same structure, changed purpose' },
+      { phrase: 'was constructed', use: 'new building or structure' },
+      { phrase: 'was demolished', use: 'building removed entirely' },
+      { phrase: 'was extended', use: 'existing feature made larger' },
+      { phrase: 'underwent development', use: 'area changed significantly' },
+      { phrase: 'was added', use: 'new feature introduced' },
+      { phrase: 'was removed', use: 'feature disappeared' },
+      { phrase: 'remained unchanged', use: 'no change over the period' },
+      { phrase: 'disappeared', use: 'feature no longer present' },
+      { phrase: 'to the north/south of', use: 'directional location' },
+      { phrase: 'in the [direction] corner', use: 'corner location' },
+      { phrase: 'adjacent to', use: 'directly next to' },
+      { phrase: 'opposite / facing', use: 'across from another feature' },
+      { phrase: 'situated in / located near', use: 'general position' },
+      { phrase: 'on both sides of', use: 'flanking a central feature' },
+      { phrase: 'running through', use: 'a feature that passes through the area' },
+      { phrase: 'at the intersection of', use: 'where two roads or features meet' },
+      { phrase: 'connecting X to Y', use: 'a linking feature such as a bridge or road' },
+      { phrase: 'thereby improving accessibility', use: 'purpose/result clause' },
+    ],
+    staticDynamic: {
+      static: [
+        'Maps showing a single point in time: use simple present if undated, simple past if dated.',
+        'For proposed/future maps: use conditional or modal forms (would be, is proposed).',
+        'Keep tense consistent across all passive structures in the same paragraph (was built, was replaced, was demolished).',
+      ],
+      dynamic: [
+        'For maps showing change over time: use simple past throughout (was built, was replaced).',
+        'Use past perfect (had been constructed) only for features completed before the final year shown.',
+        'For single-date maps, always use passive voice regardless of whether past or present tense is chosen.',
+      ],
+    },
+    danger: [
+      'Do not use active voice: NOT They built a school. USE A school was built.',
+      'Do not describe the overview with specific locations — keep it general.',
+      'Do not list features one by one without grouping or comparing.',
+      'Do not use present tense for historical changes.',
+      'Do not ignore unchanged features — mentioning what stayed the same shows analytical awareness.',
+      'Do not use vague location language: say northeastern corner, not up there.',
+    ],
+    tips: [
+      'Always use passive voice: was built, was replaced, was constructed.',
+      'Write the overview first: state two main changes and one thing that remained the same.',
+      'Add a compass direction to every change: to the north of, in the southeastern corner.',
+      'Show contrast: use while and conversely for areas that changed differently.',
+      'Use past simple for all historical changes — do not mix tenses.',
+      'Group similar changes: Several facilities including... saves words and sounds analytical.',
+      'Add purpose or result to at least one change: thereby, to provide, connecting X to Y.',
+    ],
+    prepositions: [
+      { key: 'to the north/south/east/west of', value: 'for directional position of a feature' },
+      { key: 'in the northeastern/northwestern/southeastern/southwestern corner', value: 'for corner positions' },
+      { key: 'adjacent to / next to', value: 'for directly neighboring features' },
+      { key: 'at the intersection of', value: 'for features at a crossroads or junction' },
+      { key: 'on both sides of', value: 'for features flanking a road or river' },
+      { key: 'between [year] and [year]', value: 'for the time span of change' },
+      { key: 'over the [n]-year period', value: 'for change across the whole timeframe' },
+      { key: 'by [year]', value: 'for an end-state after change' },
+      { key: 'throughout the period', value: 'for features that stayed the same' },
+    ],
+  },
+  'guidebook/task1/processes': {
+    title: 'Process Diagrams',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing process diagrams under timed conditions.',
+    structures: [
+      { pattern: 'The [diagram] illustrates [how X is produced]. Overall, the process comprises [#] stages, commencing with [first step] and culminating in [final step].', example: 'The diagram illustrates the process by which cocoa beans are transformed into chocolate. Overall, the procedure consists of ten stages, commencing with harvesting and culminating in packaging.' },
+      { pattern: '[Material] is/are [past participle].', example: 'The beans are roasted at 180 degrees Celsius.' },
+      { pattern: '[X] is converted/transformed into [Y].', example: 'Cocoa beans are converted into a thick paste known as cocoa liquor.' },
+      { pattern: '[Transition], [material] is [verb] [specific detail].', example: 'Subsequently, the mixture is heated to 1400 degrees Celsius in a rotating kiln.' },
+      { pattern: '[X] is [verb1], [verb2], and then [verb3].', example: 'The liquid is filtered, cooled, and then stored in large containers.' },
+      { pattern: 'Once/After [process] is complete, [next step].', example: 'Once cooling is complete, the solidified material is crushed into fine powder.' },
+      { pattern: '[Material] is [verb] to [purpose].', example: 'Materials are filtered to remove impurities.' },
+      { pattern: '[Action], thereby [verb-ing] [result].', example: 'Materials are heated rapidly, thereby reducing production time significantly.' },
+      { pattern: 'While [X] is being [verb], [Y] simultaneously undergoes [process].', example: 'While one batch is heated, another simultaneously undergoes chemical treatment.' },
+      { pattern: '[Material] is subjected to [process], during which [detail].', example: 'The mixture is subjected to intense pressure, during which air bubbles are removed.' },
+    ],
+    collocations: [
+      { phrase: 'commencing with', use: 'starting the process description' },
+      { phrase: 'culminating in', use: 'ending with the final product' },
+      { phrase: 'in the initial stage', use: 'first step' },
+      { phrase: 'subsequently', use: 'next step in sequence' },
+      { phrase: 'in the penultimate stage', use: 'second-to-last step' },
+      { phrase: 'is subjected to', use: 'material undergoes a process' },
+      { phrase: 'undergoes [transformation]', use: 'material changes state' },
+      { phrase: 'is transferred to', use: 'material moves to next station' },
+      { phrase: 'is passed through', use: 'material moves through a device' },
+      { phrase: 'is converted into', use: 'material changes identity' },
+      { phrase: 'is ground into', use: 'material made into powder' },
+      { phrase: 'is left to [cool/dry/settle]', use: 'natural process without active agent' },
+      { phrase: 'at approximately [number]', use: 'specific temperature, time, or quantity' },
+      { phrase: 'over a [time] period', use: 'duration of a stage' },
+      { phrase: 'prior to [noun]', use: 'before a step' },
+      { phrase: 'in precise proportions', use: 'mixing stage with ratios' },
+      { phrase: 'by means of', use: 'using a specific method or tool' },
+      { phrase: 'at this juncture', use: 'at this point in the process' },
+      { phrase: 'thereby [verb-ing]', use: 'result of the previous action' },
+      { phrase: 'meticulously [verb]', use: 'carefully done, quality emphasis' },
+    ],
+    staticDynamic: {
+      static: [
+        'Use present simple passive throughout: is heated, is filtered, is packaged.',
+        'Process diagrams are always described in present tense — not past, not future.',
+        'Every stage verb must be in passive form - there is no exception for process diagrams.',
+      ],
+      dynamic: [
+        'For parallel or simultaneous stages: use While [X] is being [verb], [Y] simultaneously undergoes...',
+        'For stages that depend on a previous stage: use Once [clause] is complete, [next step].',
+        'Use is being + past participle (continuous passive) for a stage in progress alongside another.',
+      ],
+    },
+    danger: [
+      'Do not use active voice: NOT Workers heat the mixture. USE The mixture is heated.',
+      'Do not repeat then or next more than once each — vary with Subsequently, Following this, Thereafter.',
+      'Do not omit specific details (temperatures, times) shown in the diagram.',
+      'Do not use past tense — process diagrams use present simple passive throughout.',
+      'Do not ignore parallel processes if shown in the diagram — describe them with concurrently or simultaneously.',
+      'Do not skip the overview — state the number of stages, first step, and final product.',
+    ],
+    tips: [
+      'Count stages precisely before writing and state the exact number in the overview.',
+      'Use passive voice for every stage: is collected, is heated, is packaged.',
+      'Vary your sequential connectors: Initially, Subsequently, Following this, At this juncture, Ultimately.',
+      'Include all specific details: temperatures, times, quantities — these show accuracy.',
+      'Use prior to [noun] and once [clause] is complete for elegant sequencing.',
+      'Describe parallel processes using while and simultaneously.',
+      'Aim for 150–190 words — include all stages without padding.',
+    ],
+    prepositions: [
+      { key: 'at approximately [temperature/number]', value: 'for specific measurements in the diagram' },
+      { key: 'over a [time] period', value: 'for duration of a stage' },
+      { key: 'prior to [noun]', value: 'before a step' },
+      { key: 'by means of [tool/method]', value: 'the instrument or method used' },
+      { key: 'in precise proportions', value: 'for mixing stages' },
+      { key: 'through [a series of filters / a kiln]', value: 'material passing through a device' },
+      { key: 'into [containers / powder / liquid]', value: 'final form of the material at a stage' },
+    ],
+  },
+  'guidebook/task1/tables': {
+    title: 'Tables',
+    eyebrow: 'Task 1 · Cheatsheet',
+    deck: 'Quick-reference structures, collocations, and pitfalls for describing tables under timed conditions.',
+    structures: [
+      { pattern: '[X] ranked highest in [category], at [figure].', example: 'Norway ranked highest in GDP per capita, at $82,500.' },
+      { pattern: '[X] substantially outpaced [Y] in [category].', example: 'Norway substantially outpaced Ethiopia in internet access (98% vs 15%).' },
+      { pattern: '... ranged from [low] to [high].', example: 'Life expectancy ranged from 66.2 to 82.5 years across all four countries.' },
+      { pattern: '[X] was approximately [N] times greater than [Y].', example: 'Norway GDP was approximately 90 times greater than Ethiopia.' },
+      { pattern: 'With the exception of [X], [trend].', example: 'With the exception of Ethiopia, literacy was relatively high across all nations.' },
+      { pattern: 'While [X] and [Y] [shared feature], [contrast].', example: 'While Brazil and India shared similar life expectancy, their GDPs differed enormously.' },
+      { pattern: 'In descending order, figures stood at [A, B, C, D].', example: 'In descending order, internet access stood at 98% (Norway), 70% (Brazil), 43% (India), 15% (Ethiopia).' },
+      { pattern: 'Shifting focus to [category], [observation].', example: 'Shifting focus to social indicators, the picture becomes more nuanced.' },
+      { pattern: '[X] proved a notable outlier, recording [figure].', example: 'Ethiopia proved a notable outlier in literacy, recording just 38%.' },
+      { pattern: '... reflecting each [subject] level of [development].', example: '...reflecting each country level of economic development.' },
+    ],
+    collocations: [
+      { phrase: 'rank highest in all categories', use: 'overall leader' },
+      { phrase: 'record the lowest figure for', use: 'bottom of a column' },
+      { phrase: 'stand out markedly from', use: 'one outlier much higher than others' },
+      { phrase: 'lag considerably behind', use: 'one country well below the others' },
+      { phrase: 'consistently outperform', use: 'one group always higher than another' },
+      { phrase: 'present a striking contrast', use: 'large gap between two values' },
+      { phrase: 'show a marked disparity in', use: 'notable difference in one category' },
+      { phrase: 'fall within a comparable range', use: 'two values that are similar' },
+      { phrase: 'a wide gulf between', use: 'very large gap between two extremes' },
+      { phrase: 'at the lower end of the spectrum', use: 'the weakest performers' },
+      { phrase: 'achieve markedly superior outcomes', use: 'high performers across all metrics' },
+      { phrase: 'highlight the profound gap', use: 'interpretive closing phrase' },
+      { phrase: 'broadly similar / comparable to', use: 'two values that are close' },
+      { phrase: 'the most pronounced disparity', use: 'the biggest gap in the table' },
+      { phrase: 'across all indicators / metrics', use: 'scope across the whole table' },
+      { phrase: 'a mere X% / just X years', use: 'emphasise a surprisingly low value' },
+      { phrase: 'perform relatively well in', use: 'mid-range assessment' },
+      { phrase: 'occupy a middle ground', use: 'neither highest nor lowest' },
+      { phrase: 'approximately X times greater than', use: 'multiplier ratio' },
+      { phrase: 'reflecting the level of development', use: 'interpretive phrase after data' },
+    ],
+    staticDynamic: {
+      static: [
+        'Table with a specific year: use simple past throughout (Norway had the highest GDP).',
+        'Table with no year: use simple present (Norway has / Norway ranks / Norway leads).',
+        'When unsure if a table is dated, check the title or column headers before choosing a tense.',
+      ],
+      dynamic: [
+        'Never use future tense to describe table data.',
+        'Do not mix past and present tense within a single response about one table.',
+        'For comparisons across rows or columns, keep tense constant - past for all dated figures, present for undated.',
+      ],
+    },
+    danger: [
+      'Never include specific figures in the overview — state the overall pattern only.',
+      'Do not describe the table row by row — group by tier or category.',
+      'Do not include every single data point — select the 5–6 most significant figures.',
+      'Do not mix past and present tense.',
+      'Do not overuse also / also / also — vary with similarly, in contrast, notably.',
+    ],
+    tips: [
+      'Identify the highest and lowest value in each column before writing.',
+      'Find the single biggest gap in the table — use it as your multiplier.',
+      'Group countries into 2 tiers or 2 categories for your body paragraphs.',
+      'Use with the exception of to handle an outlier elegantly.',
+      'Add an interpretive phrase after every key figure: suggesting, reflecting, highlighting.',
+      'Use in descending order to list all four values in a single efficient sentence.',
+      'Aim for 150–200 words: one overview + two body paragraphs.',
+    ],
+    prepositions: [
+      { key: 'in [category / GDP per capita / life expectancy]', value: 'for specifying which metric is being discussed' },
+      { key: 'across all [indicators / metrics / categories]', value: 'for scope across the whole table' },
+      { key: 'by [gap amount / percentage points]', value: 'for quantifying a difference between two values' },
+      { key: 'at [figure]', value: 'for appending a specific value after a claim' },
+      { key: 'in [year]', value: 'for a table with a specific year given' },
+      { key: 'between [X] and [Y]', value: 'for comparing two specific values or countries' },
     ],
   },
 };

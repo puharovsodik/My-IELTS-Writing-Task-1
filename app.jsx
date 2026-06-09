@@ -124,6 +124,7 @@ function HomeScreen() {
 function App() {
   const hash = useHashRoute();
   const route = useMemoA(() => parseRoute(hash), [hash]);
+  const data = window.IELTS_DATA;
 
   // Tweaks
   const initialTweaks = useMemoA(() => {
@@ -180,10 +181,24 @@ function App() {
     screen = <GroupPage domainId={route[0]} groupId={route[1]} />;
   } else if (route.length === 3) {
     chromeProps.domainId = route[0];
-    if (route[2] === 'instruction') {
+    const dom3 = data.domains.find(d => d.id === route[0]);
+    const grp3 = dom3 && dom3.groups.find(g => g.id === route[1]);
+    const guideSection = grp3 && grp3.guideSections && grp3.guideSections.find(s => s.id === route[2]);
+    if (guideSection) {
+      screen = <ChartHubPage domainId={route[0]} groupId={route[1]} sectionId={route[2]} />;
+    } else if (route[2] === 'instruction') {
       screen = <InstructionPage domainId={route[0]} groupId={route[1]} />;
     } else if (route[2] === 'cheatsheet') {
       screen = <CheatsheetPage domainId={route[0]} groupId={route[1]} />;
+    } else {
+      screen = <NotFound />;
+    }
+  } else if (route.length === 4) {
+    chromeProps.domainId = route[0];
+    if (route[2] === 'guide') {
+      screen = <GuidePage domainId={route[0]} groupId={route[1]} topicId={route[3]} />;
+    } else if (route[2] === 'cheatsheet') {
+      screen = <ChartCheatsheetPage domainId={route[0]} groupId={route[1]} topicId={route[3]} />;
     } else {
       screen = <NotFound />;
     }
@@ -253,22 +268,31 @@ function TopBar({ route, dark, onToggleDark }) {
       crumbs.push({ label: cat ? cat.title : route[1], path: null, domain: route[0] });
     }
   } else {
-    if (route[0]) {
-      const dom = data.domains.find((d) => d.id === route[0]);
-      if (dom) crumbs.push({ label: dom.title, path: `/${dom.id}`, domain: dom.id });
+    const dom = route[0] ? data.domains.find((d) => d.id === route[0]) : null;
+    const grp = dom && route[1] ? dom.groups.find((g) => g.id === route[1]) : null;
+    const guideSection = grp && grp.guideSections && route[2]
+      ? grp.guideSections.find((s) => s.id === route[2])
+      : null;
+
+    if (dom) crumbs.push({ label: dom.title, path: `/${dom.id}`, domain: dom.id });
+
+    if (grp) {
+      crumbs.push({ label: grp.title, path: `/${route[0]}/${route[1]}`, domain: dom.id });
     }
-    if (route[0] && route[1]) {
-      const dom = data.domains.find((d) => d.id === route[0]);
-      const grp = dom && dom.groups.find((g) => g.id === route[1]);
-      if (grp) crumbs.push({ label: grp.title, path: `/${route[0]}/${route[1]}`, domain: dom.id });
-    }
-    if (route[0] && route[1] && route[2]) {
+
+    if (guideSection) {
+      const sectionPath = route[3] ? `/${route[0]}/${route[1]}/${route[2]}` : null;
+      crumbs.push({ label: guideSection.title, path: sectionPath, domain: dom.id });
+
+      if (route[3]) {
+        const topic = (guideSection.topics || []).find((t) => t.id === route[3]);
+        crumbs.push({ label: topic ? topic.title : route[3], path: null, domain: dom.id });
+      }
+    } else if (route[0] && route[1] && route[2]) {
       let label = route[2];
       if (label === 'instruction') label = 'Instruction';
       else if (label === 'cheatsheet') label = 'Cheatsheet';
       else {
-        const dom = data.domains.find((d) => d.id === route[0]);
-        const grp = dom && dom.groups.find((g) => g.id === route[1]);
         const top = grp && grp.topics && grp.topics.find((t) => t.id === route[2]);
         if (top) label = top.title;
       }

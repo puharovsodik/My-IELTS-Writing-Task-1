@@ -131,7 +131,11 @@ function DomainPage({ domainId }) {
 }
 
 function countNodes(domain) {
-  return domain.groups.reduce((acc, g) => acc + (g.topics ? g.topics.length : g.nodes.length), 0);
+  return domain.groups.reduce((acc, g) => {
+    if (g.topics) return acc + g.topics.length;
+    if (g.guideSections) return acc + g.guideSections.length;
+    return acc + g.nodes.length;
+  }, 0);
 }
 
 function GroupRow({ domain, group }) {
@@ -160,6 +164,12 @@ function GroupRow({ domain, group }) {
                 {t.title}
               </span>
             ))
+          : group.guideSections
+          ? group.guideSections.map((s) => (
+              <span key={s.id} className={`badge badge--${s.id === 'guide' ? 'instruction' : 'cheatsheet'}`}>
+                {s.title}
+              </span>
+            ))
           : group.nodes.map((n) => (
               <span key={n} className={`badge badge--${n}`}>
                 {n}
@@ -180,6 +190,7 @@ function GroupPage({ domainId, groupId }) {
   if (!domain || !group) return <NotFound />;
 
   const isPractice = !!group.topics;
+  const isGuideSections = !!group.guideSections;
 
   return (
     <div className="page" data-domain={domain.id}>
@@ -192,11 +203,17 @@ function GroupPage({ domainId, groupId }) {
           <p className="subtitle">
             {isPractice
               ? `Pick a visual type. Each topic uses a real exam-style prompt with a model answer to retype.`
+              : isGuideSections
+              ? `Browse the in-depth Guide for theory and model sentences, or keep the Cheatsheet open for quick reference while you write.`
               : `Two reference modules. Read the Instruction once for theory; keep the Cheatsheet open while you practise.`}
           </p>
         </div>
         <div className="meta">
-          {isPractice ? `${group.topics.length} topics` : `${group.nodes.length} nodes`}
+          {isPractice
+            ? `${group.topics.length} topics`
+            : isGuideSections
+            ? `${group.guideSections.length} sections`
+            : `${group.nodes.length} nodes`}
         </div>
       </div>
 
@@ -204,7 +221,62 @@ function GroupPage({ domainId, groupId }) {
 
       {isPractice
         ? <TopicGrid domain={domain} group={group} />
+        : isGuideSections
+        ? <GuideSectionList domain={domain} group={group} />
         : <NodeList domain={domain} group={group} />}
+    </div>
+  );
+}
+
+function GuideSectionList({ domain, group }) {
+  return (
+    <div className="node-list">
+      {group.guideSections.map(section => (
+        <a
+          key={section.id}
+          className="node-card"
+          href={`#/${domain.id}/${group.id}/${section.id}`}
+          onClick={e => { e.preventDefault(); nav(`/${domain.id}/${group.id}/${section.id}`); }}
+        >
+          <span className={`badge badge--${section.id === 'guide' ? 'instruction' : 'cheatsheet'}`}>
+            {section.title}
+          </span>
+          <p className="node-card__body">{section.summary}</p>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function ChartHubPage({ domainId, groupId, sectionId }) {
+  const data = window.IELTS_DATA;
+  const dom = data.domains.find(d => d.id === domainId);
+  const grp = dom && dom.groups.find(g => g.id === groupId);
+  const section = grp && grp.guideSections && grp.guideSections.find(s => s.id === sectionId);
+  const badgeClass = sectionId === 'guide' ? 'badge--instruction' : 'badge--cheatsheet';
+
+  if (!section) return <NotFound />;
+
+  return (
+    <div className="page page--reading topic-hub" data-domain={domainId}>
+      <div className="reading-head">
+        <span className={`badge ${badgeClass}`}>{section.title}</span>
+        <h1 className="reading-title">Task 1 · {section.title}</h1>
+      </div>
+      <p className="article">{section.summary}</p>
+      <div className="topic-grid">
+        {(section.topics || []).map(topic => (
+          <a
+            key={topic.id}
+            className="topic-card"
+            href={`#/${domainId}/${groupId}/${sectionId}/${topic.id}`}
+            onClick={e => { e.preventDefault(); nav(`/${domainId}/${groupId}/${sectionId}/${topic.id}`); }}
+          >
+            <span className="topic-card__icon">{topic.icon}</span>
+            <span className="topic-card__title">{topic.title}</span>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
@@ -282,5 +354,5 @@ function NotFound() {
 // Export
 Object.assign(window, {
   useHashRoute, nav,
-  Home, DomainPage, GroupPage, NotFound,
+  Home, DomainPage, GroupPage, NotFound, ChartHubPage,
 });
