@@ -263,7 +263,7 @@ function ChartHubPage({ domainId, groupId, sectionId }) {
         <span className={`badge ${badgeClass}`}>{section.title}</span>
         <h1 className="reading-title">Task 1 · {section.title}</h1>
       </div>
-      <p className="article">{section.summary}</p>
+      <p className="reading-deck">{section.summary}</p>
       <div className="topic-grid">
         {(section.topics || []).map(topic => (
           <a

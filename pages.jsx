@@ -16,8 +16,8 @@ function InstructionPage({ domainId, groupId }) {
         <span className="badge badge--instruction">Instruction</span>
         <div className="eyebrow" style={{ marginTop: 18 }}>{data.eyebrow}</div>
         <h1 className="reading-title">{data.title}</h1>
-        <p className="reading-deck">{data.deck}</p>
       </div>
+      <p className="reading-deck">{data.deck}</p>
 
       <hr className="rule" />
 
@@ -103,8 +103,8 @@ function CheatsheetPage({ domainId, groupId }) {
         <span className="badge badge--cheatsheet">Cheatsheet</span>
         <div className="eyebrow" style={{ marginTop: 18 }}>{data.eyebrow}</div>
         <h1 className="reading-title">{data.title}</h1>
-        <p className="reading-deck">{data.deck}</p>
       </div>
+      <p className="reading-deck">{data.deck}</p>
 
       <hr className="rule" />
 
@@ -216,12 +216,12 @@ function GuidePage({ domainId, groupId, topicId }) {
         <span className="badge badge--instruction">{guide.eyebrow}</span>
         <h1 className="reading-title">{guide.title}</h1>
       </div>
-      <p className="article">{guide.deck}</p>
+      <p className="reading-deck">{guide.deck}</p>
 
       {guide.sections.map((section, i) => (
         <section key={i} className="reading-section">
           <h2>{section.title}</h2>
-          {section.intro && <p className="article">{section.intro}</p>}
+          {section.intro && <p className="reading-deck">{section.intro}</p>}
           {section.template && (
             <div className="template">
               <p className="template__body">{renderTemplateSlots(section.template)}</p>
@@ -282,7 +282,7 @@ function ChartCheatsheetPage({ domainId, groupId, topicId }) {
         <span className="badge badge--cheatsheet">{sheet.eyebrow}</span>
         <h1 className="reading-title">{sheet.title}</h1>
       </div>
-      <p className="article">{sheet.deck}</p>
+      <p className="reading-deck">{sheet.deck}</p>
 
       <section className="reading-section">
         <h2>Structures</h2>
